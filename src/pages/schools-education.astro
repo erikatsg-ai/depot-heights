@@ -1,0 +1,889 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle =
+  "Schools & Education Near Depot Heights | Primary, Secondary & Tertiary";
+
+const pageDescription =
+  "Explore schools and education options near Depot Heights, including primary schools, secondary schools, junior colleges, polytechnics and university options.";
+
+const primarySchools = [
+  {
+    name: "Zhangde Primary School",
+    image: "/images/zhangde-pri.webp",
+    description:
+      "A primary school option serving families in the wider central Singapore area.",
+  },
+  {
+    name: "Blangah Rise Primary School",
+    image: "/images/blangah-rise-pri.webp",
+    description:
+      "A primary school serving the Blangah Rise and surrounding residential neighbourhoods.",
+  },
+  {
+    name: "Radin Mas Primary School",
+    image: "/images/radin-mas-pri.webp",
+    description:
+      "A primary school option serving families in the Radin Mas and Telok Blangah area.",
+  },
+  {
+    name: "Gan Eng Seng Primary School",
+    image: "/images/gan-eng-seng-pri.webp",
+    description:
+      "A primary school option within the wider neighbourhood network.",
+  },
+  {
+    name: "CHIJ (Kellock) Primary",
+    image: "/images/chij-kellock-pri.webp",
+    description:
+      "A girls' primary school option serving families in the central Singapore area.",
+  },
+  {
+    name: "Alexandra Primary School",
+    image: "/images/alexandra-pri.webp",
+    description:
+      "A primary school option conveniently located within the Alexandra and Queenstown area.",
+  },
+];
+
+const secondarySchools = [
+  {
+    name: "New Town Secondary School",
+    image: "/images/new-town-sec.webp",
+    description:
+      "A secondary school option serving families in the wider Queenstown and central-western area.",
+  },
+  {
+    name: "Gan Eng Seng School",
+    image: "/images/gan-eng-seng-sec.webp",
+    description:
+      "An established secondary school option within the wider neighbourhood network.",
+  },
+  {
+    name: "Fairfield Methodist Secondary School",
+    image: "/images/fairfield-methodist-sec.webp",
+    description:
+      "A secondary school option serving families in the central-western part of Singapore.",
+  },
+  {
+    name: "Crescent Girls' School",
+    image: "/images/crescent-girls.webp",
+    description:
+      "A girls' secondary school option within the wider central Singapore education network.",
+  },
+  {
+    name: "Bukit Merah Secondary School",
+    image: "/images/bukit-merah-sec.webp",
+    description:
+      "A secondary school option serving families in the Bukit Merah and surrounding area.",
+  },
+];
+
+const juniorColleges = [
+  {
+    name: "Anglo-Chinese School",
+    image: "/images/anglo-chinese_sch.webp",
+    description:
+      "An established educational institution within the wider network of schools serving the central Singapore area.",
+  },
+];
+
+const polytechnics = [
+  {
+    name: "Singapore Polytechnic",
+    description:
+      "A leading polytechnic offering a broad range of diploma programmes and applied learning pathways.",
+  },
+  {
+    name: "Ngee Ann Polytechnic",
+    description:
+      "A major polytechnic offering a wide range of diploma programmes and applied education opportunities.",
+  },
+];
+
+const universities = [
+  {
+    name: "National University of Singapore",
+    image: "/images/nus.webp",
+    description:
+      "Singapore's leading comprehensive university, located at Kent Ridge and accessible from the wider Depot Heights area.",
+  },
+];
+
+const educationCategories = [
+  {
+    title: "International Schools",
+    text:
+      "Families seeking an international curriculum can also consider international-school options across Singapore. Availability, curriculum and admissions requirements vary by institution.",
+  },
+  {
+    title: "Specialised Institutions",
+    text:
+      "The wider Singapore education network also includes specialised institutions and schools serving different learning pathways and educational needs.",
+  },
+  {
+    title: "Preschool & Childcare",
+    text:
+      "Families with younger children have access to preschool and childcare options across the surrounding residential neighbourhoods. Availability and admissions should be checked directly with individual operators.",
+  },
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="/schools"
+  image="/images/depot-heights-hero.webp"
+  imageAlt="Depot Heights residential estate"
+>
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">DEPOT HEIGHTS · SCHOOLS & EDUCATION</p>
+
+      <h1>
+        Learning
+        <span>within reach.</span>
+      </h1>
+
+      <p class="hero-text">
+        Families at Depot Heights benefit from access to a broad education
+        network, spanning primary and secondary schools, junior college,
+        polytechnic and university options, together with preschool, childcare
+        and other educational pathways across the wider area.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="#primary-schools">
+          Explore schools
+        </a>
+
+        <a class="button button-secondary" href="/">
+          Back to neighbourhood guide
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img
+        src="/images/depot-heights-hero.webp"
+        alt="Depot Heights residential estate"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <section class="section introduction-section">
+    <div class="intro-grid">
+      <div class="section-heading">
+        <p class="eyebrow">SCHOOLS & EDUCATION</p>
+
+        <h2>
+          A broad education network for families at different stages of
+          learning.
+        </h2>
+      </div>
+
+      <div class="intro-copy">
+        <p>
+          The surrounding area offers access to schools and educational
+          institutions across different levels, from primary and secondary
+          education to junior college, polytechnic and university.
+        </p>
+
+        <p>
+          Families can also explore preschool, childcare, international-school
+          and specialised education pathways across the wider Singapore
+          education network.
+        </p>
+      </div>
+    </div>
+
+    <div class="highlight-grid">
+      <article class="highlight-card">
+        <span class="highlight-icon">🏫</span>
+
+        <h3>Primary</h3>
+
+        <p>
+          Primary-school options serving families across the wider Depot
+          Heights and surrounding neighbourhood network.
+        </p>
+      </article>
+
+      <article class="highlight-card">
+        <span class="highlight-icon">📚</span>
+
+        <h3>Secondary</h3>
+
+        <p>
+          Secondary-school options across the wider central and southern
+          Singapore education network.
+        </p>
+      </article>
+
+      <article class="highlight-card">
+        <span class="highlight-icon">🎓</span>
+
+        <h3>Tertiary</h3>
+
+        <p>
+          Junior colleges, polytechnics and university pathways are accessible
+          across the wider education network.
+        </p>
+      </article>
+
+      <article class="highlight-card">
+        <span class="highlight-icon">👨‍👩‍👧</span>
+
+        <h3>Early Learning</h3>
+
+        <p>
+          Preschool and childcare options are available across surrounding
+          residential neighbourhoods.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section education-section" id="primary-schools">
+    <div class="section-heading">
+      <p class="eyebrow">01 · PRIMARY SCHOOLS</p>
+
+      <h2>Primary Schools</h2>
+
+      <p>
+        Primary-school options in the wider Depot Heights and surrounding
+        neighbourhood network.
+      </p>
+    </div>
+
+    <div class="cards">
+      {
+        primarySchools.map((school) => (
+          <article class="card">
+            <div class="card-image">
+              <img
+                src={school.image}
+                alt={school.name}
+                loading="lazy"
+              />
+            </div>
+
+            <div class="card-body">
+              <h3>{school.name}</h3>
+
+              <p>{school.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section education-section alt-section" id="secondary-schools">
+    <div class="section-heading">
+      <p class="eyebrow">02 · SECONDARY SCHOOLS</p>
+
+      <h2>Secondary Schools</h2>
+
+      <p>
+        Secondary-school options serving families across the wider central and
+        southern Singapore education network.
+      </p>
+    </div>
+
+    <div class="cards">
+      {
+        secondarySchools.map((school) => (
+          <article class="card">
+            <div class="card-image">
+              <img
+                src={school.image}
+                alt={school.name}
+                loading="lazy"
+              />
+            </div>
+
+            <div class="card-body">
+              <h3>{school.name}</h3>
+
+              <p>{school.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section education-section" id="junior-colleges">
+    <div class="section-heading">
+      <p class="eyebrow">03 · JUNIOR COLLEGES</p>
+
+      <h2>Junior Colleges</h2>
+
+      <p>
+        Junior-college pathways available within the wider education network.
+      </p>
+    </div>
+
+    <div class="cards single-card-grid">
+      {
+        juniorColleges.map((school) => (
+          <article class="card">
+            <div class="card-image">
+              <img
+                src={school.image}
+                alt={school.name}
+                loading="lazy"
+              />
+            </div>
+
+            <div class="card-body">
+              <h3>{school.name}</h3>
+
+              <p>{school.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section education-section alt-section" id="polytechnics">
+    <div class="section-heading">
+      <p class="eyebrow">04 · POLYTECHNICS</p>
+
+      <h2>Polytechnics</h2>
+
+      <p>
+        Polytechnic education provides practical, industry-focused pathways
+        through a wide range of diploma programmes.
+      </p>
+    </div>
+
+    <div class="polytechnic-grid">
+      {
+        polytechnics.map((polytechnic) => (
+          <article class="polytechnic-card">
+            <span class="card-number">
+              POLYTECHNIC
+            </span>
+
+            <h3>{polytechnic.name}</h3>
+
+            <p>{polytechnic.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section education-section" id="universities">
+    <div class="section-heading">
+      <p class="eyebrow">05 · UNIVERSITIES</p>
+
+      <h2>Universities</h2>
+
+      <p>
+        Higher-education opportunities are also accessible through Singapore's
+        established university network.
+      </p>
+    </div>
+
+    <div class="cards single-card-grid">
+      {
+        universities.map((university) => (
+          <article class="card">
+            <div class="card-image">
+              <img
+                src={university.image}
+                alt={university.name}
+                loading="lazy"
+              />
+            </div>
+
+            <div class="card-body">
+              <h3>{university.name}</h3>
+
+              <p>{university.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section education-section alt-section" id="other-education">
+    <div class="section-heading">
+      <p class="eyebrow">06 · 07 · 08 · OTHER EDUCATION OPTIONS</p>
+
+      <h2>More Education Options</h2>
+
+      <p>
+        Beyond the photographed schools and institutions, families can also
+        explore other education pathways available across Singapore.
+      </p>
+    </div>
+
+    <div class="text-grid">
+      {
+        educationCategories.map((category) => (
+          <article class="text-card">
+            <h3>{category.title}</h3>
+
+            <p>{category.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="closing-section">
+    <div class="closing-inner">
+      <p class="eyebrow">PLANNING FOR EDUCATION</p>
+
+      <h2>
+        Education options for families at different stages of learning.
+      </h2>
+
+      <p>
+        School admission, enrolment availability, distance and eligibility
+        requirements can change over time. Families should check the relevant
+        school's official information and current admission requirements when
+        making education decisions.
+      </p>
+
+      <div class="closing-actions">
+        <a class="button button-primary" href="/location">
+          Explore Location
+        </a>
+
+        <a class="button button-secondary" href="/transport">
+          Explore Transport
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    min-height: 600px;
+    background: #e8f0e8;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px clamp(30px, 6vw, 90px);
+  }
+
+  .eyebrow {
+    margin: 0 0 16px;
+    color: #2b6e52;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    max-width: 700px;
+    margin: 0;
+    font-size: clamp(45px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.055em;
+  }
+
+  .hero h1 span {
+    display: block;
+    color: #2b6e52;
+  }
+
+  .hero-text {
+    max-width: 650px;
+    margin: 28px 0 0;
+    color: #52625a;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .hero-actions,
+  .closing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .button-primary {
+    background: #2b6e52;
+    color: #ffffff;
+  }
+
+  .button-secondary {
+    border: 1px solid #2b6e52;
+    color: #2b6e52;
+  }
+
+  .hero-image {
+    min-height: 600px;
+    overflow: hidden;
+    background: #dce7dd;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .section {
+    padding: 95px 5vw;
+  }
+
+  .introduction-section {
+    background: #ffffff;
+  }
+
+  .alt-section {
+    background: #f7f8f3;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+    max-width: 1300px;
+    margin: 0 auto 65px;
+  }
+
+  .section-heading {
+    max-width: 900px;
+    margin-bottom: 55px;
+  }
+
+  .intro-grid .section-heading {
+    margin: 0;
+  }
+
+  .section-heading h2 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .section-heading p:not(.eyebrow) {
+    max-width: 760px;
+    margin: 22px 0 0;
+    color: #5d6b64;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .intro-copy {
+    color: #52625a;
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .intro-copy p {
+    margin: 0 0 20px;
+  }
+
+  .intro-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .highlight-card {
+    min-height: 220px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #f7f8f3;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .highlight-icon {
+    display: block;
+    margin-bottom: 18px;
+    font-size: 30px;
+  }
+
+  .highlight-card h3 {
+    margin: 0;
+    font-size: 25px;
+    line-height: 1.2;
+  }
+
+  .highlight-card p {
+    margin: 12px 0 0;
+    color: #5d6b64;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .education-section {
+    scroll-margin-top: 100px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .single-card-grid {
+    grid-template-columns: minmax(0, 420px);
+  }
+
+  .card {
+    overflow: hidden;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+    box-shadow: 0 12px 32px rgba(24, 47, 34, 0.06);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    background: #dce7dd;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+  }
+
+  .card:hover .card-image img {
+    transform: scale(1.04);
+  }
+
+  .card-body {
+    padding: 26px;
+  }
+
+  .card-body h3 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .card-body p {
+    margin: 15px 0 0;
+    color: #5d6b64;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .polytechnic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .polytechnic-card {
+    min-height: 240px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+    box-shadow: 0 12px 32px rgba(24, 47, 34, 0.06);
+  }
+
+  .card-number {
+    display: block;
+    margin-bottom: 15px;
+    color: #2b6e52;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+  .polytechnic-card h3 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .polytechnic-card p {
+    margin: 15px 0 0;
+    color: #5d6b64;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .text-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .text-card {
+    min-height: 220px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .text-card h3 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .text-card p {
+    margin: 15px 0 0;
+    color: #5d6b64;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .closing-section {
+    padding: 95px 5vw;
+    background: #142f25;
+    color: #ffffff;
+  }
+
+  .closing-inner {
+    max-width: 950px;
+  }
+
+  .closing-inner .eyebrow {
+    color: #c9e4d5;
+  }
+
+  .closing-inner h2 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .closing-inner > p:not(.eyebrow) {
+    max-width: 800px;
+    margin: 25px 0 0;
+    color: #d8e9df;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .closing-actions .button-secondary {
+    border-color: #c9e4d5;
+    color: #c9e4d5;
+  }
+
+  @media (max-width: 1100px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-image,
+    .hero-image img {
+      min-height: 480px;
+    }
+
+    .highlight-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cards,
+    .text-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 800px) {
+    .section,
+    .closing-section {
+      padding: 75px 24px;
+    }
+
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+
+    .polytechnic-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-content {
+      padding: 65px 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 14vw, 70px);
+    }
+
+    .hero-text {
+      font-size: 16px;
+    }
+
+    .hero-image,
+    .hero-image img {
+      min-height: 350px;
+    }
+
+    .highlight-grid,
+    .cards,
+    .text-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .single-card-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .card-image {
+      height: 230px;
+    }
+  }
+</style>

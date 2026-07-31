@@ -1,0 +1,857 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const cafeDestinations = [
+  {
+    number: "01",
+    id: "dusk",
+    name: "DUSK",
+    location: "Mount Faber",
+    image: "/images/dusk.webp",
+    alt: "DUSK at Mount Faber near Depot Heights",
+    description:
+      "DUSK is a scenic dining destination on Mount Faber, offering residents a relaxing setting surrounded by greenery. Its location makes it a good choice when you want to combine a meal or drinks with the atmosphere of Mount Faber and the surrounding Southern Ridges.",
+    highlight:
+      "A scenic destination for a relaxed outing surrounded by greenery on Mount Faber.",
+  },
+
+  {
+    number: "02",
+    id: "arbora-cafe",
+    name: "Arbora Café",
+    location: "Mount Faber",
+    image: "/images/cafe-arbora-mount-faber.webp",
+    alt: "Arbora Café at Mount Faber near Depot Heights",
+    description:
+      "Arbora Café is a relaxed café and dining destination on Mount Faber. Surrounded by greenery, it offers a change of scenery from the everyday neighbourhood routine and can be combined with a visit to Mount Faber Park and the surrounding walking routes.",
+    highlight:
+      "A peaceful café destination that pairs naturally with a Mount Faber and Southern Ridges outing.",
+  },
+
+  {
+    number: "03",
+    id: "little-island-brewing",
+    name: "Little Island Brewing Co.",
+    location: "Gillman Barracks",
+    images: [
+      {
+        src: "/images/little-island-brewing-burger.webp",
+        alt: "Burger at Little Island Brewing Co. at Gillman Barracks",
+      },
+      {
+        src: "/images/little-island-brewing-steak.webp",
+        alt: "Steak at Little Island Brewing Co. at Gillman Barracks",
+      },
+    ],
+    description:
+      "Little Island Brewing Co. is a casual dining and drinks destination at Gillman Barracks. The area is known for its combination of art galleries, creative spaces, heritage surroundings and food and drinks, making it an interesting destination for a longer afternoon or evening outing.",
+    highlight:
+      "A casual food and drinks destination that can be combined with exploring the galleries and creative spaces at Gillman Barracks.",
+  },
+
+  {
+    number: "04",
+    id: "hopscotch",
+    name: "Hopscotch",
+    location: "Gillman Barracks",
+    image: "/images/hopscotch.webp",
+    alt: "Hopscotch at Gillman Barracks near Depot Heights",
+    description:
+      "Hopscotch is a dining and drinks destination located within Gillman Barracks. Its setting in the former military compound gives it a distinctive atmosphere and makes it suitable for an evening outing with friends.",
+    highlight:
+      "A relaxed evening destination in the distinctive arts and heritage setting of Gillman Barracks.",
+  },
+
+  {
+    number: "05",
+    id: "naked-finn",
+    name: "Naked Finn",
+    location: "Gillman Barracks",
+    image: "/images/naked-finn.webp",
+    alt: "Naked Finn at Gillman Barracks near Depot Heights",
+    description:
+      "Naked Finn is a seafood-focused dining destination at Gillman Barracks. It is another option for residents who enjoy exploring the area's mix of food, art, heritage and creative spaces.",
+    highlight:
+      "A seafood-focused dining option to include in a wider Gillman Barracks outing.",
+  },
+];
+
+const cafeAreas = [
+  {
+    title: "Mount Faber & Southern Ridges",
+    description:
+      "Mount Faber is one of the most scenic café and dining areas near Depot Heights. Residents can combine a café visit with walks through Mount Faber Park, the Southern Ridges and nearby Henderson Waves.",
+  },
+
+  {
+    title: "Gillman Barracks",
+    description:
+      "Gillman Barracks offers a distinctive combination of art, heritage, food and leisure. It is a good destination for a longer afternoon or evening outing, with galleries and dining options located within the former military compound.",
+  },
+
+  {
+    title: "Alexandra & Bukit Merah",
+    description:
+      "The wider Alexandra and Bukit Merah area also provides residents with cafés and casual dining options around established residential estates, shopping destinations and commercial buildings.",
+  },
+];
+---
+
+<Layout
+  title="Best Cafés Near Depot Heights | Café Guide"
+  description="Explore cafés and casual dining destinations near Depot Heights, including DUSK and Arbora Café on Mount Faber and Little Island Brewing Co., Hopscotch and Naked Finn at Gillman Barracks."
+  canonical="/cafes"
+  image="/images/dusk.webp"
+>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">
+          CAFÉS & CASUAL DINING NEAR DEPOT HEIGHTS
+        </p>
+
+        <h1>
+          Coffee,
+          <span>greenery & good company.</span>
+        </h1>
+
+        <p class="hero-text">
+          Depot Heights residents have a range of cafés and casual
+          dining destinations to explore across Mount Faber, the
+          Southern Ridges and Gillman Barracks. Whether you are looking
+          for a scenic outing, a relaxed meal or somewhere to meet
+          friends, there are places worth discovering nearby.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#cafe-guide">
+            Explore cafés
+          </a>
+
+          <a class="button secondary" href="/local-food">
+            Explore local food
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img
+          src="/images/dusk.webp"
+          alt="DUSK at Mount Faber near Depot Heights"
+        />
+
+        <div class="hero-card-overlay">
+          <p>DEPOT HEIGHTS</p>
+
+          <div class="hero-card-line"></div>
+
+          <strong>
+            Coffee stops.<br />
+            Scenic surroundings.
+          </strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="eyebrow">
+        CAFÉ LIFE AROUND THE NEIGHBOURHOOD
+      </p>
+
+      <h2>
+        A coffee break is never far away.
+      </h2>
+
+      <p>
+        From the greenery of Mount Faber to the creative atmosphere
+        of Gillman Barracks, Depot Heights is surrounded by cafés and
+        casual dining destinations worth exploring. These places are
+        especially enjoyable when combined with nearby parks, walking
+        routes, galleries and other neighbourhood attractions.
+      </p>
+    </section>
+
+    <!-- CAFE GUIDE -->
+    <section class="section-grid" id="cafe-guide">
+      {
+        cafeDestinations.map((cafe) => (
+          <article class="section-card" id={cafe.id}>
+            <div class="section-number">
+              {cafe.number}
+            </div>
+
+            <div>
+              <p class="eyebrow">
+                {cafe.location}
+              </p>
+
+              <h2>
+                {cafe.name}
+              </h2>
+
+              <p class="section-description">
+                {cafe.description}
+              </p>
+
+              {
+                cafe.images ? (
+                  <div class="cafe-photo-grid two-photos">
+                    {cafe.images.map((photo) => (
+                      <figure class="cafe-photo-card">
+                        <img
+                          src={photo.src}
+                          alt={photo.alt}
+                          loading="lazy"
+                        />
+                      </figure>
+                    ))}
+                  </div>
+                ) : (
+                  <div class="main-cafe-image">
+                    <img
+                      src={cafe.image}
+                      alt={cafe.alt}
+                      loading="lazy"
+                    />
+                  </div>
+                )
+              }
+
+              <div class="highlight-box">
+                <p class="highlight-eyebrow">
+                  WHY VISIT
+                </p>
+
+                <p>
+                  {cafe.highlight}
+                </p>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </section>
+
+    <!-- AREAS TO EXPLORE -->
+    <section class="area-section">
+      <div class="area-heading">
+        <p class="eyebrow">
+          CAFÉ AREAS TO EXPLORE
+        </p>
+
+        <h2>
+          Different neighbourhoods, different experiences.
+        </h2>
+
+        <p>
+          The café and casual dining scene around Depot Heights
+          extends beyond individual destinations. Several nearby
+          areas offer their own combination of scenery, food,
+          heritage, arts and leisure activities.
+        </p>
+      </div>
+
+      <div class="area-grid">
+        {
+          cafeAreas.map((area) => (
+            <article class="area-card">
+              <h3>
+                {area.title}
+              </h3>
+
+              <p>
+                {area.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="featured">
+      <div>
+        <p class="eyebrow">
+          LOCAL CAFÉ GUIDE
+        </p>
+
+        <h2>
+          Good coffee and good food can be part of the neighbourhood routine.
+        </h2>
+      </div>
+
+      <p>
+        Living at Depot Heights means having access to both everyday
+        neighbourhood food options and destination dining surrounded
+        by greenery, heritage and arts. Start with Mount Faber and
+        Gillman Barracks, then explore the wider Alexandra and
+        Bukit Merah neighbourhoods.
+      </p>
+    </section>
+
+    <!-- RELATED -->
+    <section class="related-section">
+      <div class="related-heading">
+        <p class="eyebrow">
+          MORE FOOD & DINING
+        </p>
+
+        <h2>
+          Continue exploring the neighbourhood.
+        </h2>
+      </div>
+
+      <div class="related-grid">
+        <article class="related-card">
+          <h3>
+            Local Food
+          </h3>
+
+          <p>
+            Explore hawker centres, markets and local food destinations
+            around Depot Heights, Bukit Merah, Alexandra and nearby
+            neighbourhoods.
+          </p>
+
+          <a class="text-link" href="/local-food">
+            Explore Local Food →
+          </a>
+        </article>
+
+        <article class="related-card">
+          <h3>
+            Restaurants
+          </h3>
+
+          <p>
+            Discover restaurants and dining destinations around
+            Depot Heights, Mount Faber, Alexandra and the wider
+            neighbourhood.
+          </p>
+
+          <a class="text-link" href="/restaurants">
+            Explore Restaurants →
+          </a>
+        </article>
+
+        <article class="related-card">
+          <h3>
+            Lifestyle & Nature
+          </h3>
+
+          <p>
+            Explore parks, heritage sites, arts, shopping and leisure
+            destinations around Depot Heights and the surrounding
+            neighbourhoods.
+          </p>
+
+          <a class="text-link" href="/lifestyle">
+            Explore Lifestyle & Nature →
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    margin: 0;
+    color: #1d2924;
+    background: #f7f5ef;
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  }
+
+  :global(a) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.5fr)
+      minmax(280px, 0.7fr);
+    min-height: 78vh;
+    padding: 8rem 8vw 6rem;
+    gap: 5rem;
+    align-items: center;
+    background:
+      radial-gradient(
+        circle at 80% 30%,
+        rgba(94, 145, 112, 0.22),
+        transparent 35%
+      ),
+      linear-gradient(
+        135deg,
+        #eef3e9 0%,
+        #f7f5ef 60%
+      );
+  }
+
+  .hero-content {
+    max-width: 850px;
+  }
+
+  .eyebrow {
+    margin: 0 0 1rem;
+    color: #3d805f;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+  h1 {
+    max-width: 900px;
+    margin: 0;
+    font-size:
+      clamp(45px, 8vw, 80px);
+    line-height: 0.94;
+    letter-spacing: -0.07em;
+  }
+
+  h1 span {
+    display: block;
+    color: #3d805f;
+  }
+
+  .hero-text {
+    max-width: 700px;
+    margin: 1.8rem 0 0;
+    color: #53615b;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .button {
+    padding: 0.9rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 750;
+  }
+
+  .primary {
+    color: white;
+    background: #27664d;
+  }
+
+  .secondary {
+    color: #27664d;
+    border: 1px solid #9eb3a5;
+  }
+
+  .hero-card {
+    position: relative;
+    min-height: 360px;
+    overflow: hidden;
+    border-radius: 2rem;
+    color: white;
+    background: #315f4a;
+    box-shadow:
+      0 25px 70px
+      rgba(39, 102, 77, 0.18);
+  }
+
+  .hero-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+  }
+
+  .hero-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(31, 72, 55, 0.05),
+        rgba(31, 72, 55, 0.9)
+      );
+  }
+
+  .hero-card-overlay {
+    position: absolute;
+    z-index: 2;
+    right: 2rem;
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .hero-card-overlay p {
+    margin: 0;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+  .hero-card-line {
+    width: 50px;
+    height: 2px;
+    margin: 1rem 0;
+    background: white;
+  }
+
+  .hero-card strong {
+    display: block;
+    font-size:
+      clamp(1.8rem, 3vw, 3rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .intro {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 8rem 8vw 4rem;
+    text-align: center;
+  }
+
+  .intro h2,
+  .featured h2,
+  .related-heading h2,
+  .area-heading h2 {
+    margin: 0;
+    font-size:
+      clamp(38px, 5vw, 65px);
+    line-height: 1;
+    letter-spacing: -0.06em;
+  }
+
+  .intro > p:last-child {
+    margin: 1.5rem auto 0;
+    color: #65736c;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .section-grid {
+    padding: 2rem 8vw 8rem;
+  }
+
+  .section-card {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 0;
+    border-top:
+      1px solid
+      rgba(29, 41, 36, 0.15);
+  }
+
+  .section-number {
+    color: #70a281;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+  }
+
+  .section-card h2 {
+    margin: 0;
+    font-size:
+      clamp(38px, 4vw, 65px);
+    letter-spacing: -0.05em;
+  }
+
+  .section-description {
+    max-width: 700px;
+    margin: 1.2rem 0 2rem;
+    color: #65736c;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .main-cafe-image {
+    margin: 2rem 0;
+  }
+
+  .main-cafe-image img {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 2rem;
+    box-shadow:
+      0 20px 50px
+      rgba(39, 102, 77, 0.12);
+  }
+
+  .cafe-photo-grid {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .cafe-photo-grid.two-photos {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .cafe-photo-card {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid #cbd5cd;
+    background: #eef1ec;
+  }
+
+  .cafe-photo-card img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition:
+      transform 0.3s ease;
+  }
+
+  .cafe-photo-card:hover img {
+    transform: scale(1.03);
+  }
+
+  .highlight-box {
+    padding: 1.5rem 1.7rem;
+    border-left:
+      4px solid
+      #3d805f;
+    border-radius:
+      0 1.2rem 1.2rem 0;
+    background:
+      rgba(61, 128, 95, 0.08);
+  }
+
+  .highlight-box p {
+    margin: 0;
+    color: #53615b;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .highlight-box .highlight-eyebrow {
+    margin-bottom: 0.5rem;
+    color: #27664d;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .area-section {
+    padding: 7rem 8vw;
+    background: #e9eee7;
+  }
+
+  .area-heading {
+    max-width: 850px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .area-heading > p:last-child {
+    max-width: 700px;
+    margin: 1.5rem auto 0;
+    color: #65736c;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .area-grid {
+    display: grid;
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .area-card {
+    padding: 2rem;
+    border:
+      1px solid
+      #cbd5cd;
+    border-radius: 1.5rem;
+    background:
+      rgba(255, 255, 255, 0.35);
+  }
+
+  .area-card h3 {
+    margin: 0;
+    color: #27664d;
+    font-size:
+      clamp(23px, 2vw, 28px);
+    letter-spacing: -0.03em;
+  }
+
+  .area-card p {
+    margin: 1rem 0 0;
+    color: #65736c;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .featured {
+    display: grid;
+    grid-template-columns:
+      1.3fr 0.7fr;
+    gap: 5rem;
+    padding: 7rem 8vw;
+    color: white;
+    background: #27664d;
+  }
+
+  .featured .eyebrow {
+    color: #b9d7c1;
+  }
+
+  .featured p:last-child {
+    align-self: end;
+    margin: 0;
+    color: #d5e5d9;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .related-section {
+    padding: 8rem 8vw;
+  }
+
+  .related-heading {
+    max-width: 850px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .related-card {
+    padding: 2rem;
+    border:
+      1px solid
+      #cbd5cd;
+    border-radius: 1.5rem;
+    background:
+      rgba(255, 255, 255, 0.28);
+  }
+
+  .related-card h3 {
+    margin: 0;
+    color: #27664d;
+    font-size:
+      clamp(23px, 2vw, 28px);
+  }
+
+  .related-card p {
+    margin: 1rem 0 1.5rem;
+    color: #65736c;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .text-link {
+    color: #27664d;
+    font-size: 0.85rem;
+    font-weight: 800;
+  }
+
+  .text-link:hover {
+    color: #1f513d;
+  }
+
+  @media (max-width: 900px) {
+    .hero,
+    .featured {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      padding-top: 5rem;
+    }
+
+    .hero-card {
+      min-height: 280px;
+    }
+
+    .hero-card img {
+      min-height: 280px;
+    }
+
+    .area-grid,
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cafe-photo-grid.two-photos {
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 700px) {
+    .cafe-photo-grid.two-photos {
+      grid-template-columns: 1fr;
+    }
+
+    .cafe-photo-card img {
+      height: 260px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding: 4rem 5vw;
+    }
+
+    .section-grid,
+    .intro,
+    .area-section,
+    .related-section {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    .section-card {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 3rem 0;
+    }
+
+    .featured {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+  }
+</style>

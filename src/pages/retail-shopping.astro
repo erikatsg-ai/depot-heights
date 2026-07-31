@@ -1,0 +1,952 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle =
+  "Shopping & Retail Near Depot Heights | Alexandra, Bukit Merah & Beyond";
+
+const pageDescription =
+  "Explore shopping and retail destinations near Depot Heights, including Depot Heights Shopping Centre, Alexandra Central, IKEA Alexandra, VivoCity, Great World City, Queensway Shopping Centre, mTower and Mapletree Business Centre.";
+
+const shoppingDestinations = [
+  {
+    number: "01",
+    title: "Depot Heights Shopping Centre",
+    description:
+      "The neighbourhood shopping centre at 108 Depot Road serves the surrounding Depot Heights community with convenient everyday amenities and local services.",
+    details:
+      "Level 1 includes Ikada Bakery, Bailey & Whiskey Café and a SingPost mailbox. The centre also has childcare facilities on Level 2.",
+  },
+  {
+    number: "02",
+    title: "Alexandra Central",
+    description:
+      "A convenient commercial and retail destination along Alexandra Road, providing access to food, services and everyday shopping close to the Depot Heights area.",
+    details:
+      "Its location along the Alexandra corridor makes it a practical stop when travelling between Depot Heights, IKEA Alexandra and the wider Bukit Merah area.",
+  },
+  {
+    number: "03",
+    title: "IKEA Alexandra",
+    description:
+      "A popular destination for home furnishings, household solutions and practical ideas for the home, located along Alexandra Road.",
+    details:
+      "Residents can also enjoy IKEA's Swedish food options, making it a destination for both home shopping and casual dining.",
+  },
+  {
+    number: "04",
+    title: "Queensway Shopping Centre",
+    description:
+      "A long-established shopping centre known especially for sportswear, sporting goods, footwear and specialist retail.",
+    details:
+      "Its distinctive retail mix makes it a useful destination for sports enthusiasts and shoppers looking for specialist products.",
+  },
+  {
+    number: "05",
+    title: "VivoCity",
+    description:
+      "One of Singapore's major shopping and lifestyle destinations at HarbourFront, offering extensive retail, dining, entertainment and family-friendly activities.",
+    details:
+      "VivoCity also provides convenient access towards Sentosa and the southern waterfront.",
+  },
+  {
+    number: "06",
+    title: "Great World City",
+    description:
+      "A major shopping and lifestyle destination in the River Valley area, with retail, dining, supermarkets, entertainment and family-oriented amenities.",
+    details:
+      "Its central location provides another shopping option for Depot Heights residents travelling towards the River Valley and Orchard areas.",
+  },
+];
+
+const commercialDestinations = [
+  {
+    number: "01",
+    title: "mTower",
+    description:
+      "A commercial and business destination along Alexandra Road, contributing to the established business environment surrounding Depot Heights.",
+  },
+  {
+    number: "02",
+    title: "Mapletree Business Centre",
+    description:
+      "A major business destination in the Alexandra area, with offices, workplaces and supporting amenities serving the wider commercial community.",
+  },
+  {
+    number: "03",
+    title: "Mapletree Business City",
+    description:
+      "A large commercial and workplace hub in the Alexandra area, offering offices, dining and supporting lifestyle amenities.",
+  },
+  {
+    number: "04",
+    title: "Alexandra TechnoPark",
+    description:
+      "An established business and technology hub near Depot Heights, forming part of the wider Alexandra commercial corridor.",
+  },
+];
+
+const retailAreas = [
+  {
+    number: "01",
+    title: "HarbourFront",
+    description:
+      "HarbourFront combines shopping, dining, entertainment and waterfront activities, with VivoCity serving as the area's major retail destination.",
+  },
+  {
+    number: "02",
+    title: "Anchorpoint",
+    description:
+      "A long-established shopping destination near Alexandra Road that has evolved beyond its earlier outlet-shopping identity, with restaurants, cafés and Cold Storage.",
+  },
+  {
+    number: "03",
+    title: "Central Plaza",
+    description:
+      "A convenient shopping and commercial destination serving the wider Bukit Merah and Tiong Bahru area.",
+  },
+  {
+    number: "04",
+    title: "Alexandra Road",
+    description:
+      "The Alexandra Road corridor brings together a mix of shopping, home furnishings, commercial buildings, workplaces and everyday services within practical reach of Depot Heights.",
+  },
+];
+
+const majorShoppingDestinations = [
+  {
+    number: "01",
+    title: "Orchard Road",
+    description:
+      "Singapore's premier shopping boulevard, with major shopping malls, international brands, department stores, dining and entertainment.",
+  },
+  {
+    number: "02",
+    title: "Great World City",
+    description:
+      "A major lifestyle mall offering retail, dining, supermarkets, entertainment and family-oriented amenities.",
+  },
+  {
+    number: "03",
+    title: "VivoCity",
+    description:
+      "A major southern retail and lifestyle destination connected to HarbourFront MRT and Sentosa.",
+  },
+  {
+    number: "04",
+    title: "Queensway Shopping Centre",
+    description:
+      "A specialist retail destination particularly popular for sportswear, sporting goods and footwear.",
+  },
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="/retails-shopping"
+  image="/images/vivocity.webp"
+  imageAlt="VivoCity shopping mall near HarbourFront"
+>
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">SHOPPING & RETAIL</p>
+
+      <h1>
+        Shopping
+        <span>within easy reach.</span>
+      </h1>
+
+      <p class="hero-text">
+        Depot Heights is surrounded by an established network of neighbourhood
+        shopping centres, commercial destinations, home-furnishing stores and
+        major lifestyle malls. From everyday needs at Depot Heights Shopping
+        Centre to VivoCity, Great World City and Orchard Road, residents have
+        a wide range of retail options across the south and central areas of
+        Singapore.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="#nearby-shopping">
+          Explore shopping
+        </a>
+
+        <a class="button button-secondary" href="#major-destinations">
+          Major destinations
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img
+        src="/images/vivocity.webp"
+        alt="VivoCity shopping mall near HarbourFront"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <section class="section introduction-section">
+    <div class="intro-grid">
+      <div class="section-heading">
+        <p class="eyebrow">SHOPPING AROUND DEPOT HEIGHTS</p>
+
+        <h2>
+          Everyday convenience, home living and major retail destinations.
+        </h2>
+      </div>
+
+      <div class="intro-copy">
+        <p>
+          Depot Heights benefits from its location within the established
+          Alexandra and Bukit Merah area. Residents have access to a mix of
+          neighbourhood shopping, commercial centres and larger lifestyle
+          destinations without being limited to a single retail district.
+        </p>
+
+        <p>
+          The immediate area provides convenient everyday options, while the
+          wider Alexandra Road corridor connects Depot Heights with IKEA
+          Alexandra, Alexandra Central and major business destinations. Further
+          south, HarbourFront and VivoCity provide a larger retail and
+          entertainment experience, while Great World City and Orchard Road
+          offer additional choices towards central Singapore.
+        </p>
+      </div>
+    </div>
+
+    <div class="highlight-grid">
+      <article class="highlight-card">
+        <span class="highlight-icon">🏪</span>
+
+        <h3>Everyday Needs</h3>
+
+        <p>
+          Convenient neighbourhood shopping and services are available close
+          to home at Depot Heights Shopping Centre and the surrounding area.
+        </p>
+      </article>
+
+      <article class="highlight-card">
+        <span class="highlight-icon">🛋️</span>
+
+        <h3>Home Living</h3>
+
+        <p>
+          IKEA Alexandra and the wider Alexandra retail corridor provide
+          practical options for furnishing and improving the home.
+        </p>
+      </article>
+
+      <article class="highlight-card">
+        <span class="highlight-icon">🛍️</span>
+
+        <h3>Major Malls</h3>
+
+        <p>
+          VivoCity and Great World City provide larger retail, dining,
+          entertainment and lifestyle experiences.
+        </p>
+      </article>
+
+      <article class="highlight-card">
+        <span class="highlight-icon">🏙️</span>
+
+        <h3>City Shopping</h3>
+
+        <p>
+          Orchard Road remains within practical reach for major malls,
+          international brands, department stores and city shopping.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section
+    class="section shopping-section"
+    id="nearby-shopping"
+  >
+    <div class="section-heading">
+      <p class="eyebrow">NEARBY SHOPPING</p>
+
+      <h2>
+        Shopping destinations closest to the Depot Heights area.
+      </h2>
+
+      <p>
+        These destinations form the main shopping and retail landscape around
+        Depot Heights, covering everyday needs, home furnishings, specialist
+        shopping and larger lifestyle experiences.
+      </p>
+    </div>
+
+    <div class="shopping-grid">
+      {
+        shoppingDestinations.map((destination) => (
+          <article class="shopping-card">
+            <span class="card-number">{destination.number}</span>
+
+            <h3>{destination.title}</h3>
+
+            <p>{destination.description}</p>
+
+            <p class="card-detail">{destination.details}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section commercial-section">
+    <div class="section-heading">
+      <p class="eyebrow">COMMERCIAL & BUSINESS DESTINATIONS</p>
+
+      <h2>
+        Shopping is part of a wider commercial corridor.
+      </h2>
+
+      <p>
+        The Alexandra area is not only a retail destination. It is also an
+        established business corridor with major workplaces, commercial
+        buildings and supporting amenities.
+      </p>
+    </div>
+
+    <div class="commercial-grid">
+      {
+        commercialDestinations.map((destination) => (
+          <article class="commercial-card">
+            <span class="card-number">{destination.number}</span>
+
+            <h3>{destination.title}</h3>
+
+            <p>{destination.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section retail-areas-section">
+    <div class="section-heading">
+      <p class="eyebrow">RETAIL AREAS & SHOPPING CORRIDORS</p>
+
+      <h2>
+        Explore the wider retail landscape around southern Singapore.
+      </h2>
+
+      <p>
+        Beyond individual shopping centres, several established commercial
+        corridors provide different retail experiences within reach of Depot
+        Heights.
+      </p>
+    </div>
+
+    <div class="area-grid">
+      {
+        retailAreas.map((area) => (
+          <article class="area-card">
+            <span class="card-number">{area.number}</span>
+
+            <h3>{area.title}</h3>
+
+            <p>{area.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section major-section" id="major-destinations">
+    <div class="section-heading">
+      <p class="eyebrow">MAJOR SHOPPING DESTINATIONS</p>
+
+      <h2>
+        From southern lifestyle malls to Singapore's premier shopping street.
+      </h2>
+
+      <p>
+        When residents want a larger shopping experience, several major retail
+        destinations are accessible from the Depot Heights area.
+      </p>
+    </div>
+
+    <div class="major-grid">
+      {
+        majorShoppingDestinations.map((destination) => (
+          <article class="major-card">
+            <span class="card-number">{destination.number}</span>
+
+            <h3>{destination.title}</h3>
+
+            <p>{destination.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section food-section">
+    <div class="section-heading">
+      <p class="eyebrow">SHOPPING, FOOD & LIFESTYLE</p>
+
+      <h2>
+        Retail destinations are also places to eat, meet and spend time.
+      </h2>
+
+      <p>
+        Shopping around Depot Heights is closely connected with Singapore's
+        wider food and lifestyle scene. Many of the area's shopping centres
+        combine retail with cafés, restaurants, supermarkets and entertainment.
+      </p>
+    </div>
+
+    <div class="food-grid">
+      <article class="food-card">
+        <span class="card-number">01</span>
+
+        <h3>Local Food & Hawker Centres</h3>
+
+        <p>
+          Explore traditional local food and hawker centres around Bukit Merah,
+          Alexandra, Tiong Bahru and the surrounding neighbourhoods.
+        </p>
+
+        <a class="text-link" href="/local-food">
+          Explore Local Food →
+        </a>
+      </article>
+
+      <article class="food-card">
+        <span class="card-number">02</span>
+
+        <h3>Cafés</h3>
+
+        <p>
+          Discover cafés around Alexandra, Bukit Merah, Tiong Bahru, Telok
+          Blangah and the wider southern-central area.
+        </p>
+
+        <a class="text-link" href="/cafes">
+          Explore Cafés →
+        </a>
+      </article>
+
+      <article class="food-card">
+        <span class="card-number">03</span>
+
+        <h3>Restaurants</h3>
+
+        <p>
+          Find restaurants ranging from neighbourhood dining to destination
+          restaurants across the surrounding area.
+        </p>
+
+        <a class="text-link" href="/restaurants">
+          Explore Restaurants →
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <section class="closing-section">
+    <div class="closing-inner">
+      <p class="eyebrow">SHOPPING AROUND DEPOT HEIGHTS</p>
+
+      <h2>
+        A convenient location for everyday shopping and larger retail trips.
+      </h2>
+
+      <p>
+        Depot Heights offers residents a useful balance between neighbourhood
+        convenience and access to Singapore's wider retail landscape. Everyday
+        needs are close to home, while Alexandra, HarbourFront, VivoCity,
+        Great World City and Orchard Road provide progressively larger shopping
+        and lifestyle experiences.
+      </p>
+
+      <div class="closing-actions">
+        <a
+          class="button button-primary"
+          href="/lifestyle"
+        >
+          Explore Lifestyle
+        </a>
+
+        <a
+          class="button button-secondary"
+          href="/location"
+        >
+          Explore Location
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    min-height: 600px;
+    background: #e8f0e8;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px clamp(30px, 6vw, 90px);
+  }
+
+  .eyebrow {
+    margin: 0 0 16px;
+    color: #2b6e52;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    max-width: 700px;
+    margin: 0;
+    font-size: clamp(45px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.055em;
+  }
+
+  .hero h1 span {
+    display: block;
+    color: #2b6e52;
+  }
+
+  .hero-text {
+    max-width: 650px;
+    margin: 28px 0 0;
+    color: #52625a;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .hero-actions,
+  .closing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .button-primary {
+    background: #2b6e52;
+    color: #ffffff;
+  }
+
+  .button-secondary {
+    border: 1px solid #2b6e52;
+    color: #2b6e52;
+  }
+
+  .hero-image {
+    min-height: 600px;
+    overflow: hidden;
+    background: #dce7dd;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .section {
+    padding: 95px 5vw;
+  }
+
+  .section-heading {
+    max-width: 900px;
+    margin-bottom: 55px;
+  }
+
+  .section-heading h2 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .section-heading p:not(.eyebrow) {
+    max-width: 760px;
+    margin: 22px 0 0;
+    color: #5d6b64;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .introduction-section {
+    background: #ffffff;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+    max-width: 1300px;
+    margin: 0 auto 65px;
+  }
+
+  .intro-grid .section-heading {
+    margin: 0;
+  }
+
+  .intro-copy {
+    color: #52625a;
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .intro-copy p {
+    margin: 0 0 20px;
+  }
+
+  .intro-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .highlight-card {
+    min-height: 220px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #f7f8f3;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .highlight-icon {
+    display: block;
+    margin-bottom: 18px;
+    font-size: 30px;
+  }
+
+  .highlight-card h3 {
+    margin: 0;
+    font-size: 25px;
+    line-height: 1.2;
+  }
+
+  .highlight-card p {
+    margin: 12px 0 0;
+    color: #5d6b64;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .shopping-section {
+    background: #f7f8f3;
+  }
+
+  .shopping-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .shopping-card,
+  .commercial-card,
+  .area-card,
+  .major-card {
+    padding: 30px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .shopping-card {
+    min-height: 320px;
+  }
+
+  .card-number {
+    display: block;
+    margin-bottom: 15px;
+    color: #2b6e52;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+  .shopping-card h3,
+  .commercial-card h3,
+  .area-card h3,
+  .major-card h3 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .shopping-card p,
+  .commercial-card p,
+  .area-card p,
+  .major-card p {
+    margin: 15px 0 0;
+    color: #5d6b64;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .shopping-card .card-detail {
+    padding-top: 15px;
+    border-top: 1px solid #e4e9e4;
+    color: #52625a;
+    font-size: 15px;
+  }
+
+  .commercial-section {
+    background: #235f47;
+    color: #ffffff;
+  }
+
+  .commercial-section .eyebrow {
+    color: #c9e4d5;
+  }
+
+  .commercial-section .section-heading p:not(.eyebrow) {
+    color: #d4e7dc;
+  }
+
+  .commercial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .commercial-card {
+    min-height: 235px;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  .commercial-card .card-number {
+    color: #c9e4d5;
+  }
+
+  .commercial-card h3 {
+    color: #ffffff;
+  }
+
+  .commercial-card p {
+    color: #d8e9df;
+  }
+
+  .retail-areas-section {
+    background: #edf3ed;
+  }
+
+  .area-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .area-card {
+    min-height: 230px;
+  }
+
+  .major-section {
+    background: #ffffff;
+  }
+
+  .major-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .major-card {
+    min-height: 235px;
+    background: #f7f8f3;
+  }
+
+  .major-card h3 {
+    font-size: 23px;
+  }
+
+  .major-card p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .food-section {
+    background: #e8f0e8;
+  }
+
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .food-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .food-card h3 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .food-card p {
+    margin: 15px 0 0;
+    color: #5d6b64;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .text-link {
+    margin-top: auto;
+    padding-top: 25px;
+    color: #2b6e52;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .closing-section {
+    padding: 95px 5vw;
+    background: #142f25;
+    color: #ffffff;
+  }
+
+  .closing-inner {
+    max-width: 950px;
+  }
+
+  .closing-inner .eyebrow {
+    color: #c9e4d5;
+  }
+
+  .closing-inner h2 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .closing-inner > p:not(.eyebrow) {
+    max-width: 800px;
+    margin: 25px 0 0;
+    color: #d8e9df;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .closing-actions .button-secondary {
+    border-color: #c9e4d5;
+    color: #c9e4d5;
+  }
+
+  @media (max-width: 1100px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-image,
+    .hero-image img {
+      min-height: 480px;
+    }
+
+    .highlight-grid,
+    .major-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .shopping-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 800px) {
+    .section,
+    .closing-section {
+      padding: 75px 24px;
+    }
+
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+
+    .commercial-grid,
+    .area-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .food-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-content {
+      padding: 65px 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 14vw, 70px);
+    }
+
+    .hero-text {
+      font-size: 16px;
+    }
+
+    .hero-image,
+    .hero-image img {
+      min-height: 350px;
+    }
+
+    .highlight-grid,
+    .shopping-grid,
+    .major-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

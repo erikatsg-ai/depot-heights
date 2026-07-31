@@ -1,0 +1,1189 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const outdoorAmenities = [
+  {
+    name: "Children's Playground",
+    image: "/images/open-air-playground.webp",
+    alt: "Open-air children's playground at Depot Heights",
+    description:
+      "Residents have access to playground facilities where children can play, explore and enjoy time outdoors within the estate.",
+  },
+  {
+    name: "Sheltered Playground",
+    image: "/images/sheltered-playground.webp",
+    alt: "Sheltered playground at Depot Heights",
+    description:
+      "A sheltered playground provides an additional space for children to play and spend time outdoors with greater protection from the weather.",
+  },
+  {
+    name: "Open-Air Exercise Park",
+    image: "/images/open-air-exercise.webp",
+    alt: "Open-air exercise park at Depot Heights",
+    description:
+      "Equipped with outdoor exercise stations and facilities, the open-air exercise park provides residents with a convenient place to stay active and healthy.",
+  },
+  {
+    name: "Enclosed Street Soccer",
+    image: "/images/street-soccer.webp",
+    alt: "Enclosed street soccer court at Depot Heights",
+    description:
+      "An enclosed street soccer area provides residents with a dedicated space for recreational play and informal games within the estate.",
+  },
+];
+
+const convenienceAmenities = [
+  {
+    name: "Sheltered Pick-Up & Drop-Off Points",
+    location: "Key block entrances",
+    benefit:
+      "Fully covered porch areas keep you completely dry during rainy days and provide a safe, convenient way to meet family members, visitors and children.",
+  },
+  {
+    name: "Multi-Storey Car Park (MSCP)",
+    location: "Estate car parks",
+    benefit:
+      "Convenient sheltered multi-level parking is available for residents and visitors alike.",
+  },
+  {
+    name: "Vehicle Washing Bay",
+    location: "Within MSCP",
+    benefit:
+      "Convenient designated washing bays are available for residents who need to clean their vehicles.",
+  },
+  {
+    name: "Bicycle Parking",
+    location: "Near selected blocks",
+    benefit:
+      "Secure sheltered bicycle parking provides a practical option for residents who cycle around the neighbourhood.",
+  },
+  {
+    name: "Drinking Water Machines",
+    location: "Key estate locations",
+    benefit:
+      "Convenient drinking water facilities provide residents with easy access to water when needed.",
+  },
+  {
+    name: "Parcel Lockers",
+    location: "Block 105A / Void Deck",
+    benefit:
+      "Secure self-service collection lockers provide a convenient way to receive online purchases when residents are not at home.",
+  },
+  {
+    name: "Residents' Network (RN) Centre",
+    location: "Block 104C Void Deck",
+    benefit:
+      "Serves as the community centre for residents, supporting local Depot Heights activities and fostering neighbourhood connections.",
+  },
+  {
+    name: "Green Roof Spaces",
+    location: "Car park roof areas",
+    benefit:
+      "Landscaped car park roof spaces provide greenery and help create a more pleasant environment within the estate.",
+  },
+  {
+    name: "Sheltered Pavillions",
+    location: "Throughout the estate",
+    benefit:
+      "Large, breezy community pavilions provide places for social gatherings, relaxation and everyday use within the estate.",
+  },
+];
+
+const convenienceImages = [
+  {
+    image: "/images/covered-drop-off-point.webp",
+    alt: "Covered drop-off point at Depot Heights",
+  },
+  {
+    image: "/images/sheltered-linkway-bus-stop.webp",
+    alt: "Sheltered linkway and bus stop at Depot Heights",
+  },
+  {
+    image: "/images/vending-machine-and-pickup-locker.webp",
+    alt: "Vending machine and parcel pickup locker at Depot Heights",
+  },
+  {
+    image: "/images/sheltered-linkway-carpark.webp",
+    alt: "Sheltered linkway near the car park at Depot Heights",
+  },
+];
+
+const shoppingCentreImages = [
+  {
+    image: "/images/depot-heights-shopping-centre.webp",
+    alt: "Depot Heights Shopping Centre at Block 108 Depot Road",
+  },
+  {
+    image: "/images/anytime-fitness.webp",
+    alt: "Anytime Fitness at Depot Heights Shopping Centre",
+  },
+];
+
+const shoppingServices = [
+  "NTUC FairPrice — groceries and everyday essentials for daily household needs.",
+  "Traditional Chinese Medicine Hall — traditional healthcare and wellness services.",
+  "Medical & Dental Clinics — convenient healthcare services for nearby residents.",
+  "Childcare Centre — childcare and early education services.",
+  "Pet Grooming — pet care services for furry family members.",
+  "Ikada Bakery — freshly baked local and speciality bread and pastries.",
+  "Bailey & Whiskey Café — a convenient café option for a relaxed coffee break.",
+  "Mad Roaster — coffee and casual café dining close to home.",
+  "Mini Mart — convenient everyday essentials and household items.",
+  "Wonder Wash 24/7 Laundromat — automated self-service laundry.",
+  "ATM — convenient cash withdrawal and payment services.",
+];
+
+const shoppingDining = [
+  "Yue Hua Food Court — a local food court offering affordable meals, drinks and everyday dining options.",
+  "Anytime Fitness — a 24-hour fitness gym equipped with comprehensive cardio machines and strength training equipment.",
+];
+
+const nearbyAreas = [
+  {
+    title: "Parks & Green Spaces",
+    description:
+      "Depot Heights is surrounded by greenery and is well placed for residents who enjoy nature, walking and outdoor recreation. Nearby parks and trails provide opportunities to explore the Southern Ridges and surrounding green spaces.",
+  },
+  {
+    title: "Getting Around",
+    description:
+      "With nearby bus services and convenient road connections, residents can travel easily between Depot Heights, Bukit Merah, HarbourFront, the CBD and other parts of Singapore.",
+  },
+  {
+    title: "Shopping & Essentials",
+    description:
+      "Beyond the on-site Depot Heights Shopping Centre, residents have access to nearby shopping and retail destinations including Alexandra Central, Anchorpoint and other convenient options around the Bukit Merah area.",
+  },
+  {
+    title: "Popular Primary Schools",
+    description:
+      "Families at Depot Heights are within reach of several primary schools in the surrounding neighbourhoods, providing a range of education options for school-going children.",
+  },
+];
+---
+
+<Layout
+  title="Amenities at Depot Heights | Facilities, Shopping & Everyday Convenience"
+  description="Explore the amenities at Depot Heights, including outdoor facilities, playgrounds, exercise areas, sheltered walkways, everyday convenience amenities and Depot Heights Shopping Centre."
+  canonical="https://depotheights.sg/amenities"
+  image="/images/depot-heights-shopping-centre.webp"
+>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">
+          AMENITIES AT DEPOT HEIGHTS
+        </p>
+
+        <h1>
+          Everything you need,
+          <span>close to home.</span>
+        </h1>
+
+        <p class="hero-text">
+          Depot Heights offers a practical mix of estate facilities,
+          outdoor spaces and everyday conveniences. From playgrounds
+          and exercise areas to sheltered walkways and the shopping
+          centre at Block 108, residents have many essential amenities
+          within easy reach.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#outdoor">
+            Explore amenities
+          </a>
+
+          <a class="button secondary" href="#shopping">
+            Shopping centre
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img
+          src="/images/depot-heights-shopping-centre.webp"
+          alt="Depot Heights Shopping Centre at Block 108 Depot Road"
+        />
+
+        <div class="hero-card-overlay">
+          <p>DEPOT HEIGHTS</p>
+
+          <div class="hero-card-line"></div>
+
+          <strong>
+            Everyday convenience.<br />
+            Within reach.
+          </strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="eyebrow">
+        LIVING AT DEPOT HEIGHTS
+      </p>
+
+      <h2>
+        Practical amenities for everyday living.
+      </h2>
+
+      <p>
+        Depot Heights is designed around practical everyday needs,
+        with outdoor recreational facilities, sheltered pedestrian
+        spaces, estate conveniences and a neighbourhood shopping
+        centre that brings essential services closer to home.
+      </p>
+    </section>
+
+    <!-- OUTDOOR AMENITIES -->
+    <section class="content-section" id="outdoor">
+      <div class="section-heading">
+        <p class="eyebrow">
+          OUTDOOR AMENITIES
+        </p>
+
+        <h2>
+          Spaces to play, exercise and unwind.
+        </h2>
+
+        <p>
+          Residents can enjoy a selection of outdoor facilities within
+          the estate, providing spaces for children, families and
+          residents who enjoy staying active.
+        </p>
+      </div>
+
+      <div class="card-grid two-columns">
+        {outdoorAmenities.map((amenity) => (
+          <article class="amenity-card">
+            <div class="card-image">
+              <img
+                src={amenity.image}
+                alt={amenity.alt}
+                loading="lazy"
+                width="800"
+                height="450"
+              />
+            </div>
+
+            <div class="card-content">
+              <h3>
+                {amenity.name}
+              </h3>
+
+              <p>
+                {amenity.description}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- EVERYDAY CONVENIENCE -->
+    <section class="content-section soft-section">
+      <div class="section-heading">
+        <p class="eyebrow">
+          EVERYDAY CONVENIENCE AMENITIES
+        </p>
+
+        <h2>
+          Practical facilities around the estate.
+        </h2>
+
+        <p>
+          Beyond recreational spaces, Depot Heights includes a range
+          of practical facilities designed to make everyday life more
+          convenient for residents.
+        </p>
+      </div>
+
+      <div class="convenience-layout">
+        <div class="convenience-image-stack">
+          {convenienceImages.map((item) => (
+            <div class="convenience-image">
+              <img
+                src={item.image}
+                alt={item.alt}
+                loading="lazy"
+                width="800"
+                height="450"
+              />
+            </div>
+          ))}
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Amenity</th>
+                <th>Location</th>
+                <th>Benefit</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {convenienceAmenities.map((amenity) => (
+                <tr>
+                  <td>{amenity.name}</td>
+                  <td>{amenity.location}</td>
+                  <td>{amenity.benefit}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOPPING CENTRE -->
+    <section class="content-section" id="shopping">
+      <div class="section-heading">
+        <p class="eyebrow">
+          DEPOT HEIGHTS SHOPPING CENTRE
+        </p>
+
+        <h2>
+          One-stop lifestyle hub.
+        </h2>
+
+        <p>
+          Located at Block 108 Depot Road, Depot Heights Shopping
+          Centre provides residents with a convenient selection of
+          retail, groceries, essential services, healthcare, dining
+          and fitness options close to home.
+        </p>
+      </div>
+
+      <div class="shopping-gallery">
+        {shoppingCentreImages.map((item) => (
+          <div class="gallery-image">
+            <img
+              src={item.image}
+              alt={item.alt}
+              loading="lazy"
+              width="800"
+              height="450"
+            />
+          </div>
+        ))}
+      </div>
+
+      <p class="shopping-intro">
+        The convenience of Depot Heights extends beyond the estate
+        itself. With essential services and everyday facilities
+        located at Depot Heights Shopping Centre, residents can
+        complete many daily errands without travelling far from home.
+      </p>
+
+      <div class="shopping-sections">
+        <article class="shopping-block">
+          <h3>
+            Level 1: Retail, Groceries & Essential Services
+          </h3>
+
+          <ul>
+            {shoppingServices.map((service) => (
+              <li>{service}</li>
+            ))}
+          </ul>
+        </article>
+
+        <article class="shopping-block">
+          <div class="shopping-block-image">
+            <img
+              src="/images/food-court.webp"
+              alt="Food court at Depot Heights Shopping Centre"
+              loading="lazy"
+              width="800"
+              height="450"
+            />
+          </div>
+
+          <h3>
+            Level 2: Dining & Fitness
+          </h3>
+
+          <ul>
+            {shoppingDining.map((service) => (
+              <li>{service}</li>
+            ))}
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- BEYOND THE ESTATE -->
+    <section class="content-section soft-section">
+      <div class="section-heading">
+        <p class="eyebrow">
+          BEYOND THE ESTATE
+        </p>
+
+        <h2>
+          Parks, transport, shopping and more nearby.
+        </h2>
+
+        <p>
+          Depot Heights is also well positioned for residents who
+          want to explore the wider Bukit Merah and Alexandra
+          neighbourhoods. The surrounding area offers access to
+          green spaces, transport connections, shopping destinations
+          and schools.
+        </p>
+      </div>
+
+      <div class="nearby-grid">
+        {nearbyAreas.map((area) => (
+          <article class="nearby-card">
+            <h3>
+              {area.title}
+            </h3>
+
+            <p>
+              {area.description}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- FEATURED SUMMARY -->
+    <section class="featured">
+      <div>
+        <p class="eyebrow">
+          DEPOT HEIGHTS AMENITIES
+        </p>
+
+        <h2>
+          A neighbourhood designed for everyday convenience.
+        </h2>
+      </div>
+
+      <p>
+        From outdoor recreational facilities and sheltered walkways
+        to everyday estate amenities and the shops and services at
+        Depot Heights Shopping Centre, residents have many of the
+        essentials of daily life close at hand.
+      </p>
+    </section>
+
+    <!-- RELATED -->
+    <section class="related-section">
+      <div class="related-heading">
+        <p class="eyebrow">
+          LIVING AROUND DEPOT HEIGHTS
+        </p>
+
+        <h2>
+          Explore more of the neighbourhood.
+        </h2>
+      </div>
+
+      <div class="related-grid">
+        <article class="related-card">
+          <h3>
+            Healthcare
+          </h3>
+
+          <p>
+            Find nearby family clinics, hospitals and specialist
+            medical services available to Depot Heights residents.
+          </p>
+
+          <a
+            class="text-link"
+            href="/healthcare"
+          >
+            Explore Healthcare →
+          </a>
+        </article>
+
+        <article class="related-card">
+          <h3>
+            Transport
+          </h3>
+
+          <p>
+            Discover how Depot Heights connects to Bukit Merah,
+            HarbourFront, the CBD and other parts of Singapore.
+          </p>
+
+          <a
+            class="text-link"
+            href="/transport"
+          >
+            Explore Transport →
+          </a>
+        </article>
+
+        <article class="related-card">
+          <h3>
+            Lifestyle & Nature
+          </h3>
+
+          <p>
+            Explore parks, heritage sites, cafés, restaurants,
+            shopping and leisure destinations around Depot Heights.
+          </p>
+
+          <a
+            class="text-link"
+            href="/lifestyle"
+          >
+            Explore Lifestyle & Nature →
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    margin: 0;
+    color: #1d2924;
+    background: #f7f5ef;
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  }
+
+  :global(a) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.5fr)
+      minmax(280px, 0.7fr);
+    min-height: 78vh;
+    padding: 8rem 8vw 6rem;
+    gap: 5rem;
+    align-items: center;
+    background:
+      radial-gradient(
+        circle at 80% 30%,
+        rgba(94, 145, 112, 0.22),
+        transparent 35%
+      ),
+      linear-gradient(
+        135deg,
+        #eef3e9 0%,
+        #f7f5ef 60%
+      );
+  }
+
+  .hero-content {
+    max-width: 850px;
+  }
+
+  .eyebrow {
+    margin: 0 0 1rem;
+    color: #3d805f;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+  h1 {
+    max-width: 900px;
+    margin: 0;
+    font-size:
+      clamp(45px, 8vw, 80px);
+    line-height: 0.94;
+    letter-spacing: -0.07em;
+  }
+
+  h1 span {
+    display: block;
+    color: #3d805f;
+  }
+
+  .hero-text {
+    max-width: 700px;
+    margin: 1.8rem 0 0;
+    color: #53615b;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .button {
+    padding: 0.9rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 750;
+  }
+
+  .primary {
+    color: white;
+    background: #27664d;
+  }
+
+  .secondary {
+    color: #27664d;
+    border: 1px solid #9eb3a5;
+  }
+
+  .hero-card {
+    position: relative;
+    min-height: 360px;
+    overflow: hidden;
+    border-radius: 2rem;
+    color: white;
+    background: #315f4a;
+    box-shadow:
+      0 25px 70px
+      rgba(39, 102, 77, 0.18);
+  }
+
+  .hero-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+  }
+
+  .hero-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(31, 72, 55, 0.05),
+        rgba(31, 72, 55, 0.9)
+      );
+  }
+
+  .hero-card-overlay {
+    position: absolute;
+    z-index: 2;
+    right: 2rem;
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .hero-card-overlay p {
+    margin: 0;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+  .hero-card-line {
+    width: 50px;
+    height: 2px;
+    margin: 1rem 0;
+    background: white;
+  }
+
+  .hero-card strong {
+    display: block;
+    font-size:
+      clamp(1.8rem, 3vw, 3rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .intro {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 8rem 8vw 4rem;
+    text-align: center;
+  }
+
+  .intro h2,
+  .featured h2,
+  .related-heading h2 {
+    margin: 0;
+    font-size:
+      clamp(38px, 5vw, 65px);
+    line-height: 1;
+    letter-spacing: -0.06em;
+  }
+
+  .intro > p:last-child {
+    margin: 1.5rem auto 0;
+    color: #65736c;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .content-section {
+    padding: 5rem 8vw 8rem;
+  }
+
+  .soft-section {
+    background: #e9eee7;
+  }
+
+  .section-heading {
+    max-width: 850px;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+  }
+
+  .section-heading h2 {
+    margin: 0;
+    font-size:
+      clamp(38px, 5vw, 65px);
+    line-height: 1;
+    letter-spacing: -0.06em;
+  }
+
+  .section-heading > p:last-child {
+    max-width: 700px;
+    margin: 1.5rem auto 0;
+    color: #65736c;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .card-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .two-columns {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .amenity-card {
+    overflow: hidden;
+    border: 1px solid #cbd5cd;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.42);
+    box-shadow:
+      0 12px 35px
+      rgba(39, 102, 77, 0.05);
+  }
+
+  .card-image {
+    overflow: hidden;
+  }
+
+  .card-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition:
+      transform 0.35s ease;
+  }
+
+  .amenity-card:hover .card-image img {
+    transform: scale(1.03);
+  }
+
+  .card-content {
+    padding: 2rem;
+  }
+
+  .amenity-card h3 {
+    margin: 0;
+    color: #27664d;
+    font-size:
+      clamp(23px, 2.2vw, 28px);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+
+  .amenity-card p {
+    margin: 1rem 0 0;
+    color: #65736c;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .convenience-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .convenience-image-stack {
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .convenience-image {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid #cbd5cd;
+  }
+
+  .convenience-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .table-wrapper {
+    min-width: 0;
+    overflow-x: auto;
+    border: 1px solid #cbd5cd;
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  th,
+  td {
+    padding: 1rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #d5ddd7;
+  }
+
+  th {
+    color: #27664d;
+    background: #eef3e9;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  td:first-child {
+    min-width: 150px;
+    color: #27664d;
+    font-weight: 750;
+  }
+
+  td:nth-child(2) {
+    min-width: 120px;
+    color: #53615b;
+    font-weight: 650;
+  }
+
+  td:last-child {
+    color: #65736c;
+  }
+
+  tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .shopping-gallery {
+    display: grid;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .gallery-image {
+    min-width: 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid #cbd5cd;
+  }
+
+  .gallery-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition:
+      transform 0.35s ease;
+  }
+
+  .gallery-image:hover img {
+    transform: scale(1.03);
+  }
+
+  .shopping-intro {
+    max-width: 1000px;
+    margin: 2rem auto 0;
+    color: #65736c;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .shopping-sections {
+    display: grid;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+  }
+
+  .shopping-block {
+    min-width: 0;
+    overflow: hidden;
+    padding: 2rem;
+    border: 1px solid #cbd5cd;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.42);
+  }
+
+  .shopping-block-image {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin: -2rem -2rem 2rem;
+    width: calc(100% + 4rem);
+  }
+
+  .shopping-block-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .shopping-block h3 {
+    margin: 0 0 1.25rem;
+    color: #27664d;
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  .shopping-block ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .shopping-block li {
+    margin-bottom: 0.7rem;
+    color: #65736c;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .nearby-grid {
+    display: grid;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .nearby-card {
+    padding: 2rem;
+    border: 1px solid #cbd5cd;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.42);
+  }
+
+  .nearby-card h3 {
+    margin: 0;
+    color: #27664d;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .nearby-card p {
+    margin: 1rem 0 0;
+    color: #65736c;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .featured {
+    display: grid;
+    grid-template-columns:
+      1.3fr 0.7fr;
+    gap: 5rem;
+    padding: 7rem 8vw;
+    color: white;
+    background: #27664d;
+  }
+
+  .featured .eyebrow {
+    color: #b9d7c1;
+  }
+
+  .featured p:last-child {
+    align-self: end;
+    margin: 0;
+    color: #d5e5d9;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .related-section {
+    padding: 8rem 8vw;
+  }
+
+  .related-heading {
+    max-width: 850px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .related-card {
+    padding: 2rem;
+    border: 1px solid #cbd5cd;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.28);
+  }
+
+  .related-card h3 {
+    margin: 0;
+    color: #27664d;
+    font-size: 24px;
+  }
+
+  .related-card p {
+    margin: 1rem 0 1.5rem;
+    color: #65736c;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .text-link {
+    color: #27664d;
+    font-size: 0.85rem;
+    font-weight: 800;
+  }
+
+  .text-link:hover {
+    color: #1f513d;
+  }
+
+  @media (max-width: 1000px) {
+    .convenience-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .shopping-sections,
+    .nearby-grid {
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 900px) {
+    .hero,
+    .featured {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      padding-top: 5rem;
+    }
+
+    .hero-card {
+      min-height: 280px;
+    }
+
+    .hero-card img {
+      min-height: 280px;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .two-columns,
+    .shopping-gallery,
+    .shopping-sections,
+    .nearby-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      padding:
+        4rem 5vw;
+    }
+
+    .content-section,
+    .intro,
+    .related-section {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    .featured {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .shopping-block {
+      padding: 1.5rem;
+    }
+
+    .shopping-block-image {
+      margin: -1.5rem -1.5rem 1.5rem;
+      width: calc(100% + 3rem);
+    }
+
+    th,
+    td {
+      padding: 0.75rem;
+    }
+
+    table {
+      min-width: 650px;
+    }
+  }
+</style>

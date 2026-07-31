@@ -1,0 +1,1147 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle =
+  "Depot Heights Location | Bukit Merah, Alexandra & Southern Singapore";
+
+const pageDescription =
+  "Discover the location of Depot Heights in Bukit Merah, Singapore, with easy access to Alexandra, HarbourFront, one-north, the CBD, parks, nature trails, healthcare, shopping and major transport connections.";
+
+const nearbyAreas = [
+  {
+    number: "01",
+    title: "Alexandra",
+    description:
+      "Alexandra is one of the closest commercial and lifestyle areas to Depot Heights, with IKEA Alexandra, Alexandra Central, Alexandra TechnoPark, Mapletree Business City and a wide range of food, retail and business destinations.",
+  },
+  {
+    number: "02",
+    title: "Redhill",
+    description:
+      "Redhill is a nearby established neighbourhood with residential estates, everyday amenities, food options and MRT connections towards Tiong Bahru, the city and the wider Bukit Merah area.",
+  },
+  {
+    number: "03",
+    title: "Tiong Bahru",
+    description:
+      "Tiong Bahru is known for its distinctive heritage architecture, cafés, restaurants, bakeries, Tiong Bahru Market and Tiong Bahru Food Centre. It is one of the most recognisable neighbourhoods within easy reach of Depot Heights.",
+  },
+  {
+    number: "04",
+    title: "Telok Blangah",
+    description:
+      "Telok Blangah provides a strong connection to parks, hill trails and the Southern Ridges, while also offering access towards HarbourFront, Labrador and the southern waterfront.",
+  },
+  {
+    number: "05",
+    title: "HarbourFront",
+    description:
+      "HarbourFront is a major southern commercial and lifestyle destination centred around VivoCity and HarbourFront MRT, with onward access to Sentosa and the wider southern waterfront.",
+  },
+  {
+    number: "06",
+    title: "Queenstown",
+    description:
+      "Queenstown lies to the west of Depot Heights and provides additional access to established residential neighbourhoods, community amenities, shopping and the wider Alexandra and one-north areas.",
+  },
+];
+
+const mrtConnections = [
+  {
+    number: "01",
+    title: "HarbourFront MRT",
+    lines: "North East Line & Circle Line",
+    description:
+      "HarbourFront MRT provides direct access to VivoCity, Sentosa and the wider southern waterfront, with connections towards Marina Bay and the city.",
+  },
+  {
+    number: "02",
+    title: "Telok Blangah MRT",
+    lines: "Circle Line",
+    description:
+      "Telok Blangah MRT provides convenient access towards Telok Blangah Hill, the Southern Ridges, Mount Faber and HarbourFront.",
+  },
+  {
+    number: "03",
+    title: "Redhill MRT",
+    lines: "East West Line",
+    description:
+      "Redhill MRT connects residents towards Tiong Bahru, Outram, Raffles Place, City Hall and the western part of Singapore.",
+  },
+  {
+    number: "04",
+    title: "Tiong Bahru MRT",
+    lines: "East West Line",
+    description:
+      "Tiong Bahru MRT provides access to one of Singapore's best-known heritage neighbourhoods, together with its market, food centre, cafés and restaurants.",
+  },
+];
+
+const roadConnections = [
+  {
+    number: "01",
+    title: "Alexandra Road",
+    description:
+      "Alexandra Road is one of the main routes connecting Depot Heights with Alexandra, IKEA Alexandra, Alexandra Central, Mapletree Business City and the wider southern and central parts of Singapore.",
+  },
+  {
+    number: "02",
+    title: "Depot Road",
+    description:
+      "Depot Road forms the immediate local connection around Depot Heights, linking the estate with Alexandra Road, Henderson Road and nearby residential and commercial areas.",
+  },
+  {
+    number: "03",
+    title: "Henderson Road",
+    description:
+      "Henderson Road provides an important east-west connection towards Redhill, Tiong Bahru and Alexandra, while also linking the wider Bukit Merah area with Telok Blangah and the southern districts.",
+  },
+  {
+    number: "04",
+    title: "Telok Blangah Road",
+    description:
+      "Telok Blangah Road provides access towards Telok Blangah, Labrador, HarbourFront and the southern waterfront, as well as connections towards the parks and attractions around Telok Blangah Hill.",
+  },
+  {
+    number: "05",
+    title: "Ayer Rajah Expressway",
+    shortTitle: "AYE",
+    description:
+      "The Ayer Rajah Expressway provides an important westbound and eastbound road connection, helping connect Depot Heights with one-north, Jurong and the city.",
+  },
+  {
+    number: "06",
+    title: "Central Expressway Connections",
+    shortTitle: "CTE",
+    description:
+      "Connections towards the Central Expressway provide access to Singapore's central and northern districts, adding to the wider road network available from the Depot Heights area.",
+  },
+];
+
+const commercialHubs = [
+  {
+    number: "01",
+    title: "Alexandra TechnoPark",
+    description:
+      "A major business and technology hub near Depot Heights, bringing together offices, businesses and supporting amenities along the established Alexandra commercial corridor.",
+  },
+  {
+    number: "02",
+    title: "Mapletree Business City",
+    description:
+      "A major commercial and workplace destination in the Alexandra area, with offices, dining and lifestyle amenities serving the surrounding business community.",
+  },
+  {
+    number: "03",
+    title: "HarbourFront",
+    description:
+      "An established commercial district close to VivoCity, HarbourFront MRT and the southern waterfront, with offices, retail, dining and entertainment.",
+  },
+  {
+    number: "04",
+    title: "one-north",
+    description:
+      "The one-north precinct is a major business, research and technology area centred around one-north MRT, with developments including Biopolis, Fusionopolis, Solaris, INNOVIS and Synthesis.",
+  },
+  {
+    number: "05",
+    title: "Singapore CBD",
+    description:
+      "Singapore's Central Business District is within practical reach from Depot Heights, providing access to major financial, business and professional services employment centres.",
+  },
+  {
+    number: "06",
+    title: "NUS & NUH",
+    description:
+      "The National University of Singapore and National University Hospital are important education, research and healthcare destinations within the wider southern-western corridor.",
+  },
+];
+
+const greenConnections = [
+  {
+    number: "01",
+    title:
+      "Telok Blangah Hill Park → Henderson Waves → Mount Faber Park",
+    image: "/images/henderson-wave-birdview.webp",
+    alt: "Henderson Waves connecting Telok Blangah Hill and Mount Faber",
+    description:
+      "One green route from the Telok Blangah Hill Park area leads towards Henderson Waves and onwards to Mount Faber Park. This route combines hilltop greenery with one of Singapore's best-known pedestrian bridges and panoramic views across the southern part of the island.",
+  },
+  {
+    number: "02",
+    title:
+      "Telok Blangah Hill Park → Southern Ridges → Alexandra Arch → HortPark → Kent Ridge Park",
+    image: "/images/hortpark.webp",
+    alt: "HortPark and the Southern Ridges",
+    description:
+      "A separate green connection follows the Southern Ridges from Telok Blangah Hill Park towards Alexandra Arch, HortPark and onwards to Kent Ridge Park. This route connects several major green spaces and offers an extended nature and walking route through the southern ridges.",
+  },
+  {
+    number: "03",
+    title:
+      "Alexandra Garden Trail → Labrador Park → Bukit Chermin Boardwalk → Marina at Keppel Bay",
+    image: "/images/labrador-wwii-remnants.webp",
+    alt: "Labrador Park and its historic waterfront surroundings",
+    description:
+      "Another route begins from the Alexandra Garden Trail and continues towards Labrador Park and Labrador Nature Reserve, then along the Bukit Chermin Boardwalk towards Marina at Keppel Bay. This route combines gardens, nature, heritage and waterfront scenery.",
+  },
+  {
+    number: "04",
+    title:
+      "Rail Corridor — Cycling Entry Beside AIA Alexandra Building",
+    image: "/images/rail-corridor-aia-alexandra.webp",
+    alt: "Rail Corridor access near AIA Alexandra Building",
+    description:
+      "The Rail Corridor also provides a nearby recreational cycling opportunity, with a short access point beside the AIA Alexandra Building. It offers another way to explore Singapore's wider green corridor by bicycle or on foot.",
+  },
+];
+
+const majorDestinations = [
+  {
+    number: "01",
+    title: "HarbourFront & VivoCity",
+    description:
+      "A major retail, dining, entertainment and waterfront destination with direct connections to Sentosa.",
+  },
+  {
+    number: "02",
+    title: "NUS & NUH",
+    description:
+      "Major education, research and healthcare institutions within the wider southern-western corridor.",
+  },
+  {
+    number: "03",
+    title: "one-north",
+    description:
+      "A major business and research precinct centred around one-north MRT, including Biopolis, Fusionopolis, Solaris, INNOVIS and Synthesis.",
+  },
+  {
+    number: "04",
+    title: "Singapore CBD",
+    description:
+      "The Central Business District is accessible from Depot Heights for work, business, finance, dining and city activities.",
+  },
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="/location"
+  image="/images/depot-heights-location-hero.webp"
+  imageAlt="Depot Heights and the surrounding Bukit Merah neighbourhood"
+>
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">DEPOT HEIGHTS LOCATION</p>
+
+      <h1>
+        Well connected
+        <span>to the best of the south.</span>
+      </h1>
+
+      <p class="hero-text">
+        Depot Heights sits in the established Bukit Merah area, surrounded by
+        Alexandra, Redhill, Tiong Bahru, Telok Blangah and HarbourFront. Its
+        location provides practical access to commercial hubs, workplaces,
+        education and healthcare, while also placing residents close to some
+        of Singapore's most attractive parks, trails and waterfront destinations.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="#nearby-areas">
+          Explore the area
+        </a>
+
+        <a class="button button-secondary" href="#green-connections">
+          Discover green connections
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img
+        src="/images/depot-heights-location-hero.webp"
+        alt="Depot Heights and the surrounding Bukit Merah neighbourhood"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <section class="section introduction-section">
+    <div class="intro-grid">
+      <div class="section-heading">
+        <p class="eyebrow">WHERE IS DEPOT HEIGHTS?</p>
+
+        <h2>
+          A residential neighbourhood at the meeting point of Bukit Merah,
+          Alexandra and the southern corridor.
+        </h2>
+      </div>
+
+      <div class="intro-copy">
+        <p>
+          Depot Heights is located along Depot Road in Bukit Merah, a mature
+          residential area in the southern part of Singapore. The estate is
+          positioned close to Alexandra Road and within easy reach of
+          established neighbourhoods including Redhill, Tiong Bahru,
+          Telok Blangah and HarbourFront.
+        </p>
+
+        <p>
+          Beyond its immediate surroundings, the location provides access to
+          major employment and commercial areas such as Alexandra TechnoPark,
+          Mapletree Business City, one-north and the CBD. Residents can also
+          reach major education and healthcare destinations including NUS and
+          NUH, while the Southern Ridges, Mount Faber, HortPark and Labrador
+          provide a strong connection to nature and outdoor recreation.
+        </p>
+      </div>
+    </div>
+
+    <div class="highlight-grid">
+      <article class="highlight-card">
+        <span class="highlight-icon">🏢</span>
+        <h3>Commercial</h3>
+        <p>
+          Close to Alexandra, one-north, HarbourFront and the Singapore CBD.
+        </p>
+      </article>
+
+      <article class="highlight-card">
+        <span class="highlight-icon">🌳</span>
+        <h3>Nature</h3>
+        <p>
+          Easy access to the Southern Ridges, HortPark, Mount Faber, Labrador
+          and Kent Ridge Park.
+        </p>
+      </article>
+
+      <article class="highlight-card">
+        <span class="highlight-icon">🚌</span>
+        <h3>Connectivity</h3>
+        <p>
+          Served by a network of buses and within reach of several MRT
+          stations and major expressways.
+        </p>
+      </article>
+
+      <article class="highlight-card">
+        <span class="highlight-icon">🏥</span>
+        <h3>Lifestyle</h3>
+        <p>
+          Surrounded by shopping, food, cafés, restaurants, healthcare,
+          schools and everyday amenities.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section
+    class="section areas-section"
+    id="nearby-areas"
+  >
+    <div class="section-heading">
+      <p class="eyebrow">NEARBY NEIGHBOURHOODS</p>
+
+      <h2>
+        Several established Singapore neighbourhoods are within easy reach.
+      </h2>
+
+      <p>
+        Depot Heights benefits from its position between established
+        residential, commercial and lifestyle districts. Each nearby
+        neighbourhood offers something different, from shopping and workplaces
+        to food, heritage and green spaces.
+      </p>
+    </div>
+
+    <div class="areas-grid">
+      {
+        nearbyAreas.map((area) => (
+          <article class="area-card">
+            <span class="card-number">{area.number}</span>
+
+            <h3>{area.title}</h3>
+
+            <p>{area.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section mrt-section">
+    <div class="section-heading">
+      <p class="eyebrow">MRT & PUBLIC TRANSPORT CONNECTIONS</p>
+
+      <h2>
+        Multiple transport options connect Depot Heights with the wider island.
+      </h2>
+
+      <p>
+        Depot Heights is supported by bus services and several MRT stations
+        within the wider surrounding area. For detailed bus routes, major
+        stops and destinations, see the dedicated Transport page.
+      </p>
+    </div>
+
+    <div class="mrt-grid">
+      {
+        mrtConnections.map((station) => (
+          <article class="mrt-card">
+            <span class="card-number">{station.number}</span>
+
+            <h3>{station.title}</h3>
+
+            <strong>{station.lines}</strong>
+
+            <p>{station.description}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="transport-cta">
+      <div>
+        <p class="eyebrow">DETAILED BUS ROUTES</p>
+
+        <h3>
+          See how buses from Depot Heights connect to major destinations.
+        </h3>
+      </div>
+
+      <a
+        class="button button-light"
+        href="/transport"
+      >
+        Explore Transport
+      </a>
+    </div>
+  </section>
+
+  <section class="section roads-section">
+    <div class="section-heading">
+      <p class="eyebrow">ROAD CONNECTIVITY</p>
+
+      <h2>
+        Convenient road connections across the southern and central areas.
+      </h2>
+
+      <p>
+        Depot Heights is positioned within an established road network
+        connecting Bukit Merah with Alexandra, Telok Blangah, HarbourFront,
+        the western corridor and central Singapore.
+      </p>
+    </div>
+
+    <div class="road-grid">
+      {
+        roadConnections.map((road) => (
+          <article class="road-card">
+            <span class="card-number">{road.number}</span>
+
+            <h3>{road.title}</h3>
+
+            {road.shortTitle && (
+              <span class="road-short-title">
+                {road.shortTitle}
+              </span>
+            )}
+
+            <p>{road.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section hubs-section">
+    <div class="section-heading">
+      <p class="eyebrow">COMMERCIAL & EMPLOYMENT CONNECTIVITY</p>
+
+      <h2>
+        Close to established business and employment centres.
+      </h2>
+
+      <p>
+        The location of Depot Heights places residents within practical reach
+        of major commercial and employment hubs across Alexandra, HarbourFront,
+        one-north and the CBD.
+      </p>
+    </div>
+
+    <div class="hub-grid">
+      {
+        commercialHubs.map((hub) => (
+          <article class="hub-card">
+            <span class="card-number">{hub.number}</span>
+
+            <h3>{hub.title}</h3>
+
+            <p>{hub.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section
+    class="section green-section"
+    id="green-connections"
+  >
+    <div class="section-heading">
+      <p class="eyebrow">GREEN & NATURE CONNECTIONS</p>
+
+      <h2>
+        Four different ways to explore the green south.
+      </h2>
+
+      <p>
+        One of the distinctive advantages of the Depot Heights location is its
+        access to a network of parks, trails, heritage landscapes and waterfront
+        destinations. These are separate routes and recreational connections
+        rather than one single continuous trail.
+      </p>
+    </div>
+
+    <div class="route-grid">
+      {
+        greenConnections.map((route) => (
+          <article class="route-card">
+            <div class="route-image">
+              <img
+                src={route.image}
+                alt={route.alt}
+                loading="lazy"
+              />
+            </div>
+
+            <div class="route-content">
+              <span class="card-number">{route.number}</span>
+
+              <h3>{route.title}</h3>
+
+              <p>{route.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section destinations-section">
+    <div class="section-heading">
+      <p class="eyebrow">MAJOR DESTINATIONS</p>
+
+      <h2>
+        From Depot Heights to major destinations across the south and west.
+      </h2>
+
+      <p>
+        The estate's location makes it practical to reach major destinations
+        for work, study, healthcare, shopping, dining and leisure.
+      </p>
+    </div>
+
+    <div class="destination-grid">
+      {
+        majorDestinations.map((destination) => (
+          <article class="destination-card">
+            <span class="card-number">{destination.number}</span>
+
+            <h3>{destination.title}</h3>
+
+            <p>{destination.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="closing-section">
+    <div class="closing-inner">
+      <p class="eyebrow">WHY THE LOCATION MATTERS</p>
+
+      <h2>
+        A residential address between city convenience and southern nature.
+      </h2>
+
+      <p>
+        Depot Heights offers a useful balance between established neighbourhood
+        living and access to Singapore's wider network of workplaces, commercial
+        districts, education, healthcare, parks and waterfront destinations.
+        Alexandra, Redhill, Tiong Bahru, Telok Blangah and HarbourFront are all
+        part of the surrounding landscape, while one-north, NUS, NUH and the CBD
+        remain practical destinations for work, study and daily life.
+      </p>
+
+      <div class="closing-actions">
+        <a
+          class="button button-primary"
+          href="/transport"
+        >
+          Explore Transport
+        </a>
+
+        <a
+          class="button button-secondary"
+          href="/lifestyle"
+        >
+          Explore Lifestyle
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    min-height: 600px;
+    background: #e8f0e8;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px clamp(30px, 6vw, 90px);
+  }
+
+  .eyebrow {
+    margin: 0 0 16px;
+    color: #2b6e52;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    max-width: 700px;
+    margin: 0;
+    font-size: clamp(45px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.055em;
+  }
+
+  .hero h1 span {
+    display: block;
+    color: #2b6e52;
+  }
+
+  .hero-text {
+    max-width: 650px;
+    margin: 28px 0 0;
+    color: #52625a;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .hero-actions,
+  .closing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .button-primary {
+    background: #2b6e52;
+    color: #ffffff;
+  }
+
+  .button-secondary {
+    border: 1px solid #2b6e52;
+    color: #2b6e52;
+  }
+
+  .button-light {
+    background: #ffffff;
+    color: #235f47;
+  }
+
+  .hero-image {
+    min-height: 600px;
+    overflow: hidden;
+    background: #dce7dd;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .section {
+    padding: 95px 5vw;
+  }
+
+  .section-heading {
+    max-width: 900px;
+    margin-bottom: 55px;
+  }
+
+  .section-heading h2 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .section-heading p:not(.eyebrow) {
+    max-width: 760px;
+    margin: 22px 0 0;
+    color: #5d6b64;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .introduction-section {
+    background: #ffffff;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+    max-width: 1300px;
+    margin: 0 auto 65px;
+  }
+
+  .intro-grid .section-heading {
+    margin: 0;
+  }
+
+  .intro-copy {
+    color: #52625a;
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .intro-copy p {
+    margin: 0 0 20px;
+  }
+
+  .intro-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .highlight-card {
+    min-height: 220px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #f7f8f3;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .highlight-icon {
+    display: block;
+    margin-bottom: 18px;
+    font-size: 30px;
+  }
+
+  .highlight-card h3 {
+    margin: 0;
+    font-size: 25px;
+    line-height: 1.2;
+  }
+
+  .highlight-card p {
+    margin: 12px 0 0;
+    color: #5d6b64;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .areas-section {
+    background: #f7f8f3;
+  }
+
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .area-card,
+  .mrt-card,
+  .road-card,
+  .hub-card,
+  .destination-card {
+    padding: 30px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .area-card {
+    min-height: 265px;
+  }
+
+  .card-number {
+    display: block;
+    margin-bottom: 15px;
+    color: #2b6e52;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+  .area-card h3,
+  .mrt-card h3,
+  .road-card h3,
+  .hub-card h3,
+  .destination-card h3 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .area-card p,
+  .mrt-card p,
+  .road-card p,
+  .hub-card p,
+  .destination-card p {
+    margin: 15px 0 0;
+    color: #5d6b64;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .mrt-section {
+    background: #235f47;
+    color: #ffffff;
+  }
+
+  .mrt-section .eyebrow {
+    color: #c9e4d5;
+  }
+
+  .mrt-section .section-heading p:not(.eyebrow) {
+    color: #d4e7dc;
+  }
+
+  .mrt-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .mrt-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  .mrt-card .card-number {
+    color: #c9e4d5;
+  }
+
+  .mrt-card h3 {
+    color: #ffffff;
+  }
+
+  .mrt-card strong {
+    display: block;
+    margin-top: 10px;
+    color: #c9e4d5;
+    font-size: 14px;
+  }
+
+  .mrt-card p {
+    color: #d8e9df;
+  }
+
+  .transport-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 55px;
+    padding: 35px 40px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .transport-cta .eyebrow {
+    margin-bottom: 8px;
+  }
+
+  .transport-cta h3 {
+    max-width: 650px;
+    margin: 0;
+    color: #ffffff;
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .roads-section {
+    background: #edf3ed;
+  }
+
+  .road-grid,
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .road-card,
+  .hub-card {
+    min-height: 240px;
+  }
+
+  .road-short-title {
+    display: inline-block;
+    margin-top: 9px;
+    color: #2b6e52;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .hubs-section {
+    background: #ffffff;
+  }
+
+  .green-section {
+    background: #e8f0e8;
+  }
+
+  .route-grid {
+    display: grid;
+    gap: 65px;
+  }
+
+  .route-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 45px;
+    align-items: center;
+  }
+
+  .route-card:nth-child(even) {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+
+  .route-card:nth-child(even) .route-image {
+    order: 2;
+  }
+
+  .route-image {
+    min-height: 360px;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #dce7dd;
+  }
+
+  .route-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .route-content {
+    max-width: 650px;
+  }
+
+  .route-content h3 {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 45px);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+  }
+
+  .route-content p {
+    margin: 18px 0 0;
+    color: #52625a;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .destinations-section {
+    background: #f7f8f3;
+  }
+
+  .destination-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .destination-card {
+    min-height: 235px;
+  }
+
+  .destination-card h3 {
+    font-size: 23px;
+  }
+
+  .destination-card p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .closing-section {
+    padding: 95px 5vw;
+    background: #142f25;
+    color: #ffffff;
+  }
+
+  .closing-inner {
+    max-width: 950px;
+  }
+
+  .closing-inner .eyebrow {
+    color: #c9e4d5;
+  }
+
+  .closing-inner h2 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .closing-inner > p:not(.eyebrow) {
+    max-width: 800px;
+    margin: 25px 0 0;
+    color: #d8e9df;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .closing-actions .button-secondary {
+    border-color: #c9e4d5;
+    color: #c9e4d5;
+  }
+
+  @media (max-width: 1100px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-image,
+    .hero-image img {
+      min-height: 480px;
+    }
+
+    .highlight-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .areas-grid,
+    .destination-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .route-card,
+    .route-card:nth-child(even) {
+      grid-template-columns: 1fr;
+    }
+
+    .route-card:nth-child(even) .route-image {
+      order: initial;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .section,
+    .closing-section {
+      padding: 75px 24px;
+    }
+
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+
+    .mrt-grid,
+    .road-grid,
+    .hub-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .transport-cta {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 30px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-content {
+      padding: 65px 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 14vw, 70px);
+    }
+
+    .hero-text {
+      font-size: 16px;
+    }
+
+    .hero-image,
+    .hero-image img {
+      min-height: 350px;
+    }
+
+    .highlight-grid,
+    .areas-grid,
+    .destination-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .route-image,
+    .route-image img {
+      min-height: 300px;
+    }
+
+    .transport-cta h3 {
+      font-size: 24px;
+    }
+  }
+</style>

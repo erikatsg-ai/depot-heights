@@ -1,0 +1,1269 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const highlights = [
+  {
+    title: "About Depot Heights",
+    description:
+      "Learn about Depot Heights, its location in Bukit Merah and what makes the neighbourhood a distinctive place to live.",
+    href: "/about-depot-heights",
+  },
+  {
+    title: "Amenities",
+    description:
+      "Explore estate facilities, outdoor recreation, sheltered walkways, everyday conveniences and Depot Heights Shopping Centre.",
+    href: "/amenities",
+  },
+  {
+    title: "Healthcare",
+    description:
+      "Find nearby family clinics, polyclinics, public hospitals, private hospitals and specialist medical care.",
+    href: "/healthcare",
+  },
+  {
+    title: "Schools & Education",
+    description:
+      "Discover primary and secondary schools, junior colleges and universities accessible from Depot Heights.",
+    href: "/schools-education",
+  },
+  {
+    title: "Transport",
+    description:
+      "See how Depot Heights connects to Bukit Merah, HarbourFront, the CBD and other parts of Singapore.",
+    href: "/transport",
+  },
+  {
+    title: "Lifestyle & Nature",
+    description:
+      "Explore parks, heritage sites, cafés, restaurants, arts, shopping and leisure destinations around the neighbourhood.",
+    href: "/lifestyle",
+  },
+];
+
+const livingSections = [
+  {
+    title: "Food & Hawker Centres",
+    description:
+      "Explore nearby hawker centres and local food destinations around Bukit Merah and the surrounding neighbourhoods.",
+    href: "/food-hawker-centres",
+  },
+  {
+    title: "Cafés",
+    description:
+      "Discover cafés close to Depot Heights, including convenient options right at your doorstep and popular nearby coffee spots.",
+    href: "/cafes",
+  },
+  {
+    title: "Restaurants",
+    description:
+      "Find restaurants and dining destinations around Depot Heights, Bukit Merah, Alexandra and nearby areas.",
+    href: "/restaurants",
+  },
+  {
+    title: "Parks & Nature",
+    description:
+      "Explore Telok Blangah Hill, Mount Faber, Henderson Waves, the Southern Ridges and other nearby green spaces.",
+    href: "/parks-nature",
+  },
+  {
+    title: "Shopping & Retail",
+    description:
+      "Discover everyday shopping, retail destinations and major centres including IKEA, Great World City and VivoCity.",
+    href: "/shopping-retail",
+  },
+  {
+    title: "Sports & Recreation",
+    description:
+      "Explore sports facilities, outdoor recreation and places to stay active around Depot Heights and the wider neighbourhood.",
+    href: "/sports-recreation",
+  },
+];
+
+const propertySections = [
+  {
+    title: "Resale HDB",
+    description:
+      "Learn more about resale HDB homes at Depot Heights and the surrounding property market context.",
+    href: "/property/resale-hdb",
+  },
+  {
+    title: "Unit Types & Layouts",
+    description:
+      "Explore the different residential blocks, unit types and layouts found across Depot Heights.",
+    href: "/property/unit-types-layouts",
+  },
+  {
+    title: "Renting at Depot Heights",
+    description:
+      "Information for residents and tenants considering renting a home at Depot Heights.",
+    href: "/property/renting",
+  },
+  {
+    title: "Property Articles",
+    description:
+      "Read articles about living, homes and property-related topics connected to Depot Heights.",
+    href: "/property/articles",
+  },
+];
+
+const historySections = [
+  {
+    title: "History of Depot Heights",
+    description:
+      "Discover the story of Depot Heights and the wider Depot Road area, including the neighbourhood's changing landscape and heritage.",
+    href: "/history-of-depot-heights",
+  },
+  {
+    title: "Depot Heights Location",
+    description:
+      "Understand where Depot Heights sits within Bukit Merah and how the estate connects to surrounding districts.",
+    href: "/location",
+  },
+];
+---
+
+<Layout
+  title="Depot Heights | Bukit Merah, Singapore"
+  description="Discover Depot Heights in Bukit Merah, Singapore — a neighbourhood guide covering local food, cafés, restaurants, shopping, healthcare, schools, transport, parks, recreation, history and property."
+  canonical="https://depotheights.sg/"
+  image="/images/depot-heights-hero.webp"
+>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">
+          DEPOT HEIGHTS · BUKIT MERAH · SINGAPORE
+        </p>
+
+        <h1>
+          Life at
+          <span>Depot Heights.</span>
+        </h1>
+
+        <p class="hero-text">
+          A neighbourhood guide to living, dining, nature and everyday
+          convenience around Depot Heights in Bukit Merah.
+        </p>
+
+        <p class="hero-subtext">
+          Discover the places, facilities and connections that make
+          Depot Heights a convenient home — from local hawker centres
+          and cafés to parks, transport, healthcare, schools and
+          shopping.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="button primary"
+            href="/about-depot-heights"
+          >
+            Discover Depot Heights
+          </a>
+
+          <a
+            class="button secondary"
+            href="/amenities"
+          >
+            Explore amenities
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img
+          src="/images/depot-heights-hero.webp"
+          alt="Depot Heights in Bukit Merah, Singapore"
+        />
+
+        <div class="hero-card-overlay">
+          <p>DEPOT HEIGHTS</p>
+
+          <div class="hero-card-line"></div>
+
+          <strong>
+            Living, Dining,<br />
+            Nature & Convenience.
+          </strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="eyebrow">
+        WELCOME TO DEPOT HEIGHTS
+      </p>
+
+      <h2>
+        A neighbourhood guide for residents and visitors.
+      </h2>
+
+      <p>
+        Depot Heights is a residential neighbourhood in Bukit Merah,
+        Singapore. This website brings together useful information
+        about the estate and the places around it, helping residents
+        and visitors discover what is available close to home.
+      </p>
+
+      <p>
+        Whether you are looking for somewhere to eat, a nearby park,
+        a convenient bus connection, healthcare services, schools,
+        shopping or information about the homes at Depot Heights,
+        explore the neighbourhood through the guides below.
+      </p>
+    </section>
+
+    <!-- QUICK ACCESS -->
+    <section class="content-section" id="explore">
+      <div class="section-heading">
+        <p class="eyebrow">
+          EXPLORE DEPOT HEIGHTS
+        </p>
+
+        <h2>
+          Everything around the neighbourhood, in one place.
+        </h2>
+
+        <p>
+          Start with the areas that matter most to everyday life at
+          Depot Heights.
+        </p>
+      </div>
+
+      <div class="highlight-grid">
+        {
+          highlights.map((item) => (
+            <a
+              class="highlight-card"
+              href={item.href}
+            >
+              <div class="card-number">
+                {String(highlights.indexOf(item) + 1).padStart(2, "0")}
+              </div>
+
+              <div>
+                <h3>
+                  {item.title}
+                </h3>
+
+                <p>
+                  {item.description}
+                </p>
+
+                <span class="text-link">
+                  Explore →
+                </span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- LIVING AROUND DEPOT HEIGHTS -->
+    <section class="content-section soft-section">
+      <div class="section-heading">
+        <p class="eyebrow">
+          LIVING AROUND DEPOT HEIGHTS
+        </p>
+
+        <h2>
+          Food, nature, shopping and recreation.
+        </h2>
+
+        <p>
+          Beyond the estate itself, Depot Heights is surrounded by a
+          wide range of places to eat, relax, shop and enjoy the
+          outdoors.
+        </p>
+      </div>
+
+      <div class="living-grid">
+        {
+          livingSections.map((item) => (
+            <article class="living-card">
+              <h3>
+                {item.title}
+              </h3>
+
+              <p>
+                {item.description}
+              </p>
+
+              <a
+                class="text-link"
+                href={item.href}
+              >
+                Explore {item.title} →
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- FEATURED NEIGHBOURHOOD -->
+    <section class="neighbourhood-feature">
+      <div class="feature-image">
+        <img
+          src="/images/depot-heights-shopping-centre.webp"
+          alt="Depot Heights Shopping Centre at Block 108 Depot Road"
+          loading="lazy"
+          width="800"
+          height="450"
+        />
+      </div>
+
+      <div class="feature-content">
+        <p class="eyebrow">
+          DEPOT HEIGHTS SHOPPING CENTRE
+        </p>
+
+        <h2>
+          Everyday convenience is right at your doorstep.
+        </h2>
+
+        <p>
+          Located at Block 108 Depot Road, Depot Heights Shopping
+          Centre provides residents with convenient access to
+          groceries, essential services, healthcare, dining, cafés
+          and fitness facilities.
+        </p>
+
+        <p>
+          It is one of the neighbourhood's most convenient everyday
+          destinations and an important part of life at Depot Heights.
+        </p>
+
+        <a
+          class="button primary"
+          href="/amenities#shopping"
+        >
+          Explore Depot Heights Shopping Centre
+        </a>
+      </div>
+    </section>
+
+    <!-- PROPERTY -->
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">
+          PROPERTY AT DEPOT HEIGHTS
+        </p>
+
+        <h2>
+          Homes and property information.
+        </h2>
+
+        <p>
+          Explore information about living in a home at Depot Heights,
+          including resale HDB homes, unit types and layouts, renting
+          and property-related articles.
+        </p>
+      </div>
+
+      <div class="property-grid">
+        {
+          propertySections.map((item) => (
+            <article class="property-card">
+              <h3>
+                {item.title}
+              </h3>
+
+              <p>
+                {item.description}
+              </p>
+
+              <a
+                class="text-link"
+                href={item.href}
+              >
+                Explore {item.title} →
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- HISTORY & LOCATION -->
+    <section class="content-section soft-section">
+      <div class="section-heading">
+        <p class="eyebrow">
+          THE STORY OF THE NEIGHBOURHOOD
+        </p>
+
+        <h2>
+          Understand Depot Heights and its surroundings.
+        </h2>
+
+        <p>
+          Learn about the history of the area and discover where
+          Depot Heights is located within Bukit Merah.
+        </p>
+      </div>
+
+      <div class="history-grid">
+        {
+          historySections.map((item) => (
+            <article class="history-card">
+              <h3>
+                {item.title}
+              </h3>
+
+              <p>
+                {item.description}
+              </p>
+
+              <a
+                class="text-link"
+                href={item.href}
+              >
+                Explore {item.title} →
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- WHY DEPOT HEIGHTS -->
+    <section class="featured">
+      <div>
+        <p class="eyebrow">
+          LIFE AT DEPOT HEIGHTS
+        </p>
+
+        <h2>
+          A convenient base for everyday life in Bukit Merah.
+        </h2>
+      </div>
+
+      <p>
+        With everyday amenities nearby, access to public transport,
+        healthcare and schools, a wide choice of food and cafés, and
+        green spaces across the surrounding neighbourhood, Depot
+        Heights offers residents a practical and well-connected place
+        to call home.
+      </p>
+    </section>
+
+    <!-- FINAL NAVIGATION -->
+    <section class="related-section">
+      <div class="related-heading">
+        <p class="eyebrow">
+          DEPOT HEIGHTS NEIGHBOURHOOD GUIDE
+        </p>
+
+        <h2>
+          Continue exploring.
+        </h2>
+
+        <p>
+          Browse the main sections of the Depot Heights neighbourhood
+          guide.
+        </p>
+      </div>
+
+      <div class="related-grid">
+        <article class="related-card">
+          <h3>
+            About Depot Heights
+          </h3>
+
+          <p>
+            Learn about the estate, its location and what makes Depot
+            Heights part of the wider Bukit Merah neighbourhood.
+          </p>
+
+          <a
+            class="text-link"
+            href="/about-depot-heights"
+          >
+            Explore About Depot Heights →
+          </a>
+        </article>
+
+        <article class="related-card">
+          <h3>
+            Living Around Depot Heights
+          </h3>
+
+          <p>
+            Discover food, cafés, restaurants, parks, shopping,
+            recreation and other destinations around the neighbourhood.
+          </p>
+
+          <a
+            class="text-link"
+            href="/lifestyle"
+          >
+            Explore Lifestyle & Nature →
+          </a>
+        </article>
+
+        <article class="related-card">
+          <h3>
+            Depot Heights Location
+          </h3>
+
+          <p>
+            Find out how Depot Heights connects to Bukit Merah,
+            Alexandra, HarbourFront, the CBD and the rest of Singapore.
+          </p>
+
+          <a
+            class="text-link"
+            href="/location"
+          >
+            Explore Location →
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    margin: 0;
+    color: #1d2924;
+    background: #f7f5ef;
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  }
+
+  :global(a) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .hero {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1.5fr)
+      minmax(280px, 0.7fr);
+
+    min-height: 78vh;
+
+    padding: 8rem 8vw 6rem;
+
+    gap: 5rem;
+
+    align-items: center;
+
+    background:
+      radial-gradient(
+        circle at 80% 30%,
+        rgba(94, 145, 112, 0.22),
+        transparent 35%
+      ),
+      linear-gradient(
+        135deg,
+        #eef3e9 0%,
+        #f7f5ef 60%
+      );
+  }
+
+  .hero-content {
+    max-width: 850px;
+  }
+
+  .eyebrow {
+    margin: 0 0 1rem;
+
+    color: #3d805f;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+  }
+
+  h1 {
+    max-width: 900px;
+
+    margin: 0;
+
+    font-size:
+      clamp(45px, 8vw, 80px);
+
+    line-height: 0.94;
+
+    letter-spacing: -0.07em;
+  }
+
+  h1 span {
+    display: block;
+
+    color: #3d805f;
+  }
+
+  .hero-text {
+    max-width: 700px;
+
+    margin: 1.8rem 0 0;
+
+    color: #53615b;
+
+    font-size: 21px;
+
+    font-weight: 650;
+
+    line-height: 1.7;
+  }
+
+  .hero-subtext {
+    max-width: 700px;
+
+    margin: 1rem 0 0;
+
+    color: #65736c;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.8rem;
+
+    margin-top: 2rem;
+  }
+
+  .button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0.9rem 1.25rem;
+
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+
+    font-weight: 750;
+  }
+
+  .primary {
+    color: white;
+
+    background: #27664d;
+  }
+
+  .secondary {
+    color: #27664d;
+
+    border:
+      1px solid
+      #9eb3a5;
+  }
+
+  .hero-card {
+    position: relative;
+
+    min-height: 460px;
+
+    overflow: hidden;
+
+    border-radius: 2rem;
+
+    color: white;
+
+    background: #315f4a;
+
+    box-shadow:
+      0 25px 70px
+      rgba(39, 102, 77, 0.18);
+  }
+
+  .hero-card img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 460px;
+
+    object-fit: cover;
+  }
+
+  .hero-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(31, 72, 55, 0.05),
+        rgba(31, 72, 55, 0.9)
+      );
+  }
+
+  .hero-card-overlay {
+    position: absolute;
+
+    z-index: 2;
+
+    right: 2rem;
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .hero-card-overlay p {
+    margin: 0;
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+  }
+
+  .hero-card-line {
+    width: 50px;
+    height: 2px;
+
+    margin: 1rem 0;
+
+    background: white;
+  }
+
+  .hero-card strong {
+    display: block;
+
+    font-size:
+      clamp(1.8rem, 3vw, 3rem);
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+  }
+
+  .intro {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 8rem 8vw 5rem;
+
+    text-align: center;
+  }
+
+  .intro h2,
+  .featured h2,
+  .related-heading h2 {
+    margin: 0;
+
+    font-size:
+      clamp(38px, 5vw, 65px);
+
+    line-height: 1;
+
+    letter-spacing: -0.06em;
+  }
+
+  .intro > p:not(.eyebrow) {
+    max-width: 780px;
+
+    margin: 1.5rem auto 0;
+
+    color: #65736c;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+  }
+
+  .content-section {
+    padding: 5rem 8vw 8rem;
+  }
+
+  .soft-section {
+    background: #e9eee7;
+  }
+
+  .section-heading {
+    max-width: 850px;
+
+    margin: 0 auto 3.5rem;
+
+    text-align: center;
+  }
+
+  .section-heading h2 {
+    margin: 0;
+
+    font-size:
+      clamp(38px, 5vw, 65px);
+
+    line-height: 1;
+
+    letter-spacing: -0.06em;
+  }
+
+  .section-heading > p:last-child {
+    max-width: 700px;
+
+    margin: 1.5rem auto 0;
+
+    color: #65736c;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+  }
+
+  .highlight-grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+  }
+
+  .highlight-card {
+    display: grid;
+
+    grid-template-columns: 55px 1fr;
+
+    gap: 1.2rem;
+
+    min-height: 280px;
+
+    padding: 2rem;
+
+    border:
+      1px solid
+      #cbd5cd;
+
+    border-radius: 1.5rem;
+
+    background:
+      rgba(255, 255, 255, 0.42);
+
+    box-shadow:
+      0 12px 35px
+      rgba(39, 102, 77, 0.05);
+
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .highlight-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+      0 18px 45px
+      rgba(39, 102, 77, 0.1);
+  }
+
+  .card-number {
+    color: #9eb3a5;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.05em;
+  }
+
+  .highlight-card h3,
+  .living-card h3,
+  .property-card h3,
+  .history-card h3,
+  .related-card h3 {
+    margin: 0;
+
+    color: #27664d;
+
+    font-size: 24px;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.03em;
+  }
+
+  .highlight-card p,
+  .living-card p,
+  .property-card p,
+  .history-card p,
+  .related-card p {
+    margin: 1rem 0 1.5rem;
+
+    color: #65736c;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+  }
+
+  .text-link {
+    color: #27664d;
+
+    font-size: 0.85rem;
+
+    font-weight: 800;
+  }
+
+  .text-link:hover {
+    color: #1f513d;
+  }
+
+  .living-grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+  }
+
+  .living-card {
+    min-height: 260px;
+
+    padding: 2rem;
+
+    border:
+      1px solid
+      #cbd5cd;
+
+    border-radius: 1.5rem;
+
+    background:
+      rgba(255, 255, 255, 0.45);
+  }
+
+  .neighbourhood-feature {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    background: #27664d;
+
+    color: white;
+  }
+
+  .feature-image {
+    min-height: 500px;
+
+    overflow: hidden;
+  }
+
+  .feature-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 500px;
+
+    object-fit: cover;
+  }
+
+  .feature-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 5rem;
+  }
+
+  .feature-content .eyebrow {
+    color: #b9d7c1;
+  }
+
+  .feature-content h2 {
+    margin: 0;
+
+    font-size:
+      clamp(35px, 4vw, 55px);
+
+    line-height: 1;
+
+    letter-spacing: -0.05em;
+  }
+
+  .feature-content p:not(.eyebrow) {
+    color: #d5e5d9;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+  }
+
+  .feature-content .button {
+    align-self: flex-start;
+
+    margin-top: 1rem;
+
+    color: #27664d;
+
+    background: white;
+  }
+
+  .property-grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+  }
+
+  .property-card {
+    min-height: 260px;
+
+    padding: 2rem;
+
+    border:
+      1px solid
+      #cbd5cd;
+
+    border-radius: 1.5rem;
+
+    background:
+      rgba(255, 255, 255, 0.42);
+  }
+
+  .history-grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+  }
+
+  .history-card {
+    min-height: 260px;
+
+    padding: 2.5rem;
+
+    border:
+      1px solid
+      #cbd5cd;
+
+    border-radius: 1.5rem;
+
+    background:
+      rgba(255, 255, 255, 0.42);
+  }
+
+  .featured {
+    display: grid;
+
+    grid-template-columns:
+      1.3fr 0.7fr;
+
+    gap: 5rem;
+
+    padding: 7rem 8vw;
+
+    color: white;
+
+    background: #27664d;
+  }
+
+  .featured .eyebrow {
+    color: #b9d7c1;
+  }
+
+  .featured p:last-child {
+    align-self: end;
+
+    margin: 0;
+
+    color: #d5e5d9;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+  }
+
+  .related-section {
+    padding: 8rem 8vw;
+  }
+
+  .related-heading {
+    max-width: 850px;
+
+    margin: 0 auto 3rem;
+
+    text-align: center;
+  }
+
+  .related-heading > p:last-child {
+    margin: 1.5rem auto 0;
+
+    color: #65736c;
+
+    font-size: 17px;
+  }
+
+  .related-grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+  }
+
+  .related-card {
+    min-height: 280px;
+
+    padding: 2rem;
+
+    border:
+      1px solid
+      #cbd5cd;
+
+    border-radius: 1.5rem;
+
+    background:
+      rgba(255, 255, 255, 0.28);
+  }
+
+  @media (max-width: 1100px) {
+    .highlight-grid,
+    .living-grid {
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    }
+
+    .property-grid {
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 900px) {
+    .hero,
+    .featured,
+    .neighbourhood-feature {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      padding-top: 5rem;
+    }
+
+    .hero-card {
+      min-height: 360px;
+    }
+
+    .hero-card img {
+      min-height: 360px;
+    }
+
+    .feature-image,
+    .feature-image img {
+      min-height: 350px;
+    }
+
+    .feature-content {
+      padding: 4rem 5vw;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .highlight-grid,
+    .living-grid,
+    .property-grid,
+    .history-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      padding:
+        4rem 5vw;
+    }
+
+    .content-section,
+    .intro,
+    .related-section {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    .featured {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    .highlight-card {
+      min-height: auto;
+    }
+
+    .living-card,
+    .property-card,
+    .history-card,
+    .related-card {
+      min-height: auto;
+    }
+
+    .feature-content {
+      padding: 3rem 5vw;
+    }
+  }
+</style>

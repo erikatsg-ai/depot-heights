@@ -1,0 +1,1655 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const navItems = [
+  { label: "Amenities", href: "/amenities" },
+  { label: "Food & Dining", href: "/local-food" },
+  { label: "Lifestyle & Nature", href: "/lifestyle" },
+  { label: "Commercial & Retail", href: "/commercial" },
+  { label: "Transport", href: "/transport" },
+  { label: "Healthcare", href: "/healthcare" },
+  { label: "Schools", href: "/schools" },
+];
+
+const featuredFoodCentres = [
+  {
+    id: "alexandra-village",
+    number: "01",
+    title: "Alexandra Village Food Centre",
+    location: "Bukit Merah / Alexandra Road",
+    image: "/images/avfc-bukit-merah.webp",
+    description:
+      "Alexandra Village Food Centre is one of the most convenient local hawker destinations for Depot Heights residents. The wider Alexandra and Bukit Merah Lane 1 area also has several established local food businesses and traditional food specialists worth exploring.",
+    gettingThere:
+      "A convenient local food destination from Depot Heights, with the surrounding Bukit Merah Lane 1 area offering additional food stops for residents who want to explore beyond the main food centre.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Alexandra+Village+Food+Centre+Singapore",
+  },
+
+  {
+    id: "abc-brickworks",
+    number: "02",
+    title: "ABC Brickworks Market & Food Centre",
+    location: "Jalan Bukit Merah",
+    image: "/images/abc-brickworks-market.webp",
+    description:
+      "ABC Brickworks Market & Food Centre is another established local food destination in the wider Bukit Merah neighbourhood. It is a useful stop for Depot Heights residents looking to explore traditional hawker food beyond the immediate Depot Road area.",
+    gettingThere:
+      "Located along Jalan Bukit Merah, ABC Brickworks is a convenient addition to a wider local food outing around Bukit Merah and Alexandra.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=ABC+Brickworks+Market+Food+Centre+Singapore",
+  },
+
+  {
+    id: "margaret-drive",
+    number: "03",
+    title: "Margaret Drive Hawker Centre",
+    location: "Margaret Drive",
+    image: "/images/margaret-dr-hawker-centre.webp",
+    description:
+      "A neighbourhood hawker destination in the Margaret Drive area, surrounded by established residential estates and local amenities. It is a good choice for exploring the wider Queenstown food scene.",
+    gettingThere:
+      "Located in the Margaret Drive neighbourhood, this is a useful food stop when exploring the wider Queenstown area from Depot Heights.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Margaret+Drive+Hawker+Centre+Singapore",
+  },
+
+  {
+    id: "tiong-bahru",
+    number: "04",
+    title: "Tiong Bahru Food Centre",
+    location: "Tiong Bahru",
+    image: "/images/tiong-bahru-market.webp",
+    description:
+      "One of the best-known hawker centres near Depot Heights, Tiong Bahru Food Centre is a favourite for exploring traditional Singaporean hawker food. The surrounding Tiong Bahru neighbourhood also offers a mix of heritage streets, cafés, restaurants and independent shops.",
+    gettingThere:
+      "Take Bus 175 (faster) or Bus 195, and alight at Bus Stop Blk 1 (10149) or Blk 55 (06051), Tiong Bahru Road, then walk behind the block to reach the food centre. Approximately 3.2 km from Depot Heights.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Tiong+Bahru+Food+Centre+Singapore",
+  },
+
+  {
+    id: "bukit-merah-view",
+    number: "05",
+    title: "Bukit Merah View Market & Hawker Centre",
+    location: "Bukit Merah View",
+    image: "/images/bukit-merah-view-market-food-centre.webp",
+    description:
+      "A neighbourhood market and hawker centre serving the Bukit Merah View community. It is one of the local food destinations around Depot Heights that residents can visit when exploring the wider Bukit Merah neighbourhood.",
+    gettingThere:
+      "A convenient option for exploring the local food scene around Bukit Merah View and the surrounding residential estates.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Bukit+Merah+View+Market+Hawker+Centre+Singapore",
+  },
+];
+
+const otherFoodCentres = [
+  {
+    id: "bukit-merah-central",
+    number: "06",
+    title: "Bukit Merah Central Food Centre",
+    location: "Bukit Merah Central",
+    image: "/images/bukit-merah-central-food-centre.webp",
+    description:
+      "Located within the established Bukit Merah Central neighbourhood, this food centre is surrounded by residential blocks and everyday amenities. It is a convenient option when visiting the Bukit Merah town centre.",
+    gettingThere:
+      "A useful local food stop when visiting Bukit Merah Central and the surrounding neighbourhood amenities.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Bukit+Merah+Central+Food+Centre+Singapore",
+  },
+
+  {
+    id: "mei-ling",
+    number: "07",
+    title: "Mei Ling Market & Food Centre",
+    location: "Mei Chin Road",
+    image: "/images/mei-ling-market-food-centre.webp",
+    description:
+      "A neighbourhood market and food centre serving the Mei Ling estate and surrounding Queenstown community. It is a quieter local destination for residents who enjoy exploring traditional markets and neighbourhood food centres.",
+    gettingThere:
+      "A local food destination in the Queenstown area and a useful addition to a wider food trip around the surrounding neighbourhoods.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Mei+Ling+Market+Food+Centre+Singapore",
+  },
+
+  {
+    id: "redhill-food-centre",
+    number: "08",
+    title: "Redhill Food Centre",
+    location: "Redhill",
+    image: "/images/redhill-food-centre.webp",
+    description:
+      "A neighbourhood food destination in the Redhill area, offering another selection of local hawker food. It is a useful stop for residents who want to explore beyond the immediate Depot Road and Bukit Merah area.",
+    gettingThere:
+      "A good destination to include when exploring the wider Redhill neighbourhood and its surrounding local amenities.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Redhill+Food+Centre+Singapore",
+  },
+
+  {
+    id: "seah-im",
+    number: "09",
+    title: "Seah Im Food Centre",
+    location: "Seah Im Road / HarbourFront",
+    image: "/images/seah-im-food-centre.webp",
+    description:
+      "Located near HarbourFront, Seah Im Food Centre is a convenient local food stop when visiting the HarbourFront and Sentosa area.",
+    gettingThere:
+      "Its location near HarbourFront makes it convenient to combine a local hawker meal with a visit to the waterfront, VivoCity or Sentosa.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Seah+Im+Food+Centre+Singapore",
+  },
+
+  {
+    id: "telok-blangah-crescent",
+    number: "10",
+    title: "Telok Blangah Crescent Market & Food Centre",
+    location: "Telok Blangah Crescent",
+    image: "/images/telok-blangah-crescent-market-food-centre.webp",
+    description:
+      "A neighbourhood market and food centre serving the Telok Blangah community. It is one of several local food destinations that Depot Heights residents can explore in the wider Telok Blangah neighbourhood.",
+    gettingThere:
+      "Located within the wider Telok Blangah neighbourhood, this is one of the local food centres accessible from the Depot Heights area.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Telok+Blangah+Crescent+Market+Food+Centre+Singapore",
+  },
+
+  {
+    id: "telok-blangah",
+    number: "11",
+    title: "Telok Blangah Food Centre",
+    location: "Telok Blangah Drive",
+    image: "/images/telok-blangah-food-centre.webp",
+    description:
+      "Another local food destination in the Telok Blangah area, offering residents another opportunity to explore neighbourhood hawker food beyond the immediate Depot Road and Bukit Merah area.",
+    gettingThere:
+      "A local food option within the wider Telok Blangah neighbourhood, suitable for residents exploring nearby hawker centres and markets.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Telok+Blangah+Food+Centre+Singapore",
+  },
+];
+
+const hiddenGems = [
+  {
+    id: "zion-riverside",
+    number: "12",
+    title: "Zion Riverside Food Centre",
+    location: "Zion Road / Singapore River",
+    image: "/images/zion-riverside-food-centre.webp",
+    description:
+      "A local food destination near Zion Road and the Singapore River. For Depot Heights residents, it makes a good destination for a longer local-food outing and is especially suitable for those who enjoy cycling around Singapore's neighbourhoods.",
+    gettingThere:
+      "Cycling is a practical option for residents who enjoy exploring the surrounding neighbourhoods. Approximately 4 km from Depot Heights by bicycle.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Zion+Riverside+Food+Centre+Singapore",
+  },
+
+  {
+    id: "beo-crescent",
+    number: "13",
+    title: "Beo Crescent Market",
+    location: "Beo Crescent",
+    image: "/images/beo-crescent-market.webp",
+    description:
+      "A quieter neighbourhood food destination in the Tiong Bahru area. Beo Crescent Market is a good option for residents who enjoy discovering less prominent local food spots away from the better-known hawker centres.",
+    gettingThere:
+      "A convenient addition to a wider Tiong Bahru food outing, where residents can combine a visit with Tiong Bahru Food Centre and the surrounding cafés, shops and neighbourhood streets.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Beo+Crescent+Market+Singapore",
+  },
+
+  {
+    id: "havelock-road",
+    number: "14",
+    title: "Havelock Road Cooked Food Centre",
+    location: "Havelock Road",
+    image: "/images/havelock-road-cooked-food-centre.webp",
+    description:
+      "A lesser-known neighbourhood cooked-food destination around the Havelock Road area. It offers another opportunity to explore local food beyond the more familiar hawker centres.",
+    gettingThere:
+      "A good option to include in a wider local-food trip around Havelock Road and Tiong Bahru, particularly for residents who enjoy exploring Singapore's neighbourhood food centres.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Havelock+Road+Cooked+Food+Centre+Singapore",
+  },
+];
+
+const alexandraVillageFoods = [
+  {
+    name: "AJ Delights Muffin",
+    image: "/images/avfc-ajdelights-muffin.webp",
+  },
+  {
+    name: "The Thunder Tea Story",
+    image: "/images/avfc-the-thunder-tea-story.webp",
+  },
+  {
+    name: "Xiao Long Bao",
+    image: "/images/avfc-xiaolongbao.webp",
+  },
+  {
+    name: "Claypot Chicken Rice",
+    image: "/images/avfc-claypot-chickenrice.webp",
+  },
+  {
+    name: "HK Yummy Soup",
+    image: "/images/avfc-hk-yummysoup.webp",
+  },
+  {
+    name: "Premium Hor Fun",
+    image: "/images/avfc-horfun-premium.webp",
+  },
+  {
+    name: "Jin Pai Zi Char",
+    image: "/images/avfc-jinpai-zichar.webp",
+  },
+  {
+    name: "Soya Sauce Chicken",
+    image: "/images/avfc-soya-sauce-chicken.webp",
+  },
+  {
+    name: "Zhen Shan Mei Claypot Laksa",
+    image: "/images/avfc-zhenshanmei-claypot-laksa.webp",
+  },
+];
+
+const kengEngKeeFoods = [
+  {
+    name: "Butter Cereal Prawn",
+    image: "/images/avfc-kek-butter-cereal-prawn.webp",
+  },
+  {
+    name: "Roasted Chicken",
+    image: "/images/avfc-kek-roasted-chicken.webp",
+  },
+  {
+    name: "Coffee Pork Ribs",
+    image: "/images/avfc-kek-coffee-porkribs.webp",
+  },
+  {
+    name: "Golden Pearl Roll",
+    image: "/images/avfc-kek-golden-pearl-roll.webp",
+  },
+  {
+    name: "Prawn Paste Chicken",
+    image: "/images/avfc-kek-prawn-paste-chicken.webp",
+  },
+  {
+    name: "Curry Fish Head",
+    image: "/images/avfc-kek-curry-fishhead.webp",
+  },
+];
+
+const pohCheuFoods = [
+  {
+    name: "Soon Kueh & Ang Ku Kueh",
+    image: "/images/avfc-pohcheu-soonkueh(4).webp",
+  },
+  {
+    name: "Soon Kueh",
+    image: "/images/avfc-pohcheu-soonkueh(3).webp",
+  },
+  {
+    name: "Ang Ku Kueh",
+    image: "/images/avfc-pohcheu-soonkueh(2).webp",
+  },
+  {
+    name: "Poh Cheu Handmade Kueh",
+    image: "/images/avfc-pohcheu-soonkueh(1).webp",
+  },
+];
+
+const tiongBahruFoods = [
+  {
+    name: "Tiong Bahru Rojak",
+    image: "/images/tiong-bahru-rojok.webp",
+  },
+  {
+    name: "Tian Tian Yuan Dessert",
+    image: "/images/tiong-bahru-dessert-tiantianyuan.webp",
+  },
+  {
+    name: "Tiong Bahru Vegetarian Food",
+    image: "/images/tiong-bahru-vegetarian.webp",
+  },
+];
+
+const margaretDriveFoods = [
+  {
+    name: "Fernando's Pizza",
+    image: "/images/margaret-dr-fernandos-pizza.webp",
+  },
+  {
+    name: "Longtong",
+    image: "/images/margaret-dr-longtong.webp",
+  },
+  {
+    name: "Hakka Thunder Tea Rice",
+    image: "/images/margaret-dr-hakka-thunder-tea-rice.webp",
+  },
+];
+
+const title = "Best Hawker Food Near Depot Heights | Local Food Guide";
+
+const description =
+  "Explore hawker centres, markets and local food destinations near Depot Heights, including Alexandra Village, ABC Brickworks, Margaret Drive, Tiong Bahru, Bukit Merah View and hidden local food gems.";
+
+const canonical = "https://depotheights.sg/local-food";
+
+const heroImage = "/images/avfc-bukit-merah.webp";
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  heroImage={heroImage}
+>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">
+          BEST HAWKER FOOD NEAR DEPOT HEIGHTS
+        </p>
+
+        <h1>
+          Local food
+          <span>close to home.</span>
+        </h1>
+
+        <p class="hero-text">
+          Depot Heights is surrounded by established neighbourhoods
+          with plenty of local food choices. Explore hawker centres,
+          markets, traditional food shops and neighbourhood favourites
+          around Bukit Merah, Alexandra, Queenstown, Tiong Bahru,
+          HarbourFront and Telok Blangah.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#hawker-food">
+            Explore local food
+          </a>
+
+          <a class="button secondary" href="/cafes">
+            Explore cafés
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img
+          src={heroImage}
+          alt="Alexandra Village Food Centre near Depot Heights"
+        />
+
+        <div class="hero-card-overlay">
+          <p>DEPOT HEIGHTS</p>
+
+          <div class="hero-card-line"></div>
+
+          <strong>
+            Hawker favourites.<br />
+            Neighbourhood food.
+          </strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <p class="eyebrow">
+        LOCAL FOOD AROUND DEPOT HEIGHTS
+      </p>
+
+      <h2>
+        Good food is part of the neighbourhood.
+      </h2>
+
+      <p>
+        From Alexandra Village and ABC Brickworks to Margaret Drive,
+        Tiong Bahru and Bukit Merah View, there are many local food
+        destinations within the wider neighbourhood. Further afield,
+        hidden gems such as Zion Riverside, Beo Crescent and Havelock
+        Road offer more opportunities to explore.
+      </p>
+    </section>
+
+    <section class="section-grid" id="hawker-food">
+      {
+        featuredFoodCentres.map((centre) => (
+          <article class="section-card" id={centre.id}>
+            <div class="section-number">
+              {centre.number}
+            </div>
+
+            <div>
+              <p class="eyebrow">
+                {centre.location}
+              </p>
+
+              <h2>{centre.title}</h2>
+
+              <p class="section-description">
+                {centre.description}
+              </p>
+
+              <div class="main-food-image">
+                <img
+                  src={centre.image}
+                  alt={centre.title}
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="info-row">
+                <div class="transport-note">
+                  <p class="transport-eyebrow">
+                    Getting there from Depot Heights
+                  </p>
+
+                  <p>{centre.gettingThere}</p>
+                </div>
+
+                <a
+                  class="map-button"
+                  href={centre.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span aria-hidden="true">📍</span>
+                  View on Google Maps
+                </a>
+              </div>
+
+              {centre.id === "alexandra-village" && (
+                <div class="nearby-food">
+                  <div class="nearby-heading">
+                    <p class="eyebrow">
+                      ALEXANDRA VILLAGE FOOD GUIDE
+                    </p>
+
+                    <h3>
+                      Local food favourites to explore
+                    </h3>
+
+                    <p>
+                      Alexandra Village Food Centre and the surrounding
+                      Bukit Merah Lane 1 area offer plenty of local food
+                      choices. Here are some of the food recommendations
+                      from the Depot Heights local food guide.
+                    </p>
+                  </div>
+
+                  <div class="food-grid ten-items">
+                    {alexandraVillageFoods.map((food) => (
+                      <article class="food-card">
+                        <img
+                          src={food.image}
+                          alt={food.name}
+                          loading="lazy"
+                        />
+
+                        <div class="food-card-content">
+                          <h4>{food.name}</h4>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+
+                  <div class="nearby-business">
+                    <div class="business-heading">
+                      <p class="business-location">
+                        123 Bukit Merah Lane 1
+                      </p>
+
+                      <h4>Kiroi Japanese Cheesecake</h4>
+
+                      <p>
+                        A local dessert stop in the Alexandra Village
+                        and Bukit Merah Lane 1 area. Look out for Kiroi's
+                        Japanese cheesecake as part of a food outing
+                        around Alexandra Village.
+                      </p>
+                    </div>
+
+                    <div class="single-food-card">
+                      <article class="food-card">
+                        <img
+                          src="/images/avfc-japanese-cheesecake.webp"
+                          alt="Kiroi Japanese Cheesecake at 123 Bukit Merah Lane 1"
+                          loading="lazy"
+                        />
+
+                        <div class="food-card-content">
+                          <h4>Kiroi Japanese Cheesecake</h4>
+
+                          <a
+                            class="small-map-link"
+                            href="https://www.google.com/maps/search/?api=1&query=123+Bukit+Merah+Lane+1+Singapore"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            📍 View 123 Bukit Merah Lane 1 on Google Maps
+                          </a>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+
+                  <div class="nearby-business">
+                    <div class="business-heading">
+                      <p class="business-location">
+                        124 Bukit Merah Lane 1
+                      </p>
+
+                      <h4>Keng Eng Kee Seafood</h4>
+
+                      <p>Six recommended dishes:</p>
+                    </div>
+
+                    <div class="food-grid six-items">
+                      {kengEngKeeFoods.map((food) => (
+                        <article class="food-card">
+                          <img
+                            src={food.image}
+                            alt={food.name}
+                            loading="lazy"
+                          />
+
+                          <div class="food-card-content">
+                            <h4>{food.name}</h4>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+
+                    <a
+                      class="small-map-link"
+                      href="https://www.google.com/maps/search/?api=1&query=124+Bukit+Merah+Lane+1+Singapore"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      📍 View 124 Bukit Merah Lane 1 on Google Maps
+                    </a>
+                  </div>
+
+                  <div class="nearby-business">
+                    <div class="business-heading">
+                      <p class="business-location">
+                        127 Bukit Merah Lane 1
+                      </p>
+
+                      <h4>
+                        Poh Cheu Soon Kueh & Ang Ku Kueh
+                      </h4>
+
+                      <p>
+                        Four recommended food photos:
+                      </p>
+                    </div>
+
+                    <div class="food-grid four-items">
+                      {pohCheuFoods.map((food) => (
+                        <article class="food-card">
+                          <img
+                            src={food.image}
+                            alt={food.name}
+                            loading="lazy"
+                          />
+
+                          <div class="food-card-content">
+                            <h4>{food.name}</h4>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+
+                    <a
+                      class="small-map-link"
+                      href="https://www.google.com/maps/search/?api=1&query=127+Bukit+Merah+Lane+1+Singapore"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      📍 View 127 Bukit Merah Lane 1 on Google Maps
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {centre.id === "tiong-bahru" && (
+                <div class="recommended-section">
+                  <h3>Recommended local food</h3>
+
+                  <div class="food-grid three-items">
+                    {tiongBahruFoods.map((food) => (
+                      <article class="food-card">
+                        <img
+                          src={food.image}
+                          alt={food.name}
+                          loading="lazy"
+                        />
+
+                        <div class="food-card-content">
+                          <h4>{food.name}</h4>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {centre.id === "margaret-drive" && (
+                <div class="recommended-section">
+                  <h3>Recommended local food</h3>
+
+                  <div class="food-grid three-items">
+                    {margaretDriveFoods.map((food) => (
+                      <article class="food-card">
+                        <img
+                          src={food.image}
+                          alt={food.name}
+                          loading="lazy"
+                        />
+
+                        <div class="food-card-content">
+                          <h4>{food.name}</h4>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </article>
+        ))
+      }
+
+      {
+        otherFoodCentres.map((centre) => (
+          <article class="section-card" id={centre.id}>
+            <div class="section-number">
+              {centre.number}
+            </div>
+
+            <div>
+              <p class="eyebrow">
+                {centre.location}
+              </p>
+
+              <h2>{centre.title}</h2>
+
+              <p class="section-description">
+                {centre.description}
+              </p>
+
+              <div class="main-food-image">
+                <img
+                  src={centre.image}
+                  alt={centre.title}
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="info-row">
+                <div class="transport-note">
+                  <p class="transport-eyebrow">
+                    Getting there from Depot Heights
+                  </p>
+
+                  <p>{centre.gettingThere}</p>
+                </div>
+
+                <a
+                  class="map-button"
+                  href={centre.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span aria-hidden="true">📍</span>
+                  View on Google Maps
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </section>
+
+    <section class="hidden-gems-section" id="hidden-gems">
+      <div class="hidden-gems-heading">
+        <p class="eyebrow">
+          HIDDEN GEMS
+        </p>
+
+        <h2>Worth the extra trip.</h2>
+
+        <p>
+          These lesser-known food destinations are a little further
+          from Depot Heights, but are worth discovering for residents
+          who enjoy exploring Singapore's neighbourhood food scene.
+        </p>
+      </div>
+
+      <div class="section-grid hidden-gems-grid">
+        {
+          hiddenGems.map((centre) => (
+            <article class="section-card" id={centre.id}>
+              <div class="section-number">
+                {centre.number}
+              </div>
+
+              <div>
+                <p class="eyebrow">
+                  {centre.location}
+                </p>
+
+                <h2>{centre.title}</h2>
+
+                <p class="section-description">
+                  {centre.description}
+                </p>
+
+                <div class="main-food-image">
+                  <img
+                    src={centre.image}
+                    alt={centre.title}
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="info-row">
+                  <div class="transport-note">
+                    <p class="transport-eyebrow">
+                      Getting there from Depot Heights
+                    </p>
+
+                    <p>{centre.gettingThere}</p>
+                  </div>
+
+                  <a
+                    class="map-button"
+                    href={centre.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span aria-hidden="true">📍</span>
+                    View on Google Maps
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="featured">
+      <div>
+        <p class="eyebrow">
+          LOCAL FOOD GUIDE
+        </p>
+
+        <h2>
+          A neighbourhood surrounded by local food.
+        </h2>
+      </div>
+
+      <p>
+        Depot Heights residents can explore a wide range of hawker
+        centres and food destinations across the surrounding
+        neighbourhoods. Start with Alexandra Village, ABC Brickworks,
+        Margaret Drive, Tiong Bahru and Bukit Merah View, then venture
+        further to discover hidden local food gems.
+      </p>
+    </section>
+
+    <section class="related-section">
+      <div class="related-heading">
+        <p class="eyebrow">
+          MORE FOOD & DINING
+        </p>
+
+        <h2>
+          Continue exploring the neighbourhood.
+        </h2>
+      </div>
+
+      <div class="related-grid">
+        <article class="related-card">
+          <h3>Cafés</h3>
+
+          <p>
+            Explore cafés around Depot Heights, Mount Faber,
+            HortPark and the surrounding neighbourhoods.
+          </p>
+
+          <a class="text-link" href="/cafes">
+            Explore Cafés →
+          </a>
+        </article>
+
+        <article class="related-card">
+          <h3>Restaurants</h3>
+
+          <p>
+            Discover restaurants and dining destinations around
+            Depot Heights and nearby areas.
+          </p>
+
+          <a class="text-link" href="/restaurants">
+            Explore Restaurants →
+          </a>
+        </article>
+
+        <article class="related-card">
+          <h3>Lifestyle & Nature</h3>
+
+          <p>
+            Explore nature, heritage, arts, shopping and leisure
+            destinations around Depot Heights.
+          </p>
+
+          <a class="text-link" href="/lifestyle">
+            Explore Lifestyle & Nature →
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    margin: 0;
+    color: #1d2924;
+    background: #f7f5ef;
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  }
+
+  :global(a) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.5fr)
+      minmax(280px, 0.7fr);
+
+    min-height: 78vh;
+
+    padding: 8rem 8vw 6rem;
+
+    gap: 5rem;
+
+    align-items: center;
+
+    background:
+      radial-gradient(
+        circle at 80% 30%,
+        rgba(94, 145, 112, 0.22),
+        transparent 35%
+      ),
+      linear-gradient(
+        135deg,
+        #eef3e9 0%,
+        #f7f5ef 60%
+      );
+  }
+
+  .hero-content {
+    max-width: 850px;
+  }
+
+  .eyebrow {
+    margin: 0 0 1rem;
+
+    color: #3d805f;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+  }
+
+  h1 {
+    max-width: 900px;
+
+    margin: 0;
+
+    font-size:
+      clamp(45px, 8vw, 80px);
+
+    line-height: 0.94;
+
+    letter-spacing: -0.07em;
+  }
+
+  h1 span {
+    display: block;
+    color: #3d805f;
+  }
+
+  .hero-text {
+    max-width: 700px;
+
+    margin: 1.8rem 0 0;
+
+    color: #53615b;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+
+    margin-top: 2rem;
+  }
+
+  .button {
+    padding: 0.9rem 1.25rem;
+
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 750;
+  }
+
+  .primary {
+    color: white;
+    background: #27664d;
+  }
+
+  .secondary {
+    color: #27664d;
+
+    border:
+      1px solid
+      #9eb3a5;
+  }
+
+  .hero-card {
+    position: relative;
+
+    min-height: 360px;
+
+    overflow: hidden;
+
+    border-radius: 2rem;
+
+    color: white;
+
+    background: #315f4a;
+
+    box-shadow:
+      0 25px 70px
+      rgba(39, 102, 77, 0.18);
+  }
+
+  .hero-card img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 360px;
+
+    object-fit: cover;
+  }
+
+  .hero-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(31, 72, 55, 0.05),
+        rgba(31, 72, 55, 0.9)
+      );
+  }
+
+  .hero-card-overlay {
+    position: absolute;
+
+    z-index: 2;
+
+    right: 2rem;
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .hero-card-overlay p {
+    margin: 0;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+  }
+
+  .hero-card-line {
+    width: 50px;
+    height: 2px;
+
+    margin: 1rem 0;
+
+    background: white;
+  }
+
+  .hero-card strong {
+    display: block;
+
+    font-size:
+      clamp(1.8rem, 3vw, 3rem);
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+  }
+
+  .intro {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 8rem 8vw 4rem;
+
+    text-align: center;
+  }
+
+  .intro h2,
+  .featured h2,
+  .related-heading h2,
+  .hidden-gems-heading h2 {
+    margin: 0;
+
+    font-size:
+      clamp(38px, 5vw, 65px);
+
+    line-height: 1;
+
+    letter-spacing: -0.06em;
+  }
+
+  .intro > p:last-child {
+    margin: 1.5rem auto 0;
+
+    color: #65736c;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+  }
+
+  .section-grid {
+    padding: 2rem 8vw 8rem;
+  }
+
+  .section-card {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 2rem;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 4rem 0;
+
+    border-top:
+      1px solid
+      rgba(29, 41, 36, 0.15);
+  }
+
+  .section-number {
+    color: #70a281;
+
+    font-size: 0.8rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+  }
+
+  .section-card h2 {
+    margin: 0;
+
+    font-size:
+      clamp(38px, 4vw, 65px);
+
+    letter-spacing: -0.05em;
+  }
+
+  .section-description {
+    max-width: 700px;
+
+    margin: 1.2rem 0 2rem;
+
+    color: #65736c;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+  }
+
+  .main-food-image {
+    margin: 2rem 0;
+  }
+
+  .main-food-image img {
+    display: block;
+
+    width: 100%;
+
+    max-height: 480px;
+
+    object-fit: cover;
+
+    border-radius: 2rem;
+
+    box-shadow:
+      0 20px 50px
+      rgba(39, 102, 77, 0.12);
+  }
+
+  .info-row {
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    gap: 1rem;
+
+    align-items: stretch;
+
+    margin: 2rem 0 3rem;
+  }
+
+  .transport-note {
+    padding: 1.5rem 1.7rem;
+
+    border-left:
+      4px solid
+      #3d805f;
+
+    border-radius:
+      0 1.2rem 1.2rem 0;
+
+    background:
+      rgba(61, 128, 95, 0.08);
+  }
+
+  .transport-note p {
+    margin: 0;
+
+    color: #53615b;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+  .transport-note .transport-eyebrow {
+    margin-bottom: 0.5rem;
+
+    color: #27664d;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+  }
+
+  .map-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+
+    min-width: 190px;
+
+    padding: 1rem 1.25rem;
+
+    border-radius: 1rem;
+
+    color: white;
+
+    background: #27664d;
+
+    font-size: 0.82rem;
+    font-weight: 750;
+
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .map-button:hover {
+    background: #1f513d;
+    transform: translateY(-2px);
+  }
+
+  .section-card h3 {
+    margin: 0 0 1.4rem;
+
+    color: #27664d;
+
+    font-size: 0.82rem;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+  }
+
+  .food-grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 1rem;
+  }
+
+  .food-grid.four-items {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  }
+
+  .food-grid.six-items {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .food-grid.ten-items {
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+  }
+
+  .food-grid.three-items {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .food-card {
+    overflow: hidden;
+
+    border:
+      1px solid
+      #cbd5cd;
+
+    border-radius: 1.2rem;
+
+    background:
+      rgba(255, 255, 255, 0.28);
+  }
+
+  .food-card img {
+    display: block;
+
+    width: 100%;
+    height: 190px;
+
+    object-fit: cover;
+  }
+
+  .food-card-content {
+    padding: 1rem;
+  }
+
+  .food-card h4 {
+    margin: 0;
+
+    color: #27664d;
+
+    font-size: 23px;
+
+    line-height: 1.35;
+  }
+
+  .single-food-card {
+    max-width: 420px;
+  }
+
+  .small-map-link {
+    display: inline-block;
+
+    margin-top: 1rem;
+
+    color: #27664d;
+
+    font-size: 0.8rem;
+    font-weight: 750;
+  }
+
+  .nearby-food {
+    margin-top: 4rem;
+
+    padding-top: 3rem;
+
+    border-top:
+      1px solid
+      rgba(29, 41, 36, 0.12);
+  }
+
+  .nearby-heading {
+    margin-bottom: 2rem;
+  }
+
+  .nearby-heading h3 {
+    margin: 0.5rem 0 0;
+
+    color: #1d2924;
+
+    font-size:
+      clamp(28px, 3vw, 42px);
+
+    letter-spacing: -0.04em;
+
+    text-transform: none;
+  }
+
+  .nearby-heading p:last-child {
+    max-width: 700px;
+
+    margin-top: 1rem;
+
+    color: #65736c;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+  .nearby-business {
+    margin-top: 2rem;
+
+    padding: 2rem;
+
+    border:
+      1px solid
+      #cbd5cd;
+
+    border-radius: 1.5rem;
+
+    background:
+      rgba(255, 255, 255, 0.24);
+  }
+
+  .business-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .nearby-business h4 {
+    margin: 0.3rem 0 0;
+
+    color: #27664d;
+
+    font-size: 28px;
+
+    letter-spacing: -0.03em;
+  }
+
+  .nearby-business p {
+    color: #65736c;
+
+    font-size: 16px;
+  }
+
+  .business-location {
+    margin: 0;
+
+    color: #3d805f !important;
+
+    font-size: 0.75rem !important;
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+  }
+
+  .recommended-section {
+    margin-top: 3rem;
+  }
+
+  .hidden-gems-section {
+    padding: 7rem 0 2rem;
+
+    background:
+      #e9eee7;
+  }
+
+  .hidden-gems-heading {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 0 8vw 3rem;
+  }
+
+  .hidden-gems-heading > p:last-child {
+    max-width: 700px;
+
+    margin: 1.5rem 0 0;
+
+    color: #65736c;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+  }
+
+  .hidden-gems-grid {
+    padding-top: 0;
+  }
+
+  .featured {
+    display: grid;
+
+    grid-template-columns:
+      1.3fr 0.7fr;
+
+    gap: 5rem;
+
+    padding: 7rem 8vw;
+
+    color: white;
+
+    background: #27664d;
+  }
+
+  .featured .eyebrow {
+    color: #b9d7c1;
+  }
+
+  .featured p:last-child {
+    align-self: end;
+
+    margin: 0;
+
+    color: #d5e5d9;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+  }
+
+  .related-section {
+    padding: 8rem 8vw;
+  }
+
+  .related-heading {
+    max-width: 850px;
+
+    margin: 0 auto 3rem;
+
+    text-align: center;
+  }
+
+  .related-grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+  }
+
+  .related-card {
+    padding: 2rem;
+
+    border:
+      1px solid
+      #cbd5cd;
+
+    border-radius: 1.5rem;
+
+    background:
+      rgba(255, 255, 255, 0.28);
+  }
+
+  .related-card h3 {
+    margin: 0;
+
+    color: #27664d;
+
+    font-size: 28px;
+  }
+
+  .related-card p {
+    margin: 1rem 0 1.5rem;
+
+    color: #65736c;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+  .text-link {
+    color: #27664d;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+  }
+
+  @media (max-width: 1100px) {
+    .food-grid.ten-items {
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .food-grid.four-items,
+    .food-grid.six-items {
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 900px) {
+    .hero,
+    .featured {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      padding-top: 5rem;
+    }
+
+    .hero-card {
+      min-height: 280px;
+    }
+
+    .hero-card img {
+      min-height: 280px;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .info-row {
+      grid-template-columns: 1fr;
+    }
+
+    .map-button {
+      min-height: 54px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .food-grid,
+    .food-grid.four-items,
+    .food-grid.six-items,
+    .food-grid.ten-items,
+    .food-grid.three-items {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding: 4rem 5vw;
+    }
+
+    .section-grid,
+    .intro,
+    .related-section {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    .hidden-gems-heading {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    .section-card {
+      grid-template-columns: 1fr;
+
+      gap: 1rem;
+
+      padding: 3rem 0;
+    }
+
+    .nearby-business {
+      padding: 1.2rem;
+    }
+
+    .featured {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+  }
+</style>

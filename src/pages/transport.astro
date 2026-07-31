@@ -1,0 +1,830 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle =
+  "Depot Heights Transport | Bus Routes, MRT & Connectivity";
+
+const pageDescription =
+  "Explore public transport from Depot Heights, including bus connections from Blk 110 and Aft Hewlett Packard, with routes towards Bukit Merah, Bras Basah, Clarke Quay, HarbourFront and other major destinations.";
+
+const busRoutes = [
+  {
+    number: "57",
+    title: "Bus 57",
+    subtitle: "Depot Heights → Bukit Merah Interchange",
+    description:
+      "Bus 57 provides a useful local connection from the Depot Heights area towards Bukit Merah Interchange, making it convenient for residents travelling towards Bukit Merah Central and connecting to the wider bus network.",
+    stops: [
+      "Blk 110",
+      "Aft Hewlett Packard",
+      "Bukit Merah area",
+      "Bukit Merah Interchange",
+    ],
+  },
+  {
+    number: "175",
+    title: "Bus 175",
+    subtitle: "Depot Heights → City / Bras Basah",
+    description:
+      "Bus 175 provides a direct public transport option towards the city, including the Bras Basah area. It is useful for residents travelling towards central Singapore for work, education, culture, shopping and leisure.",
+    stops: [
+      "Blk 110",
+      "Aft Hewlett Packard",
+      "Telok Blangah Hill Park",
+      "Bras Basah area",
+    ],
+  },
+  {
+    number: "195",
+    title: "Bus 195",
+    subtitle: "Depot Heights → Clarke Quay / Central Singapore",
+    description:
+      "Bus 195 provides a connection towards the central city and Clarke Quay area, giving residents an alternative route for reaching Singapore's downtown attractions, dining destinations and business districts.",
+    stops: [
+      "Blk 110",
+      "Aft Hewlett Packard",
+      "Central Singapore",
+      "Opp Clarke Quay",
+    ],
+  },
+];
+
+const majorConnections = [
+  {
+    number: "01",
+    title: "Bukit Merah Interchange",
+    description:
+      "A major bus interchange serving Bukit Merah and providing connections to many parts of Singapore.",
+  },
+  {
+    number: "02",
+    title: "Bras Basah",
+    description:
+      "A central cultural and education district close to museums, arts venues, schools and the city centre.",
+  },
+  {
+    number: "03",
+    title: "Clarke Quay",
+    description:
+      "A central waterfront destination known for restaurants, nightlife, entertainment and access to the Singapore River.",
+  },
+  {
+    number: "04",
+    title: "HarbourFront",
+    description:
+      "A major southern destination with VivoCity, HarbourFront MRT, Sentosa connections and the waterfront.",
+  },
+  {
+    number: "05",
+    title: "NUS & NUH",
+    description:
+      "Important education, research and healthcare destinations in the wider southern-western corridor.",
+  },
+  {
+    number: "06",
+    title: "Alexandra & Tiong Bahru",
+    description:
+      "Nearby established areas offering food, shopping, workplaces, cafés and everyday amenities.",
+  },
+];
+
+const referenceStops = [
+  {
+    number: "01",
+    stop: "Blk 110",
+    code: "14201",
+    description:
+      "The main reference bus stop for Depot Heights residents. This is the primary point used to understand the area's bus connections.",
+  },
+  {
+    number: "02",
+    stop: "Aft Hewlett Packard",
+    code: "14209",
+    description:
+      "A second nearby reference stop that provides another convenient boarding point for selected bus services.",
+  },
+];
+
+const travelLinks = [
+  {
+    title: "Explore Depot Heights Location",
+    href: "/location",
+    description:
+      "See how Depot Heights connects to Alexandra, Redhill, Tiong Bahru, Telok Blangah, HarbourFront and the wider southern area.",
+  },
+  {
+    title: "Living Around Depot Heights",
+    href: "/living-around-depot-heights",
+    description:
+      "Discover food, cafés, healthcare, schools, shopping and everyday amenities around the neighbourhood.",
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">DEPOT HEIGHTS TRANSPORT</p>
+
+        <h1>
+          Simple bus connections
+          <span>from your doorstep.</span>
+        </h1>
+
+        <p class="hero-text">
+          Depot Heights residents have convenient bus connections from the
+          nearby stops at Blk 110 and Aft Hewlett Packard. Rather than listing
+          every stop along Depot Road, this guide highlights the main routes
+          and important destinations that are most useful for everyday travel.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#bus-routes">
+            Explore bus routes
+          </a>
+
+          <a class="button button-secondary" href="/location">
+            View location
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="/images/depot-heights-location-hero.webp"
+          alt="Depot Heights and surrounding Bukit Merah area"
+          loading="eager"
+        />
+      </div>
+    </section>
+
+    <section class="section reference-section">
+      <div class="section-heading">
+        <p class="eyebrow">DEPOT HEIGHTS REFERENCE STOPS</p>
+
+        <h2>
+          Two nearby bus stops are all you need to remember.
+        </h2>
+
+        <p>
+          The transport guide uses two main reference points around Depot
+          Heights. This keeps the information simple and avoids overwhelming
+          residents and visitors with a long list of bus stops along Depot
+          Road.
+        </p>
+      </div>
+
+      <div class="reference-grid">
+        {
+          referenceStops.map((item) => (
+            <article class="reference-card">
+              <span class="reference-number">{item.number}</span>
+
+              <div class="stop-header">
+                <h3>{item.stop}</h3>
+
+                <strong>{item.code}</strong>
+              </div>
+
+              <p>{item.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section routes-section" id="bus-routes">
+      <div class="section-heading">
+        <p class="eyebrow">MAIN BUS ROUTES</p>
+
+        <h2>
+          Three useful routes connecting Depot Heights with major destinations.
+        </h2>
+
+        <p>
+          These routes are presented as simple journey lines rather than a
+          detailed timetable. The aim is to help residents quickly understand
+          where the main bus services can take them.
+        </p>
+      </div>
+
+      <div class="routes-list">
+        {
+          busRoutes.map((route) => (
+            <article class="route-card">
+              <div class="route-number-large">
+                {route.number}
+              </div>
+
+              <div class="route-main">
+                <p class="route-label">{route.title}</p>
+
+                <h3>{route.subtitle}</h3>
+
+                <p class="route-description">
+                  {route.description}
+                </p>
+
+                <div class="route-line">
+                  {
+                    route.stops.map((stop, index) => (
+                      <div class="route-stop">
+                        <span class="stop-dot" />
+
+                        <span>{stop}</span>
+
+                        {index < route.stops.length - 1 && (
+                          <span class="line" />
+                        )}
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section connections-section">
+      <div class="section-heading">
+        <p class="eyebrow">MAJOR DESTINATIONS</p>
+
+        <h2>
+          Where the wider bus network can take you.
+        </h2>
+
+        <p>
+          From the Depot Heights area, public transport provides access to
+          important transport interchanges, city districts, commercial hubs,
+          education and healthcare destinations.
+        </p>
+      </div>
+
+      <div class="connections-grid">
+        {
+          majorConnections.map((item) => (
+            <article class="connection-card">
+              <span>{item.number}</span>
+
+              <h3>{item.title}</h3>
+
+              <p>{item.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section journey-section">
+      <div class="journey-inner">
+        <div>
+          <p class="eyebrow">TRAVEL AROUND SINGAPORE</p>
+
+          <h2>
+            From local neighbourhood buses to the city and southern waterfront.
+          </h2>
+
+          <p>
+            The advantage of living at Depot Heights is not simply having a
+            nearby bus stop. The surrounding bus network connects the estate
+            with established neighbourhoods, major interchanges, the city
+            centre and southern destinations such as HarbourFront.
+          </p>
+        </div>
+
+        <div class="journey-note">
+          <strong>Useful reference points</strong>
+
+          <p>
+            Start with <b>Blk 110 (14201)</b> or
+            <b>Aft Hewlett Packard (14209)</b>, then choose the bus route that
+            best matches your destination.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section links-section">
+      <div class="section-heading">
+        <p class="eyebrow">EXPLORE MORE</p>
+
+        <h2>
+          Discover more about living around Depot Heights.
+        </h2>
+      </div>
+
+      <div class="links-grid">
+        {
+          travelLinks.map((link) => (
+            <a class="link-card" href={link.href}>
+              <span>→</span>
+
+              <h3>{link.title}</h3>
+
+              <p>{link.description}</p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    margin: 0;
+    background: #f7f8f3;
+    color: #183126;
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    line-height: 1.7;
+  }
+
+  :global(a) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    min-height: 580px;
+    background: #e8f0e8;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 75px clamp(30px, 6vw, 90px);
+  }
+
+  .eyebrow {
+    margin: 0 0 16px;
+    color: #2b6e52;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    max-width: 700px;
+    margin: 0;
+    font-size: clamp(45px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.055em;
+  }
+
+  .hero h1 span {
+    display: block;
+    color: #2b6e52;
+  }
+
+  .hero-text {
+    max-width: 680px;
+    margin: 25px 0 0;
+    color: #52625a;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 22px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .button-primary {
+    background: #2b6e52;
+    color: #fff;
+  }
+
+  .button-secondary {
+    border: 1px solid #2b6e52;
+    color: #2b6e52;
+  }
+
+  .hero-image {
+    min-height: 580px;
+    overflow: hidden;
+    background: #dce7dd;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 580px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .section {
+    padding: 90px 5vw;
+  }
+
+  .section-heading {
+    max-width: 850px;
+    margin-bottom: 50px;
+  }
+
+  .section-heading h2 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .section-heading p:not(.eyebrow) {
+    max-width: 720px;
+    margin: 20px 0 0;
+    color: #5d6b64;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .reference-section {
+    background: #fff;
+  }
+
+  .reference-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .reference-card {
+    padding: 35px;
+    border-radius: 22px;
+    background: #f7f8f3;
+    border: 1px solid rgba(24, 49, 38, 0.1);
+  }
+
+  .reference-number {
+    display: block;
+    margin-bottom: 18px;
+    color: #2b6e52;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+  .stop-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .stop-header h3 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  .stop-header strong {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #2b6e52;
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+
+  .reference-card p {
+    margin: 18px 0 0;
+    color: #5d6b64;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .routes-section {
+    background: #edf3ed;
+  }
+
+  .routes-list {
+    display: grid;
+    gap: 24px;
+  }
+
+  .route-card {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 35px;
+    padding: 40px;
+    border-radius: 24px;
+    background: #fff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .route-number-large {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 65px;
+    font-weight: 900;
+    line-height: 1;
+    color: #2b6e52;
+  }
+
+  .route-label {
+    margin: 0 0 8px;
+    color: #2b6e52;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .route-main h3 {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 43px);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+  }
+
+  .route-description {
+    max-width: 800px;
+    margin: 18px 0 30px;
+    color: #5d6b64;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .route-line {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 10px 0;
+  }
+
+  .route-stop {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 42px;
+    color: #183126;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .stop-dot {
+    position: relative;
+    z-index: 2;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #2b6e52;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #2b6e52;
+  }
+
+  .line {
+    display: block;
+    width: 45px;
+    height: 3px;
+    margin: 0 12px;
+    background: #9db6a7;
+  }
+
+  .connections-section {
+    background: #fff;
+  }
+
+  .connections-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .connection-card {
+    min-height: 230px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #f7f8f3;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .connection-card > span {
+    display: block;
+    margin-bottom: 15px;
+    color: #2b6e52;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+  .connection-card h3 {
+    margin: 0;
+    font-size: 27px;
+    line-height: 1.15;
+  }
+
+  .connection-card p {
+    margin: 15px 0 0;
+    color: #5d6b64;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .journey-section {
+    background: #235f47;
+    color: #fff;
+  }
+
+  .journey-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .journey-inner .eyebrow {
+    color: #c9e4d5;
+  }
+
+  .journey-inner h2 {
+    max-width: 800px;
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .journey-inner > div > p:not(.eyebrow) {
+    max-width: 750px;
+    margin: 22px 0 0;
+    color: #d8e9df;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .journey-note {
+    padding: 35px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .journey-note strong {
+    display: block;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .journey-note p {
+    margin: 14px 0 0;
+    color: #d8e9df;
+    line-height: 1.8;
+  }
+
+  .links-section {
+    background: #f7f8f3;
+  }
+
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .link-card {
+    display: block;
+    padding: 35px;
+    border-radius: 22px;
+    background: #fff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .link-card:hover {
+    transform: translateY(-4px);
+    border-color: #2b6e52;
+  }
+
+  .link-card > span {
+    display: block;
+    margin-bottom: 18px;
+    color: #2b6e52;
+    font-size: 26px;
+    font-weight: 800;
+  }
+
+  .link-card h3 {
+    margin: 0;
+    font-size: 29px;
+    line-height: 1.15;
+  }
+
+  .link-card p {
+    margin: 15px 0 0;
+    color: #5d6b64;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 1050px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-image,
+    .hero-image img {
+      min-height: 450px;
+    }
+
+    .connections-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .journey-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .hero h1 {
+      font-size: clamp(45px, 14vw, 70px);
+    }
+
+    .hero-image,
+    .hero-image img {
+      min-height: 350px;
+    }
+
+    .section {
+      padding: 70px 24px;
+    }
+
+    .reference-grid,
+    .connections-grid,
+    .links-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .route-card {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 28px;
+    }
+
+    .route-number-large {
+      justify-content: flex-start;
+      font-size: 55px;
+    }
+
+    .route-line {
+      display: block;
+    }
+
+    .route-stop {
+      margin-bottom: 0;
+    }
+
+    .line {
+      width: 3px;
+      height: 25px;
+      margin: 0 0 0 6px;
+    }
+
+    .stop-header {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
