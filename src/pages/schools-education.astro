@@ -1,130 +1,196 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const pageTitle =
-  "Schools & Education Near Depot Heights | Primary, Secondary & Tertiary";
+const pageTitle = "Schools & Education Near Depot Heights | Primary, Secondary & Tertiary";
 
-const pageDescription =
-  "Explore schools and education options near Depot Heights, including primary schools, secondary schools, junior colleges, polytechnics and university options.";
+const pageDescription = "Explore schools and education options near Depot Heights, including primary schools, secondary schools, junior colleges, polytechnics and university options, complete with travel routes starting from Bus Stop Blk 110, Depot Road.";
 
 const primarySchools = [
   {
     name: "Zhangde Primary School",
     image: "/images/zhangde-pri.webp",
-    description:
-      "A primary school option serving families in the wider central Singapore area.",
+    description: "A primary school option serving families in the wider central Singapore area.",
+    travel: "From Blk 110: Take Bus 195 to Bukit Merah Int / transfer or ~10 mins via car (~2.4 km)",
   },
   {
     name: "Blangah Rise Primary School",
     image: "/images/blangah-rise-pri.webp",
-    description:
-      "A primary school serving the Blangah Rise and surrounding residential neighbourhoods.",
+    description: "A primary school serving the Blangah Rise and surrounding residential neighbourhoods.",
+    travel: "From Blk 110: ~8 mins via car or local taxi connections (~2.8 km)",
   },
   {
     name: "Radin Mas Primary School",
     image: "/images/radin-mas-pri.webp",
-    description:
-      "A primary school option serving families in the Radin Mas and Telok Blangah area.",
+    description: "A primary school option serving families in the Radin Mas and Telok Blangah area.",
+    travel: "From Blk 110: ~10 mins via car or connecting buses (~2.2 km)",
   },
   {
     name: "Gan Eng Seng Primary School",
     image: "/images/gan-eng-seng-pri.webp",
-    description:
-      "A primary school option within the wider neighbourhood network.",
+    description: "A primary school option within the wider neighbourhood network.",
+    travel: "From Blk 110: ~9 mins via car or public transit (~2.0 km)",
   },
   {
     name: "CHIJ (Kellock) Primary",
     image: "/images/chij-kellock-pri.webp",
-    description:
-      "A girls' primary school option serving families in the central Singapore area.",
+    description: "A girls' primary school option serving families in the central Singapore area.",
+    travel: "From Blk 110: ~12 mins via car or connecting routes (~3.3 km)",
   },
   {
     name: "Alexandra Primary School",
     image: "/images/alexandra-pri.webp",
-    description:
-      "A primary school option conveniently located within the Alexandra and Queenstown area.",
+    description: "A primary school option conveniently located within the Alexandra and Queenstown area.",
+    travel: "From Blk 110: Take Bus 195 to Alexandra Road, ~8 mins duration (~2.5 km)",
   },
 ];
 
 const secondarySchools = [
   {
-    name: "New Town Secondary School",
-    image: "/images/new-town-sec.webp",
-    description:
-      "A secondary school option serving families in the wider Queenstown and central-western area.",
+    name: "Queensway Secondary School",
+    image: "/images/queensway-sec.webp",
+    description: "An established institution in the nearby Queenstown neighborhood focusing on holistic development and character building.",
+    travel: "From Blk 110: ~10 mins via car or connecting buses (~3.9 km)",
+  },
+  {
+    name: "Queenstown Secondary School",
+    image: "/images/queenstown-sec.webp",
+    description: "Conveniently accessible school with a rich heritage in academic, sporting, and technical education tracks.",
+    travel: "From Blk 110: ~12 mins via car or public transit (~3.1 km)",
+  },
+  {
+    name: "Outram Secondary School",
+    image: "/images/outram-sec.webp",
+    description: "Located within short transit distance, offering comprehensive academic paths and specialized co-curricular programs.",
+    travel: "From Blk 110: ~15 mins via public transport links (~4.2 km)",
+  },
+  {
+    name: "Anglo-Chinese School (Independent)",
+    image: "/images/anglo-chinese-sch.webp",
+    description: "A premier institution renowned for its academic excellence, offering both Express and Integrated Programme (IP) pathways.",
+    travel: "From Blk 110: Take Bus 175 to Dover Rd or Bus 57/175 to Labrador Park MRT, switch to Circle Line to Buona Vista / East-West Line to Dover (~20 mins / ~4.5 km)",
+  },
+  {
+    name: "Fairfield Methodist School (Secondary)",
+    image: "/images/fairfield-methodist-sec.webp",
+    description: "A popular choice known for its strong values-driven culture, vibrant community, and robust co-curricular options.",
+    travel: "From Blk 110: ~15 mins via car or connecting MRT via Buona Vista/One-North (~4.2 km)",
   },
   {
     name: "Gan Eng Seng School",
     image: "/images/gan-eng-seng-sec.webp",
-    description:
-      "An established secondary school option within the wider neighbourhood network.",
-  },
-  {
-    name: "Fairfield Methodist Secondary School",
-    image: "/images/fairfield-methodist-sec.webp",
-    description:
-      "A secondary school option serving families in the central-western part of Singapore.",
+    description: "An established secondary school option within the wider neighbourhood network.",
+    travel: "From Blk 110: ~12 mins via bus or car (~4.0 km)",
   },
   {
     name: "Crescent Girls' School",
     image: "/images/crescent-girls.webp",
-    description:
-      "A girls' secondary school option within the wider central Singapore education network.",
+    description: "A girls' secondary school option within the wider central Singapore education network.",
+    travel: "From Blk 110: ~10 mins via car (~3.6 km)",
   },
   {
     name: "Bukit Merah Secondary School",
     image: "/images/bukit-merah-sec.webp",
-    description:
-      "A secondary school option serving families in the Bukit Merah and surrounding area.",
+    description: "A secondary school option serving families in the Bukit Merah and surrounding area.",
+    travel: "From Blk 110: Take Bus 57 to Bukit Merah (~7 mins, ~2.2 km)",
   },
 ];
 
 const juniorColleges = [
   {
-    name: "Anglo-Chinese School",
-    image: "/images/anglo-chinese_sch.webp",
-    description:
-      "An established educational institution within the wider network of schools serving the central Singapore area.",
+    name: "Anglo-Chinese Junior College",
+    image: "/images/anglo-chinese-junior-college.webp",
+    description: "A premier junior college offering rigorous pre-university education and dynamic holistic development programmes located along Dover Road.",
+    travel: "From Blk 110: Take Bus 175 direct or connect via Buona Vista network (~25 mins, ~4.5 km)",
+  },
+  {
+    name: "Anglo-Chinese School (Independent)",
+    image: "/images/anglo-chinese-sch.webp",
+    description: "Offering its legacy pre-university and IB senior secondary pathway options located along Dover Road.",
+    travel: "From Blk 110: Take Bus 175 direct or connect via Buona Vista network (~22 mins, ~4.5 km)",
+  },
+  {
+    name: "Hwa Chong Institution",
+    image: "/images/hwa-chong-institution.webp",
+    description: "A world-renowned institution offering a vibrant bilingual and bicultural environment with exceptional pre-university programmes.",
+    travel: "From Blk 110: ~13 mins via car or bus transit links (~28 mins, ~11.0 km)",
   },
 ];
 
 const polytechnics = [
   {
     name: "Singapore Polytechnic",
-    description:
-      "A leading polytechnic offering a broad range of diploma programmes and applied learning pathways.",
+    image: "/images/singapore-polytechnic.webp",
+    description: "A leading polytechnic offering a broad range of diploma programmes and applied learning pathways.",
+    travel: "From Blk 110: Take Bus 195 to Queenstown MRT, transfer to East-West Line, alight at Dover MRT (~20 mins)",
   },
   {
     name: "Ngee Ann Polytechnic",
-    description:
-      "A major polytechnic offering a wide range of diploma programmes and applied education opportunities.",
+    image: "/images/ngee-ann-polytechnic.webp",
+    description: "A major polytechnic offering a wide range of diploma programmes and applied education opportunities.",
+    travel: "From Blk 110: ~18 mins via car via AYE expressway (~9 km)",
   },
 ];
 
-const universities = [
+const university = [
   {
     name: "National University of Singapore",
     image: "/images/nus.webp",
-    description:
-      "Singapore's leading comprehensive university, located at Kent Ridge and accessible from the wider Depot Heights area.",
+    description: "Singapore's leading comprehensive university, located at Kent Ridge and accessible from the wider Depot Heights area.",
+    travel: "From Blk 110: ~15-20 mins via car or direct connecting buses down West Coast highway paths (~8.0 km)",
   },
 ];
 
-const educationCategories = [
+const internationalSchools = [
   {
-    title: "International Schools",
-    text:
-      "Families seeking an international curriculum can also consider international-school options across Singapore. Availability, curriculum and admissions requirements vary by institution.",
+    name: "North London Collegiate School (NLCS) Singapore",
+    image: "/images/north-london-collegiate.webp",
+    description: "Located just opposite Depot Heights along Depot Road. This prestigious British international school offers a rigorous, high-quality academic environment following the IB continuum.",
+    travel: "From Blk 110: ~5 mins walk across Depot Road or 2 mins drive (~0.5 km)",
   },
   {
-    title: "Specialised Institutions",
-    text:
-      "The wider Singapore education network also includes specialised institutions and schools serving different learning pathways and educational needs.",
+    name: "ISS International School",
+    image: "/images/iss.webp",
+    description: "Situated nearby at Preston Road, this established institution delivers a comprehensive International Baccalaureate (IB) education profile for all grade levels.",
+    travel: "From Blk 110: ~5-8 mins via car down Depot Road/Preston Road (~2.0 km)",
   },
   {
-    title: "Preschool & Childcare",
-    text:
-      "Families with younger children have access to preschool and childcare options across the surrounding residential neighbourhoods. Availability and admissions should be checked directly with individual operators.",
+    name: "Knightsbridge House International School",
+    image: "/images/knightsbridge-house.webp",
+    description: "Operating within Bukit Merah Central (~1.5km away), providing a highly reputable and cost-accessible Cambridge international curriculum.",
+    travel: "From Blk 110: Take Bus 57 to Bukit Merah Central (~5 mins)",
+  },
+  {
+    name: "Shelton College International",
+    image: "/images/shelton-college.webp",
+    description: "Located nearby on Telok Blangah Rise (~2km away), specializing in private foundational secondary pathways alongside diploma and degree certifications.",
+    travel: "From Blk 110: ~6 mins via car or local shuttle routes (~2.0 km)",
+  },
+  {
+    name: "Management Development Institute of Singapore (MDIS)",
+    image: "/images/mdis.webp",
+    description: "A prominent private education institution providing professional certifications, diplomas, and degree programs across multiple disciplines.",
+    travel: "From Blk 110: Accessible via central connecting routes (~15-20 mins)",
+  },
+];
+
+const preschools = [
+  {
+    name: "First Steps Preschool",
+    location: "Depot Heights Shopping Centre #02-02",
+    description: "Conveniently located right inside the estate's central commercial plaza, offering easy morning and evening drop-offs for residents.",
+    travel: "From Blk 110: 1-3 mins walk via sheltered estate linkways",
+  },
+  {
+    name: "Appleland PlayHouse",
+    location: "104C Depot Road #01-03",
+    description: "Situated at the foot of Blk 104C, providing early childhood care and play-based foundational learning close to home.",
+    travel: "From Blk 110: 1-3 mins walk within the precinct",
+  },
+  {
+    name: "Little Footprints Preschool",
+    location: "3 Depot Close #02-01",
+    description: "Nestled adjacent to the residential blocks, offering comprehensive infant care and childcare programs in a nurturing environment.",
+    travel: "From Blk 110: ~5 mins walk across Depot Close path (~0.5 km)",
   },
 ];
 ---
@@ -132,43 +198,27 @@ const educationCategories = [
 <Layout
   title={pageTitle}
   description={pageDescription}
-  canonical="/schools"
-  image="/images/depot-heights-hero.webp"
-  imageAlt="Depot Heights residential estate"
+  canonical="/schools-education"
+  image="/images/schools-education-hero.webp"
+  imageAlt="Schools near Depot Heights"
 >
   <section class="hero">
     <div class="hero-content">
       <p class="eyebrow">DEPOT HEIGHTS · SCHOOLS & EDUCATION</p>
-
       <h1>
         Learning
         <span>within reach.</span>
       </h1>
-
       <p class="hero-text">
-        Families at Depot Heights benefit from access to a broad education
-        network, spanning primary and secondary schools, junior college,
-        polytechnic and university options, together with preschool, childcare
-        and other educational pathways across the wider area.
+        Starting seamlessly from <strong>Bus Stop Blk 110 (Depot Road)</strong>, families at Depot Heights benefit from direct access via public buses (57, 175, 195) to a broad educational network spanning primary schools, secondary schools, junior colleges, polytechnics, and university options.
       </p>
-
       <div class="hero-actions">
-        <a class="button button-primary" href="#primary-schools">
-          Explore schools
-        </a>
-
-        <a class="button button-secondary" href="/">
-          Back to neighbourhood guide
-        </a>
+        <a class="button button-primary" href="#primary-schools">Explore schools</a>
+        <a class="button button-secondary" href="/">Back to neighbourhood guide</a>
       </div>
     </div>
-
     <div class="hero-image">
-      <img
-        src="/images/depot-heights-hero.webp"
-        alt="Depot Heights residential estate"
-        loading="eager"
-      />
+      <img src="/images/schools-education-hero.webp" alt="Schools near Depot Heights" loading="eager" decoding="async" />
     </div>
   </section>
 
@@ -176,301 +226,241 @@ const educationCategories = [
     <div class="intro-grid">
       <div class="section-heading">
         <p class="eyebrow">SCHOOLS & EDUCATION</p>
-
-        <h2>
-          A broad education network for families at different stages of
-          learning.
-        </h2>
+        <h2>A broad education network connected straight from Depot Road.</h2>
       </div>
-
       <div class="intro-copy">
         <p>
-          The surrounding area offers access to schools and educational
-          institutions across different levels, from primary and secondary
-          education to junior college, polytechnic and university.
+          Boarding from Bus Stop Blk 110 connects residents smoothly to major transport nodes like Labrador Park MRT, Queenstown MRT, and Bukit Merah Central, mapping out straightforward travel to schools across the island.
         </p>
-
         <p>
-          Families can also explore preschool, childcare, international-school
-          and specialised education pathways across the wider Singapore
-          education network.
+          Explore the updated travel distances, durations, and transit paths below tailored explicitly for journeys starting right outside your doorstep at Block 110.
         </p>
       </div>
     </div>
-
-    <div class="highlight-grid">
-      <article class="highlight-card">
-        <span class="highlight-icon">🏫</span>
-
-        <h3>Primary</h3>
-
-        <p>
-          Primary-school options serving families across the wider Depot
-          Heights and surrounding neighbourhood network.
-        </p>
-      </article>
-
-      <article class="highlight-card">
-        <span class="highlight-icon">📚</span>
-
-        <h3>Secondary</h3>
-
-        <p>
-          Secondary-school options across the wider central and southern
-          Singapore education network.
-        </p>
-      </article>
-
-      <article class="highlight-card">
-        <span class="highlight-icon">🎓</span>
-
-        <h3>Tertiary</h3>
-
-        <p>
-          Junior colleges, polytechnics and university pathways are accessible
-          across the wider education network.
-        </p>
-      </article>
-
-      <article class="highlight-card">
-        <span class="highlight-icon">👨‍👩‍👧</span>
-
-        <h3>Early Learning</h3>
-
-        <p>
-          Preschool and childcare options are available across surrounding
-          residential neighbourhoods.
-        </p>
-      </article>
-    </div>
-  </section>
+    </section>
 
   <section class="section education-section" id="primary-schools">
     <div class="section-heading">
       <p class="eyebrow">01 · PRIMARY SCHOOLS</p>
-
       <h2>Primary Schools</h2>
-
-      <p>
-        Primary-school options in the wider Depot Heights and surrounding
-        neighbourhood network.
-      </p>
+      <p>Primary options mapped with travel details starting from Bus Stop Blk 110, Depot Road.</p>
     </div>
-
     <div class="cards">
-      {
-        primarySchools.map((school) => (
-          <article class="card">
-            <div class="card-image">
-              <img
-                src={school.image}
-                alt={school.name}
-                loading="lazy"
-              />
-            </div>
-
-            <div class="card-body">
-              <h3>{school.name}</h3>
-
-              <p>{school.description}</p>
-            </div>
-          </article>
-        ))
-      }
+      {primarySchools.map((school) => (
+        <article class="card">
+          <button class="card-image thumb-trigger" type="button" data-full={school.image} aria-label={`Enlarge photo of ${school.name}`}>
+            <img src={school.image} alt={school.name} loading="lazy" decoding="async" />
+            <span class="zoom-hint">Click to enlarge</span>
+          </button>
+          <div class="card-body">
+            <h3>{school.name}</h3>
+            <p class="travel-badge">{school.travel}</p>
+            <p>{school.description}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
   <section class="section education-section alt-section" id="secondary-schools">
     <div class="section-heading">
       <p class="eyebrow">02 · SECONDARY SCHOOLS</p>
-
       <h2>Secondary Schools</h2>
-
-      <p>
-        Secondary-school options serving families across the wider central and
-        southern Singapore education network.
-      </p>
+      <p>Secondary options with transit guides originating from Depot Road.</p>
     </div>
-
     <div class="cards">
-      {
-        secondarySchools.map((school) => (
-          <article class="card">
-            <div class="card-image">
-              <img
-                src={school.image}
-                alt={school.name}
-                loading="lazy"
-              />
-            </div>
-
-            <div class="card-body">
-              <h3>{school.name}</h3>
-
-              <p>{school.description}</p>
-            </div>
-          </article>
-        ))
-      }
+      {secondarySchools.map((school) => (
+        <article class="card">
+          <button class="card-image thumb-trigger" type="button" data-full={school.image} aria-label={`Enlarge photo of ${school.name}`}>
+            <img src={school.image} alt={school.name} loading="lazy" decoding="async" />
+            <span class="zoom-hint">Click to enlarge</span>
+          </button>
+          <div class="card-body">
+            <h3>{school.name}</h3>
+            <p class="travel-badge">{school.travel}</p>
+            <p>{school.description}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
   <section class="section education-section" id="junior-colleges">
     <div class="section-heading">
-      <p class="eyebrow">03 · JUNIOR COLLEGES</p>
-
-      <h2>Junior Colleges</h2>
-
-      <p>
-        Junior-college pathways available within the wider education network.
-      </p>
+      <p class="eyebrow">03 · JUNIOR COLLEGE</p>
+      <h2>Junior College</h2>
+      <p>Pre-university pathways including Anglo-Chinese Junior College and Hwa Chong Institution.</p>
     </div>
-
-    <div class="cards single-card-grid">
-      {
-        juniorColleges.map((school) => (
-          <article class="card">
-            <div class="card-image">
-              <img
-                src={school.image}
-                alt={school.name}
-                loading="lazy"
-              />
-            </div>
-
-            <div class="card-body">
-              <h3>{school.name}</h3>
-
-              <p>{school.description}</p>
-            </div>
-          </article>
-        ))
-      }
+    <div class="cards">
+      {juniorColleges.map((school) => (
+        <article class="card">
+          <button class="card-image thumb-trigger" type="button" data-full={school.image} aria-label={`Enlarge photo of ${school.name}`}>
+            <img src={school.image} alt={school.name} loading="lazy" decoding="async" />
+            <span class="zoom-hint">Click to enlarge</span>
+          </button>
+          <div class="card-body">
+            <h3>{school.name}</h3>
+            <p class="travel-badge">{school.travel}</p>
+            <p>{school.description}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
   <section class="section education-section alt-section" id="polytechnics">
     <div class="section-heading">
       <p class="eyebrow">04 · POLYTECHNICS</p>
-
       <h2>Polytechnics</h2>
-
-      <p>
-        Polytechnic education provides practical, industry-focused pathways
-        through a wide range of diploma programmes.
-      </p>
+      <p>Featuring Singapore Polytechnic and Ngee Ann Polytechnic with travel directions from Blk 110.</p>
     </div>
-
-    <div class="polytechnic-grid">
-      {
-        polytechnics.map((polytechnic) => (
-          <article class="polytechnic-card">
-            <span class="card-number">
-              POLYTECHNIC
-            </span>
-
+    <div class="cards">
+      {polytechnics.map((polytechnic) => (
+        <article class="card">
+          <button class="card-image thumb-trigger" type="button" data-full={polytechnic.image} aria-label={`Enlarge photo of ${polytechnic.name}`}>
+            <img src={polytechnic.image} alt={polytechnic.name} loading="lazy" decoding="async" />
+            <span class="zoom-hint">Click to enlarge</span>
+          </button>
+          <div class="card-body">
             <h3>{polytechnic.name}</h3>
-
+            <p class="travel-badge">{polytechnic.travel}</p>
             <p>{polytechnic.description}</p>
-          </article>
-        ))
-      }
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
-  <section class="section education-section" id="universities">
+  <section class="section education-section" id="university">
     <div class="section-heading">
-      <p class="eyebrow">05 · UNIVERSITIES</p>
-
-      <h2>Universities</h2>
-
-      <p>
-        Higher-education opportunities are also accessible through Singapore's
-        established university network.
-      </p>
+      <p class="eyebrow">05 · UNIVERSITY</p>
+      <h2>University</h2>
+      <p>Higher-education connections from Depot Heights to NUS and tertiary networks.</p>
     </div>
-
     <div class="cards single-card-grid">
-      {
-        universities.map((university) => (
-          <article class="card">
-            <div class="card-image">
-              <img
-                src={university.image}
-                alt={university.name}
-                loading="lazy"
-              />
-            </div>
-
-            <div class="card-body">
-              <h3>{university.name}</h3>
-
-              <p>{university.description}</p>
-            </div>
-          </article>
-        ))
-      }
+      {university.map((uni) => (
+        <article class="card">
+          <button class="card-image thumb-trigger" type="button" data-full={uni.image} aria-label={`Enlarge photo of ${uni.name}`}>
+            <img src={uni.image} alt={uni.name} loading="lazy" decoding="async" />
+            <span class="zoom-hint">Click to enlarge</span>
+          </button>
+          <div class="card-body">
+            <h3>{uni.name}</h3>
+            <p class="travel-badge">{uni.travel}</p>
+            <p>{uni.description}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
-  <section class="section education-section alt-section" id="other-education">
+  <section class="section education-section alt-section" id="international-schools">
     <div class="section-heading">
-      <p class="eyebrow">06 · 07 · 08 · OTHER EDUCATION OPTIONS</p>
-
-      <h2>More Education Options</h2>
-
-      <p>
-        Beyond the photographed schools and institutions, families can also
-        explore other education pathways available across Singapore.
-      </p>
+      <p class="eyebrow">06 · INTERNATIONAL & PRIVATE SCHOOLS</p>
+      <h2>International Schools</h2>
+      <p>Families seeking international curricula or private institutions can also consider these options across Singapore.</p>
     </div>
-
-    <div class="text-grid">
-      {
-        educationCategories.map((category) => (
-          <article class="text-card">
-            <h3>{category.title}</h3>
-
-            <p>{category.text}</p>
-          </article>
-        ))
-      }
+    <div class="cards">
+      {internationalSchools.map((item) => (
+        <article class="card">
+          <button class="card-image thumb-trigger" type="button" data-full={item.image} aria-label={`Enlarge photo of ${item.name}`}>
+            <img src={item.image} alt={item.name} loading="lazy" decoding="async" />
+            <span class="zoom-hint">Click to enlarge</span>
+          </button>
+          <div class="card-body">
+            <h3>{item.name}</h3>
+            <p class="travel-badge">{item.travel}</p>
+            <p>{item.description}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
+
+  <section class="section education-section" id="preschool-childcare">
+    <div class="section-heading">
+      <p class="eyebrow">07 · PRESCHOOL & CHILDCARE</p>
+      <h2>Preschool & Childcare</h2>
+      <p>Families with younger children have access to preschool and childcare options across the surrounding residential neighbourhoods.</p>
+    </div>
+    <div class="cards">
+      {preschools.map((item) => (
+        <article class="card text-only-card">
+          <div class="card-body">
+            <h3>{item.name}</h3>
+            {item.location && <p class="location-badge">{item.location}</p>}
+            <p class="travel-badge">{item.travel}</p>
+            <p>{item.description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- Native HTML Dialog Modal -->
+  <dialog id="imageModal" class="slideshow-dialog" aria-label="Enlarged image preview">
+    <div class="dialog-controls">
+      <button class="dialog-close" type="button" aria-label="Close modal" data-close>×</button>
+    </div>
+    <div class="dialog-body">
+      <img class="dialog-main-img" id="modalImage" src="" alt="Enlarged view" loading="lazy" decoding="async" />
+    </div>
+  </dialog>
 
   <section class="closing-section">
     <div class="closing-inner">
       <p class="eyebrow">PLANNING FOR EDUCATION</p>
-
-      <h2>
-        Education options for families at different stages of learning.
-      </h2>
-
+      <h2>Seamless commuting from Bus Stop Blk 110, Depot Road.</h2>
       <p>
-        School admission, enrolment availability, distance and eligibility
-        requirements can change over time. Families should check the relevant
-        school's official information and current admission requirements when
-        making education decisions.
+        School admission, enrolment availability, distance and eligibility requirements can change over time. Families should check the relevant school's official information and current admission requirements when making education decisions.
       </p>
-
       <div class="closing-actions">
-        <a class="button button-primary" href="/location">
-          Explore Location
-        </a>
-
-        <a class="button button-secondary" href="/transport">
-          Explore Transport
-        </a>
+        <a class="button button-primary" href="/location">Explore Location</a>
+        <a class="button button-secondary" href="/transport">Explore Transport</a>
       </div>
     </div>
   </section>
 </Layout>
 
-<style>
-  :global(*) {
-    box-sizing: border-box;
-  }
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("imageModal") as HTMLDialogElement;
+    const modalImg = document.getElementById("modalImage") as HTMLImageElement;
+    const closeBtn = modal?.querySelector("[data-close]");
 
+    document.querySelectorAll(".thumb-trigger").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const fullSrc = trigger.getAttribute("data-full");
+        if (fullSrc && modal && modalImg) {
+          modalImg.src = fullSrc;
+          modal.showModal();
+          document.body.style.overflow = "hidden";
+        }
+      });
+    });
+
+    const closeModal = () => {
+      if (modal) {
+        modal.close();
+        document.body.style.overflow = "";
+      }
+    };
+
+    closeBtn?.addEventListener("click", closeModal);
+
+    modal?.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    modal?.addEventListener("cancel", () => {
+      document.body.style.overflow = "";
+    });
+  });
+</script>
+
+<style>
   .hero {
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
@@ -533,10 +523,8 @@ const educationCategories = [
     border-radius: 999px;
     font-size: 14px;
     font-weight: 800;
-    transition:
-      transform 0.2s ease,
-      opacity 0.2s ease,
-      background 0.2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+    text-decoration: none;
   }
 
   .button:hover {
@@ -682,6 +670,12 @@ const educationCategories = [
     background: #ffffff;
     border: 1px solid rgba(24, 49, 38, 0.08);
     box-shadow: 0 12px 32px rgba(24, 47, 34, 0.06);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-only-card {
+    justify-content: flex-start;
   }
 
   .card-image {
@@ -689,6 +683,11 @@ const educationCategories = [
     height: 260px;
     overflow: hidden;
     background: #dce7dd;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    display: block;
   }
 
   .card-image img {
@@ -699,12 +698,31 @@ const educationCategories = [
     transition: transform 0.45s ease;
   }
 
-  .card:hover .card-image img {
+  .card-image:hover img {
     transform: scale(1.04);
+  }
+
+  .zoom-hint {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .card-image:hover .zoom-hint {
+    opacity: 1;
   }
 
   .card-body {
     padding: 26px;
+    flex: 1;
   }
 
   .card-body h3 {
@@ -713,75 +731,101 @@ const educationCategories = [
     line-height: 1.15;
   }
 
-  .card-body p {
-    margin: 15px 0 0;
-    color: #5d6b64;
-    font-size: 16px;
-    line-height: 1.8;
-  }
-
-  .polytechnic-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-  }
-
-  .polytechnic-card {
-    min-height: 240px;
-    padding: 30px;
-    border-radius: 20px;
-    background: #ffffff;
-    border: 1px solid rgba(24, 49, 38, 0.08);
-    box-shadow: 0 12px 32px rgba(24, 47, 34, 0.06);
-  }
-
-  .card-number {
-    display: block;
-    margin-bottom: 15px;
-    color: #2b6e52;
+  .travel-badge,
+  .location-badge {
+    display: inline-block;
+    margin: 10px 0 0;
     font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: #2b6e52;
+    background: #e8f0e8;
+    padding: 4px 10px;
+    border-radius: 6px;
   }
 
-  .polytechnic-card h3 {
-    margin: 0;
-    font-size: 28px;
-    line-height: 1.15;
+  .location-badge {
+    margin-right: 6px;
+    background: #f0f4f1;
+    color: #405248;
   }
 
-  .polytechnic-card p {
-    margin: 15px 0 0;
+  .card-body p:not(.travel-badge):not(.location-badge) {
+    margin: 12px 0 0;
     color: #5d6b64;
     font-size: 16px;
     line-height: 1.8;
   }
 
-  .text-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-  }
-
-  .text-card {
-    min-height: 220px;
-    padding: 30px;
-    border-radius: 20px;
-    background: #ffffff;
-    border: 1px solid rgba(24, 49, 38, 0.08);
-  }
-
-  .text-card h3 {
+  /* Full-Screen Slideshow Dialog Modal */
+  .slideshow-dialog {
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100%;
+    height: 100%;
     margin: 0;
-    font-size: 28px;
-    line-height: 1.15;
+    padding: 0;
+    background: transparent;
+    border: none;
   }
 
-  .text-card p {
-    margin: 15px 0 0;
-    color: #5d6b64;
-    font-size: 16px;
-    line-height: 1.8;
+  .slideshow-dialog::backdrop {
+    background: rgba(7, 20, 15, 0.92);
+    backdrop-filter: blur(8px);
+    cursor: zoom-out;
+  }
+
+  .slideshow-dialog[open] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dialog-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 18px;
+    z-index: 10;
+  }
+
+  .dialog-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px 40px;
+    min-height: 0;
+  }
+
+  .dialog-main-img {
+    max-width: 90%;
+    max-height: calc(100vh - 140px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .dialog-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(19, 50, 39, 0.78);
+    color: #ffffff;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 30px;
+    line-height: 1;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 5;
+  }
+
+  .dialog-close:hover {
+    background: #275a43;
+    transform: scale(1.05);
   }
 
   .closing-section {
@@ -832,8 +876,7 @@ const educationCategories = [
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .cards,
-    .text-grid {
+    .cards {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
@@ -847,10 +890,6 @@ const educationCategories = [
     .intro-grid {
       grid-template-columns: 1fr;
       gap: 35px;
-    }
-
-    .polytechnic-grid {
-      grid-template-columns: 1fr;
     }
   }
 
@@ -873,8 +912,7 @@ const educationCategories = [
     }
 
     .highlight-grid,
-    .cards,
-    .text-grid {
+    .cards {
       grid-template-columns: 1fr;
     }
 

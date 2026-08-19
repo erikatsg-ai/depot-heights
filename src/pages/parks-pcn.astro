@@ -1,0 +1,664 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Parks & PCN Near Depot Heights | Bukit Merah Green Trails Guide";
+const description = "Explore the best parks, hidden shortcuts, and park connectors (PCN) near Depot Heights, Singapore. Discover direct trails to Telok Blangah Hill, Henderson Waves, HortPark, and the Rail Corridor.";
+const canonical = "/parks-pcn";
+
+const parksData = [
+  {
+    title: "Telok Blangah Hill & Neighbourhood Shortcuts",
+    subtitle: "Your backyard gateway to secondary forests and elevated canopy walks",
+    description: "For residents living in Depot Heights, Telok Blangah Hill is practically in your backyard. Hidden neighborhood footpaths and stairways provide a quick, seamless ascent straight into the park's tranquil secondary forest, terraced gardens, and the iconic elevated Forest Walk canopy bridge.",
+    highlights: [
+      "Direct walking access via Depot Road and Henderson neighborhood trails.",
+      "Immersive elevated metal boardwalks traversing the jungle canopy.",
+      "Peaceful vantage points overlooking Bukit Merah and the southern coast."
+    ],
+    images: [
+      { src: "/images/shortcut-telok-blangah-hill(0).webp", alt: "Neighborhood shortcut trail leading directly to Telok Blangah Hill near Depot Heights" },
+      { src: "/images/shortcut-telok-blangah-hill(1).webp", alt: "Lush nature trail greenery connecting Depot Heights residential blocks" },
+      { src: "/images/shortcut-telok-blangah-hill(2).webp", alt: "Pedestrian pathways linking Depot Heights to Telok Blangah Hill park grounds" },
+      { src: "/images/telok-blangah-hill-park(0).webp", alt: "Telok Blangah Hill Park beautifully manicured landscaped grounds" },
+      { src: "/images/telok-blangah-hill-park(1).webp", alt: "Scenic viewpoints and resting pavilions at Telok Blangah Hill" },
+      { src: "/images/telok-blangah-forest-walk(1).webp", alt: "Elevated metal boardwalk of the Forest Walk cutting through dense trees" },
+      { src: "/images/telok-blangah-forest-walk(2).webp", alt: "Immersive nature view and bird watching along the Forest Walk" },
+      { src: "/images/telok-blangah-forest-walk(3).webp", alt: "Canopy level perspective deep inside the Telok Blangah secondary forest" }
+    ]
+  },
+  {
+    title: "HortPark via Alexandra Arch",
+    subtitle: "Singapore's premier gardening lifestyle hub and botanical showcase",
+    description: "A short stroll down towards Alexandra Road brings you to the striking Alexandra Arch bridge, which serves as a seamless gateway into HortPark. Known as Singapore's gardening lifestyle hub, it connects seamlessly into the Southern Ridges trail network.",
+    highlights: [
+      "Award-winning themed gardens, butterfly enclosures, and greenhouses.",
+      "Connected directly via the architectural marvel of Alexandra Arch.",
+      "Spacious lawns ideal for morning jogs, family walks, and weekend picnics."
+    ],
+    images: [
+      { src: "/images/alexandra-arch-hortpark.webp", alt: "Alexandra Arch pedestrian bridge connecting Alexandra Road to HortPark" },
+      { src: "/images/hortpark(0).webp", alt: "HortPark grand entrance and visitor center gardens" },
+      { src: "/images/hortpark(1).webp", alt: "Themed floral gardens and manicured lawns at HortPark" },
+      { src: "/images/hortpark(2).webp", alt: "Greenhouse structures and specialized botanical displays" },
+      { src: "/images/hortpark(3).webp", alt: "Relaxing shaded pathways meandering through HortPark greenery" },
+      { src: "/images/hortpark(4).webp", alt: "Open spaces and recreational community areas at HortPark" },
+      { src: "/images/hortpark(5).webp", alt: "Horticultural architectural displays and garden showcases" }
+    ]
+  },
+  {
+    title: "The Canopy Walk",
+    subtitle: "Suspended walkway bridging HortPark to Kent Ridge Park",
+    description: "Stretching between HortPark and Kent Ridge Park, the Canopy Walk lets you wander high above the ravine floor on a safe, elevated wooden boardwalk. It is a favorite among Depot Heights nature lovers looking for an easy yet immersive jungle trek.",
+    highlights: [
+      "Elevated wooden platform offering eye-level views of native bird life.",
+      "Fully shaded path providing a cool microclimate even on warm afternoons.",
+      "Connects seamlessly between HortPark and Kent Ridge historical sites."
+    ],
+    images: [
+      { src: "/images/canopy-walk(1).webp", alt: "Elevated wooden walkway of the Canopy Walk trail" },
+      { src: "/images/canopy-walk(2).webp", alt: "Lush forest canopy vistas from the suspended walkway bridge" },
+      { src: "/images/canopy-walk(3).webp", alt: "Quiet pedestrian trail completely surrounded by dense tropical foliage" }
+    ]
+  },
+  {
+    title: "Kent Ridge Park",
+    subtitle: "Historical ridge terrain rich in biodiversity and World War II heritage",
+    description: "Rich in WWII heritage and untouched secondary forest, Kent Ridge Park offers a rugged environment for runners and history buffs alike. Easily integrated into a longer loop starting from Depot Heights.",
+    highlights: [
+      "Historical World War II plaque trails and old defense remnants.",
+      "Quiet reflection ponds teeming with local aquatic wildlife.",
+      "Rugged dirt tracks and paved slopes offering a great workout."
+    ],
+    images: [
+      { src: "/images/kent-ridge-park(1).webp", alt: "Kent Ridge Park reflective ponds and natural wetland habitat" },
+      { src: "/images/kent-ridge-park(2).webp", alt: "Historical markers and diverse flora at Kent Ridge Park" },
+      { src: "/images/kent-ridge-park(3).webp", alt: "Shaded walking tracks winding through dense woodland" },
+      { src: "/images/kent-ridge-park(4).webp", alt: "Open grassy lawns and fitness spots at Kent Ridge Park" },
+      { src: "/images/kent-ridge-park(5).webp", alt: "Biodiversity rich ridge landscape in southern Singapore" }
+    ]
+  },
+  {
+    title: "Mount Faber Park & Henderson Waves",
+    subtitle: "Iconic wave architecture, sweeping skyline vistas, and hilltop relaxation",
+    description: "Walk across the stunning wave-form architecture of Henderson Waves—Singapore's highest pedestrian bridge—from Telok Blangah Hill straight into Mount Faber Park for majestic skyline and harbor views.",
+    highlights: [
+      "Breathtaking sunset and night views over the southern islands and city.",
+      "The architectural waves of Henderson Waves provide amazing photo ops.",
+      "Abundant food and beverage choices at Faber Peak after your hike."
+    ],
+    images: [
+      { src: "/images/henderson-waves.webp", alt: "Iconic wooden curved ribs of Henderson Waves pedestrian bridge" },
+      { src: "/images/henderson-wave-birdview.webp", alt: "Bird's eye perspective of Henderson Waves floating above the forest canopy" },
+      { src: "/images/mount-faber-park(1).webp", alt: "Mount Faber Park peak overview and shaded walking paths" },
+      { src: "/images/mount-faber-park(2).webp", alt: "Panoramic vistas looking out towards Singapore's southern coast" },
+      { src: "/images/mount-faber-park(3).webp", alt: "Lush hillside landscape and lush slopes at Mount Faber Park" },
+      { src: "/images/mount-faber-park(4).webp", alt: "Cable car lines and thick foliage surrounding Mount Faber peak" },
+      { src: "/images/mount-faber-park(5).webp", alt: "Peaceful resting shelters and gazebos along Mount Faber trails" }
+    ]
+  },
+  {
+    title: "Labrador Nature Reserve & Coastal Walk",
+    subtitle: "Singapore's only rocky sea cliff nature reserve and maritime history site",
+    description: "Extend your trail south towards the sea. Labrador Park blends coastal tranquility with deep military history, featuring preserved World War II gun batteries and a scenic boardwalk overlooking the sparkling waters.",
+    highlights: [
+      "Only rocky sea-cliff nature reserve on the mainland of Singapore.",
+      "Fascinating historical WWII tunnels, cannons, and machine gun nests.",
+      "Relaxing waterfront promenade with refreshing sea breezes."
+    ],
+    images: [
+      { src: "/images/labrador-park.webp", alt: "Labrador Park coastal view and waterfront path facing the sea" },
+      { src: "/images/labrador-park(1).webp", alt: "Seaside promenade at Labrador Nature Reserve" },
+      { src: "/images/labrador-park(2).webp", alt: "Protected mangrove swamp and rich coastal ecology zone" },
+      { src: "/images/labrador-park(3).webp", alt: "Historical gun battery trails and educational markers at Labrador Park" },
+      { src: "/images/labrador-park(4).webp", alt: "Tranquil boardwalk walking tracks running right beside the water" },
+      { src: "/images/labrador-park(5).webp", alt: "Open green spaces facing busy southern commercial shipping lanes" },
+      { src: "/images/labrador-wwii-remnants.webp", alt: "Preserved WWII historical relics, bunkers, and defense structures" }
+    ]
+  },
+  {
+    title: "Rail Corridor (Alexandra Access)",
+    subtitle: "Continuous green artery and active mobility highway stretching across Singapore",
+    description: "The historic Rail Corridor runs close to the Alexandra precinct, offering Depot Heights residents an uninterrupted, vehicle-free active mobility corridor stretching all the way from Tanjong Pagar down north toward Kranji.",
+    highlights: [
+      "Completely uninterrupted running, cycling, and walking green highway.",
+      "Easy access points from nearby Alexandra Road and surrounding estates.",
+      "Rich industrial heritage mixed with recovering wild woodlands."
+    ],
+    images: [
+      { src: "/images/rail-corridor-aia-alexandra.webp", alt: "Rail Corridor section near Alexandra road crossing and AIA building" },
+      { src: "/images/rail-corridor(0).webp", alt: "Compacted gravel running tracks along the historic Rail Corridor path" },
+      { src: "/images/rail-corridor(1).webp", alt: "Overhead green jungle canopy framing the multi-use active mobility trail" }
+    ]
+  }
+];
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <div class="page-container">
+    <header class="page-header">
+      <span class="badge-category">Nature & Outdoors Guide</span>
+      <h1>Parks & Nature Trails Near Depot Heights</h1>
+      <p>
+        Living in Depot Heights puts you at the unique crossroads of Singapore's best green spaces. 
+        Whether you are looking for a quick neighborhood shortcut into <strong>Telok Blangah Hill</strong>, 
+        a weekend stroll across <strong>Henderson Waves</strong>, or a long-distance run along the 
+        <strong>Rail Corridor</strong>, this guide details the finest nature spots right outside your doorstep. 
+        Click any photo thumbnail to open a full-screen interactive slideshow.
+      </p>
+    </header>
+
+    <main class="parks-content">
+      {parksData.map((park, index) => (
+        <section class="park-section" data-park-gallery>
+          <div class="park-info">
+            <span class="section-number">0{index + 1}</span>
+            <h2>{park.title}</h2>
+            <h3>{park.subtitle}</h3>
+            <p>{park.description}</p>
+            
+            <ul class="highlights-list">
+              {park.highlights.map((highlight) => (
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Clean 2-Thumbnail Grid -->
+          <div class="thumbnail-grid">
+            {park.images.map((img, imgIndex) => (
+              <button 
+                class={`thumb-btn ${imgIndex >= 2 ? "visually-hidden-thumb" : ""}`} 
+                type="button" 
+                data-index={imgIndex}
+                data-src={img.src}
+                data-alt={img.alt}
+                aria-label={`View image ${imgIndex + 1} of ${park.images.length} for ${park.title}`}
+              >
+                <img 
+                  src={img.src} 
+                  alt={img.alt} 
+                  loading={imgIndex < 2 ? "eager" : "lazy"} 
+                  decoding="async" 
+                />
+                {imgIndex === 1 && park.images.length > 2 && (
+                  <span class="badge-count">+{park.images.length - 2} more photos</span>
+                )}
+              </button>
+            ))}
+          </div>
+
+          <!-- Native HTML Dialog Slideshow Modal -->
+          <dialog class="slideshow-dialog" aria-label={`Slideshow for ${park.title}`}>
+            <div class="dialog-controls">
+              <button class="dialog-close" type="button" aria-label="Close slideshow" data-close>×</button>
+            </div>
+            
+            <div class="dialog-body">
+              <button class="nav-btn prev-btn" type="button" aria-label="Previous image" data-prev>‹</button>
+              
+              <div class="dialog-image-container">
+                <img class="dialog-main-img" src="" alt="" loading="lazy" decoding="async" data-dialog-image />
+                <div class="dialog-caption" data-caption></div>
+                <div class="dialog-counter" data-counter>1 / 1</div>
+              </div>
+              
+              <button class="nav-btn next-btn" type="button" aria-label="Next image" data-next>›</button>
+            </div>
+          </dialog>
+        </section>
+      ))}
+    </main>
+  </div>
+</Layout>
+
+<script>
+  document.querySelectorAll("[data-park-gallery]").forEach((section) => {
+    const thumbs = Array.from(section.querySelectorAll(".thumb-btn")) as HTMLButtonElement[];
+    const dialog = section.querySelector(".slideshow-dialog") as HTMLDialogElement;
+    const dialogImg = section.querySelector("[data-dialog-image]") as HTMLImageElement;
+    const dialogCaption = section.querySelector("[data-caption]");
+    const counter = section.querySelector("[data-counter]");
+    const btnClose = section.querySelector("[data-close]");
+    const btnPrev = section.querySelector("[data-prev]");
+    const btnNext = section.querySelector("[data-next]");
+
+    if (!dialog || !dialogImg || thumbs.length === 0) return;
+
+    let currentIndex = 0;
+
+    const updateView = () => {
+      const current = thumbs[currentIndex];
+      const src = current.dataset.src || "";
+      const alt = current.dataset.alt || "";
+      
+      dialogImg.src = src;
+      dialogImg.alt = alt;
+      if (dialogCaption) dialogCaption.textContent = alt;
+      if (counter) counter.textContent = `${currentIndex + 1} / ${thumbs.length}`;
+    };
+
+    const openModal = (index: number) => {
+      currentIndex = index;
+      updateView();
+      dialog.showModal();
+      document.body.style.overflow = "hidden";
+    };
+
+    const closeModal = () => {
+      dialog.close();
+      document.body.style.overflow = "";
+    };
+
+    const nextImage = () => {
+      currentIndex = (currentIndex + 1) % thumbs.length;
+      updateView();
+    };
+
+    const prevImage = () => {
+      currentIndex = (currentIndex - 1 + thumbs.length) % thumbs.length;
+      updateView();
+    };
+
+    thumbs.forEach((thumb, index) => {
+      thumb.addEventListener("click", () => openModal(index));
+    });
+
+    btnClose?.addEventListener("click", closeModal);
+    btnNext?.addEventListener("click", nextImage);
+    btnPrev?.addEventListener("click", prevImage);
+
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) closeModal();
+    });
+
+    dialog.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "Escape") document.body.style.overflow = "";
+    });
+  });
+</script>
+
+<style>
+  .page-container {
+    width: min(1300px, 90vw);
+    margin: 0 auto;
+    padding: 60px 0 100px;
+  }
+
+  .page-header {
+    max-width: 900px;
+    margin-bottom: 60px;
+  }
+
+  .badge-category {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(43, 110, 82, 0.1);
+    color: #2b6e52;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+
+  .page-header h1 {
+    color: #1d2924;
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin: 0 0 20px;
+  }
+
+  .page-header p {
+    color: #4f5f57;
+    font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .parks-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .park-section {
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(24, 49, 38, 0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .park-section:hover {
+    border-color: rgba(43, 110, 82, 0.22);
+    box-shadow: 0 16px 40px rgba(24, 49, 38, 0.06);
+  }
+
+  .park-info {
+    position: relative;
+  }
+
+  .section-number {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #2b6e52;
+    background: rgba(43, 110, 82, 0.08);
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .park-info h2 {
+    color: #1d2924;
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+    font-weight: 900;
+    margin: 0 0 6px;
+    letter-spacing: -0.03em;
+    line-height: 1.25;
+  }
+
+  .park-info h3 {
+    color: #2b6e52;
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    font-weight: 700;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+
+  .park-info p {
+    color: #55665e;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin: 0 0 18px;
+    max-width: 950px;
+  }
+
+  .highlights-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .highlights-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #2b453a;
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
+
+  .check-icon {
+    color: #2b6e52;
+    flex-shrink: 0;
+  }
+
+  /* Exactly 2 Thumbnails Side-by-Side */
+  .thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .visually-hidden-thumb {
+    display: none !important;
+  }
+
+  .thumb-btn {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+    border: none;
+    background: #dfe9e0;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: zoom-in;
+    box-shadow: 0 4px 10px rgba(24, 49, 38, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .thumb-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #dfe9e0;
+    transition: transform 0.45s ease, filter 0.25s ease;
+  }
+
+  .thumb-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(24, 49, 38, 0.15);
+  }
+
+  .thumb-btn:hover img {
+    transform: scale(1.04);
+    filter: brightness(0.94);
+  }
+
+  .thumb-btn:focus-visible {
+    outline: 3px solid #6d9a7c;
+    outline-offset: 3px;
+  }
+
+  .badge-count {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(19, 50, 39, 0.88);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    backdrop-filter: blur(4px);
+  }
+
+  /* Full-Screen Slideshow Dialog Modal */
+  .slideshow-dialog {
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+
+  .slideshow-dialog::backdrop {
+    background: rgba(7, 20, 15, 0.92);
+    backdrop-filter: blur(8px);
+    cursor: zoom-out;
+  }
+
+  .slideshow-dialog[open] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dialog-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 18px;
+    z-index: 10;
+  }
+
+  .dialog-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 40px;
+    gap: 20px;
+    min-height: 0;
+  }
+
+  .dialog-image-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 0;
+    position: relative;
+  }
+
+  .dialog-main-img {
+    max-width: 100%;
+    max-height: calc(100vh - 160px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    user-select: none;
+  }
+
+  .dialog-caption {
+    color: #d8e9df;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: 500;
+    max-width: 800px;
+  }
+
+  .dialog-counter {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 7px 13px;
+    border-radius: 999px;
+    background: rgba(19, 50, 39, 0.78);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .dialog-close,
+  .nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(19, 50, 39, 0.78);
+    color: #ffffff;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 5;
+  }
+
+  .dialog-close {
+    width: 48px;
+    height: 48px;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .nav-btn {
+    width: 54px;
+    height: 54px;
+    font-size: 42px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .dialog-close:hover,
+  .nav-btn:hover {
+    background: #275a43;
+    transform: scale(1.05);
+  }
+
+  .dialog-close:focus-visible,
+  .nav-btn:focus-visible {
+    outline: 3px solid #a9d1b5;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 768px) {
+    .page-container {
+      padding: 40px 0 80px;
+    }
+
+    .park-section {
+      padding: 20px;
+      border-radius: 16px;
+      gap: 16px;
+    }
+
+    .thumbnail-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .dialog-body {
+      padding: 0 10px 20px;
+      position: relative;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      font-size: 32px;
+      background: rgba(13, 33, 25, 0.7);
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
+
+    .dialog-close {
+      width: 44px;
+      height: 44px;
+      font-size: 30px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .dialog-main-img {
+      max-height: calc(100vh - 120px);
+    }
+
+    .dialog-counter {
+      bottom: -25px;
+    }
+  }
+</style>

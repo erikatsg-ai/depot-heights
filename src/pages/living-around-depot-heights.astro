@@ -2,571 +2,281 @@
 import Layout from "../layouts/Layout.astro";
 
 const pageTitle =
-  "Living Around Depot Heights | Food, Shopping, Healthcare, Schools & Nature";
+  "Living Around Depot Heights | HDB Estate Guide, Amenities & Lifestyle";
 
 const pageDescription =
-  "Discover what it is like living around Depot Heights in Bukit Merah, Singapore, including hawker centres, cafés, restaurants, shopping, healthcare, schools, parks, nature and leisure.";
+  "Discover what makes living around Depot Heights ideal for HDB home buyers and tenants. Explore mature estate convenience, greenery, connectivity, schools, dining, and daily lifestyle around Bukit Merah and Alexandra.";
 
-const foodPlaces = [
+const canonicalUrl = "https://depot-heights.pages.dev/living-around";
+
+const heroImage = "/images/depot-heights-hero.webp";
+
+const livingHighlights = [
   {
     number: "01",
-    title: "Alexandra Village Food Centre",
+    title: "Mature Estate Convenience",
+    icon: "🏘️",
     description:
-      "A well-known neighbourhood food destination near Alexandra, offering a wide range of local hawker favourites and everyday dining options.",
+      "Enjoy the established infrastructure of Bukit Merah and Alexandra, where coffee shops, wet markets, supermarkets, clinics, and everyday conveniences are right at your doorstep.",
   },
   {
     number: "02",
-    title: "ABC Brickworks Food Centre",
+    title: "Nature & Green Corridors",
+    icon: "🌿",
     description:
-      "A popular local food centre serving traditional Singaporean hawker dishes and affordable everyday meals.",
+      "Live next to Singapore's premier green spaces. Mount Faber Park, Telok Blangah Hill, HortPark, and the Southern Ridges offer scenic weekend walks and outdoor recreation.",
   },
   {
     number: "03",
-    title: "Tiong Bahru Food Centre",
+    title: "Exceptional Central Connectivity",
+    icon: "🚆",
     description:
-      "One of the best-known hawker destinations in the area, combining traditional local food with the character of the historic Tiong Bahru neighbourhood.",
+      "Effortlessly commute to the CBD, Orchard Road, or Marina Bay via nearby MRT stations (Redhill, Tiong Bahru, HarbourFront, Telok Blangah) and major expressways.",
   },
   {
     number: "04",
-    title: "Margaret Drive Hawker Centre",
+    title: "Proximity to Work & Business Hubs",
+    icon: "💼",
     description:
-      "A convenient food destination in the wider Queenstown and Margaret Drive area, offering a variety of local hawker food.",
-  },
-];
-
-const cafes = [
-  {
-    number: "01",
-    title: "Tiong Bahru Cafés",
-    description:
-      "Tiong Bahru is one of Singapore's best-known café neighbourhoods, with independent cafés, bakeries and coffee shops integrated into its distinctive residential streets.",
-  },
-  {
-    number: "02",
-    title: "Gillman Barracks",
-    description:
-      "The former military barracks has developed into an arts and lifestyle destination with galleries, cafés, restaurants and creative spaces.",
-  },
-  {
-    number: "03",
-    title: "Alexandra & Depot Road Area",
-    description:
-      "The surrounding Alexandra and Depot Road areas provide additional casual dining and café options for residents looking for convenient places to eat and meet.",
-  },
-];
-
-const restaurants = [
-  {
-    number: "01",
-    title: "DUSK",
-    description:
-      "A rooftop destination around Mount Faber offering dining and drinks with views across the southern landscape.",
-  },
-  {
-    number: "02",
-    title: "Arbora Café",
-    description:
-      "Located around Mount Faber, Arbora provides a relaxed dining setting surrounded by greenery.",
-  },
-  {
-    number: "03",
-    title: "Hopscotch",
-    description:
-      "A local dining and drinks destination at Gillman Barracks, combining food, beverages and a relaxed lifestyle setting.",
-  },
-  {
-    number: "04",
-    title: "Little Island Brewing Co.",
-    description:
-      "A brewery and dining destination offering a casual setting for meals and social gatherings.",
+      "An ideal address for working professionals. Minutes away from Mapletree Business City, Alexandra Technopark, mTower, and HarbourFront commercial centers.",
   },
   {
     number: "05",
-    title: "Naked Finn",
+    title: "Food Lover's Paradise",
+    icon: "🍜",
     description:
-      "A seafood-focused restaurant known for its simple approach to fresh seafood and a relaxed dining experience.",
-  },
-];
-
-const shoppingPlaces = [
-  {
-    number: "01",
-    title: "Depot Heights Shopping Centre",
-    description:
-      "Located at 108 Depot Road, the neighbourhood shopping centre provides convenient everyday services and local amenities close to home.",
-  },
-  {
-    number: "02",
-    title: "IKEA Alexandra",
-    description:
-      "A major home furnishing destination along Alexandra Road, offering furniture, home products and Swedish food.",
-  },
-  {
-    number: "03",
-    title: "Anchorpoint",
-    description:
-      "A nearby shopping and dining destination along Alexandra Road, now focused on restaurants, cafés, everyday retail and Cold Storage.",
-  },
-  {
-    number: "04",
-    title: "Alexandra Central",
-    description:
-      "A mixed commercial destination with retail, food and services along the Alexandra Road corridor.",
-  },
-  {
-    number: "05",
-    title: "Great World City",
-    description:
-      "A major shopping, dining and lifestyle destination within the wider central-southern area.",
+      "Surrounded by legendary hawker centers including ABC Brickworks, Alexandra Village, and Tiong Bahru Market, alongside trendy cafes and bistros.",
   },
   {
     number: "06",
-    title: "VivoCity",
+    title: "Family-Friendly Community",
+    icon: "👨‍👩‍👧‍👦",
     description:
-      "One of Singapore's major shopping malls, offering extensive retail, dining and entertainment options at HarbourFront.",
+      "A tight-knit neighbourhood equipped with local childcare centers, primary and secondary schools, parks, and recreational facilities for all ages.",
   },
 ];
 
-const healthcarePlaces = [
+const targetAudienceCards = [
   {
-    number: "01",
-    title: "Mount Elizabeth Hospital – Orchard",
-    description:
-      "A major private hospital in the Orchard area, providing specialist medical services and healthcare facilities.",
+    title: "For HDB Home Buyers & Families",
+    badge: "Long-Term Value",
+    text: "Depot Heights offers a rare combination of mature estate convenience and central location. Families benefit from established schools, healthcare facilities, childcare options, and strong long-term property fundamentals in District 4/3.",
   },
   {
-    number: "02",
-    title: "Queenstown Polyclinic",
-    description:
-      "A public healthcare facility serving residents in the wider Queenstown and southern-western area.",
-  },
-  {
-    number: "03",
-    title: "Bukit Merah Polyclinic",
-    description:
-      "A public healthcare facility serving the Bukit Merah community and surrounding neighbourhoods.",
-  },
-  {
-    number: "04",
-    title: "National University Hospital",
-    description:
-      "A major tertiary hospital and academic medical centre serving the western and southern parts of Singapore.",
+    title: "For Working Professionals & Tenants",
+    badge: "Strategic Location",
+    text: "Say goodbye to long commutes. Living near major business nodes like Mapletree Business City and the CBD means spending less time travelling and more time enjoying life. Quick access to MRT lines and buses makes urban mobility seamless.",
   },
 ];
 
-const schools = [
+const neighborhoodPerks = [
   {
-    number: "01",
-    title: "Primary Schools",
-    description:
-      "Families in the wider area have access to primary schools including Zhangde Primary School, Blangah Rise Primary School, Radin Mas Primary School, Gan Eng Seng Primary School and Alexandra Primary School.",
+    title: "Daily Essentials & Shopping",
+    text: "Depot Heights Shopping Centre houses local bakeries, cafes, and postal services, while nearby Anchorpoint, Alexandra Central, and VivoCity fulfill all retail and supermarket needs.",
   },
   {
-    number: "02",
-    title: "Secondary Schools",
-    description:
-      "Nearby secondary school options include New Town Secondary School, Gan Eng Seng School, Fairfield Methodist Secondary School, Crescent Girls' School and Bukit Merah Secondary School.",
+    title: "Active Outdoor Lifestyle",
+    text: "Weekend hikes across Henderson Waves, cycling along the Coast-to-Coast trail, or unwinding at Sentosa's beaches—all just minutes away from home.",
   },
   {
-    number: "03",
-    title: "Junior College & University",
-    description:
-      "The wider southern and western corridor provides access to institutions including Anglo-Chinese School and the National University of Singapore.",
-  },
-];
-
-const leisurePlaces = [
-  {
-    number: "01",
-    title: "Southern Ridges",
-    description:
-      "A network of elevated walking routes connecting green spaces across southern Singapore, including Telok Blangah Hill Park, Henderson Waves, Mount Faber Park and HortPark.",
-  },
-  {
-    number: "02",
-    title: "HortPark",
-    description:
-      "A horticultural park connected to the Southern Ridges, offering gardens, greenery and a pleasant destination for walking and exploring.",
-  },
-  {
-    number: "03",
-    title: "Mount Faber Park",
-    description:
-      "One of Singapore's historic hilltop parks, offering greenery, walking routes and views towards the southern waterfront.",
-  },
-  {
-    number: "04",
-    title: "Labrador Park",
-    description:
-      "A coastal park combining greenery, waterfront scenery and World War II heritage sites.",
-  },
-  {
-    number: "05",
-    title: "Kent Ridge Park",
-    description:
-      "A scenic hilltop park with walking routes, greenery and historical significance in the wider southern corridor.",
-  },
-  {
-    number: "06",
-    title: "Gillman Barracks",
-    description:
-      "An arts and lifestyle destination where residents can combine galleries, food, drinks and cultural activities.",
-  },
-];
-
-const quickLinks = [
-  {
-    title: "About Depot Heights",
-    href: "/about-depot-heights",
-    description:
-      "Learn about the estate, Depot Heights Shopping Centre and the neighbourhood.",
-  },
-  {
-    title: "Explore Location",
-    href: "/location",
-    description:
-      "See nearby neighbourhoods, road connections, commercial hubs and green routes.",
-  },
-  {
-    title: "Public Transport",
-    href: "/transport",
-    description:
-      "Explore the main bus routes and transport connections around Depot Heights.",
+    title: "Rich Cultural Heritage",
+    text: "Immerse in the historic charms of Tiong Bahru's Art Deco architecture, Alexandra Village's traditional shophouses, and Gillman Barracks' contemporary art enclave.",
   },
 ];
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">LIVING AROUND DEPOT HEIGHTS</p>
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={canonicalUrl}
+  image={heroImage}
+  imageAlt="Living around Depot Heights estate"
+>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">LIVING AROUND DEPOT HEIGHTS</p>
 
-        <h1>
-          Everyday life
-          <span>within easy reach.</span>
-        </h1>
+      <h1>
+        The smart address for
+        <span>modern urban living.</span>
+      </h1>
 
-        <p class="hero-text">
-          Living around Depot Heights means having access to a wide range of
-          food, cafés, restaurants, shopping, healthcare, schools, parks and
-          leisure destinations across Bukit Merah and the surrounding southern
-          neighbourhoods.
-        </p>
+      <p class="hero-text">
+        Looking for the ideal balance of city convenience, nature, and community charm? 
+        Discover why Depot Heights and the surrounding Bukit Merah-Alexandra enclave 
+        is one of Singapore’s most sought-after locations for HDB home buyers, families, 
+        and working tenants alike.
+      </p>
 
-        <div class="hero-actions">
-          <a class="button button-primary" href="#food">
-            Explore local life
-          </a>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#why-depot-heights">
+          Why live here
+        </a>
 
-          <a class="button button-secondary" href="/location">
-            Explore the location
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-image">
-        <img
-          src="/images/depot-heights-location-hero.webp"
-          alt="Depot Heights and the surrounding Bukit Merah neighbourhood"
-          loading="eager"
-        />
-      </div>
-    </section>
-
-    <section class="section intro-section">
-      <div class="intro-grid">
-        <div class="section-heading">
-          <p class="eyebrow">LIFE AROUND THE ESTATE</p>
-
-          <h2>
-            A neighbourhood with food, convenience and green spaces nearby.
-          </h2>
-        </div>
-
-        <div class="intro-copy">
-          <p>
-            Depot Heights is located within an established part of Singapore
-            where residential neighbourhoods sit alongside food centres,
-            shopping areas, workplaces, schools and healthcare facilities.
-          </p>
-
-          <p>
-            The surrounding area also extends beyond everyday necessities.
-            Residents can enjoy cafés and restaurants in Tiong Bahru and
-            Gillman Barracks, shopping at Alexandra and HarbourFront, and
-            outdoor destinations around the Southern Ridges, Mount Faber and
-            Labrador.
-          </p>
-
-          <p>
-            This combination gives the Depot Heights area a practical balance
-            between daily convenience and opportunities for leisure.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section food-section" id="food">
-      <div class="section-heading">
-        <p class="eyebrow">LOCAL FOOD</p>
-
-        <h2>
-          Hawker food is never far away.
-        </h2>
-
-        <p>
-          The wider Bukit Merah, Alexandra, Tiong Bahru and Queenstown areas
-          are home to several well-known food centres, giving residents plenty
-          of choices for affordable local meals.
-        </p>
-      </div>
-
-      <div class="card-grid four-columns">
-        {
-          foodPlaces.map((item) => (
-            <article class="info-card">
-              <span>{item.number}</span>
-
-              <h3>{item.title}</h3>
-
-              <p>{item.description}</p>
-            </article>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="section cafes-section">
-      <div class="split-heading">
-        <div>
-          <p class="eyebrow">CAFÉS</p>
-
-          <h2>
-            Coffee and café culture around the neighbourhood.
-          </h2>
-        </div>
-
-        <p>
-          From the established café scene in Tiong Bahru to the creative
-          atmosphere of Gillman Barracks, there are several options for
-          residents looking for coffee, brunch or a relaxed place to meet.
-        </p>
-      </div>
-
-      <div class="card-grid three-columns">
-        {
-          cafes.map((item) => (
-            <article class="info-card">
-              <span>{item.number}</span>
-
-              <h3>{item.title}</h3>
-
-              <p>{item.description}</p>
-            </article>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="section restaurants-section">
-      <div class="section-heading">
-        <p class="eyebrow">RESTAURANTS</p>
-
-        <h2>
-          Dining destinations across the southern neighbourhoods.
-        </h2>
-
-        <p>
-          The surrounding area offers everything from casual dining and
-          breweries to seafood and rooftop destinations.
-        </p>
-      </div>
-
-      <div class="card-grid three-columns">
-        {
-          restaurants.map((item) => (
-            <article class="info-card">
-              <span>{item.number}</span>
-
-              <h3>{item.title}</h3>
-
-              <p>{item.description}</p>
-            </article>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="section shopping-section">
-      <div class="section-heading">
-        <p class="eyebrow">SHOPPING & RETAIL</p>
-
-        <h2>
-          Everyday shopping nearby, with major malls within reach.
-        </h2>
-
-        <p>
-          Residents have access to neighbourhood amenities as well as major
-          shopping destinations across Alexandra, the central-southern area
-          and HarbourFront.
-        </p>
-      </div>
-
-      <div class="card-grid three-columns">
-        {
-          shoppingPlaces.map((item) => (
-            <article class="info-card">
-              <span>{item.number}</span>
-
-              <h3>{item.title}</h3>
-
-              <p>{item.description}</p>
-            </article>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="section healthcare-section">
-      <div class="section-heading">
-        <p class="eyebrow">HEALTHCARE</p>
-
-        <h2>
-          Healthcare options across the southern and central areas.
-        </h2>
-
-        <p>
-          The location provides access to public healthcare, polyclinics and
-          major hospitals serving residents across Bukit Merah, Queenstown,
-          Orchard and the wider western corridor.
-        </p>
-      </div>
-
-      <div class="card-grid four-columns">
-        {
-          healthcarePlaces.map((item) => (
-            <article class="info-card">
-              <span>{item.number}</span>
-
-              <h3>{item.title}</h3>
-
-              <p>{item.description}</p>
-            </article>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="section schools-section">
-      <div class="section-heading">
-        <p class="eyebrow">SCHOOLS & EDUCATION</p>
-
-        <h2>
-          Education options within the wider neighbourhood.
-        </h2>
-
-        <p>
-          Families living around Depot Heights can consider schools across
-          Bukit Merah, Queenstown and the wider southern area, with further
-          education opportunities available towards the city and NUS.
-        </p>
-      </div>
-
-      <div class="card-grid three-columns">
-        {
-          schools.map((item) => (
-            <article class="info-card">
-              <span>{item.number}</span>
-
-              <h3>{item.title}</h3>
-
-              <p>{item.description}</p>
-            </article>
-          ))
-        }
-      </div>
-
-      <div class="section-action">
-        <a class="button button-secondary" href="/schools-education">
-          Explore Schools & Education
+        <a class="button button-secondary" href="/location">
+          Explore connectivity
         </a>
       </div>
-    </section>
+    </div>
 
-    <section class="section leisure-section">
+    <div class="hero-image">
+      <img
+        src={heroImage}
+        alt="Depot Heights neighbourhood view"
+        loading="eager"
+        width="800"
+        height="600"
+      />
+    </div>
+  </section>
+
+  <!-- INTRO VALUE PROPOSITION -->
+  <section class="section introduction-section">
+    <div class="intro-grid">
       <div class="section-heading">
-        <p class="eyebrow">PARKS, NATURE & LEISURE</p>
+        <p class="eyebrow">ESTATE VALUE & LIFESTYLE</p>
+        <h2>Everything you need, right where you live.</h2>
+      </div>
 
-        <h2>
-          Green spaces and outdoor destinations are part of everyday life.
-        </h2>
-
+      <div class="intro-copy">
         <p>
-          One of the advantages of living around Depot Heights is access to
-          the green network across southern Singapore, from hilltop parks and
-          walking trails to coastal destinations and heritage sites.
+          Choosing where to buy a home or rent a property is about more than just square footage—it is 
+          about lifestyle, accessibility, and future convenience. Depot Heights delivers a harmonious 
+          blend of mature HDB estate warmth and rapid access to Singapore's core economic and leisure hubs.
+        </p>
+        <p>
+          Whether you are a young couple laying down roots, a growing family seeking top-tier amenities, 
+          or a professional looking for a well-connected rental home near business districts, this area 
+          presents an unmatched urban proposition.
+        </p>
+      </div>
+    </div>
+
+    <!-- TARGET AUDIENCE CARDS -->
+    <div class="audience-grid">
+      {
+        targetAudienceCards.map((card) => (
+          <article class="audience-card">
+            <span class="audience-badge">{card.badge}</span>
+            <h3>{card.title}</h3>
+            <p>{card.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS GRID -->
+  <section class="section highlights-section" id="why-depot-heights">
+    <div class="section-heading centered">
+      <p class="eyebrow">NEIGHBOURHOOD ADVANTAGES</p>
+      <h2>What makes living around Depot Heights exceptional?</h2>
+      <p class="section-subtitle">
+        Designed for convenience, framed by nature, and connected to the pulse of Singapore.
+      </p>
+    </div>
+
+    <div class="highlights-grid">
+      {
+        livingHighlights.map((item) => (
+          <article class="highlight-card">
+            <div class="card-top">
+              <span class="highlight-icon">{item.icon}</span>
+              <span class="card-number">{item.number}</span>
+            </div>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- LIFESTYLE PERKS SECTION -->
+  <section class="section perks-section">
+    <div class="perks-grid">
+      <div class="section-heading">
+        <p class="eyebrow">EVERYDAY EXPERIENCE</p>
+        <h2>A vibrant community tailored for modern routines.</h2>
+        <p>
+          Life at Depot Heights means you never have to travel far for your daily needs. 
+          From morning coffees at local kopitiams to evening strolls through scenic parks, 
+          the neighbourhood effortlessly accommodates busy schedules and relaxed weekends.
         </p>
       </div>
 
-      <div class="card-grid three-columns">
+      <div class="perks-list">
         {
-          leisurePlaces.map((item) => (
-            <article class="info-card">
-              <span>{item.number}</span>
-
-              <h3>{item.title}</h3>
-
-              <p>{item.description}</p>
-            </article>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="section final-section">
-      <div class="section-heading">
-        <p class="eyebrow">EXPLORE DEPOT HEIGHTS</p>
-
-        <h2>
-          There is more to discover around the estate.
-        </h2>
-      </div>
-
-      <div class="quick-links">
-        {
-          quickLinks.map((link) => (
-            <a class="quick-link" href={link.href}>
+          neighborhoodPerks.map((perk, index) => (
+            <div class="perk-item">
+              <span class="perk-index">0{index + 1}</span>
               <div>
-                <h3>{link.title}</h3>
-
-                <p>{link.description}</p>
+                <h3>{perk.title}</h3>
+                <p>{perk.text}</p>
               </div>
-
-              <span>→</span>
-            </a>
+            </div>
           ))
         }
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="closing-section">
-      <div class="closing-inner">
-        <p class="eyebrow">LIVING AROUND DEPOT HEIGHTS</p>
+  <!-- EXPLORE MORE SECTIONS -->
+  <section class="section explore-links-section">
+    <div class="section-heading centered">
+      <p class="eyebrow">DIVE DEEPER</p>
+      <h2>Explore what the neighbourhood has to offer.</h2>
+    </div>
 
-        <h2>
-          A practical neighbourhood with plenty to explore.
-        </h2>
+    <div class="explore-grid">
+      <article class="explore-card">
+        <h3>Local Food & Hawker Culture</h3>
+        <p>Discover legendary hawker centres, local delicacies, and comfort food around Bukit Merah and Alexandra.</p>
+        <a class="text-link" href="/local-food">Explore Local Food →</a>
+      </article>
 
-        <p>
-          From local hawker centres and everyday shopping to cafés,
-          restaurants, healthcare, schools and some of Singapore's most
-          attractive southern parks, Depot Heights is surrounded by a wide
-          range of places that make everyday life convenient and interesting.
-        </p>
+      <article class="explore-card">
+        <h3>Cafés & Dining</h3>
+        <p>Find trendy brunch spots, coffee roasteries, and scenic hilltop restaurants nearby.</p>
+        <a class="text-link" href="/cafes">Explore Cafés →</a>
+      </article>
+
+      <article class="explore-card">
+        <h3>Shopping & Retail</h3>
+        <p>Browse neighborhood malls, home furnishing stores, and commercial centers.</p>
+        <a class="text-link" href="/retail-shopping">Explore Retail →</a>
+      </article>
+
+      <article class="explore-card">
+        <h3>Location & Connectivity</h3>
+        <p>Check out public transport links, driving routes, and distance to key business districts.</p>
+        <a class="text-link" href="/location">Explore Location →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing-section">
+    <div class="closing-inner">
+      <p class="eyebrow">YOUR NEXT MOVE</p>
+      <h2>Ready to call Depot Heights home?</h2>
+      <p>
+        Experience the perfect combination of mature estate comfort, unbeatable central 
+        accessibility, and lush green surroundings. Take the next step in your property 
+        journey today.
+      </p>
+
+      <div class="closing-actions">
+        <a class="button button-primary" href="/location">
+          Check Location & Map
+        </a>
+        <a class="button button-secondary" href="/retail-shopping">
+          Explore Retail Options
+        </a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 </Layout>
 
 <style>
@@ -580,8 +290,8 @@ const quickLinks = [
 
   :global(body) {
     margin: 0;
-    background: #f7f8f3;
-    color: #183126;
+    color: #1d2924;
+    background: #f7f5ef;
     font-family:
       Inter,
       ui-sans-serif,
@@ -590,7 +300,6 @@ const quickLinks = [
       BlinkMacSystemFont,
       "Segoe UI",
       sans-serif;
-    line-height: 1.7;
   }
 
   :global(a) {
@@ -601,7 +310,7 @@ const quickLinks = [
   .hero {
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
-    min-height: 580px;
+    min-height: 600px;
     background: #e8f0e8;
   }
 
@@ -609,15 +318,16 @@ const quickLinks = [
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 75px clamp(30px, 6vw, 90px);
+    padding: 80px clamp(30px, 6vw, 90px);
   }
 
   .eyebrow {
     margin: 0 0 16px;
     color: #2b6e52;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 800;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
     text-transform: uppercase;
   }
 
@@ -635,14 +345,15 @@ const quickLinks = [
   }
 
   .hero-text {
-    max-width: 680px;
-    margin: 25px 0 0;
+    max-width: 650px;
+    margin: 28px 0 0;
     color: #52625a;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.8;
   }
 
-  .hero-actions {
+  .hero-actions,
+  .closing-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
@@ -653,16 +364,24 @@ const quickLinks = [
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 46px;
-    padding: 0 22px;
+    min-height: 48px;
+    padding: 0 24px;
     border-radius: 999px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 800;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
   }
 
   .button-primary {
     background: #2b6e52;
-    color: #fff;
+    color: #ffffff;
   }
 
   .button-secondary {
@@ -671,7 +390,7 @@ const quickLinks = [
   }
 
   .hero-image {
-    min-height: 580px;
+    min-height: 600px;
     overflow: hidden;
     background: #dce7dd;
   }
@@ -679,18 +398,25 @@ const quickLinks = [
   .hero-image img {
     width: 100%;
     height: 100%;
-    min-height: 580px;
+    min-height: 600px;
     display: block;
     object-fit: cover;
+    object-position: center;
   }
 
   .section {
-    padding: 90px 5vw;
+    padding: 95px 5vw;
   }
 
   .section-heading {
-    max-width: 850px;
-    margin-bottom: 50px;
+    max-width: 900px;
+    margin-bottom: 55px;
+  }
+
+  .section-heading.centered {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .section-heading h2 {
@@ -701,15 +427,25 @@ const quickLinks = [
   }
 
   .section-heading p:not(.eyebrow) {
-    max-width: 720px;
-    margin: 20px 0 0;
+    max-width: 760px;
+    margin: 22px 0 0;
     color: #5d6b64;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.8;
   }
 
-  .intro-section {
-    background: #fff;
+  .section-heading.centered p:not(.eyebrow) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-subtitle {
+    font-size: 19px;
+    color: #52625a;
+  }
+
+  .introduction-section {
+    background: #ffffff;
   }
 
   .intro-grid {
@@ -717,180 +453,223 @@ const quickLinks = [
     grid-template-columns: 1fr 1fr;
     gap: 70px;
     align-items: start;
+    max-width: 1300px;
+    margin: 0 auto 55px;
   }
 
   .intro-grid .section-heading {
-    margin-bottom: 0;
+    margin: 0;
   }
 
-  .intro-copy p {
-    margin: 0 0 22px;
+  .intro-copy {
     color: #52625a;
     font-size: 17px;
     line-height: 1.85;
   }
 
-  .food-section {
-    background: #f7f8f3;
+  .intro-copy p {
+    margin: 0 0 20px;
   }
 
-  .cafes-section {
-    background: #e8f0e8;
+  .intro-copy p:last-child {
+    margin-bottom: 0;
   }
 
-  .restaurants-section {
-    background: #fff;
-  }
-
-  .shopping-section {
-    background: #edf3ed;
-  }
-
-  .healthcare-section {
-    background: #fff;
-  }
-
-  .schools-section {
-    background: #f7f8f3;
-  }
-
-  .leisure-section {
-    background: #e8f0e8;
-  }
-
-  .card-grid {
+  .audience-grid {
     display: grid;
-    gap: 22px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1300px;
+    margin: 0 auto;
   }
 
-  .three-columns {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .four-columns {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .info-card {
-    min-height: 240px;
-    padding: 30px;
+  .audience-card {
+    position: relative;
+    padding: 40px;
     border-radius: 20px;
-    background: #fff;
+    background: #f7f8f3;
     border: 1px solid rgba(24, 49, 38, 0.08);
   }
 
-  .food-section .info-card,
-  .leisure-section .info-card,
-  .cafes-section .info-card {
-    background: rgba(255, 255, 255, 0.75);
+  .audience-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+    border-radius: 999px;
+    background: rgba(43, 110, 82, 0.1);
+    color: #2b6e52;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 
-  .info-card > span {
-    display: block;
-    margin-bottom: 15px;
+  .audience-card h3 {
+    margin: 0 0 14px;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .audience-card p {
+    margin: 0;
+    color: #5d6b64;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .highlights-section {
+    background: #f7f8f3;
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .highlight-card {
+    padding: 35px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .highlight-icon {
+    font-size: 32px;
+  }
+
+  .card-number {
     color: #2b6e52;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 900;
     letter-spacing: 0.14em;
   }
 
-  .info-card h3 {
-    margin: 0;
-    font-size: 26px;
-    line-height: 1.15;
+  .highlight-card h3 {
+    margin: 0 0 12px;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
   }
 
-  .info-card p {
-    margin: 15px 0 0;
+  .highlight-card p {
+    margin: 0;
     color: #5d6b64;
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.75;
   }
 
-  .split-heading {
+  .perks-section {
+    background: #ffffff;
+  }
+
+  .perks-grid {
     display: grid;
-    grid-template-columns: 1fr 0.8fr;
-    gap: 70px;
-    align-items: end;
-    margin-bottom: 50px;
-  }
-
-  .split-heading .eyebrow {
-    margin-bottom: 16px;
-  }
-
-  .split-heading h2 {
-    margin: 0;
-    font-size: clamp(38px, 5vw, 65px);
-    line-height: 1.05;
-    letter-spacing: -0.045em;
-  }
-
-  .split-heading > p {
-    margin: 0;
-    color: #5d6b64;
-    font-size: 17px;
-    line-height: 1.8;
-  }
-
-  .section-action {
-    margin-top: 35px;
-  }
-
-  .final-section {
-    background: #fff;
-  }
-
-  .quick-links {
-    display: grid;
-    gap: 18px;
-  }
-
-  .quick-link {
-    display: flex;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
     align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    padding: 30px 35px;
-    border-radius: 20px;
-    background: #f7f8f3;
-    border: 1px solid rgba(24, 49, 38, 0.08);
-    transition:
-      transform 0.2s ease,
-      border-color 0.2s ease;
+    max-width: 1300px;
+    margin: 0 auto;
   }
 
-  .quick-link:hover {
-    transform: translateY(-3px);
-    border-color: #2b6e52;
-  }
-
-  .quick-link h3 {
+  .perks-grid .section-heading {
     margin: 0;
-    font-size: 27px;
-    line-height: 1.15;
   }
 
-  .quick-link p {
-    margin: 8px 0 0;
+  .perks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .perk-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .perk-index {
+    color: #2b6e52;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+  }
+
+  .perk-item h3 {
+    margin: 0 0 6px;
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .perk-item p {
+    margin: 0;
     color: #5d6b64;
     font-size: 15px;
+    line-height: 1.75;
   }
 
-  .quick-link > span {
+  .explore-links-section {
+    background: #edf3ed;
+  }
+
+  .explore-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .explore-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .explore-card h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .explore-card p {
+    margin: 0 0 20px;
+    color: #5d6b64;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .text-link {
+    margin-top: auto;
     color: #2b6e52;
-    font-size: 28px;
+    font-size: 14px;
     font-weight: 800;
   }
 
   .closing-section {
-    padding: 90px 5vw;
+    padding: 95px 5vw;
     background: #142f25;
-    color: #fff;
+    color: #ffffff;
   }
 
   .closing-inner {
-    max-width: 900px;
+    max-width: 950px;
   }
 
   .closing-inner .eyebrow {
@@ -904,62 +683,69 @@ const quickLinks = [
     letter-spacing: -0.045em;
   }
 
-  .closing-inner p:not(.eyebrow) {
-    max-width: 760px;
-    margin: 22px 0 0;
+  .closing-inner > p:not(.eyebrow) {
+    max-width: 800px;
+    margin: 25px 0 0;
     color: #d8e9df;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.8;
   }
 
-  @media (max-width: 1050px) {
-    .hero {
+  .closing-actions .button-secondary {
+    border-color: #c9e4d5;
+    color: #c9e4d5;
+  }
+
+  @media (max-width: 1100px) {
+    .hero,
+    .intro-grid,
+    .perks-grid {
       grid-template-columns: 1fr;
     }
 
     .hero-image,
     .hero-image img {
-      min-height: 450px;
+      min-height: 480px;
     }
 
-    .intro-grid,
-    .split-heading {
-      grid-template-columns: 1fr;
-      gap: 25px;
-    }
-
-    .four-columns {
+    .highlights-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .three-columns {
+    .explore-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: 800px) {
+    .section,
+    .closing-section {
+      padding: 75px 24px;
+    }
+
+    .audience-grid,
+    .highlights-grid,
+    .explore-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-content {
+      padding: 65px 24px;
+    }
+
     .hero h1 {
       font-size: clamp(45px, 14vw, 70px);
+    }
+
+    .hero-text {
+      font-size: 16px;
     }
 
     .hero-image,
     .hero-image img {
       min-height: 350px;
-    }
-
-    .section,
-    .closing-section {
-      padding: 70px 24px;
-    }
-
-    .three-columns,
-    .four-columns {
-      grid-template-columns: 1fr;
-    }
-
-    .quick-link {
-      align-items: flex-start;
-      padding: 28px;
     }
   }
 </style>

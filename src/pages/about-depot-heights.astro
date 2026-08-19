@@ -7,6 +7,30 @@ const pageTitle =
 const pageDescription =
   "Learn about Depot Heights, an established HDB residential estate in Bukit Merah, Singapore, covering Blocks 102 to 114, Depot Heights Shopping Centre and the neighbourhood around Depot Road.";
 
+// JSON-LD Structured Data for Advanced SEO
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": Astro.url.href,
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Depot Heights",
+    "url": "https://depot-heights.pages.dev"
+  },
+  "about": {
+    "@type": "Place",
+    "name": "Depot Heights",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Singapore",
+      "addressRegion": "Bukit Merah",
+      "streetAddress": "Depot Road"
+    }
+  }
+};
+
 const estateFacts = [
   {
     number: "01",
@@ -78,6 +102,9 @@ const nearbyLinks = [
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
+  <!-- Inject JSON-LD Schema into head -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+
   <main>
     <section class="hero">
       <div class="hero-content">
@@ -109,9 +136,12 @@ const nearbyLinks = [
 
       <div class="hero-image">
         <img
-          src="/images/depot-heights-location-hero.webp"
+          src="/images/depot-heights-about-hero.webp"
           alt="Depot Heights residential estate in Bukit Merah"
+          width="1200"
+          height="800"
           loading="eager"
+          fetchpriority="high"
         />
       </div>
     </section>
@@ -186,6 +216,8 @@ const nearbyLinks = [
           <img
             src="/images/depot-heights-shopping-centre.webp"
             alt="Depot Heights Shopping Centre at 108 Depot Road"
+            width="1000"
+            height="750"
             loading="lazy"
           />
         </div>

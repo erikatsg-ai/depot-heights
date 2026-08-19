@@ -1,0 +1,1074 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle =
+  "Sports & Recreation Near Depot Heights | Gyms, Pools, Sports Hubs & Sentosa";
+
+const pageDescription =
+  "Explore sports, fitness, and recreational facilities near Depot Heights, including Anytime Fitness at Depot Heights Shopping Centre, Queenstown ActiveSG Stadium, SAFRA Club, Delta Sports Centre, Fitness First MBC, and Sentosa island adventures.";
+
+const canonicalUrl = "https://depot-heights.pages.dev/sports-recreation";
+
+const heroImage = "/images/sports-recreation-hero.webp";
+
+const recreationCategories = [
+  {
+    number: "01",
+    title: "Parks, Green Corridors & Hiking",
+    description:
+      "Direct access to Singapore's premier green belts, offering scenic trails for runners, cyclists, and weekend hikers.",
+    details:
+      "Includes Mount Faber Park, Telok Blangah Hill Park, HortPark, Henderson Waves, and the continuous Southern Ridges loop connecting directly to Kent Ridge and Labrador Nature Reserve.",
+  },
+  {
+    number: "02",
+    title: "Fitness Gyms & ActiveSG Facilities",
+    description:
+      "Comprehensive fitness infrastructure nearby to support strength training, cardio routines, and active lifestyles.",
+    details:
+      "Proximity to nearby ActiveSG fitness centers, community club gym facilities, and commercial fitness studios along the Alexandra and Bukit Merah corridors.",
+  },
+  {
+    number: "03",
+    title: "Swimming Complexes & Aquatic Sports",
+    description:
+      "Public swimming pools and water sports facilities designed for lap swimming, family splashing, and aquatic fitness.",
+    details:
+      "Easy access to Queenstown Swimming Complex, Delta Swimming Pool, and SAFRA pools for regular aquatic training and leisure.",
+  },
+  {
+    number: "04",
+    title: "Cycling & Park Connectors (PCN)",
+    description:
+      "Seamlessly connect to Singapore's extensive Park Connector Network (PCN) for cycling, jogging, and active commuting.",
+    details:
+      "Routes link Depot Heights to the Alexandra Canal linear park, Henderson community paths, and the Coast-to-Coast trail leading towards Marina Bay or Jurong Lake Gardens.",
+  },
+  {
+    number: "05",
+    title: "Stadiums, Courts & Team Sports",
+    description:
+      "Multi-purpose indoor and outdoor courts for badminton, basketball, tennis, football, and community league play.",
+    details:
+      "Nearby sports halls, badminton courts at SAFRA and Henderson CC, and Delta Sports Centre offer spaces for team games and social matches.",
+  },
+  {
+    number: "06",
+    title: "Sentosa Resort Island Recreation",
+    description:
+      "Enjoy coastal breezes, water sports, and leisure activities just minutes south of the neighbourhood.",
+    details:
+      "Quick access to Sentosa's beaches, coastal walking promenades, cycling tracks, and lush nature hiking trails.",
+  },
+];
+
+const nearbySportsHubs = [
+  {
+    number: "01",
+    title: "Queenstown ActiveSG Stadium & Sport Centre",
+    description:
+      "A comprehensive neighborhood sports facility featuring an all-weather running track, football field, stadium seating, gym, and swimming pool.",
+    images: [
+      { src: "/images/sp-queenstown-gym.webp", alt: "Queenstown ActiveSG Gym facility" },
+      { src: "/images/sp-queenstown-stadium.webp", alt: "Queenstown ActiveSG Stadium running track" },
+      { src: "/images/sp-queenstown-swimming-pool.webp", alt: "Queenstown ActiveSG Swimming Pool" },
+    ],
+  },
+  {
+    number: "02",
+    title: "SAFRA Club",
+    description:
+      "A premier recreational clubhouse offering full-fledged facilities including a well-equipped gym, swimming pool, bowling alley, indoor badminton courts, games rooms, and food court options.",
+    images: [
+      { src: "/images/sp-safra-club.webp", alt: "SAFRA Club exterior and recreational facade" },
+      { src: "/images/sp-safra-bowling.webp", alt: "SAFRA indoor bowling alley lanes" },
+      { src: "/images/sp-safra-gym.webp", alt: "SAFRA gym and fitness workout floor" },
+      { src: "/images/sp-safra-swimming-pool.webp", alt: "SAFRA recreational swimming pool" },
+      { src: "/images/sp-safra-game.webp", alt: "SAFRA indoor badminton court and game room" },
+      { src: "/images/sp-safra-foodcourt.webp", alt: "SAFRA food court dining area" },
+    ],
+  },
+  {
+    number: "03",
+    title: "Henderson Community Club",
+    description:
+      "Local multi-purpose facilities hosting fitness activities, community wellness programmes, and indoor badminton courts right in the neighborhood.",
+    images: [
+      { src: "/images/sp-henderson-cc.webp", alt: "Henderson Community Club building facade" },
+      { src: "/images/sp-henderson-cc-badminton-court.webp", alt: "Henderson Community Club indoor badminton court" },
+    ],
+  },
+  {
+    number: "04",
+    title: "Delta Sports Centre",
+    description:
+      "An upgraded sports complex featuring modern indoor badminton halls, multi-purpose spaces, and a public swimming pool complex.",
+    images: [
+      { src: "/images/sp-delta-sports-hall-badminton.webp", alt: "Delta Sports Hall badminton courts" },
+      { src: "/images/sp-delta-swimming-pool.webp", alt: "Delta public swimming pool facility" },
+    ],
+  },
+];
+
+const doorstepGyms = [
+  {
+    number: "01",
+    title: "Anytime Fitness (Depot Heights Shopping Centre)",
+    description:
+      "Located just a lift ride away right at Depot Heights Shopping Centre, offering 24/7 access to state-of-the-art strength training and cardio equipment for ultimate convenience.",
+    image: "/images/sp-anytime-fitness-depot-heights.webp",
+    alt: "Anytime Fitness located at Depot Heights Shopping Centre",
+  },
+  {
+    number: "02",
+    title: "Fitness First (Mapletree Business City)",
+    description:
+      "A premium commercial fitness club situated nearby at Mapletree Business City, featuring top-tier group fitness classes, cycling studios, and advanced workout amenities.",
+    image: "/images/sp-fitness-first-mbc.webp",
+    alt: "Fitness First commercial gym at Mapletree Business City",
+  },
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={canonicalUrl}
+  image={heroImage}
+  imageAlt="Sports and recreation near Depot Heights"
+>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">SPORTS & RECREATION</p>
+
+      <h1>
+        Active living,
+        <span>right at your doorstep.</span>
+      </h1>
+
+      <p class="hero-text">
+        Depot Heights offers an energetic environment for fitness enthusiasts, families, 
+        and outdoor lovers. Surrounded by Anytime Fitness right downstairs, the Southern Ridges, 
+        ActiveSG sports hubs, and Sentosa's island resort amenities, residents enjoy boundless 
+        opportunities to stay active, healthy, and energized.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="#recreation-facilities">
+          Explore facilities
+        </a>
+
+        <a class="button button-secondary" href="/living-around-depot-heights">
+          Explore lifestyle
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img
+        src={heroImage}
+        alt="Sports and recreation landscape near Depot Heights"
+        loading="eager"
+        width="800"
+        height="600"
+      />
+    </div>
+  </section>
+
+  <!-- INTRO VALUE PROPOSITION -->
+  <section class="section introduction-section">
+    <div class="intro-grid">
+      <div class="section-heading">
+        <p class="eyebrow">FITNESS & WELLNESS</p>
+        <h2>A neighbourhood built for an active, healthy lifestyle.</h2>
+      </div>
+
+      <div class="intro-copy">
+        <p>
+          Whether you want a quick workout at the 24-hour gym just downstairs, are training 
+          for a marathon across park connectors, or looking for a weekend hike through forest 
+          canopy trails and Sentosa's coastal paths, Depot Heights places physical wellbeing 
+          at the center of daily life.
+        </p>
+        <p>
+          With seamless access to major sports complexes in Queenstown and Bukit Merah, 
+          alongside world-class green spaces and resort islands, residents have unmatched 
+          variety for keeping fit without traveling far.
+        </p>
+      </div>
+    </div>
+
+    <!-- HIGHLIGHT BADGES -->
+    <div class="highlight-grid">
+      <article class="highlight-card">
+        <span class="highlight-icon">🏃‍♂️</span>
+        <h3>Running & Trails</h3>
+        <p>Endless scenic routes across the Southern Ridges and Sentosa coastline.</p>
+      </article>
+
+      <article class="highlight-card">
+        <span class="highlight-icon">🏋️‍♀️</span>
+        <h3>Gyms & Fitness</h3>
+        <p>Doorstep 24/7 gym access at Depot Heights Shopping Centre and Fitness First MBC.</p>
+      </article>
+
+      <article class="highlight-card">
+        <span class="highlight-icon">🏊‍♂️</span>
+        <h3>Swimming Pools</h3>
+        <p>Public aquatic complexes and SAFRA pools nearby for lap training.</p>
+      </article>
+
+      <article class="highlight-card">
+        <span class="highlight-icon">🏝️</span>
+        <h3>Sentosa Resort</h3>
+        <p>Minutes away from beach walks, water sports, and thrill adventures.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- DOORSTEP & COMMERCIAL GYMS -->
+  <section class="section doorstep-section">
+    <div class="section-heading">
+      <p class="eyebrow">CONVENIENT FITNESS</p>
+      <h2>Gyms right at your doorstep and business hubs.</h2>
+      <p>
+        Maintain your fitness routine effortlessly with 24-hour access right downstairs or premium corporate wellness options nearby.
+      </p>
+    </div>
+
+    <div class="doorstep-grid">
+      {
+        doorstepGyms.map((gym) => (
+          <article class="doorstep-card">
+            {gym.image && (
+              <div class="card-image-wrap">
+                <img src={gym.image} alt={gym.alt} loading="lazy" width="600" height="400" />
+              </div>
+            )}
+            <div class="card-content">
+              <span class="card-number">{gym.number}</span>
+              <h3>{gym.title}</h3>
+              <p>{gym.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- KEY SPORTS HUBS WITH SLIDESHOW -->
+  <section class="section hubs-section" id="recreation-facilities">
+    <div class="section-heading">
+      <p class="eyebrow">KEY SPORTS HUBS</p>
+      <h2>Dedicated sports complexes and recreational centers.</h2>
+      <p>
+        Major athletic complexes located just minutes away provide structured 
+        environments for team sports, athletic training, swimming, and community wellness.
+      </p>
+    </div>
+
+    <div class="hubs-grid">
+      {
+        nearbySportsHubs.map((hub, index) => (
+          <article class="hub-card">
+            <span class="card-number">{hub.number}</span>
+            <h3>{hub.title}</h3>
+            <p>{hub.description}</p>
+            {hub.images && hub.images.length > 0 && (
+              <div class="hub-slideshow" data-slideshow-id={index}>
+                <div class="slides-container">
+                  {hub.images.map((photo, pIdx) => (
+                    <figure class={`slide-item ${pIdx === 0 ? 'active' : ''}`}>
+                      <img src={photo.src} alt={photo.alt} loading="lazy" width="600" height="400" />
+                    </figure>
+                  ))}
+                </div>
+                {hub.images.length > 1 && (
+                  <div class="slideshow-controls">
+                    <button class="slide-btn prev-btn" aria-label="Previous image">‹</button>
+                    <span class="slide-counter">1 / {hub.images.length}</span>
+                    <button class="slide-btn next-btn" aria-label="Next image">›</button>
+                  </div>
+                )}
+              </div>
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- SENTOSA RESORT ISLAND RECREATION & ADVENTURE -->
+  <section class="section sentosa-section">
+    <div class="sentosa-grid">
+      <div class="section-heading">
+        <p class="eyebrow">ISLAND RECREATION & ADVENTURE</p>
+        <h2>Sentosa: Your nearby resort island for sports and thrills.</h2>
+        <p>
+          Located just minutes south of Depot Heights, Sentosa offers an expansive natural and recreational playground. 
+          Residents can easily access scenic coastal walking promenades, cycling paths, water sports along the beaches, 
+          and immersive nature hiking trails through Imbiah and Mount Imbiah nature walks.
+        </p>
+      </div>
+      <div class="sentosa-highlights-box">
+        <h3>Looking for Fun & Adventure in Sentosa</h3>
+        <ul>
+          <li><strong>Adventure Cove Waterpark:</strong> High-speed water slides, wave pools, and relaxing lazy rivers.</li>
+          <li><strong>iFly Singapore:</strong> Experience the sheer thrill of indoor skydiving in a massive wind tunnel.</li>
+          <li><strong>Mega Adventure Park (MegaZip):</strong> Soar across the jungle canopy on high-adrenaline ziplines.</li>
+          <li><strong>Beach & Water Sports:</strong> Kayaking, paddleboarding, swimming, and beach volleyball along Siloso and Palawan beaches.</li>
+          <li><strong>Coastal Walking & Nature:</strong> Scenic boardwalks and green forest trails offering peaceful walks and wildlife spotting.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN RECREATION CATEGORIES -->
+  <section class="section recreation-section">
+    <div class="section-heading">
+      <p class="eyebrow">RECREATIONAL OFFERINGS</p>
+      <h2>Comprehensive outdoor and fitness amenities.</h2>
+      <p>
+        Explore the wide spectrum of athletic facilities, green trails, 
+        and active recreation options available to residents in the surrounding area.
+      </p>
+    </div>
+
+    <div class="recreation-grid">
+      {
+        recreationCategories.map((item) => (
+          <article class="recreation-card">
+            <span class="card-number">{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+            <p class="card-detail">{item.details}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- RELATED LINKS SECTION -->
+  <section class="section explore-links-section">
+    <div class="section-heading centered">
+      <p class="eyebrow">CONTINUE EXPLORING</p>
+      <h2>Discover more around Depot Heights.</h2>
+    </div>
+
+    <div class="explore-grid">
+      <article class="explore-card">
+        <h3>Nature Parks</h3>
+        <p>Explore parks, heritage trails, arts, and leisure destinations around the southern ridges.</p>
+        <a class="text-link" href="/parks-pcn">Explore Nature Parks →</a>
+      </article>
+
+      <article class="explore-card">
+        <h3>Living Around</h3>
+        <p>Discover estate convenience, family amenities, and residential value in Bukit Merah.</p>
+        <a class="text-link" href="/living-around-depot-heights">Explore Living →</a>
+      </article>
+
+      <article class="explore-card">
+        <h3>Location & Map</h3>
+        <p>Check public transport accessibility, MRT lines, and driving routes across Singapore.</p>
+        <a class="text-link" href="/location">Explore Location →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing-section">
+    <div class="closing-inner">
+      <p class="eyebrow">STAY ACTIVE</p>
+      <h2>Embrace a vibrant, healthy lifestyle at Depot Heights.</h2>
+      <p>
+        Combine urban convenience with boundless opportunities for outdoor recreation, 
+        gym training, and island resort adventures. Discover your ideal home environment in Singapore's green southern corridor.
+      </p>
+
+      <div class="closing-actions">
+        <a class="button button-primary" href="/living-around-depot-heights">
+          Explore Living Guide
+        </a>
+        <a class="button button-secondary" href="/location">
+          View Location Guide
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slideshows = document.querySelectorAll(".hub-slideshow");
+
+    slideshows.forEach((slideshow) => {
+      const slides = slideshow.querySelectorAll(".slide-item");
+      const prevBtn = slideshow.querySelector(".prev-btn");
+      const nextBtn = slideshow.querySelector(".next-btn");
+      const counter = slideshow.querySelector(".slide-counter");
+      
+      if (!slides.length) return;
+
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+
+      function updateSlide(newIndex) {
+        slides[currentIndex].classList.remove("active");
+        currentIndex = (newIndex + totalSlides) % totalSlides;
+        slides[currentIndex].classList.add("active");
+        if (counter) {
+          counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
+        }
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+          updateSlide(currentIndex - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          updateSlide(currentIndex + 1);
+        });
+      }
+    });
+  });
+</script>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    margin: 0;
+    color: #1d2924;
+    background: #f7f5ef;
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  }
+
+  :global(a) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    min-height: 600px;
+    background: #e8f0e8;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px clamp(30px, 6vw, 90px);
+  }
+
+  .eyebrow {
+    margin: 0 0 16px;
+    color: #2b6e52;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    max-width: 700px;
+    margin: 0;
+    font-size: clamp(45px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.055em;
+  }
+
+  .hero h1 span {
+    display: block;
+    color: #2b6e52;
+  }
+
+  .hero-text {
+    max-width: 650px;
+    margin: 28px 0 0;
+    color: #52625a;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .hero-actions,
+  .closing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .button-primary {
+    background: #2b6e52;
+    color: #ffffff;
+  }
+
+  .button-secondary {
+    border: 1px solid #2b6e52;
+    color: #2b6e52;
+  }
+
+  .hero-image {
+    min-height: 600px;
+    overflow: hidden;
+    background: #dce7dd;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .section {
+    padding: 95px 5vw;
+  }
+
+  .section-heading {
+    max-width: 900px;
+    margin-bottom: 55px;
+  }
+
+  .section-heading.centered {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-heading h2 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .section-heading p:not(.eyebrow) {
+    max-width: 760px;
+    margin: 22px 0 0;
+    color: #5d6b64;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .introduction-section {
+    background: #ffffff;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+    max-width: 1300px;
+    margin: 0 auto 65px;
+  }
+
+  .intro-grid .section-heading {
+    margin: 0;
+  }
+
+  .intro-copy {
+    color: #52625a;
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .intro-copy p {
+    margin: 0 0 20px;
+  }
+
+  .intro-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .highlight-card {
+    min-height: 220px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #f7f8f3;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .highlight-icon {
+    display: block;
+    margin-bottom: 18px;
+    font-size: 30px;
+  }
+
+  .highlight-card h3 {
+    margin: 0;
+    font-size: 25px;
+    line-height: 1.2;
+  }
+
+  .highlight-card p {
+    margin: 12px 0 0;
+    color: #5d6b64;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .doorstep-section {
+    background: #f7f8f3;
+  }
+
+  .doorstep-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .doorstep-card {
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-image-wrap {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #e2e8e2;
+  }
+
+  .card-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .doorstep-card:hover .card-image-wrap img {
+    transform: scale(1.03);
+  }
+
+  .card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .card-number {
+    display: block;
+    margin-bottom: 15px;
+    color: #2b6e52;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+  .doorstep-card h3 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .doorstep-card p {
+    margin: 15px 0 0;
+    color: #5d6b64;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .hubs-section {
+    background: #235f47;
+    color: #ffffff;
+  }
+
+  .hubs-section .eyebrow {
+    color: #c9e4d5;
+  }
+
+  .hubs-section .section-heading p:not(.eyebrow) {
+    color: #d4e7dc;
+  }
+
+  .hubs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .hub-card {
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hub-card .card-number {
+    color: #c9e4d5;
+  }
+
+  .hub-card h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .hub-card p {
+    margin: 15px 0 0;
+    color: #d8e9df;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  /* Slideshow Styles */
+  .hub-slideshow {
+    margin-top: 20px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .slides-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+  }
+
+  .slide-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    pointer-events: none;
+  }
+
+  .slide-item.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .slideshow-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: rgba(18, 48, 36, 0.85);
+  }
+
+  .slide-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+
+  .slide-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .slide-counter {
+    color: #c9e4d5;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .sentosa-section {
+    background: #ffffff;
+  }
+
+  .sentosa-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .sentosa-grid .section-heading {
+    margin: 0;
+  }
+
+  .sentosa-highlights-box {
+    padding: 40px;
+    border-radius: 20px;
+    background: #f7f8f3;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .sentosa-highlights-box h3 {
+    margin: 0 0 16px;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .sentosa-highlights-box ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #5d6b64;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .sentosa-highlights-box li {
+    margin-bottom: 12px;
+  }
+
+  .sentosa-highlights-box li:last-child {
+    margin-bottom: 0;
+  }
+
+  .sentosa-highlights-box strong {
+    color: #1d2924;
+  }
+
+  .recreation-section {
+    background: #f7f8f3;
+  }
+
+  .recreation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .recreation-card {
+    min-height: 320px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .recreation-card h3 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .recreation-card p {
+    margin: 15px 0 0;
+    color: #5d6b64;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .recreation-card .card-detail {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #e4e9e4;
+    color: #52625a;
+    font-size: 15px;
+  }
+
+  .explore-links-section {
+    background: #edf3ed;
+  }
+
+  .explore-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .explore-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .explore-card h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .explore-card p {
+    margin: 0 0 20px;
+    color: #5d6b64;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .text-link {
+    margin-top: auto;
+    color: #2b6e52;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .closing-section {
+    padding: 95px 5vw;
+    background: #142f25;
+    color: #ffffff;
+  }
+
+  .closing-inner {
+    max-width: 950px;
+  }
+
+  .closing-inner .eyebrow {
+    color: #c9e4d5;
+  }
+
+  .closing-inner h2 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .closing-inner > p:not(.eyebrow) {
+    max-width: 800px;
+    margin: 25px 0 0;
+    color: #d8e9df;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .closing-actions .button-secondary {
+    border-color: #c9e4d5;
+    color: #c9e4d5;
+  }
+
+  @media (max-width: 1100px) {
+    .hero,
+    .intro-grid,
+    .sentosa-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-image,
+    .hero-image img {
+      min-height: 480px;
+    }
+
+    .highlight-grid,
+    .doorstep-grid,
+    .hubs-grid,
+    .recreation-grid,
+    .explore-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 800px) {
+    .section,
+    .closing-section {
+      padding: 75px 24px;
+    }
+
+    .highlight-grid,
+    .doorstep-grid,
+    .hubs-grid,
+    .recreation-grid,
+    .explore-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-content {
+      padding: 65px 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 14vw, 70px);
+    }
+
+    .hero-text {
+      font-size: 16px;
+    }
+
+    .hero-image,
+    .hero-image img {
+      min-height: 350px;
+    }
+  }
+</style>

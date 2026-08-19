@@ -56,17 +56,17 @@ const mrtConnections = [
   },
   {
     number: "02",
-    title: "Telok Blangah MRT",
+    title: "Labrador Park / Pasir Panjang MRT",
     lines: "Circle Line",
     description:
-      "Telok Blangah MRT provides convenient access towards Telok Blangah Hill, the Southern Ridges, Mount Faber and HarbourFront.",
+      "Labrador Park MRT provides convenient access to One-North commercial area, towards Marina Bay & Buona Vista Interchange Station. ",
   },
   {
     number: "03",
-    title: "Redhill MRT",
+    title: "Queenstown MRT",
     lines: "East West Line",
     description:
-      "Redhill MRT connects residents towards Tiong Bahru, Outram, Raffles Place, City Hall and the western part of Singapore.",
+      "Queenstown MRT connects residents towards Tiong Bahru, Outram, Raffles Place, City Hall and the western part of Singapore.",
   },
   {
     number: "04",
@@ -139,13 +139,13 @@ const commercialHubs = [
   },
   {
     number: "04",
-    title: "one-north",
+    title: "One-North",
     description:
-      "The one-north precinct is a major business, research and technology area centred around one-north MRT, with developments including Biopolis, Fusionopolis, Solaris, INNOVIS and Synthesis.",
+      "The One-North precinct is a major business, research and technology area centred around one-north MRT, with developments including Biopolis, Fusionopolis, Solaris, INNOVIS and Synthesis.",
   },
   {
     number: "05",
-    title: "Singapore CBD",
+    title: "Shenton Way & CBD",
     description:
       "Singapore's Central Business District is within practical reach from Depot Heights, providing access to major financial, business and professional services employment centres.",
   },
@@ -171,7 +171,7 @@ const greenConnections = [
     number: "02",
     title:
       "Telok Blangah Hill Park → Southern Ridges → Alexandra Arch → HortPark → Kent Ridge Park",
-    image: "/images/hortpark.webp",
+    image: "/images/hortpark(0).webp",
     alt: "HortPark and the Southern Ridges",
     description:
       "A separate green connection follows the Southern Ridges from Telok Blangah Hill Park towards Alexandra Arch, HortPark and onwards to Kent Ridge Park. This route connects several major green spaces and offers an extended nature and walking route through the southern ridges.",
@@ -211,13 +211,13 @@ const majorDestinations = [
   },
   {
     number: "03",
-    title: "one-north",
+    title: "One-North",
     description:
-      "A major business and research precinct centred around one-north MRT, including Biopolis, Fusionopolis, Solaris, INNOVIS and Synthesis.",
+      "A major business and research precinct centred around One-North MRT, including Biopolis, Fusionopolis, Solaris, INNOVIS and Synthesis.",
   },
   {
     number: "04",
-    title: "Singapore CBD",
+    title: "Shenton Way & CBD",
     description:
       "The Central Business District is accessible from Depot Heights for work, business, finance, dining and city activities.",
   },
@@ -264,6 +264,7 @@ const majorDestinations = [
         src="/images/depot-heights-location-hero.webp"
         alt="Depot Heights and the surrounding Bukit Merah neighbourhood"
         loading="eager"
+        decoding="async"
       />
     </div>
   </section>
@@ -291,49 +292,12 @@ const majorDestinations = [
         <p>
           Beyond its immediate surroundings, the location provides access to
           major employment and commercial areas such as Alexandra TechnoPark,
-          Mapletree Business City, one-north and the CBD. Residents can also
+          Mapletree Business City, One-North and the CBD. Residents can also
           reach major education and healthcare destinations including NUS and
           NUH, while the Southern Ridges, Mount Faber, HortPark and Labrador
           provide a strong connection to nature and outdoor recreation.
         </p>
       </div>
-    </div>
-
-    <div class="highlight-grid">
-      <article class="highlight-card">
-        <span class="highlight-icon">🏢</span>
-        <h3>Commercial</h3>
-        <p>
-          Close to Alexandra, one-north, HarbourFront and the Singapore CBD.
-        </p>
-      </article>
-
-      <article class="highlight-card">
-        <span class="highlight-icon">🌳</span>
-        <h3>Nature</h3>
-        <p>
-          Easy access to the Southern Ridges, HortPark, Mount Faber, Labrador
-          and Kent Ridge Park.
-        </p>
-      </article>
-
-      <article class="highlight-card">
-        <span class="highlight-icon">🚌</span>
-        <h3>Connectivity</h3>
-        <p>
-          Served by a network of buses and within reach of several MRT
-          stations and major expressways.
-        </p>
-      </article>
-
-      <article class="highlight-card">
-        <span class="highlight-icon">🏥</span>
-        <h3>Lifestyle</h3>
-        <p>
-          Surrounded by shopping, food, cafés, restaurants, healthcare,
-          schools and everyday amenities.
-        </p>
-      </article>
     </div>
   </section>
 
@@ -467,7 +431,7 @@ const majorDestinations = [
       <p>
         The location of Depot Heights places residents within practical reach
         of major commercial and employment hubs across Alexandra, HarbourFront,
-        one-north and the CBD.
+        One-North and the CBD.
       </p>
     </div>
 
@@ -514,6 +478,7 @@ const majorDestinations = [
                 src={route.image}
                 alt={route.alt}
                 loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -572,7 +537,7 @@ const majorDestinations = [
         living and access to Singapore's wider network of workplaces, commercial
         districts, education, healthcare, parks and waterfront destinations.
         Alexandra, Redhill, Tiong Bahru, Telok Blangah and HarbourFront are all
-        part of the surrounding landscape, while one-north, NUS, NUH and the CBD
+        part of the surrounding landscape, while One-North, NUS, NUH and the CBD
         remain practical destinations for work, study and daily life.
       </p>
 
@@ -586,7 +551,7 @@ const majorDestinations = [
 
         <a
           class="button button-secondary"
-          href="/lifestyle"
+          href="/living-around-depot-heights"
         >
           Explore Lifestyle
         </a>

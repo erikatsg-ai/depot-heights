@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ImageGallery from "../components/ImageGallery.astro";
 
 const pageTitle =
   "Best Restaurants Near Depot Heights | Alexandra, Bukit Merah & Tiong Bahru Dining Guide";
@@ -7,198 +8,212 @@ const pageTitle =
 const pageDescription =
   "Explore recommended restaurants near Depot Heights, including dining options around Alexandra, Anchorpoint, Tiong Bahru, Pasir Panjang, Telok Blangah Hill and Tanjong Pagar. Discover Japanese, Taiwanese, Italian, Western, Swedish and heritage dining options.";
 
-const canonicalUrl = "https://depotheights.is-great.net/restaurants";
+const canonicalUrl = "https://depot-heights.pages.dev/restaurants";
 
 const heroImage = "/images/depot-heights-hero.webp";
 
-const featuredRestaurants = [
+const restaurantEstates = [
   {
-    id: "wineyard",
-    number: "01",
-    title: "Wineyard",
-    subtitle: "HortPark",
-    address: "HortPark, Singapore",
-    cuisine: "Western",
-    distance: "≈ 2 km",
-    image: "/images/rs-wineyard.webp",
-    gallery: [
-      "/images/rs-vineyard-menu.webp",
-      "/images/rs-vineyard-carte-buffet.webp",
+    estate: "Mount Faber & HortPark",
+    restaurants: [
+      {
+        number: "01",
+        id: "wineyard",
+        name: "Wineyard",
+        location: "HortPark",
+        image: "/images/rs-wineyard.webp",
+        alt: "Wineyard at HortPark near Depot Heights",
+        description:
+          "Wineyard is a garden dining destination around HortPark, offering a peaceful setting surrounded by greenery. It is an option to consider for a relaxed meal, brunch or weekend gathering.",
+        highlight:
+          "A convenient dining choice to combine with a visit to HortPark and the wider Southern Ridges area.",
+        gallery: [
+          "/images/rs-vineyard-menu.webp",
+          "/images/rs-vineyard-carte-buffet.webp",
+        ],
+      },
+      {
+        number: "02",
+        id: "alkaff-mansion",
+        name: "The Alkaff Mansion",
+        location: "Telok Blangah Hill",
+        image: "/images/rs-alkaff-mansion-main.webp",
+        alt: "The Alkaff Mansion on Telok Blangah Hill",
+        description:
+          "The Alkaff Mansion is a historic landmark on Telok Blangah Hill, surrounded by greenery and connected to the wider Southern Ridges. Today, the heritage mansion is also a distinctive dining destination, bringing together The Alkaff Mansion 1918 Heritage Bar and UNA Restaurant, known for its Spanish dining experience.",
+        highlight:
+          "A special destination close to Depot Heights for residents looking to combine heritage, greenery and dining.",
+        gallery: [
+          "/images/rs-alkaff-mansion-heritage.webp",
+          "/images/rs-alkaff-mansion-food.webp",
+        ],
+      },
     ],
-    description:
-      "Wineyard is a garden dining destination around HortPark, offering a peaceful setting surrounded by greenery. It is an option to consider for a relaxed meal, brunch or weekend gathering.",
-    note:
-      "A convenient dining choice to combine with a visit to HortPark and the wider Southern Ridges area.",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Wineyard+HortPark+Singapore",
   },
   {
-    id: "verandah-rotisserie",
-    number: "02",
-    title: "The Verandah Rotisserie",
-    subtitle: "Pasir Panjang",
-    address: "Pasir Panjang, Singapore",
-    cuisine: "Western",
-    distance: "≈ 3 km",
-    image: "/images/rs-verandah-rotisserie.webp",
-    gallery: [
-      "/images/rs-verandah-rotisserie-rice.webp",
-      "/images/rs-verandah-rotisserie-christmas.webp",
+    estate: "Alexandra & Pasir Panjang",
+    restaurants: [
+      {
+        number: "03",
+        id: "verandah-rotisserie",
+        name: "The Verandah Rotisserie",
+        location: "Pasir Panjang",
+        image: "/images/rs-verandah-rotisserie.webp",
+        alt: "The Verandah Rotisserie at Pasir Panjang",
+        description:
+          "The Verandah Rotisserie is a Western dining option around Pasir Panjang, known for rotisserie-style dishes and hearty meals.",
+        highlight:
+          "A restaurant option to consider for a relaxed meal with family or friends.",
+        gallery: [
+          "/images/rs-verandah-rotisserie-rice.webp",
+          "/images/rs-verandah-rotisserie-christmas.webp",
+        ],
+      },
+      {
+        number: "04",
+        id: "eat3bowl",
+        name: "Eat 3 Bowls",
+        location: "Pasir Panjang",
+        image: "/images/eat-3-bowls-storefront.webp",
+        alt: "Eat 3 Bowls in Pasir Panjang",
+        description:
+          "Eat 3 Bowls is a Taiwanese food destination around Pasir Panjang, offering another nearby neighbourhood option for residents exploring food beyond Depot Heights.",
+        highlight:
+          "Pasir Panjang is also convenient to combine with visits to nearby parks, HortPark and other Southern Ridges destinations.",
+        gallery: [
+          "/images/eat-3-bowls-salted-chicken.webp",
+          "/images/eat-3-bowls-garlic-steak.webp",
+        ],
+      },
+      {
+        number: "05",
+        id: "ikea-alexandra",
+        name: "IKEA Alexandra",
+        location: "Alexandra Road",
+        image: "/images/rs-ikea-alexandra.webp",
+        alt: "IKEA Alexandra restaurant and bistro",
+        description:
+          "IKEA Alexandra is a popular destination along Alexandra Road. Besides furniture and home furnishing, its Swedish-style restaurant and bistro are familiar casual dining options, including its popular chicken wings.",
+        highlight:
+          "A convenient option when combining shopping, home furnishing errands and a casual meal around Alexandra.",
+        gallery: [
+          "/images/rs-ikea-alexandra-food.webp",
+          "/images/rs-ikea-alexandra-chicken-wings.webp",
+        ],
+      },
+      {
+        number: "06",
+        id: "sakuraya-anchorpoint",
+        name: "Sakuraya",
+        location: "Anchorpoint",
+        image: "/images/sakuraya-store-front.webp",
+        alt: "Sakuraya at Anchorpoint",
+        description:
+          "Sakuraya at Anchorpoint is a convenient Japanese dining option near Alexandra Road and within easy reach of Depot Heights.",
+        highlight:
+          "A practical choice for residents looking for Japanese food around the Alexandra area.",
+        gallery: [
+          "/images/sakuraya-sashimi.webp",
+          "/images/sakuraya-grill-fish.webp",
+        ],
+      },
+      {
+        number: "07",
+        id: "ma-maison",
+        name: "Ma Maison",
+        location: "Anchorpoint",
+        image: "/images/ma-maison-storefront.webp",
+        alt: "Ma Maison at Anchorpoint",
+        description:
+          "Ma Maison at Anchorpoint is another Japanese restaurant option around Alexandra Road, conveniently located for residents in the Depot Heights and Alexandra neighbourhoods.",
+        highlight:
+          "Its Anchorpoint location makes it easy to combine dining with shopping and errands around Alexandra.",
+        gallery: [
+          "/images/ma-maison-steak.webp",
+          "/images/ma-maison-curry-egg.webp",
+        ],
+      },
     ],
-    description:
-      "The Verandah Rotisserie is a Western dining option around Pasir Panjang, known for rotisserie-style dishes and hearty meals.",
-    note:
-      "A restaurant option to consider for a relaxed meal with family or friends.",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=The+Verandah+Rotisserie+Singapore",
   },
   {
-    id: "forketta",
-    number: "03",
-    title: "Forketta",
-    subtitle: "Tiong Bahru",
-    address: "Tiong Bahru, Singapore",
-    cuisine: "Italian",
-    distance: "≈ 3.5 km",
-    image: "/images/rs-forketta-tiongbahru.webp",
-    gallery: [
-      "/images/rs-forketta.webp",
-      "/images/rs-forketta-pizza.webp",
+    estate: "Tiong Bahru & Tanjong Pagar",
+    restaurants: [
+      {
+        number: "08",
+        id: "forketta",
+        name: "Forketta",
+        location: "Tiong Bahru",
+        image: "/images/rs-forketta-tiongbahru.webp",
+        alt: "Forketta in Tiong Bahru",
+        description:
+          "Located in the Tiong Bahru area, Forketta is part of a neighbourhood dining scene that combines restaurants, cafés, bakeries and traditional local food.",
+        highlight:
+          "Tiong Bahru is easy to combine with a wider food trip, café visit or walk around the neighbourhood.",
+        gallery: [
+          "/images/rs-forketta.webp",
+          "/images/rs-forketta-pizza.webp",
+        ],
+      },
+      {
+        number: "09",
+        id: "keisuke-tori-king",
+        name: "Keisuke Tori King",
+        location: "100AM, Tanjong Pagar",
+        image: "/images/keisuke-tori-king-100am.webp",
+        alt: "Keisuke Tori King at 100AM Tanjong Pagar",
+        description:
+          "Keisuke Tori King at 100AM is a Japanese dining option in Tanjong Pagar, offering another choice for residents who are happy to travel towards the city fringe for dining.",
+        highlight:
+          "A destination dining option around Tanjong Pagar rather than a doorstep choice.",
+        gallery: [
+          "/images/keisuke-tori-king-menu.webp",
+          "/images/keisuke-tori-king-black-spicy.webp",
+        ],
+      },
+      {
+        number: "10",
+        id: "keisuke-hamburg",
+        name: "Keisuke Hamburg",
+        location: "Tanjong Pagar",
+        images: [
+          {
+            src: "/images/rs-keisuke-hamburg-tanjong-pagar(3).webp",
+            alt: "Keisuke Hamburg Tanjong Pagar storefront",
+          },
+          {
+            src: "/images/rs-keisuke-hamburg-tanjong-pagar(2).webp",
+            alt: "Keisuke Hamburg dishes",
+          },
+          {
+            src: "/images/rs-keisuke-hamburg-tanjong-pagar(1).webp",
+            alt: "Keisuke Hamburg interior setup",
+          },
+        ],
+        description:
+          "Keisuke Hamburg is a Japanese hamburger steak restaurant in the Tanjong Pagar area, offering a different style of Japanese dining from the more familiar sushi and ramen choices.",
+        highlight:
+          "A destination worth considering when you want to make a specific dining trip towards Tanjong Pagar.",
+      },
     ],
-    description:
-      "Located in the Tiong Bahru area, Forketta is part of a neighbourhood dining scene that combines restaurants, cafés, bakeries and traditional local food.",
-    note:
-      "Tiong Bahru is easy to combine with a wider food trip, café visit or walk around the neighbourhood.",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Forketta+Tiong+Bahru+Singapore",
-  },
-  {
-    id: "ikea-alexandra",
-    number: "04",
-    title: "IKEA Alexandra",
-    subtitle: "Alexandra Road",
-    address: "317 Alexandra Road, Singapore",
-    cuisine: "Swedish",
-    distance: "≈ 2 km",
-    image: "/images/rs-ikea-alexandra.webp",
-    gallery: [
-      "/images/rs-ikea-alexandra-food.webp",
-      "/images/rs-ikea-alexandra-chicken-wings.webp",
-    ],
-    description:
-      "IKEA Alexandra is a popular destination along Alexandra Road. Besides furniture and home furnishing, its Swedish-style restaurant and bistro are familiar casual dining options, including its popular chicken wings.",
-    note:
-      "A convenient option when combining shopping, home furnishing errands and a casual meal around Alexandra.",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=IKEA+Alexandra+317+Alexandra+Road+Singapore",
   },
 ];
 
-const japaneseRestaurants = [
+const restaurantAreas = [
   {
-    id: "sakuraya-anchorpoint",
-    number: "01",
-    title: "Sakuraya",
-    subtitle: "Anchorpoint",
-    address: "370 Alexandra Road, Singapore",
-    image: "/images/rs-sakuraya-anchorpoint.webp",
+    title: "Alexandra & Anchorpoint",
     description:
-      "Sakuraya at Anchorpoint is a convenient Japanese dining option near Alexandra Road and within easy reach of Depot Heights.",
-    note:
-      "A practical choice for residents looking for Japanese food around the Alexandra area.",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Sakuraya+Anchorpoint+Singapore",
+      "Alexandra Road and Anchorpoint offer quick convenience for Depot Heights residents, featuring Japanese restaurants, Swedish casual dining, and familiar neighbourhood eateries.",
   },
   {
-    id: "ma-mansion",
-    number: "02",
-    title: "Ma Mansion",
-    subtitle: "Anchorpoint",
-    address: "Anchorpoint, 370 Alexandra Road, Singapore",
-    image: "/images/rs-mamansion-anchorpoint.webp",
+    title: "Tiong Bahru",
     description:
-      "Ma Mansion at Anchorpoint is another Japanese restaurant option around Alexandra Road, conveniently located for residents in the Depot Heights and Alexandra neighbourhoods.",
-    note:
-      "Its Anchorpoint location makes it easy to combine dining with shopping and errands around Alexandra.",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Ma+Mansion+Anchorpoint+Singapore",
+      "Tiong Bahru combines heritage charm with a vibrant culinary scene, featuring Italian dining, bakeries, cafes, and traditional local food options.",
   },
   {
-    id: "toriking-black-spicy",
-    number: "03",
-    title: "Toriking Black Spicy",
-    subtitle: "100AM, Tanjong Pagar",
-    address: "100 Tras Street, Singapore",
-    image: "/images/rs-toriking-blackspicy-100am.webp",
+    title: "Southern Ridges & Pasir Panjang",
     description:
-      "Toriking Black Spicy at 100AM is a Japanese dining option in Tanjong Pagar, offering another choice for residents who are happy to travel towards the city fringe for dining.",
-    note:
-      "A destination dining option around Tanjong Pagar rather than a doorstep choice.",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Toriking+Black+Spicy+100AM+Singapore",
+      "The green corridor stretching from Mount Faber through HortPark and Pasir Panjang provides scenic garden dining and unique specialty eateries.",
   },
-  {
-    id: "keisuke-hamburg",
-    number: "04",
-    title: "Keisuke Hamburg",
-    subtitle: "Tanjong Pagar",
-    address: "Tanjong Pagar, Singapore",
-    image: "/images/rs-keisuke-hamburg-tanjong-pagar(1).webp",
-    gallery: [
-      "/images/rs-keisuke-hamburg-tanjong-pagar(2).webp",
-      "/images/rs-keisuke-hamburg-tanjong-pagar(3).webp",
-    ],
-    description:
-      "Keisuke Hamburg is a Japanese hamburger steak restaurant in the Tanjong Pagar area, offering a different style of Japanese dining from the more familiar sushi and ramen choices.",
-    note:
-      "A destination worth considering when you want to make a specific dining trip towards Tanjong Pagar.",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Keisuke+Hamburg+Tanjong+Pagar+Singapore",
-  },
-];
-
-const taiwaneseRestaurants = [
-  {
-    id: "eat3bowl",
-    number: "01",
-    title: "Eat 3 Bowls",
-    subtitle: "Pasir Panjang",
-    address: "Pasir Panjang, Singapore",
-    image: "/images/rs-eat3bowl-pasirpanjang.webp",
-    description:
-      "Eat 3 Bowls is a Taiwanese food destination around Pasir Panjang, offering another nearby neighbourhood option for residents exploring food beyond Depot Heights.",
-    note:
-      "Pasir Panjang is also convenient to combine with visits to nearby parks, HortPark and other Southern Ridges destinations.",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Eat+3+Bowls+Pasir+Panjang+Singapore",
-  },
-];
-
-const heritageRestaurant = {
-  id: "alkaff-mansion",
-  title: "The Alkaff Mansion",
-  subtitle: "Heritage Dining · Telok Blangah Hill",
-  address: "10 Telok Blangah Green, Singapore",
-  image: "/images/rs-alkaff-mansion-main.webp",
-  gallery: [
-    "/images/rs-alkaff-mansion-heritage.webp",
-    "/images/rs-alkaff-mansion-food.webp",
-  ],
-  description:
-    "The Alkaff Mansion is a historic landmark on Telok Blangah Hill, surrounded by greenery and connected to the wider Southern Ridges. Today, the heritage mansion is also a distinctive dining destination, bringing together The Alkaff Mansion 1918 Heritage Bar and UNA Restaurant, known for its Spanish dining experience.",
-  note:
-    "A special destination close to Depot Heights for residents looking to combine heritage, greenery and dining.",
-  mapUrl:
-    "https://www.google.com/maps/search/?api=1&query=The+Alkaff+Mansion+10+Telok+Blangah+Green+Singapore",
-};
-
-const nearbyAreas = [
-  "Alexandra",
-  "Anchorpoint",
-  "Tiong Bahru",
-  "Telok Blangah Hill",
-  "Pasir Panjang",
-  "Tanjong Pagar",
 ];
 ---
 
@@ -211,424 +226,291 @@ const nearbyAreas = [
   <main>
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">Depot Heights · Restaurants</p>
+      <div class="hero-content">
+        <p class="eyebrow">
+          RESTAURANTS & DINING NEAR DEPOT HEIGHTS
+        </p>
 
-          <h1>Good food, within reach.</h1>
+        <h1>
+          Good food,
+          <span>within reach.</span>
+        </h1>
 
-          <p class="hero-text">
-            Discover recommended restaurants around Alexandra, Bukit Merah,
-            Tiong Bahru, Pasir Panjang, Telok Blangah Hill and Tanjong Pagar.
-            From convenient neighbourhood dining to destination restaurants,
-            there are plenty of choices within reach of Depot Heights.
-          </p>
+        <p class="hero-text">
+          Explore recommended restaurants around Alexandra, Bukit Merah,
+          Tiong Bahru, Pasir Panjang, Telok Blangah Hill and Tanjong Pagar.
+          From convenient neighbourhood dining to destination restaurants,
+          there are plenty of choices within reach of Depot Heights.
+        </p>
 
-          <div class="hero-actions">
-            <a class="button button-primary" href="#featured-restaurants">
-              Explore restaurants
-            </a>
+        <div class="hero-actions">
+          <a class="button primary" href="#restaurant-guide">
+            Explore restaurants
+          </a>
 
-            <a class="button button-secondary" href="/">
-              Back to neighbourhood guide
-            </a>
-          </div>
+          <a class="button secondary" href="/cafes">
+            Explore cafés
+          </a>
         </div>
+      </div>
 
-        <div class="hero-image">
-          <img
-            src={heroImage}
-            alt="Depot Heights residential estate"
-          />
+      <div class="hero-card">
+        <img
+          src={heroImage}
+          alt="Depot Heights residential estate"
+          width="600"
+          height="400"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
 
-          <div class="hero-image-caption">
-            <strong>Restaurants Near Depot Heights</strong>
-            <span>
-              Alexandra · Bukit Merah · Tiong Bahru · Pasir Panjang
-            </span>
-          </div>
+        <div class="hero-card-overlay">
+          <p>DEPOT HEIGHTS</p>
+
+          <div class="hero-card-line"></div>
+
+          <strong>
+            Restaurants & dining.<br />
+            Neighbourhood guide.
+          </strong>
         </div>
       </div>
     </section>
 
-    <div class="page-content">
-      <!-- INTRO -->
-      <div class="section-intro">
-        <p class="eyebrow">Restaurants & dining</p>
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="eyebrow">
+        RESTAURANTS & DINING
+      </p>
+
+      <h2>
+        A wider dining scene is just a short journey from Depot Heights.
+      </h2>
+
+      <p>
+        Whether you are looking for family dining, Japanese cuisine,
+        Italian pizza, Taiwanese food, Swedish-style casual dining or a
+        heritage dining experience, these restaurants offer a range of
+        choices around the wider Alexandra and Bukit Merah area.
+      </p>
+    </section>
+
+    <!-- RESTAURANT GUIDE BY ESTATE -->
+    <div class="section-grid" id="restaurant-guide">
+      {
+        restaurantEstates.map((group) => (
+          <div class="estate-group">
+            <div class="estate-heading-wrapper">
+              <span class="estate-badge">NEIGHBOURHOOD ZONE</span>
+              <h2>{group.estate}</h2>
+            </div>
+
+            <div class="estate-cafes-container">
+              {group.restaurants.map((restaurant) => (
+                <article class="section-card" id={restaurant.id}>
+                  <div class="section-number">
+                    {restaurant.number}
+                  </div>
+
+                  <div>
+                    <p class="eyebrow">
+                      {restaurant.location}
+                    </p>
+
+                    <h2>
+                      {restaurant.name}
+                    </h2>
+
+                    <p class="section-description">
+                      {restaurant.description}
+                    </p>
+
+                    {
+                      restaurant.images ? (
+                        <div class="cafe-photo-grid four-photos">
+                          {restaurant.images.map((photo) => (
+                            <figure class="cafe-photo-card">
+                              <img
+                                src={photo.src}
+                                alt={photo.alt}
+                                width="400"
+                                height="300"
+                                loading="lazy"
+                                decoding="async"
+                              />
+                            </figure>
+                          ))}
+                        </div>
+                      ) : restaurant.gallery ? (
+                        <div class="cafe-photo-grid two-photos">
+                          <figure class="cafe-photo-card">
+                            <img
+                              src={restaurant.image}
+                              alt={restaurant.alt}
+                              width="400"
+                              height="300"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </figure>
+                          <figure class="cafe-photo-card">
+                            <img
+                              src={restaurant.gallery[0]}
+                              alt={`${restaurant.name} food and dining`}
+                              width="400"
+                              height="300"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </figure>
+                        </div>
+                      ) : (
+                        <div class="main-cafe-image">
+                          <img
+                            src={restaurant.image}
+                            alt={restaurant.alt}
+                            width="800"
+                            height="480"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </div>
+                      )
+                    }
+
+                    <div class="highlight-box">
+                      <p class="highlight-eyebrow">
+                        GOOD TO KNOW
+                      </p>
+
+                      <p>
+                        {restaurant.highlight}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- AREAS TO EXPLORE -->
+    <section class="area-section">
+      <div class="area-heading">
+        <p class="eyebrow">
+          POPULAR DINING AREAS
+        </p>
 
         <h2>
-          A wider dining scene is just a short journey from Depot Heights.
+          Popular dining areas near Depot Heights.
         </h2>
 
         <p>
-          Whether you are looking for family dining, Japanese cuisine,
-          Italian pizza, Taiwanese food, Swedish-style casual dining or a
-          heritage dining experience, these restaurants offer a range of
-          choices around the wider Alexandra and Bukit Merah area.
+          These neighbourhoods and districts offer a wider range of
+          restaurants and dining experiences within the wider area around
+          Depot Heights.
         </p>
       </div>
 
-      <!-- FEATURED RESTAURANTS -->
-      <section
-        class="restaurant-section"
-        id="featured-restaurants"
-      >
-        <div class="section-heading">
-          <div class="section-number">01</div>
+      <div class="area-grid">
+        {
+          restaurantAreas.map((area) => (
+            <article class="area-card">
+              <h3>
+                {area.title}
+              </h3>
 
-          <div>
-            <h2>Featured Restaurants</h2>
+              <p>
+                {area.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
 
-            <p>
-              A selection of restaurants and dining destinations that are
-              convenient to consider from Depot Heights.
-            </p>
-          </div>
-        </div>
+    <!-- FEATURED -->
+    <section class="featured">
+      <div>
+        <p class="eyebrow">
+          RESTAURANTS GUIDE
+        </p>
 
-        <div class="featured-list">
-          {
-            featuredRestaurants.map((restaurant) => (
-              <article class="featured-card">
-                <div class="featured-copy">
-                  <div class="meta-row">
-                    <span class="number">{restaurant.number}</span>
+        <h2>
+          Good food, within reach of Depot Heights.
+        </h2>
+      </div>
 
-                    <span class="badge">
-                      {restaurant.cuisine}
-                    </span>
-                  </div>
+      <p>
+        From casual neighbourhood spots to special destination dining,
+        explore the variety of culinary options available across Alexandra,
+        Bukit Merah, Tiong Bahru, and the Southern Ridges.
+      </p>
+    </section>
 
-                  <h3>{restaurant.title}</h3>
+    <!-- RELATED -->
+    <section class="related-section">
+      <div class="related-heading">
+        <p class="eyebrow">
+          MORE FOOD & DINING
+        </p>
 
-                  <p class="location">
-                    {restaurant.subtitle}
-                  </p>
+        <h2>
+          Continue exploring the neighbourhood.
+        </h2>
+      </div>
 
-                  <p class="address">
-                    {restaurant.address}
-                  </p>
-
-                  <p>{restaurant.description}</p>
-
-                  <p class="note">
-                    <strong>Good to know:</strong>{" "}
-                    {restaurant.note}
-                  </p>
-
-                  <a
-                    href={restaurant.mapUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="button button-primary"
-                  >
-                    View on Google Maps
-                  </a>
-                </div>
-
-                <div class="featured-gallery">
-                  <div class="gallery-main">
-                    <img
-                      src={restaurant.image}
-                      alt={`${restaurant.title} near Depot Heights`}
-                      loading="lazy"
-                    />
-                  </div>
-
-                  {restaurant.gallery?.map((photo) => (
-                    <div class="gallery-secondary">
-                      <img
-                        src={photo}
-                        alt={`${restaurant.title} food and dining`}
-                        loading="lazy"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </article>
-            ))
-          }
-        </div>
-      </section>
-
-      <!-- JAPANESE -->
-      <section
-        class="restaurant-section"
-        id="japanese-restaurants"
-      >
-        <div class="section-heading">
-          <div class="section-number">02</div>
-
-          <div>
-            <h2>Japanese Restaurants</h2>
-
-            <p>
-              Japanese food lovers have several choices around Alexandra and
-              further towards Tanjong Pagar. These options range from
-              convenient dining around Anchorpoint to destination restaurants
-              in the city-fringe area.
-            </p>
-          </div>
-        </div>
-
-        <div class="restaurant-grid">
-          {
-            japaneseRestaurants.map((restaurant) => (
-              <article class="restaurant-card">
-                <div class="card-image-gallery">
-                  <div class="card-main-image">
-                    <img
-                      src={restaurant.image}
-                      alt={`${restaurant.title} ${restaurant.subtitle}`}
-                      loading="lazy"
-                    />
-                  </div>
-
-                  {restaurant.gallery?.map((photo) => (
-                    <div class="card-small-image">
-                      <img
-                        src={photo}
-                        alt={`${restaurant.title} dining`}
-                        loading="lazy"
-                      />
-                    </div>
-                  ))}
-                </div>
-
-                <div class="card-content">
-                  <span class="number">
-                    {restaurant.number}
-                  </span>
-
-                  <h3>{restaurant.title}</h3>
-
-                  <p class="location">
-                    {restaurant.subtitle}
-                  </p>
-
-                  <p class="address">
-                    {restaurant.address}
-                  </p>
-
-                  <p>{restaurant.description}</p>
-
-                  <p class="note">
-                    <strong>Good to know:</strong>{" "}
-                    {restaurant.note}
-                  </p>
-
-                  <a
-                    href={restaurant.mapUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-map-link"
-                  >
-                    Google Maps →
-                  </a>
-                </div>
-              </article>
-            ))
-          }
-        </div>
-      </section>
-
-      <!-- TAIWANESE -->
-      <section
-        class="restaurant-section"
-        id="taiwanese-restaurants"
-      >
-        <div class="section-heading">
-          <div class="section-number">03</div>
-
-          <div>
-            <h2>Taiwanese Restaurant</h2>
-
-            <p>
-              Taiwanese food is also available around the wider neighbourhood.
-              Eat 3 Bowls in Pasir Panjang is one option for residents looking
-              to explore beyond the immediate Depot Heights area.
-            </p>
-          </div>
-        </div>
-
-        <div class="restaurant-grid single-card-grid">
-          {
-            taiwaneseRestaurants.map((restaurant) => (
-              <article class="restaurant-card">
-                <div class="card-image-gallery single-image">
-                  <div class="card-main-image">
-                    <img
-                      src={restaurant.image}
-                      alt={`${restaurant.title} in ${restaurant.subtitle}`}
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-
-                <div class="card-content">
-                  <span class="number">
-                    {restaurant.number}
-                  </span>
-
-                  <h3>{restaurant.title}</h3>
-
-                  <p class="location">
-                    {restaurant.subtitle}
-                  </p>
-
-                  <p class="address">
-                    {restaurant.address}
-                  </p>
-
-                  <p>{restaurant.description}</p>
-
-                  <p class="note">
-                    <strong>Good to know:</strong>{" "}
-                    {restaurant.note}
-                  </p>
-
-                  <a
-                    href={restaurant.mapUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-map-link"
-                  >
-                    Google Maps →
-                  </a>
-                </div>
-              </article>
-            ))
-          }
-        </div>
-      </section>
-
-      <!-- HERITAGE DINING -->
-      <section
-        class="restaurant-section heritage-section"
-        id="heritage-dining"
-      >
-        <div class="section-heading">
-          <div class="section-number">04</div>
-
-          <div>
-            <h2>Heritage Dining</h2>
-
-            <p>
-              For a more distinctive dining experience, The Alkaff Mansion
-              combines heritage architecture, greenery and dining on Telok
-              Blangah Hill.
-            </p>
-          </div>
-        </div>
-
-        <article class="heritage-card">
-          <div class="heritage-copy">
-            <h3>{heritageRestaurant.title}</h3>
-
-            <p class="location">
-              {heritageRestaurant.subtitle}
-            </p>
-
-            <p class="address">
-              {heritageRestaurant.address}
-            </p>
-
-            <p>{heritageRestaurant.description}</p>
-
-            <p class="note">
-              <strong>Good to know:</strong>{" "}
-              {heritageRestaurant.note}
-            </p>
-
-            <a
-              href={heritageRestaurant.mapUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button button-primary"
-            >
-              View on Google Maps
-            </a>
-          </div>
-
-          <div class="heritage-gallery">
-            <div class="heritage-main">
-              <img
-                src={heritageRestaurant.image}
-                alt="The Alkaff Mansion on Telok Blangah Hill"
-                loading="lazy"
-              />
-            </div>
-
-            {
-              heritageRestaurant.gallery.map((photo) => (
-                <div class="heritage-small">
-                  <img
-                    src={photo}
-                    alt="The Alkaff Mansion heritage and dining"
-                    loading="lazy"
-                  />
-                </div>
-              ))
-            }
-          </div>
-        </article>
-      </section>
-
-      <!-- NEARBY AREAS -->
-      <section
-        class="restaurant-section"
-        id="nearby-dining-areas"
-      >
-        <div class="section-heading">
-          <div class="section-number">05</div>
-
-          <div>
-            <h2>Popular Dining Areas Near Depot Heights</h2>
-
-            <p>
-              These neighbourhoods and districts offer a wider range of
-              restaurants and dining experiences within the wider area around
-              Depot Heights.
-            </p>
-          </div>
-        </div>
-
-        <div class="areas-grid">
-          {
-            nearbyAreas.map((area) => (
-              <article class="area-card">
-                <h3>{area}</h3>
-              </article>
-            ))
-          }
-        </div>
-      </section>
-
-      <!-- MORE FOOD -->
-      <section class="more-food-section">
-        <div class="more-food-inner">
-          <p class="eyebrow">Explore more food</p>
-
-          <h2>More Food Around Depot Heights</h2>
+      <div class="related-grid">
+        <article class="related-card">
+          <h3>
+            Cafés
+          </h3>
 
           <p>
-            Looking for more local food options? Explore our Hawker Centres
-            and Cafés pages for more recommendations around Depot Heights,
-            Alexandra, Bukit Merah and the surrounding neighbourhoods.
+            Explore coffee spots, bakeries and brunch destinations around
+            Mount Faber, Tiong Bahru, Alexandra and Depot Heights.
           </p>
 
-          <div class="page-links">
-            <a href="/hawker-centres">
-              Explore Hawker Centres →
-            </a>
+          <a class="text-link" href="/cafes">
+            Explore Cafés →
+          </a>
+        </article>
 
-            <a href="/cafes">
-              Explore Cafés →
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
+        <article class="related-card">
+          <h3>
+            Local Food
+          </h3>
+
+          <p>
+            Discover hawker centres, local dishes and traditional food
+            destinations around Bukit Merah and Alexandra.
+          </p>
+
+          <a class="text-link" href="/local-food">
+            Explore Local Food →
+          </a>
+        </article>
+
+        <article class="related-card">
+          <h3>
+            Lifestyle & Nature
+          </h3>
+
+          <p>
+            Explore parks, heritage sites, arts, shopping and leisure
+            destinations around Depot Heights and the surrounding
+            neighbourhoods.
+          </p>
+
+          <a class="text-link" href="/living-around-depot-heights">
+            Explore Lifestyle & Nature →
+          </a>
+        </article>
+      </div>
+    </section>
   </main>
 </Layout>
 
@@ -643,8 +525,8 @@ const nearbyAreas = [
 
   :global(body) {
     margin: 0;
-    background: #f5f7f3;
-    color: #17382d;
+    color: #1d2924;
+    background: #f7f5ef;
     font-family:
       Inter,
       ui-sans-serif,
@@ -655,615 +537,527 @@ const nearbyAreas = [
       sans-serif;
   }
 
-  :global(img) {
-    display: block;
-    max-width: 100%;
-  }
-
   :global(a) {
     color: inherit;
     text-decoration: none;
   }
 
   .hero {
-    padding: 72px 24px 88px;
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.5fr)
+      minmax(280px, 0.7fr);
+    min-height: 78vh;
+    padding: 8rem 8vw 6rem;
+    gap: 5rem;
+    align-items: center;
     background:
       radial-gradient(
-        circle at 15% 15%,
-        rgba(188, 216, 194, 0.38),
-        transparent 34%
+        circle at 80% 30%,
+        rgba(94, 145, 112, 0.22),
+        transparent 35%
       ),
       linear-gradient(
         135deg,
-        #e8efe7 0%,
-        #f5f7f3 58%,
-        #e4eee8 100%
+        #eef3e9 0%,
+        #f7f5ef 60%
       );
   }
 
-  .hero-inner {
-    width: min(1180px, 100%);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 64px;
-    align-items: center;
+  .hero-content {
+    max-width: 850px;
   }
 
   .eyebrow {
-    margin: 0 0 18px;
-    color: #4e7a62;
+    margin: 0 0 1rem;
+    color: #3d805f;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.18em;
-    text-transform: uppercase;
   }
 
-  .hero h1 {
-    max-width: 720px;
+  h1 {
+    max-width: 900px;
     margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(3rem, 6vw, 5.8rem);
-    font-weight: 500;
-    line-height: 0.98;
-    letter-spacing: -0.045em;
+    font-size:
+      clamp(45px, 8vw, 80px);
+    line-height: 0.94;
+    letter-spacing: -0.07em;
+  }
+
+  h1 span {
+    display: block;
+    color: #3d805f;
   }
 
   .hero-text {
-    max-width: 620px;
-    margin: 28px 0 0;
-    color: #52675d;
-    font-size: 18px;
+    max-width: 700px;
+    margin: 1.8rem 0 0;
+    color: #53615b;
+    font-size: 17px;
     line-height: 1.8;
   }
 
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 34px;
+    gap: 0.8rem;
+    margin-top: 2rem;
   }
 
   .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    padding: 0 22px;
+    padding: 0.9rem 1.25rem;
     border-radius: 999px;
-    font-size: 15px;
-    font-weight: 700;
-    transition:
-      transform 0.2s ease,
-      background 0.2s ease;
+    font-size: 0.85rem;
+    font-weight: 750;
   }
 
-  .button:hover {
-    transform: translateY(-2px);
+  .primary {
+    color: white;
+    background: #27664d;
   }
 
-  .button-primary {
-    background: #275a43;
-    color: #ffffff;
+  .secondary {
+    color: #27664d;
+    border: 1px solid #9eb3a5;
   }
 
-  .button-primary:hover {
-    background: #1d4935;
-  }
-
-  .button-secondary {
-    border: 1px solid rgba(23, 56, 45, 0.2);
-    background: rgba(255, 255, 255, 0.55);
-  }
-
-  .hero-image {
+  .hero-card {
     position: relative;
-    min-height: 500px;
+    min-height: 360px;
     overflow: hidden;
-    border-radius: 32px;
-    box-shadow: 0 28px 70px rgba(31, 69, 52, 0.18);
+    border-radius: 2rem;
+    color: white;
+    background: #315f4a;
+    box-shadow:
+      0 25px 70px
+      rgba(39, 102, 77, 0.18);
   }
 
-  .hero-image img {
+  .hero-card img {
+    display: block;
     width: 100%;
     height: 100%;
-    min-height: 500px;
+    min-height: 360px;
     object-fit: cover;
   }
 
-  .hero-image-caption {
+  .hero-card::after {
+    content: "";
     position: absolute;
-    left: 24px;
-    right: 24px;
-    bottom: 24px;
-    padding: 20px 22px;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: 20px;
-    background: rgba(19, 50, 39, 0.78);
-    color: #ffffff;
-    backdrop-filter: blur(12px);
+    inset: 0;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(31, 72, 55, 0.05),
+        rgba(31, 72, 55, 0.9)
+      );
   }
 
-  .hero-image-caption strong {
-    display: block;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 23px;
-    font-weight: 500;
+  .hero-card-overlay {
+    position: absolute;
+    z-index: 2;
+    right: 2rem;
+    bottom: 2rem;
+    left: 2rem;
   }
 
-  .hero-image-caption span {
+  .hero-card-overlay p {
+    margin: 0;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+  .hero-card-line {
+    width: 50px;
+    height: 2px;
+    margin: 1rem 0;
+    background: white;
+  }
+
+  .hero-card strong {
     display: block;
-    margin-top: 5px;
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 12px;
+    font-size:
+      clamp(1.8rem, 3vw, 3rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .intro {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 8rem 8vw 4rem;
+    text-align: center;
+  }
+
+  .intro h2,
+  .featured h2,
+  .related-heading h2,
+  .area-heading h2 {
+    margin: 0;
+    font-size:
+      clamp(38px, 5vw, 65px);
+    line-height: 1;
+    letter-spacing: -0.06em;
+  }
+
+  .intro > p:last-child {
+    margin: 1.5rem auto 0;
+    color: #65736c;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .section-grid {
+    padding: 2rem 8vw 8rem;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .estate-group {
+    margin-bottom: 5rem;
+  }
+
+  .estate-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .estate-heading-wrapper {
+    max-width: 1100px;
+    margin: 0 auto 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #27664d;
+  }
+
+  .estate-badge {
+    display: inline-block;
+    color: #27664d;
+    background: rgba(39, 102, 77, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.5rem;
+  }
+
+  .estate-heading-wrapper h2 {
+    margin: 0;
+    font-size: clamp(28px, 3.5vw, 48px);
+    letter-spacing: -0.04em;
+    color: #1d2924;
+  }
+
+  .section-card {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 0;
+    border-top:
+      1px solid
+      rgba(29, 41, 36, 0.15);
+  }
+
+  .estate-cafes-container .section-card:first-of-type {
+    border-top: none;
+    padding-top: 1rem;
+  }
+
+  .section-number {
+    color: #70a281;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+  }
+
+  .section-card h2 {
+    margin: 0;
+    font-size:
+      clamp(38px, 4vw, 65px);
+    letter-spacing: -0.05em;
+  }
+
+  .section-description {
+    max-width: 700px;
+    margin: 1.2rem 0 2rem;
+    color: #65736c;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .main-cafe-image {
+    margin: 2rem 0;
+  }
+
+  .main-cafe-image img {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 2rem;
+    box-shadow:
+      0 20px 50px
+      rgba(39, 102, 77, 0.12);
+  }
+
+  .cafe-photo-grid {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .cafe-photo-grid.two-photos {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .cafe-photo-grid.four-photos {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .cafe-photo-card {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid #cbd5cd;
+    background: #eef1ec;
+  }
+
+  .cafe-photo-card img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition:
+      transform 0.3s ease;
+  }
+
+  .cafe-photo-card:hover img {
+    transform: scale(1.03);
+  }
+
+  .highlight-box {
+    padding: 1.5rem 1.7rem;
+    border-left:
+      4px solid
+      #3d805f;
+    border-radius:
+      0 1.2rem 1.2rem 0;
+    background:
+      rgba(61, 128, 95, 0.08);
+  }
+
+  .highlight-box p {
+    margin: 0;
+    color: #53615b;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .highlight-box .highlight-eyebrow {
+    margin-bottom: 0.5rem;
+    color: #27664d;
+    font-size: 0.75rem;
+    font-weight: 800;
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
-  .page-content {
-    width: min(1180px, calc(100% - 48px));
-    margin: 0 auto;
-    padding: 96px 0 0;
+  .area-section {
+    padding: 7rem 8vw;
+    background: #e9eee7;
   }
 
-  .section-intro {
-    max-width: 780px;
-    margin-bottom: 64px;
+  .area-heading {
+    max-width: 850px;
+    margin: 0 auto 3rem;
+    text-align: center;
   }
 
-  .section-intro h2 {
-    margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2.2rem, 4vw, 3.8rem);
-    font-weight: 500;
-    line-height: 1.05;
-    letter-spacing: -0.035em;
-  }
-
-  .section-intro > p:last-child {
-    margin: 22px 0 0;
-    color: #62756b;
-    font-size: 17px;
-    line-height: 1.8;
-  }
-
-  .restaurant-section {
-    padding: 72px 0;
-    border-top: 1px solid rgba(23, 56, 45, 0.12);
-    scroll-margin-top: 100px;
-  }
-
-  .section-heading {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 28px;
-    margin-bottom: 36px;
-  }
-
-  .section-number {
-    color: #6d9a7c;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-  }
-
-  .section-heading h2 {
+  .area-heading > p:last-child {
     max-width: 700px;
-    margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 500;
-    line-height: 1.08;
-  }
-
-  .section-heading p {
-    max-width: 720px;
-    margin: 16px 0 0;
-    color: #63766c;
-    font-size: 17px;
-    line-height: 1.75;
-  }
-
-  .featured-list {
-    display: grid;
-    gap: 80px;
-  }
-
-  .featured-card {
-    display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: 55px;
-    align-items: center;
-  }
-
-  .featured-card:nth-child(even) .featured-copy {
-    order: 2;
-  }
-
-  .featured-card:nth-child(even) .featured-gallery {
-    order: 1;
-  }
-
-  .meta-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-
-  .meta-row .number {
-    margin: 0;
-  }
-
-  .number {
-    display: inline-flex;
-    color: #6d9a7c;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-  }
-
-  .badge {
-    display: inline-flex;
-    padding: 5px 12px;
-    border-radius: 999px;
-    color: #275a43;
-    background: #e8f1e9;
-    font-size: 12px;
-    font-weight: 700;
-  }
-
-  .featured-copy h3,
-  .card-content h3,
-  .heritage-copy h3 {
-    margin: 0 0 10px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(23px, 3vw, 30px);
-    font-weight: 500;
-    line-height: 1.2;
-  }
-
-  .location {
-    margin: 0 0 4px;
-    color: #4e7a62;
-    font-size: 16px;
-    font-weight: 700;
-  }
-
-  .address {
-    margin: 0 0 18px;
-    color: #718078;
-    font-size: 15px;
-  }
-
-  .featured-copy > p:not(.location):not(.address):not(.note) {
-    color: #52675d;
+    margin: 1.5rem auto 0;
+    color: #65736c;
     font-size: 17px;
     line-height: 1.8;
   }
 
-  .note {
-    margin: 22px 0;
-    padding: 15px 18px;
-    border-left: 3px solid #6d9a7c;
-    background: #edf3ed;
-    color: #5d7066;
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .featured-gallery {
+  .area-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    height: 460px;
-  }
-
-  .gallery-main {
-    grid-row: 1 / 3;
-  }
-
-  .featured-gallery > div,
-  .card-image-gallery > div,
-  .heritage-gallery > div {
-    min-width: 0;
-    overflow: hidden;
-    border-radius: 20px;
-    background: #dfe9e0;
-  }
-
-  .featured-gallery img,
-  .card-image-gallery img,
-  .heritage-gallery img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.45s ease;
-  }
-
-  .featured-gallery div:hover img,
-  .card-image-gallery div:hover img,
-  .heritage-gallery div:hover img {
-    transform: scale(1.04);
-  }
-
-  .restaurant-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-
-  .restaurant-card {
-    overflow: hidden;
-    border: 1px solid rgba(23, 56, 45, 0.1);
-    border-radius: 24px;
-    background: #ffffff;
-    box-shadow: 0 12px 35px rgba(34, 65, 51, 0.06);
-  }
-
-  .card-image-gallery {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(2, 150px);
-    gap: 6px;
-  }
-
-  .card-main-image {
-    grid-row: 1 / 3;
-  }
-
-  .card-image-gallery.single-image {
-    display: block;
-    height: 340px;
-  }
-
-  .card-content {
-    padding: 28px;
-  }
-
-  .card-content .number {
-    margin-bottom: 10px;
-  }
-
-  .card-content p:not(.location):not(.address):not(.note) {
-    color: #5f7067;
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .text-map-link {
-    display: inline-block;
-    margin-top: 4px;
-    color: #275a43;
-    font-size: 15px;
-    font-weight: 800;
-  }
-
-  .text-map-link:hover {
-    text-decoration: underline;
-  }
-
-  .single-card-grid {
-    grid-template-columns: minmax(0, 760px);
-  }
-
-  .heritage-card {
-    display: grid;
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    gap: 50px;
-    align-items: center;
-  }
-
-  .heritage-copy > p:not(.location):not(.address):not(.note) {
-    color: #52675d;
-    font-size: 17px;
-    line-height: 1.8;
-  }
-
-  .heritage-gallery {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(2, 180px);
-    gap: 8px;
-  }
-
-  .heritage-main {
-    grid-row: 1 / 3;
-  }
-
-  .areas-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
   .area-card {
-    padding: 30px;
-    border: 1px solid rgba(23, 56, 45, 0.1);
-    border-radius: 24px;
-    background: #ffffff;
-    box-shadow: 0 12px 35px rgba(34, 65, 51, 0.04);
+    padding: 2rem;
+    border:
+      1px solid
+      #cbd5cd;
+    border-radius: 1.5rem;
+    background:
+      rgba(255, 255, 255, 0.35);
   }
 
   .area-card h3 {
     margin: 0;
-    color: #275a43;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 23px;
-    font-weight: 500;
+    color: #27664d;
+    font-size:
+      clamp(23px, 2vw, 28px);
+    letter-spacing: -0.03em;
   }
 
-  .more-food-section {
-    margin: 72px calc((1180px - min(100vw - 48px, 1180px)) / -2) 0;
-    padding: 80px max(24px, calc((100vw - 1180px) / 2));
-    background: #244e3c;
-    color: #ffffff;
+  .area-card p {
+    margin: 1rem 0 0;
+    color: #65736c;
+    font-size: 16px;
+    line-height: 1.7;
   }
 
-  .more-food-inner {
-    width: min(1180px, 100%);
-    margin: 0 auto;
+  .featured {
+    display: grid;
+    grid-template-columns:
+      1.3fr 0.7fr;
+    gap: 5rem;
+    padding: 7rem 8vw;
+    color: white;
+    background: #27664d;
   }
 
-  .more-food-section .eyebrow {
-    color: #a9d1b5;
+  .featured .eyebrow {
+    color: #b9d7c1;
   }
 
-  .more-food-section h2 {
+  .featured p:last-child {
+    align-self: end;
     margin: 0;
-    color: #ffffff;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 500;
-    line-height: 1.1;
-  }
-
-  .more-food-section p:not(.eyebrow) {
-    max-width: 760px;
-    margin: 22px 0 0;
-    color: rgba(255, 255, 255, 0.76);
+    color: #d5e5d9;
     font-size: 17px;
     line-height: 1.8;
   }
 
-  .page-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 30px;
+  .related-section {
+    padding: 8rem 8vw;
   }
 
-  .page-links a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 48px;
-    padding: 0 20px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 999px;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 700;
-    transition:
-      background 0.2s ease,
-      transform 0.2s ease;
+  .related-heading {
+    max-width: 850px;
+    margin: 0 auto 3rem;
+    text-align: center;
   }
 
-  .page-links a:hover {
-    background: rgba(255, 255, 255, 0.12);
-    transform: translateY(-2px);
+  .related-grid {
+    display: grid;
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
-  @media (max-width: 960px) {
-    .hero-inner {
+  .related-card {
+    padding: 2rem;
+    border:
+      1px solid
+      #cbd5cd;
+    border-radius: 1.5rem;
+    background:
+      rgba(255, 255, 255, 0.28);
+  }
+
+  .related-card h3 {
+    margin: 0;
+    color: #27664d;
+    font-size:
+      clamp(23px, 2vw, 28px);
+  }
+
+  .related-card p {
+    margin: 1rem 0 1.5rem;
+    color: #65736c;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .text-link {
+    color: #27664d;
+    font-size: 0.85rem;
+    font-weight: 800;
+  }
+
+  .text-link:hover {
+    color: #1f513d;
+  }
+
+  @media (max-width: 900px) {
+    .hero,
+    .featured {
       grid-template-columns: 1fr;
-      gap: 42px;
     }
 
-    .hero-image,
-    .hero-image img {
-      min-height: 420px;
-    }
-
-    .featured-card,
-    .heritage-card {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    .featured-card:nth-child(even) .featured-copy,
-    .featured-card:nth-child(even) .featured-gallery {
-      order: initial;
-    }
-
-    .featured-gallery {
-      height: 420px;
-    }
-
-    .restaurant-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .areas-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .more-food-section {
-      margin-left: calc((100% - 100vw) / 2);
-      margin-right: calc((100% - 100vw) / 2);
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-  }
-
-  @media (max-width: 640px) {
     .hero {
-      padding: 52px 14px 64px;
+      padding-top: 5rem;
     }
 
-    .hero-image,
-    .hero-image img {
-      min-height: 340px;
+    .hero-card {
+      min-height: 280px;
     }
 
-    .page-content {
-      width: min(100% - 28px, 1180px);
-      padding-top: 64px;
+    .hero-card img {
+      min-height: 280px;
     }
 
-    .section-heading {
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-
-    .restaurant-section {
-      padding: 52px 0;
-    }
-
-    .featured-gallery,
-    .heritage-gallery {
-      height: auto;
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-    }
-
-    .gallery-main,
-    .heritage-main {
-      grid-row: auto;
-      height: 280px;
-    }
-
-    .gallery-secondary,
-    .heritage-small {
-      height: 180px;
-    }
-
-    .card-image-gallery {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 200px 120px;
-    }
-
-    .card-main-image {
-      grid-column: 1 / 3;
-      grid-row: 1;
-    }
-
-    .card-small-image {
-      grid-row: 2;
-    }
-
-    .card-image-gallery.single-image {
-      height: 280px;
-    }
-
-    .areas-grid {
+    .area-grid,
+    .related-grid {
       grid-template-columns: 1fr;
     }
 
-    .more-food-section {
-      margin-top: 52px;
-      padding-top: 60px;
-      padding-bottom: 60px;
+    .cafe-photo-grid.two-photos,
+    .cafe-photo-grid.four-photos {
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 700px) {
+    .cafe-photo-grid.two-photos,
+    .cafe-photo-grid.four-photos {
+      grid-template-columns: 1fr;
+    }
+
+    .cafe-photo-card img {
+      height: 260px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding: 4rem 5vw;
+    }
+
+    .section-grid,
+    .intro,
+    .area-section,
+    .related-section {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    .section-card {
+      grid-template-columns: 1fr;
+      gap: 1.0rem;
+      padding: 3rem 0;
+    }
+
+    .featured {
+      padding-left: 5vw;
+      padding-right: 5vw;
     }
   }
 </style>

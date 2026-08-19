@@ -7,10 +7,16 @@ const pageTitle =
 const pageDescription =
   "Explore shopping and retail destinations near Depot Heights, including Depot Heights Shopping Centre, Alexandra Central, IKEA Alexandra, VivoCity, Great World City, Queensway Shopping Centre, mTower and Mapletree Business Centre.";
 
+const canonicalUrl = "https://depot-heights.pages.dev/retail-shopping";
+
+const heroImage = "/images/retail-shopping-hero.webp";
+
 const shoppingDestinations = [
   {
     number: "01",
     title: "Depot Heights Shopping Centre",
+    image: "/images/depot-heights-shopping-centre.webp",
+    alt: "Depot Heights Shopping Centre storefront",
     description:
       "The neighbourhood shopping centre at 108 Depot Road serves the surrounding Depot Heights community with convenient everyday amenities and local services.",
     details:
@@ -19,6 +25,8 @@ const shoppingDestinations = [
   {
     number: "02",
     title: "Alexandra Central",
+    image: "/images/alexandra-central.webp",
+    alt: "Alexandra Central mall building",
     description:
       "A convenient commercial and retail destination along Alexandra Road, providing access to food, services and everyday shopping close to the Depot Heights area.",
     details:
@@ -27,6 +35,8 @@ const shoppingDestinations = [
   {
     number: "03",
     title: "IKEA Alexandra",
+    image: "/images/rs-ikea-alexandra.webp",
+    alt: "IKEA Alexandra store exterior and entrance",
     description:
       "A popular destination for home furnishings, household solutions and practical ideas for the home, located along Alexandra Road.",
     details:
@@ -35,6 +45,8 @@ const shoppingDestinations = [
   {
     number: "04",
     title: "Queensway Shopping Centre",
+    image: "/images/queensway-shopping-centre.webp",
+    alt: "Queensway Shopping Centre facade",
     description:
       "A long-established shopping centre known especially for sportswear, sporting goods, footwear and specialist retail.",
     details:
@@ -43,6 +55,8 @@ const shoppingDestinations = [
   {
     number: "05",
     title: "VivoCity",
+    image: "/images/vivocity.webp",
+    alt: "VivoCity shopping mall near HarbourFront",
     description:
       "One of Singapore's major shopping and lifestyle destinations at HarbourFront, offering extensive retail, dining, entertainment and family-friendly activities.",
     details:
@@ -51,10 +65,32 @@ const shoppingDestinations = [
   {
     number: "06",
     title: "Great World City",
+    image: "/images/great-world-city.webp",
+    alt: "Great World City mall exterior",
     description:
       "A major shopping and lifestyle destination in the River Valley area, with retail, dining, supermarkets, entertainment and family-oriented amenities.",
     details:
       "Its central location provides another shopping option for Depot Heights residents travelling towards the River Valley and Orchard areas.",
+  },
+  {
+    number: "07",
+    title: "Anchorpoint",
+    image: "/images/anchorpoint.webp",
+    alt: "Anchorpoint shopping centre",
+    description:
+      "A long-established shopping destination near Alexandra Road that has evolved beyond its earlier outlet-shopping identity, with restaurants, cafés and Cold Storage.",
+    details:
+      "Its compact layout and convenient location along Alexandra Road offer easy accessibility for nearby residents.",
+  },
+  {
+    number: "08",
+    title: "Tiong Bahru Plaza",
+    image: "/images/tiong-bahru-plaza.webp",
+    alt: "Tiong Bahru Plaza shopping mall",
+    description:
+      "A convenient shopping and commercial destination serving the wider Bukit Merah and Tiong Bahru area.",
+    details:
+      "Directly linked to Tiong Bahru MRT station, it offers a robust mix of retail stores, dining outlets, and entertainment options.",
   },
 ];
 
@@ -62,80 +98,73 @@ const commercialDestinations = [
   {
     number: "01",
     title: "mTower",
+    image: "/images/mTower.webp",
+    alt: "mTower commercial building along Alexandra Road",
     description:
       "A commercial and business destination along Alexandra Road, contributing to the established business environment surrounding Depot Heights.",
   },
   {
     number: "02",
-    title: "Mapletree Business Centre",
+    title: "Mapletree Business City",
+    image: "/images/mapletree-business-city.webp",
+    alt: "Mapletree Business City campus",
     description:
       "A major business destination in the Alexandra area, with offices, workplaces and supporting amenities serving the wider commercial community.",
   },
   {
     number: "03",
-    title: "Mapletree Business City",
-    description:
-      "A large commercial and workplace hub in the Alexandra area, offering offices, dining and supporting lifestyle amenities.",
-  },
-  {
-    number: "04",
     title: "Alexandra TechnoPark",
+    image: "/images/alexandra-technopark.webp",
+    alt: "Alexandra TechnoPark development",
     description:
       "An established business and technology hub near Depot Heights, forming part of the wider Alexandra commercial corridor.",
   },
-];
-
-const retailAreas = [
-  {
-    number: "01",
-    title: "HarbourFront",
-    description:
-      "HarbourFront combines shopping, dining, entertainment and waterfront activities, with VivoCity serving as the area's major retail destination.",
-  },
-  {
-    number: "02",
-    title: "Anchorpoint",
-    description:
-      "A long-established shopping destination near Alexandra Road that has evolved beyond its earlier outlet-shopping identity, with restaurants, cafés and Cold Storage.",
-  },
-  {
-    number: "03",
-    title: "Central Plaza",
-    description:
-      "A convenient shopping and commercial destination serving the wider Bukit Merah and Tiong Bahru area.",
-  },
   {
     number: "04",
-    title: "Alexandra Road",
+    title: "Harbourfront Towers",
+    image: "/images/harbourfront-towers.webp",
+    alt: "Harbourfront Towers at the southern waterfront",
     description:
-      "The Alexandra Road corridor brings together a mix of shopping, home furnishings, commercial buildings, workplaces and everyday services within practical reach of Depot Heights.",
+      "HarbourFront Towers is a premium, high-profile commercial office development situated at Singapore's southern waterfront in District 4.",
   },
 ];
 
 const majorShoppingDestinations = [
   {
     number: "01",
-    title: "Orchard Road",
+    title: "ION Orchard",
     description:
-      "Singapore's premier shopping boulevard, with major shopping malls, international brands, department stores, dining and entertainment.",
+      "A striking architectural landmark at the gateway of Orchard Road, offering luxury retail, high-street fashion, and an extensive basement food hall.",
   },
   {
     number: "02",
-    title: "Great World City",
+    title: "Takashimaya",
     description:
-      "A major lifestyle mall offering retail, dining, supermarkets, entertainment and family-oriented amenities.",
+      "Located within Ngee Ann City, this premier Japanese department store features world-class shopping, a massive basement food court, and diverse dining choices.",
   },
   {
     number: "03",
-    title: "VivoCity",
+    title: "Paragon",
     description:
-      "A major southern retail and lifestyle destination connected to HarbourFront MRT and Sentosa.",
+      "An upscale shopping destination housing high-end international designer labels, luxury lifestyle stores, and choice wellness or dining outlets.",
   },
   {
     number: "04",
-    title: "Queensway Shopping Centre",
+    title: "313@Somerset",
     description:
-      "A specialist retail destination particularly popular for sportswear, sporting goods and footwear.",
+      "A vibrant youth and lifestyle hub right above Somerset MRT station, featuring popular fast fashion brands, trendy beauty spots, and casual eateries.",
+  },
+  {
+    number: "05",
+    title: "Plaza Singapura",
+    description:
+      "A family-friendly shopping mall situated at the end of Orchard Road near Dhoby Ghaut, offering extensive retail, a cineplex, and popular dining options.",
+  },
+  {
+    number: "06",
+    title: "Marina Square / Suntec City",
+    description:
+      "Expansive integrated lifestyle and retail precincts toward the Marina Centre area, offering vast shopping selections, convention spaces, and dining avenues.",
   },
 ];
 ---
@@ -143,9 +172,9 @@ const majorShoppingDestinations = [
 <Layout
   title={pageTitle}
   description={pageDescription}
-  canonical="/retails-shopping"
-  image="/images/vivocity.webp"
-  imageAlt="VivoCity shopping mall near HarbourFront"
+  canonical={canonicalUrl}
+  image={heroImage}
+  imageAlt="Retail and shopping near Depot Heights"
 >
   <section class="hero">
     <div class="hero-content">
@@ -178,8 +207,8 @@ const majorShoppingDestinations = [
 
     <div class="hero-image">
       <img
-        src="/images/vivocity.webp"
-        alt="VivoCity shopping mall near HarbourFront"
+        src={heroImage}
+        alt="Retail and shopping near Depot Heights"
         loading="eager"
       />
     </div>
@@ -283,73 +312,24 @@ const majorShoppingDestinations = [
       {
         shoppingDestinations.map((destination) => (
           <article class="shopping-card">
-            <span class="card-number">{destination.number}</span>
+            {destination.image && (
+              <div class="card-image-wrap">
+                <img
+                  src={destination.image}
+                  alt={destination.alt}
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <div class="card-content">
+              <span class="card-number">{destination.number}</span>
 
-            <h3>{destination.title}</h3>
+              <h3>{destination.title}</h3>
 
-            <p>{destination.description}</p>
+              <p>{destination.description}</p>
 
-            <p class="card-detail">{destination.details}</p>
-          </article>
-        ))
-      }
-    </div>
-  </section>
-
-  <section class="section commercial-section">
-    <div class="section-heading">
-      <p class="eyebrow">COMMERCIAL & BUSINESS DESTINATIONS</p>
-
-      <h2>
-        Shopping is part of a wider commercial corridor.
-      </h2>
-
-      <p>
-        The Alexandra area is not only a retail destination. It is also an
-        established business corridor with major workplaces, commercial
-        buildings and supporting amenities.
-      </p>
-    </div>
-
-    <div class="commercial-grid">
-      {
-        commercialDestinations.map((destination) => (
-          <article class="commercial-card">
-            <span class="card-number">{destination.number}</span>
-
-            <h3>{destination.title}</h3>
-
-            <p>{destination.description}</p>
-          </article>
-        ))
-      }
-    </div>
-  </section>
-
-  <section class="section retail-areas-section">
-    <div class="section-heading">
-      <p class="eyebrow">RETAIL AREAS & SHOPPING CORRIDORS</p>
-
-      <h2>
-        Explore the wider retail landscape around southern Singapore.
-      </h2>
-
-      <p>
-        Beyond individual shopping centres, several established commercial
-        corridors provide different retail experiences within reach of Depot
-        Heights.
-      </p>
-    </div>
-
-    <div class="area-grid">
-      {
-        retailAreas.map((area) => (
-          <article class="area-card">
-            <span class="card-number">{area.number}</span>
-
-            <h3>{area.title}</h3>
-
-            <p>{area.description}</p>
+              {destination.details && <p class="card-detail">{destination.details}</p>}
+            </div>
           </article>
         ))
       }
@@ -361,12 +341,11 @@ const majorShoppingDestinations = [
       <p class="eyebrow">MAJOR SHOPPING DESTINATIONS</p>
 
       <h2>
-        From southern lifestyle malls to Singapore's premier shopping street.
+        Orchard Road shopping boulevard (approx. 13-min drive / 25-min bus ride).
       </h2>
 
       <p>
-        When residents want a larger shopping experience, several major retail
-        destinations are accessible from the Depot Heights area.
+        Easily accessible from Depot Heights, Singapore's premier shopping strip features iconic malls, luxury labels, and extensive lifestyle offerings.
       </p>
     </div>
 
@@ -448,6 +427,47 @@ const majorShoppingDestinations = [
     </div>
   </section>
 
+  <section class="section commercial-section">
+    <div class="section-heading">
+      <p class="eyebrow">COMMERCIAL & BUSINESS DESTINATIONS</p>
+
+      <h2>
+        Shopping is part of a wider commercial corridor.
+      </h2>
+
+      <p>
+        The Alexandra area is not only a retail destination. It is also an
+        established business corridor with major workplaces, commercial
+        buildings and supporting amenities.
+      </p>
+    </div>
+
+    <div class="commercial-grid">
+      {
+        commercialDestinations.map((destination) => (
+          <article class="commercial-card">
+            {destination.image && (
+              <div class="card-image-wrap">
+                <img
+                  src={destination.image}
+                  alt={destination.alt}
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <div class="card-content">
+              <span class="card-number">{destination.number}</span>
+
+              <h3>{destination.title}</h3>
+
+              <p>{destination.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
   <section class="closing-section">
     <div class="closing-inner">
       <p class="eyebrow">SHOPPING AROUND DEPOT HEIGHTS</p>
@@ -467,7 +487,7 @@ const majorShoppingDestinations = [
       <div class="closing-actions">
         <a
           class="button button-primary"
-          href="/lifestyle"
+          href="/living-around-depot-heights"
         >
           Explore Lifestyle
         </a>
@@ -486,6 +506,29 @@ const majorShoppingDestinations = [
 <style>
   :global(*) {
     box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    margin: 0;
+    color: #1d2924;
+    background: #f7f5ef;
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  }
+
+  :global(a) {
+    color: inherit;
+    text-decoration: none;
   }
 
   .hero {
@@ -689,10 +732,40 @@ const majorShoppingDestinations = [
   .commercial-card,
   .area-card,
   .major-card {
-    padding: 30px;
     border-radius: 20px;
     background: #ffffff;
     border: 1px solid rgba(24, 49, 38, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-image-wrap {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #e2e8e2;
+  }
+
+  .card-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .shopping-card:hover .card-image-wrap img,
+  .commercial-card:hover .card-image-wrap img,
+  .area-card:hover .card-image-wrap img {
+    transform: scale(1.03);
+  }
+
+  .card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 
   .shopping-card {
@@ -728,6 +801,7 @@ const majorShoppingDestinations = [
   }
 
   .shopping-card .card-detail {
+    margin-top: auto;
     padding-top: 15px;
     border-top: 1px solid #e4e9e4;
     color: #52625a;
@@ -754,7 +828,6 @@ const majorShoppingDestinations = [
   }
 
   .commercial-card {
-    min-height: 235px;
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.18);
   }
@@ -771,31 +844,18 @@ const majorShoppingDestinations = [
     color: #d8e9df;
   }
 
-  .retail-areas-section {
-    background: #edf3ed;
-  }
-
-  .area-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-  }
-
-  .area-card {
-    min-height: 230px;
-  }
-
   .major-section {
     background: #ffffff;
   }
 
   .major-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
   }
 
   .major-card {
+    padding: 30px;
     min-height: 235px;
     background: #f7f8f3;
   }
@@ -915,8 +975,7 @@ const majorShoppingDestinations = [
       gap: 35px;
     }
 
-    .commercial-grid,
-    .area-grid {
+    .commercial-grid {
       grid-template-columns: 1fr;
     }
 

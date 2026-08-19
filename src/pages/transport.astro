@@ -5,103 +5,162 @@ const pageTitle =
   "Depot Heights Transport | Bus Routes, MRT & Connectivity";
 
 const pageDescription =
-  "Explore public transport from Depot Heights, including bus connections from Blk 110 and Aft Hewlett Packard, with routes towards Bukit Merah, Bras Basah, Clarke Quay, HarbourFront and other major destinations.";
+  "Explore public transport from Depot Heights, including bus connections from Blk 110 and Aft Hewlett Packard to Queenstown, Labrador Park, and Pasir Panjang MRT stations, plus major routes towards Bukit Merah and the city.";
 
 const busRoutes = [
   {
     number: "57",
-    title: "Bus 57",
-    subtitle: "Depot Heights → Bukit Merah Interchange",
+    title: "From Bus Stop (14209)",
+    subtitle: "Aft Hewlett Packard → Bt Merah Int",
     description:
-      "Bus 57 provides a useful local connection from the Depot Heights area towards Bukit Merah Interchange, making it convenient for residents travelling towards Bukit Merah Central and connecting to the wider bus network.",
+      "Direct local connection from the Aft Hewlett Packard reference point towards Bukit Merah Central and the regional interchange hub.",
     stops: [
-      "Blk 110",
-      "Aft Hewlett Packard",
-      "Bukit Merah area",
-      "Bukit Merah Interchange",
+      "Aft Hewlett Packard (14209)",
+      "Bef. Bt. Merah Ctrl (Henderson)",
+      "Bt Merah Int (Central)",
     ],
   },
   {
     number: "175",
-    title: "Bus 175",
-    subtitle: "Depot Heights → City / Bras Basah",
+    title: "From Bus Stop (14209)",
+    subtitle: "Aft Hewlett Packard → Dhoby Ghaut Stn",
     description:
-      "Bus 175 provides a direct public transport option towards the city, including the Bras Basah area. It is useful for residents travelling towards central Singapore for work, education, culture, shopping and leisure.",
+      "Direct public transport option from Aft Hewlett Packard towards the city center, Orchard road shopping belt, and Bras Basah area.",
     stops: [
-      "Blk 110",
-      "Aft Hewlett Packard",
-      "Telok Blangah Hill Park",
-      "Bras Basah area",
+      "Aft Hewlett Packard (14209)",
+      "Bef. Bt. Merah Ctrl (Henderson)",
+      "Blk 119 (Bt Merah View FC)",
+      "Blk 55 (Tiong Bahru)",
+      "Opp Great World City",
+      "Orchard Stn",
+      "Dhoby Ghaut Stn (Plaza Singapura)",
     ],
   },
   {
     number: "195",
-    title: "Bus 195",
-    subtitle: "Depot Heights → Clarke Quay / Central Singapore",
+    title: "From Bus Stop (14209)",
+    subtitle: "Aft Hewlett Packard → Fort Canning Stn",
     description:
-      "Bus 195 provides a connection towards the central city and Clarke Quay area, giving residents an alternative route for reaching Singapore's downtown attractions, dining destinations and business districts.",
+      "Convenient connection from Aft Hewlett Packard through local enclaves towards central Singapore, Clarke Quay, and downtown attractions.",
     stops: [
-      "Blk 110",
-      "Aft Hewlett Packard",
-      "Central Singapore",
-      "Opp Clarke Quay",
+      "Aft Hewlett Packard (14209)",
+      "Blk 1 (SAFRA)",
+      "Blk 25 (Telok Blangah Cres FC)",
+      "St. Theresa's Convent (CHIJ)",
+      "Tiong Bahru Stn (Plaza)",
+      "Opp Great World City",
+      "Opp Mohd Sultan Rd (New Bahru)",
+      "Fort Canning Stn (Hill & Clarke Quay)",
+    ],
+  },
+  {
+    number: "57",
+    title: "From Bus Stop (14201)",
+    subtitle: "Blk 110 → Esplanade Bridge",
+    description:
+      "Alternative outbound route from Blk 110 running down towards HarbourFront, the central business district, and the waterfront area.",
+    stops: [
+      "Blk 110 (14201)",
+      "Bef Telok Blangah Hill Pk (Hortpark)",
+      "Opp Alexandra Retail Ctr (MBC)",
+      "Opp Telok Blangah Stn",
+      "Harbourfront Stn (Seah Im FC / VivoCity)",
+      "Bef Cantonment Rd (100 AM / Tg Pagar Rd)",
+      "Prudential Twr (Lau Pa Sat)",
+      "Fullerton Sq (Sg River)",
+      "Esplanade Bridge (Marina Sq / Suntec)",
+    ],
+  },
+  {
+    number: "175",
+    title: "From Bus Stop (14201)",
+    subtitle: "Blk 110 → Pasir Panjang Stn/FC",
+    description:
+      "Westbound public transport link connecting Depot Heights residents to key industrial corridors and southern coastal zones.",
+    stops: [
+      "Blk 110 (14201)",
+      "Bef Telok Blangah Hill Pk (Hortpark)",
+      "Opp Alexandra Retail Ctr (MBC)",
+      "Labrador Pk Stn",
+      "Opp HarbourSide Bldg 2 (F&B)",
+      "Pasir Panjang Stn/FC",
+    ],
+  },
+  {
+    number: "195",
+    title: "From Bus Stop (14201)",
+    subtitle: "Blk 110 → Queenstown Stn Loop",
+    description:
+      "Essential neighborhood loop route from Blk 110 providing quick secondary subway rail access points and neighborhood amenities.",
+    stops: [
+      "Blk 110 (14201)",
+      "Alexandra Hosp (Alexandra Village)",
+      "AnchorPoint (IKEA)",
+      "Queenstown Stn Exit A/D (Margaret Dr Hawker)",
     ],
   },
 ];
 
 const majorConnections = [
   {
-    number: "01",
-    title: "Bukit Merah Interchange",
-    description:
-      "A major bus interchange serving Bukit Merah and providing connections to many parts of Singapore.",
-  },
-  {
-    number: "02",
+    number: "Bus 175",
     title: "Bras Basah",
     description:
-      "A central cultural and education district close to museums, arts venues, schools and the city centre.",
+      "Hop on Bus 175 directly from Depot Heights for a smooth, direct ride straight into the fringe of the Orchard Rd in about 25 to 30 minutes.",
   },
   {
-    number: "03",
+    number: "Bus 195",
     title: "Clarke Quay",
     description:
-      "A central waterfront destination known for restaurants, nightlife, entertainment and access to the Singapore River.",
+      "Bus 195 provides easy access to the bohemian-chic cafes and shopping of Tiong Bahru, before continuing onward toward Clarke Quay, known for restaurants, nightlife, entertainment and access to the Singapore River.",
   },
   {
-    number: "04",
-    title: "HarbourFront",
+    number: "Bus 57",
+    title: "HarbourFront & CBD",
     description:
-      "A major southern destination with VivoCity, HarbourFront MRT, Sentosa connections and the waterfront.",
+      "A major southern destination with Harbourfront, VivoCity, Sentosa connections and the central business district.",
+  },
+];
+
+const mrtStations = [
+  {
+    station: "Queenstown MRT",
+    line: "East-West Line",
+    duration: "Approx. 10 minutes",
+    bus: "Bus 195",
+    description:
+      "Easily accessible via Bus 195 from Block 110, connecting you directly to the East-West Line for seamless commutes toward Raffles Place, Jurong East, or the city center.",
   },
   {
-    number: "05",
-    title: "NUS & NUH",
+    station: "Labrador Park MRT",
+    line: "Circle Line",
+    duration: "Approx. 7 minutes",
+    bus: "Bus 57 & 175",
     description:
-      "Important education, research and healthcare destinations in the wider southern-western corridor.",
+      "Quickly reached via Bus 57 / 175 heading westbound, opening up direct access to the Circle Line for travel towards Mapletree Business City, One-North, and Marina Bay.",
   },
   {
-    number: "06",
-    title: "Alexandra & Tiong Bahru",
+    station: "Pasir Panjang MRT",
+    line: "Circle Line",
+    duration: "Approx. 9 minutes",
+    bus: "Bus 175",
     description:
-      "Nearby established areas offering food, shopping, workplaces, cafés and everyday amenities.",
+      "Also connected via Bus 175 further down the southern coastal corridor, providing efficient rail links to Singapore's major science and tech hubs.",
   },
 ];
 
 const referenceStops = [
   {
-    number: "01",
     stop: "Blk 110",
     code: "14201",
     description:
-      "The main reference bus stop for Depot Heights residents. This is the primary point used to understand the area's bus connections.",
+      "Located on the residential side of Block 110 Depot Road.",
   },
   {
-    number: "02",
     stop: "Aft Hewlett Packard",
     code: "14209",
     description:
-      "A second nearby reference stop that provides another convenient boarding point for selected bus services.",
+      "Located directly across the road, beside entrance of North London Collegiate School",
   },
 ];
 
@@ -152,7 +211,7 @@ const travelLinks = [
 
       <div class="hero-image">
         <img
-          src="/images/depot-heights-location-hero.webp"
+          src="/images/transport-hero.webp"
           alt="Depot Heights and surrounding Bukit Merah area"
           loading="eager"
         />
@@ -199,13 +258,11 @@ const travelLinks = [
         <p class="eyebrow">MAIN BUS ROUTES</p>
 
         <h2>
-          Three useful routes connecting Depot Heights with major destinations.
+          Three useful bus routes connecting Depot Heights with major destinations.
         </h2>
 
         <p>
-          These routes are presented as simple journey lines rather than a
-          detailed timetable. The aim is to help residents quickly understand
-          where the main bus services can take them.
+          Depot Heights offers surprisingly robust public transport connections, making it easy to commute from this quiet residential enclave to major commercial, tech, and retail hubs across Singapore in under 30 minutes.
         </p>
       </div>
 
@@ -278,30 +335,58 @@ const travelLinks = [
       </div>
     </section>
 
+    <section class="section mrt-section" id="mrt-stations">
+      <div class="section-heading">
+        <p class="eyebrow">MRT CONNECTIVITY</p>
+
+        <h2>
+          Nearby train stations connected by feeder buses.
+        </h2>
+
+        <p>
+          Connect seamlessly to Singapore's major rail networks via quick bus rides from Depot Heights to key MRT stations nearby.
+        </p>
+      </div>
+
+      <div class="mrt-grid">
+        {
+          mrtStations.map((station) => (
+            <article class="mrt-card">
+              <div class="mrt-badge-group">
+                <span class="mrt-badge">{station.line}</span>
+                <span class="mrt-duration">⏱️ {station.duration}</span>
+              </div>
+
+              <h3>{station.station}</h3>
+              <p class="mrt-bus-tag">Accessible via <strong>{station.bus}</strong></p>
+
+              <p>{station.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
     <section class="section journey-section">
       <div class="journey-inner">
         <div>
           <p class="eyebrow">TRAVEL AROUND SINGAPORE</p>
 
           <h2>
-            From local neighbourhood buses to the city and southern waterfront.
+            Expressway Access Near Depot Heights.
           </h2>
 
           <p>
-            The advantage of living at Depot Heights is not simply having a
-            nearby bus stop. The surrounding bus network connects the estate
-            with established neighbourhoods, major interchanges, the city
-            centre and southern destinations such as HarbourFront.
+            For residents relying on taxis, Private Hire (Grab / Gojek etc), and personal vehicles, Depot Heights offers exceptional connectivity anchored by three major nearby arterials: the Ayer Rajah Expressway (AYE), the Central Expressway (CTE), and the West Coast Highway.
+            Positioned just minutes from Alexandra Road or Henderson Road, these expressways make commuting seamless across the island.
           </p>
         </div>
 
         <div class="journey-note">
-          <strong>Useful reference points</strong>
+          <strong>Useful Facts</strong>
 
           <p>
-            Start with <b>Blk 110 (14201)</b> or
-            <b>Aft Hewlett Packard (14209)</b>, then choose the bus route that
-            best matches your destination.
+            Because of this strategic triad of expressways, PHV and taxi booking wait times are short, ensuring your ride out of this quiet enclave is fast and hassle-free.
           </p>
         </div>
       </div>
@@ -660,6 +745,67 @@ const travelLinks = [
     line-height: 1.75;
   }
 
+  .mrt-section {
+    background: #f4f7f4;
+  }
+
+  .mrt-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .mrt-card {
+    min-height: 230px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #fff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .mrt-badge-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  .mrt-badge {
+    color: #2b6e52;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .mrt-duration {
+    font-size: 12px;
+    font-weight: 700;
+    color: #52625a;
+    background: #e8f0e8;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+
+  .mrt-card h3 {
+    margin: 0 0 8px;
+    font-size: 25px;
+    line-height: 1.15;
+  }
+
+  .mrt-bus-tag {
+    margin: 0 0 15px;
+    font-size: 13px;
+    color: #2b6e52;
+  }
+
+  .mrt-card p:not(.mrt-bus-tag) {
+    margin: 0;
+    color: #5d6b64;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
   .journey-section {
     background: #235f47;
     color: #fff;
@@ -768,7 +914,8 @@ const travelLinks = [
       min-height: 450px;
     }
 
-    .connections-grid {
+    .connections-grid,
+    .mrt-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -793,6 +940,7 @@ const travelLinks = [
 
     .reference-grid,
     .connections-grid,
+    .mrt-grid,
     .links-grid {
       grid-template-columns: 1fr;
     }

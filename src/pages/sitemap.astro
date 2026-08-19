@@ -30,7 +30,7 @@ const sitemapSections = [
     items: [
       {
         name: "History of Depot Heights",
-        href: "/history-of-depot-heights",
+        href: "/history-of-depot-road",
         description:
           "Discover the history and development of Depot Heights and the wider Depot Road area.",
       },
@@ -47,9 +47,9 @@ const sitemapSections = [
       },
       {
         name: "Sports & Recreation",
-        href: "/amenities#outdoor",
+        href: "/sports-recreation",
         description:
-          "Discover playgrounds, exercise facilities, street soccer and outdoor recreational spaces.",
+          "Discover sports and recreational facilities around Depot Heights.",
       },
       {
         name: "Healthcare",
@@ -65,7 +65,7 @@ const sitemapSections = [
       },
       {
         name: "Food & Hawker Centres",
-        href: "/food-hawker-centres",
+        href: "/local-food",
         description:
           "Discover hawker centres and local food options around Depot Heights.",
       },
@@ -83,19 +83,19 @@ const sitemapSections = [
       },
       {
         name: "Parks & Nature",
-        href: "/parks-nature",
+        href: "/parks-pcn",
         description:
           "Explore parks, trails, greenery and nature destinations around Depot Heights.",
       },
       {
         name: "Lifestyle & Leisure",
-        href: "/lifestyle",
+        href: "/living-around-depot-heights",
         description:
           "Discover heritage, arts, leisure, lifestyle and recreational destinations nearby.",
       },
       {
         name: "Shopping & Retail",
-        href: "/shopping-retail",
+        href: "/retail-shopping",
         description:
           "Explore shopping centres, retail destinations and everyday shopping options.",
       },
@@ -107,43 +107,13 @@ const sitemapSections = [
       },
     ],
   },
-  {
-    title: "Property at Depot Heights",
-    items: [
-      {
-        name: "Resale HDB",
-        href: "/property/resale-hdb",
-        description:
-          "Explore resale HDB information relating to homes at Depot Heights.",
-      },
-      {
-        name: "Unit Types & Layouts",
-        href: "/property/unit-types-layouts",
-        description:
-          "Learn about the unit types and layouts available at Depot Heights.",
-      },
-      {
-        name: "Renting at Depot Heights",
-        href: "/property/renting",
-        description:
-          "Find information about renting a home at Depot Heights.",
-      },
-      {
-        name: "Property Articles",
-        href: "/property/articles",
-        description:
-          "Read property-related articles and information about Depot Heights.",
-      },
-    ],
-  },
+  
 ];
-
 ---
-
 <Layout
   title="Sitemap | Depot Heights, Bukit Merah Singapore"
   description="Explore the Depot Heights website sitemap and find information about the neighbourhood, history, amenities, sports and recreation, healthcare, schools, food, cafés, restaurants, parks, lifestyle, shopping, transport and property."
-  canonical="https://depotheights.sg/sitemap"
+  canonical="https://depot-heights.pages.dev/sitemap"
 >
   <main>
     <!-- HERO -->
@@ -292,19 +262,13 @@ const sitemapSections = [
 
   .hero {
     display: grid;
-
     grid-template-columns:
       minmax(0, 1.4fr)
       minmax(280px, 0.6fr);
-
     min-height: 62vh;
-
     padding: 7rem 8vw 6rem;
-
     gap: 5rem;
-
     align-items: center;
-
     background:
       radial-gradient(
         circle at 80% 30%,
@@ -317,64 +281,45 @@ const sitemapSections = [
         #f7f5ef 60%
       );
   }
-
   .hero-content {
     max-width: 850px;
   }
-
   .eyebrow {
     margin: 0 0 1rem;
-
     color: #3d805f;
-
     font-size: 14px;
     font-weight: 800;
-
     letter-spacing: 0.18em;
   }
 
   h1 {
     max-width: 900px;
-
     margin: 0;
-
     font-size:
       clamp(48px, 8vw, 82px);
-
     line-height: 0.94;
-
     letter-spacing: -0.07em;
   }
 
   h1 span {
     display: block;
-
     color: #3d805f;
   }
 
   .hero-text {
     max-width: 720px;
-
     margin: 1.8rem 0 0;
-
     color: #53615b;
-
     font-size: 18px;
-
     line-height: 1.8;
   }
 
   .hero-card {
     position: relative;
-
     min-height: 360px;
-
     overflow: hidden;
-
     border-radius: 2rem;
-
     color: white;
-
     background:
       linear-gradient(
         145deg,
@@ -389,17 +334,12 @@ const sitemapSections = [
 
   .hero-card::before {
     content: "";
-
     position: absolute;
-
     width: 260px;
     height: 260px;
-
     top: -70px;
     right: -70px;
-
     border-radius: 50%;
-
     border:
       1px solid
       rgba(255, 255, 255, 0.15);
@@ -407,17 +347,12 @@ const sitemapSections = [
 
   .hero-card::after {
     content: "";
-
     position: absolute;
-
     width: 180px;
     height: 180px;
-
     right: 35px;
     bottom: -70px;
-
     border-radius: 50%;
-
     border:
       1px solid
       rgba(255, 255, 255, 0.12);
@@ -425,9 +360,7 @@ const sitemapSections = [
 
   .hero-card-inner {
     position: absolute;
-
     z-index: 2;
-
     right: 2.5rem;
     bottom: 2.5rem;
     left: 2.5rem;
@@ -435,31 +368,24 @@ const sitemapSections = [
 
   .hero-card-inner p {
     margin: 0;
-
     font-size: 0.7rem;
-
     font-weight: 800;
-
     letter-spacing: 0.18em;
   }
 
   .hero-card-line {
     width: 50px;
     height: 2px;
-
     margin: 1rem 0;
-
     background: white;
   }
 
   .hero-card strong {
     display: block;
-
     font-size:
       clamp(2rem, 4vw, 3.4rem);
 
     line-height: 1;
-
     letter-spacing: -0.05em;
   }
 
@@ -469,38 +395,28 @@ const sitemapSections = [
 
   .section-heading {
     max-width: 850px;
-
     margin: 0 auto 5rem;
-
     text-align: center;
   }
 
   .section-heading h2 {
     margin: 0;
-
     font-size:
       clamp(38px, 5vw, 65px);
-
     line-height: 1;
-
     letter-spacing: -0.06em;
   }
 
   .section-heading > p:last-child {
     max-width: 650px;
-
     margin: 1.5rem auto 0;
-
     color: #65736c;
-
     font-size: 17px;
-
     line-height: 1.8;
   }
 
   .sitemap-grid {
     max-width: 1100px;
-
     margin: 0 auto;
   }
 
@@ -514,53 +430,37 @@ const sitemapSections = [
 
   .sitemap-group > h2 {
     margin: 0 0 1.5rem;
-
     padding-bottom: 1rem;
-
     color: #27664d;
-
     border-bottom:
       2px solid
       #cbd5cd;
-
     font-size:
       clamp(28px, 3vw, 38px);
-
     line-height: 1.15;
-
     letter-spacing: -0.04em;
   }
 
   .sitemap-links {
     display: grid;
-
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
-
     gap: 1rem;
   }
 
   .sitemap-card {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 1.5rem;
-
     min-height: 150px;
-
     padding: 1.75rem 2rem;
-
     border:
       1px solid
       #cbd5cd;
-
     border-radius: 1.25rem;
-
     background:
       rgba(255, 255, 255, 0.42);
-
     transition:
       transform 0.2s ease,
       background 0.2s ease,
@@ -570,12 +470,9 @@ const sitemapSections = [
 
   .sitemap-card:hover {
     transform: translateY(-4px);
-
     border-color: #9eb3a5;
-
     background:
       rgba(255, 255, 255, 0.75);
-
     box-shadow:
       0 15px 35px
       rgba(39, 102, 77, 0.08);
@@ -587,44 +484,29 @@ const sitemapSections = [
 
   .sitemap-card h3 {
     margin: 0;
-
     color: #27664d;
-
     font-size: 24px;
-
     line-height: 1.2;
-
     letter-spacing: -0.03em;
   }
 
   .sitemap-card p {
     margin: 0.7rem 0 0;
-
     color: #65736c;
-
     font-size: 15px;
-
     line-height: 1.65;
   }
 
   .sitemap-arrow {
     flex-shrink: 0;
-
     display: grid;
-
     place-items: center;
-
     width: 42px;
     height: 42px;
-
     border-radius: 50%;
-
     color: white;
-
     background: #27664d;
-
     font-size: 20px;
-
     transition:
       transform 0.2s ease,
       background 0.2s ease;
@@ -632,33 +514,24 @@ const sitemapSections = [
 
   .sitemap-card:hover .sitemap-arrow {
     transform: translateX(3px);
-
     background: #1f513d;
   }
 
   .featured {
     display: grid;
-
     grid-template-columns:
       1.3fr 0.7fr;
-
     gap: 5rem;
-
     padding: 7rem 8vw;
-
     color: white;
-
     background: #27664d;
   }
 
   .featured h2 {
     margin: 0;
-
     font-size:
       clamp(38px, 5vw, 65px);
-
     line-height: 1;
-
     letter-spacing: -0.06em;
   }
 
@@ -668,13 +541,9 @@ const sitemapSections = [
 
   .featured p:last-child {
     align-self: end;
-
     margin: 0;
-
     color: #d5e5d9;
-
     font-size: 17px;
-
     line-height: 1.8;
   }
 
@@ -730,7 +599,6 @@ const sitemapSections = [
     .sitemap-arrow {
       width: 38px;
       height: 38px;
-
       font-size: 18px;
     }
   }
