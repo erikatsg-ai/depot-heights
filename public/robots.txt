@@ -1,0 +1,7 @@
+# Allow Google to crawl all pages, but block the Cloudflare internal path
+User-agent: *
+Allow: /
+Disallow: /cdn-cgi/
+
+# Point to your sitemap
+Sitemap: https://depot-heights.pages.dev/sitemap-index.xml
