@@ -1,0 +1,377 @@
+---
+interface GalleryImage {
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  images: GalleryImage[];
+  class?: string;
+}
+
+const { images, class: className = "" } = Astro.props;
+---
+
+<div class={`image-gallery ${className}`} data-gallery>
+  <div class="gallery-grid">
+    {images.map((image, index) => (
+      <button
+        class={`gallery-item ${index === 0 ? "gallery-item-main" : ""}`}
+        type="button"
+        data-index={index}
+        data-src={image.src}
+        data-alt={image.alt}
+        aria-label={`Open image ${index + 1} of ${images.length}: ${image.alt}`}
+      >
+        <img
+          src={image.src}
+          alt={image.alt}
+          {/* First image is loaded eager for Lighthouse LCP score, rest are lazy */}
+          loading={index === 0 ? "eager" : "lazy"} 
+          decoding="async"
+        />
+      </button>
+    ))}
+  </div>
+
+  {/* NATIVE HTML5 DIALOG - Replaces complex custom DOM & aria-hidden states */}
+  <dialog class="gallery-dialog" aria-label="Image gallery fullscreen view">
+    <div class="dialog-controls">
+      <button class="dialog-close" type="button" aria-label="Close image gallery" data-close>
+        ×
+      </button>
+    </div>
+
+    <div class="dialog-body">
+      <button class="dialog-prev nav-btn" type="button" aria-label="Previous image" data-prev>
+        ‹
+      </button>
+
+      <div class="dialog-image-wrap">
+        <img class="dialog-image" src="" alt="" loading="lazy" decoding="async" data-dialog-image />
+        <div class="dialog-counter" data-counter>1 / 1</div>
+      </div>
+
+      <button class="dialog-next nav-btn" type="button" aria-label="Next image" data-next>
+        ›
+      </button>
+    </div>
+  </dialog>
+</div>
+
+<script>
+  // Vanilla JS - Scoped strictly to each gallery instance
+  document.querySelectorAll("[data-gallery]").forEach((gallery) => {
+    const items = Array.from(gallery.querySelectorAll(".gallery-item")) as HTMLButtonElement[];
+    const dialog = gallery.querySelector(".gallery-dialog") as HTMLDialogElement;
+    const dialogImage = gallery.querySelector("[data-dialog-image]") as HTMLImageElement;
+    const counter = gallery.querySelector("[data-counter]");
+    const btnPrev = gallery.querySelector("[data-prev]");
+    const btnNext = gallery.querySelector("[data-next]");
+    const btnClose = gallery.querySelector("[data-close]");
+
+    if (!dialog || !dialogImage || items.length === 0) return;
+
+    let currentIndex = 0;
+
+    const updateImage = () => {
+      const currentItem = items[currentIndex];
+      dialogImage.src = currentItem.dataset.src || "";
+      dialogImage.alt = currentItem.dataset.alt || "";
+      if (counter) {
+        counter.textContent = `${currentIndex + 1} / ${items.length}`;
+      }
+    };
+
+    const openGallery = (index: number) => {
+      currentIndex = index;
+      updateImage();
+      dialog.showModal(); // Native method handles focus trap and backdrop
+      document.body.style.overflow = "hidden"; // Prevent background scroll
+    };
+
+    const closeGallery = () => {
+      dialog.close();
+      document.body.style.overflow = ""; // Restore background scroll
+    };
+
+    const showPrevious = () => {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      updateImage();
+    };
+
+    const showNext = () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      updateImage();
+    };
+
+    // Attach click listeners to grid thumbnails
+    items.forEach((item, index) => {
+      item.addEventListener("click", () => openGallery(index));
+    });
+
+    // Dialog controls
+    btnPrev?.addEventListener("click", showPrevious);
+    btnNext?.addEventListener("click", showNext);
+    btnClose?.addEventListener("click", closeGallery);
+
+    // Close when clicking directly on the dialog backdrop
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) closeGallery();
+    });
+
+    // Native dialog handles "Escape" automatically. We just need arrow keys.
+    dialog.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") showPrevious();
+      if (e.key === "ArrowRight") showNext();
+      // Restore scroll if user pressed native Escape key
+      if (e.key === "Escape") document.body.style.overflow = ""; 
+    });
+  });
+</script>
+
+<style>
+  /* =========================================
+     GRID STYLES
+  ========================================== */
+  .image-gallery {
+    width: 100%;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    height: 460px;
+  }
+
+  .gallery-item {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 20px;
+    background: #dfe9e0;
+    cursor: zoom-in;
+  }
+
+  .gallery-item-main {
+    grid-row: 1 / 3;
+  }
+
+  .gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cropped neatly */
+    transition: transform 0.45s ease, filter 0.25s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.04);
+    filter: brightness(0.94);
+  }
+
+  .gallery-item::after {
+    content: "View gallery";
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    padding: 7px 11px;
+    border-radius: 999px;
+    background: rgba(19, 50, 39, 0.78);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .gallery-item:hover::after,
+  .gallery-item:focus-visible::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .gallery-item:focus-visible {
+    outline: 3px solid #6d9a7c;
+    outline-offset: 3px;
+  }
+
+  /* =========================================
+     NATIVE DIALOG STYLES
+  ========================================== */
+  .gallery-dialog {
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+
+  .gallery-dialog::backdrop {
+    background: rgba(7, 20, 15, 0.92);
+    cursor: zoom-out;
+  }
+
+  .gallery-dialog[open] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dialog-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 18px;
+    z-index: 10;
+  }
+
+  .dialog-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 40px;
+    gap: 20px;
+    min-height: 0;
+  }
+
+  .dialog-image-wrap {
+    flex: 1;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 0;
+  }
+
+  .dialog-image {
+    max-width: 100%;
+    max-height: calc(100vh - 120px);
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Full image visible */
+    user-select: none;
+  }
+
+  /* BUTTONS */
+  .dialog-close,
+  .nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(19, 50, 39, 0.78);
+    color: #ffffff;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 5;
+  }
+
+  .dialog-close {
+    width: 48px;
+    height: 48px;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .nav-btn {
+    width: 54px;
+    height: 54px;
+    font-size: 42px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .dialog-close:hover,
+  .nav-btn:hover {
+    background: #275a43;
+    transform: scale(1.05);
+  }
+
+  .dialog-close:focus-visible,
+  .nav-btn:focus-visible {
+    outline: 3px solid #a9d1b5;
+    outline-offset: 3px;
+  }
+
+  .dialog-counter {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 7px 13px;
+    border-radius: 999px;
+    background: rgba(19, 50, 39, 0.78);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  /* =========================================
+     RESPONSIVE
+  ========================================== */
+  @media (max-width: 640px) {
+    .gallery-grid {
+      height: auto;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 240px 140px;
+    }
+
+    .gallery-item-main {
+      grid-column: 1 / 3;
+      grid-row: 1;
+    }
+
+    .dialog-body {
+      padding: 0 10px 20px;
+      gap: 10px;
+      position: relative;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      font-size: 32px;
+    }
+
+    .dialog-prev {
+      left: 10px;
+    }
+
+    .dialog-next {
+      right: 10px;
+    }
+
+    .dialog-close {
+      width: 44px;
+      height: 44px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .dialog-counter {
+      bottom: -20px;
+    }
+    
+    .dialog-image {
+       max-height: calc(100vh - 100px);
+    }
+  }
+</style>

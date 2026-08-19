@@ -1,0 +1,443 @@
+---
+// Header.astro - Restructured into your requested categories with logo support
+
+const currentPath = Astro.url.pathname;
+
+// Category 1: Amenities & Essentials
+const amenitiesItems = [
+  { href: "/amenities", label: "General Amenities" },
+  { href: "/schools-education", label: "Schools & Education" },
+  { href: "/healthcare", label: "Healthcare" },
+];
+
+// Category 2: Lifestyle & Living
+const lifestyleItems = [
+  { href: "/retail-shopping", label: "Retail & Shopping" },
+  { href: "/sports-recreation", label: "Sports & Recreation" },
+  { href: "/parks-pcn", label: "Parks & PCN" },
+  { href: "/living-around-depot-heights", label: "Living Around Depot Heights" },
+];
+
+// Category 3: Food & Dining
+const foodDiningItems = [
+  { href: "/local-food", label: "Local Food" },
+  { href: "/cafes", label: "Cafés" },
+  { href: "/restaurants", label: "Restaurants" },
+];
+
+// Category 4: Depot Heights (About/Estate Info)
+const depotHeightsItems = [
+  { href: "/about-depot-heights", label: "About Depot Heights" },
+  { href: "/location", label: "Location" },
+  { href: "/transport", label: "Transport" },
+  { href: "/history-of-depot-road", label: "History of Depot Road" },
+  { href: "/sitemap", label: "Sitemap" },
+];
+---
+
+<header class="site-header">
+  <div class="header-container">
+    <!-- Brand Logo -->
+    <a href="/" class="brand-logo" aria-label="Depot Heights HDB Estate Guide Home">
+      <div class="logo-icon-wrap">
+        <img src="/favicon.ico" alt="Depot Heights Logo" width="36" height="36" loading="eager" />
+      </div>
+      <div class="logo-text-group">
+        <span class="logo-main">Depot Heights</span>
+        <span class="logo-tagline">HDB Estate Guide</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Main Navigation">
+      <ul class="nav-list" role="list">
+        <li>
+          <a href="/" class={currentPath === "/" ? "nav-link active" : "nav-link"} aria-current={currentPath === "/" ? "page" : undefined}>
+            Home
+          </a>
+        </li>
+
+        <!-- Dropdown: Amenities -->
+        <li class="dropdown-container">
+          <button class="dropdown-trigger" aria-expanded="false" aria-haspopup="true" type="button">
+            Amenities <span class="arrow" aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown-menu" role="list">
+            {amenitiesItems.map((sub) => (
+              <li>
+                <a href={sub.href} class={currentPath === sub.href ? "dropdown-item active" : "dropdown-item"} aria-current={currentPath === sub.href ? "page" : undefined}>
+                  {sub.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+
+        <!-- Dropdown: Lifestyle -->
+        <li class="dropdown-container">
+          <button class="dropdown-trigger" aria-expanded="false" aria-haspopup="true" type="button">
+            Lifestyle <span class="arrow" aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown-menu" role="list">
+            {lifestyleItems.map((sub) => (
+              <li>
+                <a href={sub.href} class={currentPath === sub.href ? "dropdown-item active" : "dropdown-item"} aria-current={currentPath === sub.href ? "page" : undefined}>
+                  {sub.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+
+        <!-- Dropdown: Food & Dining -->
+        <li class="dropdown-container">
+          <button class="dropdown-trigger" aria-expanded="false" aria-haspopup="true" type="button">
+            Food & Dining <span class="arrow" aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown-menu" role="list">
+            {foodDiningItems.map((sub) => (
+              <li>
+                <a href={sub.href} class={currentPath === sub.href ? "dropdown-item active" : "dropdown-item"} aria-current={currentPath === sub.href ? "page" : undefined}>
+                  {sub.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+
+        <!-- Dropdown: Depot Heights -->
+        <li class="dropdown-container">
+          <button class="dropdown-trigger" aria-expanded="false" aria-haspopup="true" type="button">
+            Depot Heights <span class="arrow" aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown-menu" role="list">
+            {depotHeightsItems.map((sub) => (
+              <li>
+                <a href={sub.href} class={currentPath === sub.href ? "dropdown-item active" : "dropdown-item"} aria-current={currentPath === sub.href ? "page" : undefined}>
+                  {sub.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" type="button">
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer-content">
+      <a href="/" class="mobile-link" aria-current={currentPath === "/" ? "page" : undefined}>Home</a>
+
+      <div class="mobile-submenu-group">
+        <span class="mobile-submenu-title">Amenities</span>
+        {amenitiesItems.map((sub) => (
+          <a href={sub.href} class="mobile-sub-link" aria-current={currentPath === sub.href ? "page" : undefined}>{sub.label}</a>
+        ))}
+      </div>
+
+      <div class="mobile-submenu-group">
+        <span class="mobile-submenu-title">Lifestyle</span>
+        {lifestyleItems.map((sub) => (
+          <a href={sub.href} class="mobile-sub-link" aria-current={currentPath === sub.href ? "page" : undefined}>{sub.label}</a>
+        ))}
+      </div>
+
+      <div class="mobile-submenu-group">
+        <span class="mobile-submenu-title">Food & Dining</span>
+        {foodDiningItems.map((sub) => (
+          <a href={sub.href} class="mobile-sub-link" aria-current={currentPath === sub.href ? "page" : undefined}>{sub.label}</a>
+        ))}
+      </div>
+
+      <div class="mobile-submenu-group">
+        <span class="mobile-submenu-title">Depot Heights</span>
+        {depotHeightsItems.map((sub) => (
+          <a href={sub.href} class="mobile-sub-link" aria-current={currentPath === sub.href ? "page" : undefined}>{sub.label}</a>
+        ))}
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.querySelector(".mobile-menu-toggle");
+    const mobileDrawer = document.querySelector(".mobile-drawer");
+    const dropdownContainers = document.querySelectorAll(".dropdown-container");
+
+    if (toggleBtn && mobileDrawer) {
+      toggleBtn.addEventListener("click", () => {
+        const isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
+        toggleBtn.setAttribute("aria-expanded", (!isExpanded).toString());
+        mobileDrawer.classList.toggle("open");
+        mobileDrawer.setAttribute("aria-hidden", isExpanded.toString());
+      });
+    }
+
+    dropdownContainers.forEach((container) => {
+      const trigger = container.querySelector(".dropdown-trigger");
+      if (trigger) {
+        trigger.addEventListener("click", (e) => {
+          e.stopPropagation();
+          // Close other open dropdowns
+          dropdownContainers.forEach((c) => {
+            if (c !== container) {
+              c.classList.remove("open");
+              const t = c.querySelector(".dropdown-trigger");
+              if (t) t.setAttribute("aria-expanded", "false");
+            }
+          });
+          const isOpen = container.classList.toggle("open");
+          trigger.setAttribute("aria-expanded", isOpen.toString());
+        });
+      }
+    });
+
+    document.addEventListener("click", () => {
+      dropdownContainers.forEach((c) => {
+        c.classList.remove("open");
+        const t = c.querySelector(".dropdown-trigger");
+        if (t) t.setAttribute("aria-expanded", "false");
+      });
+    });
+  });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(24, 49, 38, 0.08);
+    font-family: Inter, sans-serif;
+  }
+
+  .header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 5vw;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .logo-icon-wrap {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-icon-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .logo-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .logo-main {
+    font-size: 20px;
+    font-weight: 900;
+    color: #1d2924;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .logo-tagline {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2b6e52;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link,
+  .dropdown-trigger {
+    color: #1d2924;
+    font-size: 15px;
+    font-weight: 700;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .nav-link:hover,
+  .dropdown-trigger:hover,
+  .nav-link.active,
+  .dropdown-container.open .dropdown-trigger {
+    color: #2b6e52;
+  }
+
+  .dropdown-container {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    min-width: 260px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  }
+
+  .dropdown-container:hover .dropdown-menu,
+  .dropdown-container.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-item {
+    display: block;
+    padding: 10px 20px;
+    color: #1d2924;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.1s ease, color 0.1s ease;
+  }
+
+  .dropdown-item:hover,
+  .dropdown-item.active {
+    background: #f7f8f3;
+    color: #2b6e52;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 11px 7px;
+  }
+
+  .mobile-menu-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background: #1d2924;
+    border-radius: 2px;
+  }
+
+  .mobile-drawer {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: #ffffff;
+    border-top: 1px solid rgba(24, 49, 38, 0.08);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-drawer.open {
+    transform: translateX(0);
+  }
+
+  .mobile-drawer-content {
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .mobile-link {
+    color: #1d2924;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .mobile-submenu-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 12px;
+    border-left: 2px solid #2b6e52;
+  }
+
+  .mobile-submenu-title {
+    color: #2b6e52;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .mobile-sub-link {
+    color: #1d2924;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  @media (max-width: 1024px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+    }
+
+    .mobile-drawer {
+      display: block;
+    }
+  }
+</style>
