@@ -5,8 +5,8 @@ export default defineConfig({
   // Your site URL - crucial for canonical URLs and sitemap
   site: 'https://depot-heights.pages.dev',
   
-  // Helps with URL handling
-  trailingSlash: 'ignore',
+  // Strict rule to prevent appending trailing slashes to XML/file extensions
+  trailingSlash: 'never',
   
   integrations: [
     sitemap({
@@ -26,8 +26,8 @@ export default defineConfig({
     })
   ],
   
-  // Build options for better performance
+  // Changed to 'file' to ensure static files and assets map cleanly without trailing slash loops
   build: {
-    format: 'directory',
+    format: 'file',
   },
 });
