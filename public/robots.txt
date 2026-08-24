@@ -3,5 +3,8 @@ User-agent: *
 Allow: /
 Disallow: /cdn-cgi/
 
-# Point to your sitemap
+# Primary sitemap index
 Sitemap: https://depot-heights.pages.dev/sitemap-index.xml
+
+# Direct fallback sitemap (helps bypass Google platform bugs)
+Sitemap: https://depot-heights.pages.dev/sitemap-0.xml
