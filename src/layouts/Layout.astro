@@ -65,6 +65,11 @@ const {
     {schemaData && (
       <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaData)} />
     )}
+    <!-- Vercel Web Analytics Tracking Hook -->
+    <script>
+      import { inject } from '@vercel/analytics';
+      inject();
+    </script>
   </head>
   <body>
     <Header />
