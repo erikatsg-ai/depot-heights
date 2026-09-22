@@ -1,0 +1,275 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Search — Depot Heights",
+  "url": "https://depot-heights.vercel.app/search/",
+  "inLanguage": "en-SG",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Depot Heights",
+    "url": "https://depot-heights.vercel.app/",
+  },
+};
+---
+
+<Layout
+  title="Search — Depot Heights Neighbourhood Guide"
+  description="Search all Depot Heights guides: amenities, healthcare, schools, food, parks, transport and neighbourhood history in Bukit Merah, Singapore."
+  robotsFollow="noindex, follow"
+  schemaData={schema}
+>
+  <main class="search-container">
+    <div class="search-header">
+      <p class="eyebrow">SEARCH DEPOT HEIGHTS</p>
+      <h1>Search</h1>
+      <p class="subtitle">
+        Find guides, amenities, food, parks, transport and more across the
+        Depot Heights neighbourhood. Start typing to see results instantly.
+      </p>
+    </div>
+
+    <!-- Pagefind mounts its UI here -->
+    <div id="search"></div>
+
+    <p class="search-hint">
+      Can't find something?
+      <a href="/sitemap/">Browse the full sitemap</a> or
+      <a href="/">return to the homepage</a>.
+    </p>
+  </main>
+</Layout>
+
+<script is:inline>
+  window.addEventListener("DOMContentLoaded", function () {
+    var el = document.getElementById("search");
+    if (!el) return;
+
+    // 1. Inject Pagefind UI CSS
+    var css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "/pagefind/pagefind-ui.css";
+    document.head.appendChild(css);
+
+    // 2. Load Pagefind UI JS as a classic script
+    var script = document.createElement("script");
+    script.src = "/pagefind/pagefind-ui.js";
+
+    script.onload = function () {
+      if (typeof window.PagefindUI === "function") {
+        new window.PagefindUI({
+          element: "#search",
+          showSubResults: true,
+          showImages: false,
+          translations: {
+            placeholder: "Search Depot Heights…",
+            clear_search: "Clear",
+            load_more: "Load more results",
+            search_label: "Search this site",
+            filters_label: "Filters",
+            zero_results: "No results for [SEARCH_TERM]",
+            many_results: "[COUNT] results for [SEARCH_TERM]",
+            one_result: "[COUNT] result for [SEARCH_TERM]",
+            alt_search:
+              "No results for [SEARCH_TERM]. Showing results for [DIFFERENT_TERM] instead",
+            search_suggestion:
+              "No results for [SEARCH_TERM]. Try one of the following searches:",
+            searching: "Searching for [SEARCH_TERM]…",
+          },
+        });
+      } else {
+        el.innerHTML =
+          '<p class="search-error">Pagefind UI loaded but window.PagefindUI is not a function. Rebuild the site with <code>npm run build</code>.</p>';
+      }
+    };
+
+    script.onerror = function () {
+      el.innerHTML =
+        '<p class="search-error">Failed to load /pagefind/pagefind-ui.js. Make sure you ran <code>npm run build</code> so the search index exists in <code>dist/pagefind/</code>.</p>';
+    };
+
+    document.body.appendChild(script);
+  });
+</script>
+
+<style>
+  .search-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 6rem 2rem 4rem;
+    font-family: Inter, system-ui, sans-serif;
+    color: #1d2924;
+  }
+
+  .search-header {
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #eef3e9;
+    padding-bottom: 2rem;
+  }
+
+  .eyebrow {
+    color: #3d805f;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    margin: 0 0 0.5rem 0;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.04em;
+  }
+
+  .subtitle {
+    color: #53615b;
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ---------- Pagefind UI overrides — Depot Heights branding ---------- */
+
+  :global(.pagefind-ui) {
+    --pagefind-ui-primary: #2b6e52;
+    --pagefind-ui-text: #1d2924;
+    --pagefind-ui-background: #ffffff;
+    --pagefind-ui-border: #e2ebe0;
+    --pagefind-ui-tag: #eef3e9;
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 12px;
+    --pagefind-ui-font: Inter, system-ui, sans-serif;
+  }
+
+  /* ---------- HIDE THE SEARCH ICON ---------- */
+
+  /* Pagefind renders the magnifying glass via a ::before pseudo-element.
+     Hide it completely. */
+  :global(.pagefind-ui__form::before),
+  :global(.pagefind-ui__search-input + svg),
+  :global(.pagefind-ui__search-input ~ svg),
+  :global(.pagefind-ui__form svg),
+  :global(.pagefind-ui__search-icon) {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+  }
+
+  /* ---------- INPUT STYLING (no icon space needed now) ---------- */
+
+  :global(.pagefind-ui__search-input) {
+    font-size: 16px !important;
+    padding: 14px 42px 14px 18px !important; /* left padding back to normal */
+    border-radius: 12px !important;
+    border: 1px solid #d8e3d5 !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  :global(.pagefind-ui__search-input:focus) {
+    outline: 2px solid #2b6e52 !important;
+    outline-offset: 2px;
+  }
+
+  /* ---------- CLEAR (×) BUTTON ---------- */
+
+  :global(.pagefind-ui__search-clear) {
+    right: 18px !important;
+    padding: 0 !important;
+    z-index: 2 !important;
+  }
+
+  /* ---------- RESULTS STYLING ---------- */
+
+  :global(.pagefind-ui__result) {
+    border-top: 1px solid #eef3e9 !important;
+    padding: 20px 0 !important;
+  }
+
+  :global(.pagefind-ui__result-title a) {
+    color: #2b6e52 !important;
+    font-weight: 800 !important;
+    text-decoration: none !important;
+  }
+
+  :global(.pagefind-ui__result-title a:hover) {
+    text-decoration: underline !important;
+  }
+
+  :global(.pagefind-ui__result-excerpt) {
+    color: #53615b !important;
+    line-height: 1.6 !important;
+  }
+
+  :global(.pagefind-ui__result-excerpt mark) {
+    background: #e8f0e8 !important;
+    color: #1d2924 !important;
+    padding: 0 2px !important;
+    border-radius: 3px !important;
+  }
+
+  /* ---------- HINT + ERROR MESSAGES ---------- */
+
+  .search-hint {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eef3e9;
+    color: #53615b;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .search-hint a {
+    color: #2b6e52;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .search-error {
+    padding: 20px;
+    background: #fdf3f3;
+    border: 1px solid #f2c9c9;
+    border-radius: 12px;
+    color: #8b2a2a;
+    line-height: 1.6;
+  }
+
+  .search-error code {
+    background: #fff5f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: ui-monospace, monospace;
+    font-size: 13px;
+  }
+
+  /* ---------- MOBILE ---------- */
+
+  @media (max-width: 600px) {
+    .search-container {
+      padding: 4rem 1.25rem 3rem;
+    }
+    h1 {
+      font-size: 2.25rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+    }
+
+    :global(.pagefind-ui__search-input) {
+      padding: 12px 40px 12px 16px !important;
+      font-size: 15px !important;
+    }
+
+    :global(.pagefind-ui__search-clear) {
+      right: 14px !important;
+    }
+  }
+</style>
+

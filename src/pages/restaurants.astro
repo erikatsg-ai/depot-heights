@@ -1,0 +1,1429 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle =
+  "Best Restaurants Near Depot Heights | Alexandra, Bukit Merah & Tiong Bahru Dining Guide";
+
+const pageDescription =
+  "Explore recommended restaurants near Depot Heights, including dining options around Alexandra, Anchorpoint, Tiong Bahru, Pasir Panjang, Telok Blangah Hill and Tanjong Pagar. Discover Japanese, Taiwanese, Italian, Western, Swedish and heritage dining options.";
+
+const heroImage = "/images/depot-heights-hero.webp";
+
+const restaurantEstates = [
+  {
+    estate: "Mount Faber & HortPark",
+    restaurants: [
+      {
+        number: "01",
+        id: "wineyard",
+        name: "Wineyard",
+        location: "HortPark",
+        image: "/images/rs-wineyard.webp",
+        alt: "Wineyard at HortPark near Depot Heights",
+        description:
+          "Wineyard is a garden dining destination around HortPark, offering a peaceful setting surrounded by greenery. It is an option to consider for a relaxed meal, brunch or weekend gathering.",
+        highlight:
+          "A convenient dining choice to combine with a visit to HortPark and the wider Southern Ridges area.",
+        gallery: [
+          "/images/rs-vineyard-menu.webp",
+          "/images/rs-vineyard-carte-buffet.webp",
+        ],
+      },
+      {
+        number: "02",
+        id: "alkaff-mansion",
+        name: "The Alkaff Mansion",
+        location: "Telok Blangah Hill",
+        image: "/images/rs-alkaff-mansion-main.webp",
+        alt: "The Alkaff Mansion on Telok Blangah Hill",
+        description:
+          "The Alkaff Mansion is a historic landmark on Telok Blangah Hill, surrounded by greenery and connected to the wider Southern Ridges. Today, the heritage mansion is also a distinctive dining destination, bringing together The Alkaff Mansion 1918 Heritage Bar and UNA Restaurant, known for its Spanish dining experience.",
+        highlight:
+          "A special destination close to Depot Heights for residents looking to combine heritage, greenery and dining.",
+        gallery: [
+          "/images/rs-alkaff-mansion-heritage.webp",
+          "/images/rs-alkaff-mansion-food.webp",
+        ],
+      },
+    ],
+  },
+  {
+    estate: "Alexandra & Pasir Panjang",
+    restaurants: [
+      {
+        number: "03",
+        id: "verandah-rotisserie",
+        name: "The Verandah Rotisserie",
+        location: "Pasir Panjang",
+        image: "/images/rs-verandah-rotisserie.webp",
+        alt: "The Verandah Rotisserie at Pasir Panjang",
+        description:
+          "The Verandah Rotisserie is a Western dining option around Pasir Panjang, known for rotisserie-style dishes and hearty meals.",
+        highlight:
+          "A restaurant option to consider for a relaxed meal with family or friends.",
+        gallery: [
+          "/images/rs-verandah-rotisserie-rice.webp",
+          "/images/rs-verandah-rotisserie-christmas.webp",
+        ],
+      },
+      {
+        number: "04",
+        id: "eat3bowl",
+        name: "Eat 3 Bowls",
+        location: "Pasir Panjang",
+        image: "/images/eat-3-bowls-storefront.webp",
+        alt: "Eat 3 Bowls in Pasir Panjang",
+        description:
+          "Eat 3 Bowls is a Taiwanese food destination around Pasir Panjang, offering another nearby neighbourhood option for residents exploring food beyond Depot Heights.",
+        highlight:
+          "Pasir Panjang is also convenient to combine with visits to nearby parks, HortPark and other Southern Ridges destinations.",
+        gallery: [
+          "/images/eat-3-bowls-salted-chicken.webp",
+          "/images/eat-3-bowls-garlic-steak.webp",
+        ],
+      },
+      {
+        number: "05",
+        id: "ikea-alexandra",
+        name: "IKEA Alexandra",
+        location: "Alexandra Road",
+        image: "/images/rs-ikea-alexandra.webp",
+        alt: "IKEA Alexandra restaurant and bistro",
+        description:
+          "IKEA Alexandra is a popular destination along Alexandra Road. Besides furniture and home furnishing, its Swedish-style restaurant and bistro are familiar casual dining options, including its popular chicken wings.",
+        highlight:
+          "A convenient option when combining shopping, home furnishing errands and a casual meal around Alexandra.",
+        gallery: [
+          "/images/rs-ikea-alexandra-food.webp",
+          "/images/rs-ikea-alexandra-chicken-wings.webp",
+        ],
+      },
+      {
+        number: "06",
+        id: "sakuraya-anchorpoint",
+        name: "Sakuraya",
+        location: "Anchorpoint",
+        image: "/images/sakuraya-store-front.webp",
+        alt: "Sakuraya at Anchorpoint",
+        description:
+          "Sakuraya at Anchorpoint is a convenient Japanese dining option near Alexandra Road and within easy reach of Depot Heights.",
+        highlight:
+          "A practical choice for residents looking for Japanese food around the Alexandra area.",
+        gallery: [
+          "/images/sakuraya-sashimi.webp",
+          "/images/sakuraya-grill-fish.webp",
+        ],
+      },
+      {
+        number: "07",
+        id: "ma-maison",
+        name: "Ma Maison",
+        location: "Anchorpoint",
+        image: "/images/ma-maison-storefront.webp",
+        alt: "Ma Maison at Anchorpoint",
+        description:
+          "Ma Maison at Anchorpoint is another Japanese restaurant option around Alexandra Road, conveniently located for residents in the Depot Heights and Alexandra neighbourhoods.",
+        highlight:
+          "Its Anchorpoint location makes it easy to combine dining with shopping and errands around Alexandra.",
+        gallery: [
+          "/images/ma-maison-steak.webp",
+          "/images/ma-maison-curry-egg.webp",
+        ],
+      },
+    ],
+  },
+  {
+    estate: "Tiong Bahru & Tanjong Pagar",
+    restaurants: [
+      {
+        number: "08",
+        id: "forketta",
+        name: "Forketta",
+        location: "Tiong Bahru",
+        image: "/images/rs-forketta-tiongbahru.webp",
+        alt: "Forketta in Tiong Bahru",
+        description:
+          "Located in the Tiong Bahru area, Forketta is part of a neighbourhood dining scene that combines restaurants, cafés, bakeries and traditional local food.",
+        highlight:
+          "Tiong Bahru is easy to combine with a wider food trip, café visit or walk around the neighbourhood.",
+        gallery: [
+          "/images/rs-forketta.webp",
+          "/images/rs-forketta-pizza.webp",
+        ],
+      },
+      {
+        number: "09",
+        id: "keisuke-tori-king",
+        name: "Keisuke Tori King",
+        location: "100AM, Tanjong Pagar",
+        image: "/images/keisuke-tori-king-100am.webp",
+        alt: "Keisuke Tori King at 100AM Tanjong Pagar",
+        description:
+          "Keisuke Tori King at 100AM is a Japanese dining option in Tanjong Pagar, offering another choice for residents who are happy to travel towards the city fringe for dining.",
+        highlight:
+          "A destination dining option around Tanjong Pagar rather than a doorstep choice.",
+        gallery: [
+          "/images/keisuke-tori-king-menu.webp",
+          "/images/keisuke-tori-king-black-spicy.webp",
+        ],
+      },
+      {
+        number: "10",
+        id: "keisuke-hamburg",
+        name: "Keisuke Hamburg",
+        location: "Tanjong Pagar",
+        image: "/images/rs-keisuke-hamburg-tanjong-pagar(3).webp",
+        alt: "Keisuke Hamburg Tanjong Pagar storefront",
+        images: [
+          {
+            src: "/images/rs-keisuke-hamburg-tanjong-pagar(3).webp",
+            alt: "Keisuke Hamburg Tanjong Pagar storefront",
+          },
+          {
+            src: "/images/rs-keisuke-hamburg-tanjong-pagar(2).webp",
+            alt: "Keisuke Hamburg dishes",
+          },
+          {
+            src: "/images/rs-keisuke-hamburg-tanjong-pagar(1).webp",
+            alt: "Keisuke Hamburg interior setup",
+          },
+        ],
+        description:
+          "Keisuke Hamburg is a Japanese hamburger steak restaurant in the Tanjong Pagar area, offering a different style of Japanese dining from the more familiar sushi and ramen choices.",
+        highlight:
+          "A destination worth considering when you want to make a specific dining trip towards Tanjong Pagar.",
+      },
+    ],
+  },
+];
+
+const restaurantAreas = [
+  {
+    title: "Alexandra & Anchorpoint",
+    description:
+      "Alexandra Road and Anchorpoint offer quick convenience for Depot Heights residents, featuring Japanese restaurants, Swedish casual dining, and familiar neighbourhood eateries.",
+  },
+  {
+    title: "Tiong Bahru",
+    description:
+      "Tiong Bahru combines heritage charm with a vibrant culinary scene, featuring Italian dining, bakeries, cafes, and traditional local food options.",
+  },
+  {
+    title: "Southern Ridges & Pasir Panjang",
+    description:
+      "The green corridor stretching from Mount Faber through HortPark and Pasir Panjang provides scenic garden dining and unique specialty eateries.",
+  },
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  image={heroImage}
+>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">
+          RESTAURANTS & DINING NEAR DEPOT HEIGHTS
+        </p>
+
+        <h1>
+          Good food,
+          <span>within reach.</span>
+        </h1>
+
+        <p class="hero-text">
+          Explore recommended restaurants around Alexandra, Bukit Merah,
+          Tiong Bahru, Pasir Panjang, Telok Blangah Hill and Tanjong Pagar.
+          From convenient neighbourhood dining to destination restaurants,
+          there are plenty of choices within reach of Depot Heights.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#restaurant-guide">
+            Explore restaurants
+          </a>
+
+          <a class="button button-secondary" href="/cafes/">
+            Explore cafés
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img
+          src={heroImage}
+          alt="Depot Heights residential estate"
+          width="600"
+          height="400"
+          fetchpriority="high"
+          decoding="async"
+        />
+
+        <div class="hero-card-overlay">
+          <p>DEPOT HEIGHTS</p>
+
+          <div class="hero-card-line"></div>
+
+          <strong>
+            Restaurants & dining.<br />
+            Neighbourhood guide.
+          </strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="eyebrow">
+        RESTAURANTS & DINING
+      </p>
+
+      <h2>
+        A wider dining scene is just a short journey from Depot Heights.
+      </h2>
+
+      <p>
+        Whether you are looking for family dining, Japanese cuisine,
+        Italian pizza, Taiwanese food, Swedish-style casual dining or a
+        heritage dining experience, these restaurants offer a range of
+        choices around the wider Alexandra and Bukit Merah area.
+      </p>
+    </section>
+
+    <!-- RESTAURANT GUIDE BY ESTATE -->
+    <div class="section-grid" id="restaurant-guide">
+      {
+        restaurantEstates.map((group) => (
+          <div class="estate-group">
+            <div class="estate-heading-wrapper">
+              <span class="estate-badge">NEIGHBOURHOOD ZONE</span>
+              <h2>{group.estate}</h2>
+            </div>
+
+            <div class="estate-cafes-container">
+              {group.restaurants.map((restaurant) => {
+                // Build all images array
+                let galleryImages = [];
+                if (restaurant.images) {
+                  galleryImages = restaurant.images.map(img => ({ src: img.src, alt: img.alt }));
+                } else if (restaurant.gallery) {
+                  galleryImages = restaurant.gallery.map(src => ({ src, alt: restaurant.name + " dining experience" }));
+                }
+                // Always include the main image as the first image
+                const allImages = [
+                  { src: restaurant.image, alt: restaurant.alt },
+                  ...galleryImages.filter(img => img.src !== restaurant.image)
+                ];
+                const mainImage = allImages[0];
+                const extraImages = allImages.slice(1);
+                const hasMore = extraImages.length > 0;
+                const galleryId = "gallery-" + restaurant.id;
+                
+                return (
+                  <article class="section-card" id={restaurant.id}>
+                    <div class="section-number">
+                      {restaurant.number}
+                    </div>
+
+                    <div class="restaurant-content">
+                      <p class="eyebrow">
+                        {restaurant.location}
+                      </p>
+
+                      <h2>
+                        {restaurant.name}
+                      </h2>
+
+                      <p class="section-description">
+                        {restaurant.description}
+                      </p>
+
+                      <!-- Main Image -->
+                      <div class="main-image-wrapper">
+                        <img
+                          src={mainImage.src}
+                          alt={mainImage.alt}
+                          width="800"
+                          height="480"
+                          decoding="async"
+                          class="main-restaurant-image"
+                          data-gallery={galleryId}
+                          data-index="0"
+                          data-src={mainImage.src}
+                          data-alt={mainImage.alt}
+                          data-all={JSON.stringify(allImages)}
+                        />
+                        <button class="expand-btn" type="button" data-expand={galleryId} aria-label="Expand slideshow">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                          </svg>
+                        </button>
+                      </div>
+
+                      <!-- Extra Images -->
+                      {hasMore && (
+                        <div class="extra-images-wrapper" data-extra-images>
+                          <div class="extra-images-grid">
+                            {extraImages.map((img, idx) => (
+                              <figure class="extra-image-card">
+                                <img
+                                  src={img.src}
+                                  alt={img.alt}
+                                  width="400"
+                                  height="300"
+                                  decoding="async"
+                                  data-gallery={galleryId}
+                                  data-index={idx + 1}
+                                  data-src={img.src}
+                                  data-alt={img.alt}
+                                  data-all={JSON.stringify(allImages)}
+                                />
+                              </figure>
+                            ))}
+                          </div>
+                          <button class="show-more-btn" type="button" data-toggle-btn>
+                            <span class="show-text">Show more photos</span>
+                            <span class="hide-text" style="display:none;">Show less</span>
+                            <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                          </button>
+                        </div>
+                      )}
+
+                      <div class="highlight-box">
+                        <p class="highlight-eyebrow">
+                          GOOD TO KNOW
+                        </p>
+
+                        <p>
+                          {restaurant.highlight}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- AREAS TO EXPLORE -->
+    <section class="area-section">
+      <div class="area-heading">
+        <p class="eyebrow">
+          POPULAR DINING AREAS
+        </p>
+
+        <h2>
+          Popular dining areas near Depot Heights.
+        </h2>
+
+        <p>
+          These neighbourhoods and districts offer a wider range of
+          restaurants and dining experiences within the wider area around
+          Depot Heights.
+        </p>
+      </div>
+
+      <div class="area-grid">
+        {
+          restaurantAreas.map((area) => (
+            <article class="area-card">
+              <h3>
+                {area.title}
+              </h3>
+
+              <p>
+                {area.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="featured">
+      <div>
+        <p class="eyebrow">
+          RESTAURANTS GUIDE
+        </p>
+
+        <h2>
+          Good food, within reach of Depot Heights.
+        </h2>
+      </div>
+
+      <p>
+        From casual neighbourhood spots to special destination dining,
+        explore the variety of culinary options available across Alexandra,
+        Bukit Merah, Tiong Bahru, and the Southern Ridges.
+      </p>
+    </section>
+
+    <!-- RELATED -->
+    <section class="related-section">
+      <div class="related-heading">
+        <p class="eyebrow">
+          MORE FOOD & DINING
+        </p>
+
+        <h2>
+          Continue exploring the neighbourhood.
+        </h2>
+      </div>
+
+      <div class="related-grid">
+        <article class="related-card">
+          <h3>
+            Cafés
+          </h3>
+
+          <p>
+            Explore coffee spots, bakeries and brunch destinations around
+            Mount Faber, Tiong Bahru, Alexandra and Depot Heights.
+          </p>
+
+          <a class="text-link" href="/cafes/">
+            Explore Cafés →
+          </a>
+        </article>
+
+        <article class="related-card">
+          <h3>
+            Local Food
+          </h3>
+
+          <p>
+            Discover hawker centres, local dishes and traditional food
+            destinations around Bukit Merah and Alexandra.
+          </p>
+
+          <a class="text-link" href="/local-food/">
+            Explore Local Food →
+          </a>
+        </article>
+
+        <article class="related-card">
+          <h3>
+            Lifestyle & Nature
+          </h3>
+
+          <p>
+            Explore parks, heritage sites, arts, shopping and leisure
+            destinations around Depot Heights and the surrounding
+            neighbourhoods.
+          </p>
+
+          <a class="text-link" href="/living-around-depot-heights/">
+            Explore Lifestyle & Nature →
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<!-- Slideshow Dialog -->
+<dialog class="slideshow-dialog" id="slideshowDialog" aria-label="Image slideshow">
+  <div class="dialog-controls">
+    <button class="dialog-close" type="button" aria-label="Close slideshow" id="dialogClose">×</button>
+  </div>
+  
+  <div class="dialog-body">
+    <button class="nav-btn prev-btn" type="button" aria-label="Previous image" id="dialogPrev">‹</button>
+    
+    <div class="dialog-image-container">
+      <img class="dialog-main-img" src="" alt="" decoding="async" id="dialogImg" />
+      <div class="dialog-caption" id="dialogCaption"></div>
+      <div class="dialog-counter" id="dialogCounter">1 / 1</div>
+    </div>
+    
+    <button class="nav-btn next-btn" type="button" aria-label="Next image" id="dialogNext">›</button>
+  </div>
+</dialog>
+
+<script>
+  (function() {
+    const dialog = document.getElementById('slideshowDialog');
+    const dialogImg = document.getElementById('dialogImg');
+    const dialogCaption = document.getElementById('dialogCaption');
+    const dialogCounter = document.getElementById('dialogCounter');
+    const dialogClose = document.getElementById('dialogClose');
+    const dialogPrev = document.getElementById('dialogPrev');
+    const dialogNext = document.getElementById('dialogNext');
+    
+    let currentImages = [];
+    let currentIndex = 0;
+    let currentGalleryId = '';
+    
+    function openSlideshow(galleryId, index) {
+      // Find all images with this gallery ID
+      const images = document.querySelectorAll(`[data-gallery="${galleryId}"]`);
+      if (images.length === 0) return;
+      
+      // Build image data array from the first image's data-all attribute
+      const firstImg = images[0];
+      const allData = firstImg.getAttribute('data-all');
+      if (allData) {
+        currentImages = JSON.parse(allData);
+      } else {
+        // Fallback: build from all images
+        currentImages = [];
+        images.forEach((img) => {
+          currentImages.push({
+            src: img.getAttribute('data-src') || img.src,
+            alt: img.getAttribute('data-alt') || img.alt || 'Restaurant image'
+          });
+        });
+      }
+      
+      currentGalleryId = galleryId;
+      currentIndex = Math.min(index, currentImages.length - 1);
+      updateDialog();
+      dialog.showModal();
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function updateDialog() {
+      const img = currentImages[currentIndex];
+      if (!img) return;
+      dialogImg.src = img.src;
+      dialogImg.alt = img.alt || 'Restaurant image';
+      dialogCaption.textContent = img.alt || 'Restaurant image';
+      dialogCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+    }
+    
+    function closeDialog() {
+      dialog.close();
+      document.body.style.overflow = '';
+    }
+    
+    function nextImage() {
+      if (currentImages.length === 0) return;
+      currentIndex = (currentIndex + 1) % currentImages.length;
+      updateDialog();
+    }
+    
+    function prevImage() {
+      if (currentImages.length === 0) return;
+      currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+      updateDialog();
+    }
+    
+    // Event listeners for images
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('[data-gallery]');
+      if (target) {
+        const galleryId = target.getAttribute('data-gallery');
+        const index = parseInt(target.getAttribute('data-index')) || 0;
+        openSlideshow(galleryId, index);
+      }
+    });
+    
+    // Expand button
+    document.addEventListener('click', function(e) {
+      const btn = e.target.closest('[data-expand]');
+      if (btn) {
+        const galleryId = btn.getAttribute('data-expand');
+        openSlideshow(galleryId, 0);
+      }
+    });
+    
+    // Toggle "Show more"
+    document.addEventListener('click', function(e) {
+      const btn = e.target.closest('[data-toggle-btn]');
+      if (btn) {
+        const wrapper = btn.closest('[data-extra-images]');
+        if (!wrapper) return;
+        const grid = wrapper.querySelector('.extra-images-grid');
+        const showText = btn.querySelector('.show-text');
+        const hideText = btn.querySelector('.hide-text');
+        const icon = btn.querySelector('.toggle-icon');
+        
+        if (!grid) return;
+        const isHidden = grid.style.display === 'none' || grid.style.display === '';
+        
+        if (isHidden) {
+          grid.style.display = 'grid';
+          if (showText) showText.style.display = 'none';
+          if (hideText) hideText.style.display = 'inline';
+          if (icon) icon.style.transform = 'rotate(180deg)';
+          btn.classList.add('expanded');
+        } else {
+          grid.style.display = 'none';
+          if (showText) showText.style.display = 'inline';
+          if (hideText) hideText.style.display = 'none';
+          if (icon) icon.style.transform = 'rotate(0deg)';
+          btn.classList.remove('expanded');
+        }
+      }
+    });
+    
+    // Dialog controls
+    dialogClose.addEventListener('click', closeDialog);
+    dialogPrev.addEventListener('click', prevImage);
+    dialogNext.addEventListener('click', nextImage);
+    
+    dialog.addEventListener('click', function(e) {
+      if (e.target === dialog) closeDialog();
+    });
+    
+    dialog.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'Escape') closeDialog();
+    });
+    
+    // Initialize extra images as hidden
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('[data-extra-images] .extra-images-grid').forEach(function(grid) {
+        grid.style.display = 'none';
+      });
+    });
+  })();
+</script>
+
+<style>
+  /* Page-specific styles only - global styles in global.css */
+  
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.7fr);
+    min-height: 78vh;
+    padding: 8rem 8vw 6rem;
+    gap: 5rem;
+    align-items: center;
+    background:
+      radial-gradient(
+        circle at 80% 30%,
+        rgba(94, 145, 112, 0.22),
+        transparent 35%
+      ),
+      linear-gradient(
+        135deg,
+        #eef3e9 0%,
+        #f7f5ef 60%
+      );
+  }
+
+  .hero-content {
+    max-width: 850px;
+  }
+
+  .eyebrow {
+    margin: 0 0 1rem;
+    color: #3d805f;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+  .hero h1 {
+    max-width: 900px;
+    margin: 0;
+    font-size: clamp(45px, 8vw, 80px);
+    line-height: 0.94;
+    letter-spacing: -0.07em;
+  }
+
+  .hero h1 span {
+    display: block;
+    color: #3d805f;
+  }
+
+  .hero-text {
+    max-width: 700px;
+    margin: 1.8rem 0 0;
+    color: #53615b;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.9rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 800;
+  }
+
+  .button-primary {
+    color: white;
+    background: #27664d;
+  }
+
+  .button-secondary {
+    color: #27664d;
+    border: 1px solid #9eb3a5;
+  }
+
+  .hero-card {
+    position: relative;
+    min-height: 360px;
+    overflow: hidden;
+    border-radius: 2rem;
+    color: white;
+    background: #315f4a;
+    box-shadow: 0 25px 70px rgba(39, 102, 77, 0.18);
+  }
+
+  .hero-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+  }
+
+  .hero-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(31, 72, 55, 0.05),
+      rgba(31, 72, 55, 0.9)
+    );
+  }
+
+  .hero-card-overlay {
+    position: absolute;
+    z-index: 2;
+    right: 2rem;
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .hero-card-overlay p {
+    margin: 0;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+  .hero-card-line {
+    width: 50px;
+    height: 2px;
+    margin: 1rem 0;
+    background: white;
+  }
+
+  .hero-card strong {
+    display: block;
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .intro {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 8rem 8vw 4rem;
+    text-align: center;
+  }
+
+  .intro h2,
+  .featured h2,
+  .related-heading h2,
+  .area-heading h2 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1;
+    letter-spacing: -0.06em;
+  }
+
+  .intro > p:last-child {
+    margin: 1.5rem auto 0;
+    color: #65736c;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .section-grid {
+    padding: 2rem 8vw 8rem;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .estate-group {
+    margin-bottom: 5rem;
+  }
+
+  .estate-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .estate-heading-wrapper {
+    max-width: 1100px;
+    margin: 0 auto 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #27664d;
+  }
+
+  .estate-badge {
+    display: inline-block;
+    color: #27664d;
+    background: rgba(39, 102, 77, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.5rem;
+  }
+
+  .estate-heading-wrapper h2 {
+    margin: 0;
+    font-size: clamp(28px, 3.5vw, 48px);
+    letter-spacing: -0.04em;
+    color: #1d2924;
+  }
+
+  .section-card {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 0;
+    border-top: 1px solid rgba(29, 41, 36, 0.15);
+  }
+
+  .estate-cafes-container .section-card:first-of-type {
+    border-top: none;
+    padding-top: 1rem;
+  }
+
+  .section-number {
+    color: #70a281;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+  }
+
+  .section-card h2 {
+    margin: 0;
+    font-size: clamp(38px, 4vw, 65px);
+    letter-spacing: -0.05em;
+  }
+
+  .section-description {
+    max-width: 700px;
+    margin: 1.2rem 0 2rem;
+    color: #65736c;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .restaurant-content {
+    min-width: 0;
+  }
+
+  .main-image-wrapper {
+    position: relative;
+    margin: 2rem 0;
+  }
+
+  .main-restaurant-image {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 2rem;
+    box-shadow: 0 20px 50px rgba(39, 102, 77, 0.12);
+    cursor: zoom-in;
+    transition: filter 0.3s ease;
+  }
+
+  .main-restaurant-image:hover {
+    filter: brightness(0.95);
+  }
+
+  .expand-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(19, 50, 39, 0.8);
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+    backdrop-filter: blur(4px);
+  }
+
+  .expand-btn:hover {
+    background: #27664d;
+    transform: scale(1.05);
+  }
+
+  .expand-btn:focus-visible {
+    outline: 3px solid #a9d1b5;
+    outline-offset: 3px;
+  }
+
+  .extra-images-wrapper {
+    margin: 1.5rem 0 2rem;
+  }
+
+  .extra-images-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .extra-image-card {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 1.2rem;
+    border: 1px solid #cbd5cd;
+    background: #eef1ec;
+    cursor: zoom-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .extra-image-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(39, 102, 77, 0.1);
+  }
+
+  .extra-image-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .extra-image-card:hover img {
+    transform: scale(1.03);
+  }
+
+  .show-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid #cbd5cd;
+    background: rgba(255, 255, 255, 0.6);
+    color: #27664d;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .show-more-btn:hover {
+    background: #27664d;
+    color: #ffffff;
+    border-color: #27664d;
+  }
+
+  .show-more-btn .toggle-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .show-more-btn.expanded .toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  .highlight-box {
+    padding: 1.5rem 1.7rem;
+    border-left: 4px solid #3d805f;
+    border-radius: 0 1.2rem 1.2rem 0;
+    background: rgba(61, 128, 95, 0.08);
+    margin-top: 2rem;
+  }
+
+  .highlight-box p {
+    margin: 0;
+    color: #53615b;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .highlight-box .highlight-eyebrow {
+    margin-bottom: 0.5rem;
+    color: #27664d;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .area-section {
+    padding: 7rem 8vw;
+    background: #e9eee7;
+  }
+
+  .area-heading {
+    max-width: 850px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .area-heading > p:last-child {
+    max-width: 700px;
+    margin: 1.5rem auto 0;
+    color: #65736c;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .area-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .area-card {
+    padding: 2rem;
+    border: 1px solid #cbd5cd;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  .area-card h3 {
+    margin: 0;
+    color: #27664d;
+    font-size: clamp(23px, 2vw, 28px);
+    letter-spacing: -0.03em;
+  }
+
+  .area-card p {
+    margin: 1rem 0 0;
+    color: #65736c;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .featured {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 5rem;
+    padding: 7rem 8vw;
+    color: white;
+    background: #27664d;
+  }
+
+  .featured .eyebrow {
+    color: #b9d7c1;
+  }
+
+  .featured p:last-child {
+    align-self: end;
+    margin: 0;
+    color: #d5e5d9;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .related-section {
+    padding: 8rem 8vw;
+  }
+
+  .related-heading {
+    max-width: 850px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .related-card {
+    padding: 2rem;
+    border: 1px solid #cbd5cd;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.28);
+  }
+
+  .related-card h3 {
+    margin: 0;
+    color: #27664d;
+    font-size: clamp(23px, 2vw, 28px);
+  }
+
+  .related-card p {
+    margin: 1rem 0 1.5rem;
+    color: #65736c;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .text-link {
+    color: #27664d;
+    font-size: 0.85rem;
+    font-weight: 800;
+  }
+
+  .text-link:hover {
+    color: #1f513d;
+  }
+
+  /* Slideshow Dialog */
+  .slideshow-dialog {
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+
+  .slideshow-dialog::backdrop {
+    background: rgba(7, 20, 15, 0.92);
+    backdrop-filter: blur(8px);
+    cursor: zoom-out;
+  }
+
+  .slideshow-dialog[open] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dialog-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 18px;
+    z-index: 10;
+  }
+
+  .dialog-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 40px;
+    gap: 20px;
+    min-height: 0;
+  }
+
+  .dialog-image-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 0;
+    position: relative;
+  }
+
+  .dialog-main-img {
+    max-width: 100%;
+    max-height: calc(100vh - 160px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    user-select: none;
+  }
+
+  .dialog-caption {
+    color: #d8e9df;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: 500;
+    max-width: 800px;
+  }
+
+  .dialog-counter {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 7px 13px;
+    border-radius: 999px;
+    background: rgba(19, 50, 39, 0.78);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .dialog-close,
+  .nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(19, 50, 39, 0.78);
+    color: #ffffff;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 5;
+  }
+
+  .dialog-close {
+    width: 48px;
+    height: 48px;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .nav-btn {
+    width: 54px;
+    height: 54px;
+    font-size: 42px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .dialog-close:hover,
+  .nav-btn:hover {
+    background: #275a43;
+    transform: scale(1.05);
+  }
+
+  .dialog-close:focus-visible,
+  .nav-btn:focus-visible {
+    outline: 3px solid #a9d1b5;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 900px) {
+    .hero,
+    .featured {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      padding-top: 5rem;
+    }
+
+    .hero-card {
+      min-height: 280px;
+    }
+
+    .hero-card img {
+      min-height: 280px;
+    }
+
+    .area-grid,
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .extra-images-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .extra-image-card img {
+      height: 200px;
+    }
+
+    .dialog-body {
+      padding: 0 10px 20px;
+      position: relative;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      font-size: 32px;
+      background: rgba(13, 33, 25, 0.7);
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
+
+    .dialog-close {
+      width: 44px;
+      height: 44px;
+      font-size: 30px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .dialog-main-img {
+      max-height: calc(100vh - 120px);
+    }
+
+    .dialog-counter {
+      bottom: -25px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding: 4rem 5vw;
+    }
+
+    .section-grid,
+    .intro,
+    .area-section,
+    .related-section {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    .section-card {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 3rem 0;
+    }
+
+    .featured {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    .main-restaurant-image {
+      max-height: 320px;
+    }
+  }
+</style>
+

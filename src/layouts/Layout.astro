@@ -1,0 +1,108 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// SYSTEM CONFIGURATION: Strict type constraints for localized search crawler matching
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL: string;
+  robotsFollow?: string; 
+  image?: string;       
+  schemaData?: object;    
+}
+
+const { 
+  title, 
+  description, 
+  canonicalURL, 
+  robotsFollow = "index, follow", 
+  image = "https://depot-heights.vercel.app/images/depot-heights-hero.webp",
+  schemaData 
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Technical Foundation Baseline Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Search Metadata -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Per-Page Robots Crawler Policies -->
+    <meta name="robots" content={robotsFollow} />
+    <meta name="googlebot" content={robotsFollow} />
+    
+    <!-- Canonical Optimization -->
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph Graph Asset Tags (Social Media Previews) -->
+    <meta property="og:site_name" content="Depot Heights Community Hub" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    
+    <!-- Multi-Platform Mobile Favicon Matrix Integration -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    
+    <!-- Automated Sitemap Crawler Hook Direction -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    
+    <!-- Structured JSON-LD Data Injection Layer -->
+    {schemaData && (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaData)} />
+    )}
+  </head>
+  <body>
+    <Header />
+    <main>
+      <!-- Main application viewport layer entry slot -->
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<!-- Global Performance Stylesheet Layer Configuration -->
+<style is:global>
+  :root {
+    --primary-forest: #2d6a4f;
+    --accent-breeze: #d8f3dc;
+    --dark-canopy: #1b4332;
+    --slate-text: #2f3e46;
+    --mist-bg: #f4f7f6;
+  }
+  
+  /* Reset Stylesheet Rules to Eliminate Content Layout Shifts (CLS) */
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
+  
+  html { 
+    scroll-behavior: smooth; 
+  }
+  
+  body { 
+    font-family: system-ui, -apple-system, sans-serif; 
+    color: var(--slate-text); 
+    background-color: var(--mist-bg); 
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+</style>

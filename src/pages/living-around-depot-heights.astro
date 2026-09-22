@@ -1,0 +1,729 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle =
+  "Living Around Depot Heights | HDB Estate Guide, Amenities & Lifestyle";
+
+const pageDescription =
+  "Discover what makes living around Depot Heights ideal for HDB home buyers and tenants. Explore mature estate convenience, greenery, connectivity, schools, dining, and daily lifestyle around Bukit Merah and Alexandra.";
+
+const heroImage = "/images/depot-heights-hero.webp";
+
+const livingHighlights = [
+  {
+    number: "01",
+    title: "Mature Estate Convenience",
+    icon: "🏘️",
+    description:
+      "Enjoy the established infrastructure of Bukit Merah and Alexandra, where coffee shops, wet markets, supermarkets, clinics, and everyday conveniences are right at your doorstep.",
+  },
+  {
+    number: "02",
+    title: "Nature & Green Corridors",
+    icon: "🌿",
+    description:
+      "Live next to Singapore's premier green spaces. Mount Faber Park, Telok Blangah Hill, HortPark, and the Southern Ridges offer scenic weekend walks and outdoor recreation.",
+  },
+  {
+    number: "03",
+    title: "Exceptional Central Connectivity",
+    icon: "🚆",
+    description:
+      "Effortlessly commute to the CBD, Orchard Road, or Marina Bay via nearby MRT stations (Redhill, Tiong Bahru, HarbourFront, Telok Blangah) and major expressways.",
+  },
+  {
+    number: "04",
+    title: "Proximity to Work & Business Hubs",
+    icon: "💼",
+    description:
+      "An ideal address for working professionals. Minutes away from Mapletree Business City, Alexandra Technopark, mTower, and HarbourFront commercial centers.",
+  },
+  {
+    number: "05",
+    title: "Food Lover's Paradise",
+    icon: "🍜",
+    description:
+      "Surrounded by legendary hawker centers including ABC Brickworks, Alexandra Village, and Tiong Bahru Market, alongside trendy cafes and bistros.",
+  },
+  {
+    number: "06",
+    title: "Family-Friendly Community",
+    icon: "👨‍👩‍👧‍👦",
+    description:
+      "A tight-knit neighbourhood equipped with local childcare centers, primary and secondary schools, parks, and recreational facilities for all ages.",
+  },
+];
+
+const targetAudienceCards = [
+  {
+    title: "For HDB Home Buyers & Families",
+    badge: "Long-Term Value",
+    text: "Depot Heights offers a rare combination of mature estate convenience and central location. Families benefit from established schools, healthcare facilities, childcare options, and strong long-term property fundamentals in District 4/3.",
+  },
+  {
+    title: "For Working Professionals & Tenants",
+    badge: "Strategic Location",
+    text: "Say goodbye to long commutes. Living near major business nodes like Mapletree Business City and the CBD means spending less time travelling and more time enjoying life. Quick access to MRT lines and buses makes urban mobility seamless.",
+  },
+];
+
+const neighborhoodPerks = [
+  {
+    title: "Daily Essentials & Shopping",
+    text: "Depot Heights Shopping Centre houses local bakeries, cafes, and postal services, while nearby Anchorpoint, Alexandra Central, and VivoCity fulfill all retail and supermarket needs.",
+  },
+  {
+    title: "Active Outdoor Lifestyle",
+    text: "Weekend hikes across Henderson Waves, cycling along the Coast-to-Coast trail, or unwinding at Sentosa's beaches—all just minutes away from home.",
+  },
+  {
+    title: "Rich Cultural Heritage",
+    text: "Immerse in the historic charms of Tiong Bahru's Art Deco architecture, Alexandra Village's traditional shophouses, and Gillman Barracks' contemporary art enclave.",
+  },
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  image={heroImage}
+>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">LIVING AROUND DEPOT HEIGHTS</p>
+
+      <h1>
+        The smart address for
+        <span>modern urban living.</span>
+      </h1>
+
+      <p class="hero-text">
+        Looking for the ideal balance of city convenience, nature, and community charm? 
+        Discover why Depot Heights and the surrounding Bukit Merah-Alexandra enclave 
+        is one of Singapore's most sought-after locations for HDB home buyers, families, 
+        and working tenants alike.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="#why-depot-heights">
+          Why live here
+        </a>
+
+        <a class="button button-secondary" href="/location/">
+          Explore connectivity
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img
+        src={heroImage}
+        alt="Depot Heights neighbourhood view"
+        fetchpriority="high"
+        decoding="async"
+        width="800"
+        height="600"
+      />
+    </div>
+  </section>
+
+  <!-- INTRO VALUE PROPOSITION -->
+  <section class="section introduction-section">
+    <div class="intro-grid">
+      <div class="section-heading">
+        <p class="eyebrow">ESTATE VALUE & LIFESTYLE</p>
+        <h2>Everything you need, right where you live.</h2>
+      </div>
+
+      <div class="intro-copy">
+        <p>
+          Choosing where to buy a home or rent a property is about more than just square footage—it is 
+          about lifestyle, accessibility, and future convenience. Depot Heights delivers a harmonious 
+          blend of mature HDB estate warmth and rapid access to Singapore's core economic and leisure hubs.
+        </p>
+        <p>
+          Whether you are a young couple laying down roots, a growing family seeking top-tier amenities, 
+          or a professional looking for a well-connected rental home near business districts, this area 
+          presents an unmatched urban proposition.
+        </p>
+      </div>
+    </div>
+
+    <!-- TARGET AUDIENCE CARDS -->
+    <div class="audience-grid">
+      {
+        targetAudienceCards.map((card) => (
+          <article class="audience-card">
+            <span class="audience-badge">{card.badge}</span>
+            <h3>{card.title}</h3>
+            <p>{card.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS GRID -->
+  <section class="section highlights-section" id="why-depot-heights">
+    <div class="section-heading centered">
+      <p class="eyebrow">NEIGHBOURHOOD ADVANTAGES</p>
+      <h2>What makes living around Depot Heights exceptional?</h2>
+      <p class="section-subtitle">
+        Designed for convenience, framed by nature, and connected to the pulse of Singapore.
+      </p>
+    </div>
+
+    <div class="highlights-grid">
+      {
+        livingHighlights.map((item) => (
+          <article class="highlight-card">
+            <div class="card-top">
+              <span class="highlight-icon">{item.icon}</span>
+              <span class="card-number">{item.number}</span>
+            </div>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- LIFESTYLE PERKS SECTION -->
+  <section class="section perks-section">
+    <div class="perks-grid">
+      <div class="section-heading">
+        <p class="eyebrow">EVERYDAY EXPERIENCE</p>
+        <h2>A vibrant community tailored for modern routines.</h2>
+        <p>
+          Life at Depot Heights means you never have to travel far for your daily needs. 
+          From morning coffees at local kopitiams to evening strolls through scenic parks, 
+          the neighbourhood effortlessly accommodates busy schedules and relaxed weekends.
+        </p>
+      </div>
+
+      <div class="perks-list">
+        {
+          neighborhoodPerks.map((perk, index) => (
+            <div class="perk-item">
+              <span class="perk-index">0{index + 1}</span>
+              <div>
+                <h3>{perk.title}</h3>
+                <p>{perk.text}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE MORE SECTIONS -->
+  <section class="section explore-links-section">
+    <div class="section-heading centered">
+      <p class="eyebrow">DIVE DEEPER</p>
+      <h2>Explore what the neighbourhood has to offer.</h2>
+    </div>
+
+    <div class="explore-grid">
+      <article class="explore-card">
+        <h3>Local Food & Hawker Culture</h3>
+        <p>Discover legendary hawker centres, local delicacies, and comfort food around Bukit Merah and Alexandra.</p>
+        <a class="text-link" href="/local-food/">
+          Explore Local Food →
+        </a>
+      </article>
+
+      <article class="explore-card">
+        <h3>Cafés & Dining</h3>
+        <p>Find trendy brunch spots, coffee roasteries, and scenic hilltop restaurants nearby.</p>
+        <a class="text-link" href="/cafes/">
+          Explore Cafés →
+        </a>
+      </article>
+
+      <article class="explore-card">
+        <h3>Shopping & Retail</h3>
+        <p>Browse neighborhood malls, home furnishing stores, and commercial centers.</p>
+        <a class="text-link" href="/retail-shopping/">
+          Explore Retail →
+        </a>
+      </article>
+
+      <article class="explore-card">
+        <h3>Location & Connectivity</h3>
+        <p>Check out public transport links, driving routes, and distance to key business districts.</p>
+        <a class="text-link" href="/location/">
+          Explore Location →
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing-section">
+    <div class="closing-inner">
+      <p class="eyebrow">YOUR NEXT MOVE</p>
+      <h2>Ready to call Depot Heights home?</h2>
+      <p>
+        Experience the perfect combination of mature estate comfort, unbeatable central 
+        accessibility, and lush green surroundings. Take the next step in your property 
+        journey today.
+      </p>
+
+      <div class="closing-actions">
+        <a class="button button-primary" href="/location/">
+          Check Location & Map
+        </a>
+        <a class="button button-secondary" href="/retail-shopping/">
+          Explore Retail Options
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Page-specific styles only - global styles in global.css */
+  
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    min-height: 600px;
+    background: #e8f0e8;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px clamp(30px, 6vw, 90px);
+  }
+
+  .eyebrow {
+    margin: 0 0 16px;
+    color: #2b6e52;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    max-width: 700px;
+    margin: 0;
+    font-size: clamp(45px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.055em;
+  }
+
+  .hero h1 span {
+    display: block;
+    color: #2b6e52;
+  }
+
+  .hero-text {
+    max-width: 650px;
+    margin: 28px 0 0;
+    color: #52625a;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .hero-actions,
+  .closing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .button-primary {
+    background: #2b6e52;
+    color: #ffffff;
+  }
+
+  .button-secondary {
+    border: 1px solid #2b6e52;
+    color: #2b6e52;
+  }
+
+  .hero-image {
+    min-height: 600px;
+    overflow: hidden;
+    background: #dce7dd;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .section {
+    padding: 95px 5vw;
+  }
+
+  .section-heading {
+    max-width: 900px;
+    margin-bottom: 55px;
+  }
+
+  .section-heading.centered {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-heading h2 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .section-heading p:not(.eyebrow) {
+    max-width: 760px;
+    margin: 22px 0 0;
+    color: #5d6b64;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .section-heading.centered p:not(.eyebrow) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-subtitle {
+    font-size: 19px;
+    color: #52625a;
+  }
+
+  .introduction-section {
+    background: #ffffff;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+    max-width: 1300px;
+    margin: 0 auto 55px;
+  }
+
+  .intro-grid .section-heading {
+    margin: 0;
+  }
+
+  .intro-copy {
+    color: #52625a;
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .intro-copy p {
+    margin: 0 0 20px;
+  }
+
+  .intro-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .audience-card {
+    position: relative;
+    padding: 40px;
+    border-radius: 20px;
+    background: #f7f8f3;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .audience-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+    border-radius: 999px;
+    background: rgba(43, 110, 82, 0.1);
+    color: #2b6e52;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .audience-card h3 {
+    margin: 0 0 14px;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .audience-card p {
+    margin: 0;
+    color: #5d6b64;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .highlights-section {
+    background: #f7f8f3;
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .highlight-card {
+    padding: 35px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .highlight-icon {
+    font-size: 32px;
+  }
+
+  .card-number {
+    color: #2b6e52;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+  .highlight-card h3 {
+    margin: 0 0 12px;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .highlight-card p {
+    margin: 0;
+    color: #5d6b64;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .perks-section {
+    background: #ffffff;
+  }
+
+  .perks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .perks-grid .section-heading {
+    margin: 0;
+  }
+
+  .perks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .perk-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .perk-index {
+    color: #2b6e52;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+  }
+
+  .perk-item h3 {
+    margin: 0 0 6px;
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .perk-item p {
+    margin: 0;
+    color: #5d6b64;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .explore-links-section {
+    background: #edf3ed;
+  }
+
+  .explore-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .explore-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 49, 38, 0.08);
+  }
+
+  .explore-card h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .explore-card p {
+    margin: 0 0 20px;
+    color: #5d6b64;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .text-link {
+    margin-top: auto;
+    color: #2b6e52;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .closing-section {
+    padding: 95px 5vw;
+    background: #142f25;
+    color: #ffffff;
+  }
+
+  .closing-inner {
+    max-width: 950px;
+  }
+
+  .closing-inner .eyebrow {
+    color: #c9e4d5;
+  }
+
+  .closing-inner h2 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .closing-inner > p:not(.eyebrow) {
+    max-width: 800px;
+    margin: 25px 0 0;
+    color: #d8e9df;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .closing-actions .button-secondary {
+    border-color: #c9e4d5;
+    color: #c9e4d5;
+  }
+
+  @media (max-width: 1100px) {
+    .hero,
+    .intro-grid,
+    .perks-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-image,
+    .hero-image img {
+      min-height: 480px;
+    }
+
+    .highlights-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .explore-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 800px) {
+    .section,
+    .closing-section {
+      padding: 75px 24px;
+    }
+
+    .audience-grid,
+    .highlights-grid,
+    .explore-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-content {
+      padding: 65px 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 14vw, 70px);
+    }
+
+    .hero-text {
+      font-size: 16px;
+    }
+
+    .hero-image,
+    .hero-image img {
+      min-height: 350px;
+    }
+  }
+</style>
+

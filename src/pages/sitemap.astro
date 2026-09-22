@@ -1,0 +1,131 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const sitemapSections = [
+  {
+    title: "Main",
+    items: [
+      { name: "Home", href: "/" },
+      { name: "About Depot Heights", href: "/about-depot-heights/" },
+      { name: "Depot Heights Location", href: "/location/" },
+    ],
+  },
+  {
+    title: "About Depot Heights",
+    items: [
+      { name: "History of Depot Road", href: "/history-of-depot-road/" },
+    ],
+  },
+  {
+    title: "Living Around Depot Heights",
+    items: [
+      { name: "Amenities", href: "/amenities/" },
+      { name: "Sports & Recreation", href: "/sports-recreation/" },
+      { name: "Healthcare", href: "/healthcare/" },
+      { name: "Schools & Education", href: "/schools-education/" },
+      { name: "Food & Hawker Centres", href: "/local-food/" },
+      { name: "Cafés", href: "/cafes/" },
+      { name: "Restaurants", href: "/restaurants/" },
+      { name: "Parks & Nature", href: "/parks-pcn/" },
+      { name: "Lifestyle & Leisure", href: "/living-around-depot-heights/" },
+      { name: "Shopping & Retail", href: "/retail-shopping/" },
+      { name: "Transport", href: "/transport/" },
+    ],
+  },
+];
+---
+<Layout
+  title="Sitemap | Depot Heights, Bukit Merah Singapore"
+  description="Explore the Depot Heights website sitemap and find information about the neighbourhood."
+  canonicalURL="https://depot-heights.vercel.app/sitemap/"
+>
+  <main class="sitemap-container">
+    <header class="sitemap-header">
+      <p class="eyebrow">DEPOT HEIGHTS WEBSITE</p>
+      <h1>Sitemap</h1>
+      <p class="subtitle">Find your way around the website directory. This clean list maps all active pages for search index discovery.</p>
+    </header>
+
+    <!-- CRITICAL MACHINE-READABLE PLAIN NAV LIST -->
+    <nav class="plain-sitemap-nav" aria-label="Sitemap Directory">
+      {
+        sitemapSections.map((section) => (
+          <div class="sitemap-group">
+            <h2>{section.title}</h2>
+            <ul class="bulleted-links">
+              {section.items.map((item) => (
+                <li>
+                  <a href={item.href} class="sitemap-anchor-link">
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </nav>
+  </main>
+</Layout>
+
+<style>
+  .sitemap-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    font-family: Inter, system-ui, sans-serif;
+    color: #1d2924;
+  }
+  .sitemap-header {
+    margin-bottom: 4rem;
+    border-bottom: 2px solid #eef3e9;
+    padding-bottom: 2rem;
+  }
+  .eyebrow {
+    color: #3d805f;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    margin: 0 0 0.5rem 0;
+  }
+  h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.04em;
+  }
+  .subtitle {
+    color: #53615b;
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.6;
+  }
+  .sitemap-group {
+    margin-bottom: 3rem;
+  }
+  .sitemap-group h2 {
+    color: #3d805f;
+    font-size: 1.4rem;
+    margin: 0 0 1rem 0;
+    border-bottom: 1px solid #eef3e9;
+    padding-bottom: 0.5rem;
+  }
+  .bulleted-links {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 0;
+  }
+  .bulleted-links li {
+    margin-bottom: 0.75rem;
+  }
+  .sitemap-anchor-link {
+    color: #183d2d;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease;
+  }
+  .sitemap-anchor-link:hover {
+    color: #3d805f;
+  }
+</style>
+
