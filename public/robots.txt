@@ -1,8 +1,6 @@
-# Robots.txt for Depot Heights
 # Allow all search engines to crawl the site
-
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://depot-heights.vercel.app/sitemap.xml
+Sitemap: https://depot-heights.vercel.app/sitemap-index.xml
