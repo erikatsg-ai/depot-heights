@@ -12,4 +12,9 @@ export default defineConfig({
   
   // Register the sitemap integration to auto-generate sitemap-index.xml on build
   integrations: [sitemap()],
+
+  // Inline CSS bundles into HTML to eliminate render-blocking stylesheet requests
+  build: {
+    inlineStylesheets: 'always',
+  },
 });

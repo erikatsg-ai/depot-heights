@@ -1,6 +1,8 @@
 ---
 import { YouTube } from 'astro-embed';
 import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets';
+import heroImg from '../assets/images/depot-heights-hero.webp';
 
 const highlights = [
   {
@@ -81,6 +83,17 @@ const historySections = [
   },
 ];
 ---
+
+<Image 
+  src={heroImg} 
+  alt="Depot Heights in Bukit Merah, Singapore" 
+  width={720} 
+  height={385} 
+  format="webp" 
+  quality={80} 
+  loading="eager" 
+  fetchpriority="high" 
+/>
 
 <Layout
   title="Depot Heights | Neighbourhood Guide, Bukit Merah, Singapore"
