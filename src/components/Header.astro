@@ -141,7 +141,7 @@ const depotHeightsItems = [
   </div>
 
   <!-- Mobile Menu Drawer -->
-  <div class="mobile-drawer" aria-hidden="true">
+  <div class="mobile-drawer" aria-hidden="true" inert>
     <div class="mobile-drawer-content">
       <a href="/" class="mobile-link" aria-current={currentPath === "/" ? "page" : undefined}>Home</a>
 
@@ -187,13 +187,22 @@ const depotHeightsItems = [
     var dropdownContainers = document.querySelectorAll(".dropdown-container");
 
     if (toggleBtn && mobileDrawer) {
-      toggleBtn.addEventListener("click", function() {
-        var isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
-        toggleBtn.setAttribute("aria-expanded", (!isExpanded).toString());
-        mobileDrawer.classList.toggle("open");
-        mobileDrawer.setAttribute("aria-hidden", isExpanded.toString());
-      });
+  toggleBtn.addEventListener("click", function() {
+    var isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
+    var willBeExpanded = !isExpanded;
+    
+    toggleBtn.setAttribute("aria-expanded", willBeExpanded.toString());
+    mobileDrawer.classList.toggle("open", willBeExpanded);
+    mobileDrawer.setAttribute("aria-hidden", (!willBeExpanded).toString());
+
+    // Toggle inert to explicitly block focusable elements when closed
+    if (willBeExpanded) {
+      mobileDrawer.removeAttribute("inert");
+    } else {
+      mobileDrawer.setAttribute("inert", "");
     }
+  });
+}
 
     dropdownContainers.forEach(function(container) {
       var trigger = container.querySelector(".dropdown-trigger");
@@ -429,11 +438,14 @@ const depotHeightsItems = [
     border-top: 1px solid rgba(24, 49, 38, 0.08);
     overflow-y: auto;
     transform: translateX(-100%);
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Add visibility to remove off-screen links from accessibility/focus tree */
+    visibility: hidden;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.25s ease;
   }
 
   .mobile-drawer.open {
     transform: translateX(0);
+    visibility: visible;
   }
 
   .mobile-drawer-content {
