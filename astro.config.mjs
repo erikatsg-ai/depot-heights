@@ -1,25 +1,15 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
   // Set the deployment URL for Vercel
   site: 'https://depot-heights.vercel.app',
   
-  // Ensure trailing slashes for SEO consistency
-  trailingSlash: 'always',
+  // Use 'never' to prevent redirection issues on sitemap XML files
+  trailingSlash: 'never',
   
-  // Configure metadata for the site
-  title: {
-    default: 'Depot Heights - HDB Estate Guide',
-    template: '%s | Depot Heights',
-  },
-  
-  // Experimental features if needed
-  experimental: {
-    // Enable easier client directives if needed
-  },
-  
-  // Integrations and plugins can be added here
-  // integrations: [],
+  // Register the sitemap integration to auto-generate sitemap-index.xml on build
+  integrations: [sitemap()],
 });
