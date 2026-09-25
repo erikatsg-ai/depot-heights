@@ -1,99 +1,74 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import { YouTube } from 'astro-embed';
-import Layout from "../layouts/Layout.astro";
-import { Image } from 'astro:assets';
-import heroImg from '../assets/images/depot-heights-hero.webp';
 
+// Highlights grid data
 const highlights = [
   {
-    title: "About Depot Heights",
-    description: "Learn about Depot Heights, its location in Bukit Merah and what makes the neighbourhood a distinctive place to live.",
-    href: "/about-depot-heights/",
+    title: "Retail & Shopping",
+    description: "Depot Heights offers a range of retail and shopping options for all your needs.",
+    href: "/retail-shopping/"
   },
   {
-    title: "Amenities",
-    description: "Explore estate facilities, outdoor recreation, sheltered walkways, everyday conveniences and Depot Heights Shopping Centre.",
-    href: "/amenities/",
+    title: "Amenities & Essentials",
+    description: "A Depot Heights Shopping Centre close by, offers a supermarkets, clinics, food courts and daily essentials.",
+    href: "/amenities/"
   },
   {
-    title: "Healthcare",
-    description: "Find nearby family clinics, polyclinics, public hospitals, private hospitals and specialist medical care.",
-    href: "/healthcare/",
+    title: "Transport & Driving",
+    description: "Bus services, nearby MRT stations, expressway access, and walking connections.",
+    href: "/transport/"
+  },
+  {
+    title: "Parks & PCNs",
+    description: "Telok Blangah Hill Park, Southern Ridges, Henderson Waves, and nearby green spaces.",
+    href: "/parks-pcn/"
   },
   {
     title: "Schools & Education",
-    description: "Discover primary and secondary schools, junior colleges and universities accessible from Depot Heights.",
-    href: "/schools-education/",
+    description: "Primary and secondary schools, preschools, and childcare centres in the area.",
+    href: "/schools-education/"
   },
   {
-    title: "Transport",
-    description: "See how Depot Heights connects to Bukit Merah, HarbourFront, the CBD and other parts of Singapore.",
-    href: "/transport/",
-  },
-  {
-    title: "Lifestyle & Nature",
-    description: "Explore parks, heritage sites, cafés, restaurants, arts, shopping and leisure destinations around the neighbourhood.",
-    href: "/living-around-depot-heights/",
-  },
+    title: "Healthcare",
+    description: "Clinics, dental services, and medical centres within reach for residents.",
+    href: "/healthcare/"
+  }
 ];
 
+// Living sections data
 const livingSections = [
   {
-    title: "Food & Hawker Centres",
-    description: "Explore nearby hawker centres and local food destinations around Bukit Merah and the surrounding neighbourhoods.",
-    href: "/local-food/",
+    title: "Hawker & Local Eats",
+    description: "Discover hawker centres, coffee shops, and local stalls offering budget-friendly food.",
+    href: "/local-food/"
   },
   {
-    title: "Cafés",
-    description: "Discover cafés close to Depot Heights, including convenient options right at your doorstep and popular nearby coffee spots.",
-    href: "/cafes/",
+    title: "Cafés & Bakeries",
+    description: "Find quiet spots for coffee, pastries, and casual catch-ups around the neighbourhood.",
+    href: "/cafes/"
   },
   {
-    title: "Restaurants",
-    description: "Find restaurants and dining destinations around Depot Heights, Bukit Merah, Alexandra and nearby areas.",
-    href: "/restaurants/",
-  },
-  {
-    title: "Parks & Nature",
-    description: "Explore Telok Blangah Hill, Mount Faber, Henderson Waves, the Southern Ridges and other nearby green spaces.",
-    href: "/parks-pcn/",
-  },
-  {
-    title: "Shopping & Retail",
-    description: "Discover everyday shopping, retail destinations and major centres including IKEA, Great World City and VivoCity.",
-    href: "/retail-shopping/",
-  },
-  {
-    title: "Sports & Recreation",
-    description: "Explore sports facilities, outdoor recreation and places to stay active around Depot Heights and the wider neighbourhood.",
-    href: "/sports-recreation/",
-  },
+    title: "Restaurants & Dining",
+    description: "Find a variety of restaurants and dining options for every taste and occasion.",
+    href: "/restaurants/"
+  }
 ];
 
+// History sections data
 const historySections = [
   {
-    title: "History of Depot Heights",
-    description: "Discover the story of Depot Heights and the wider Depot Road area, including the neighbourhood's changing landscape and heritage.",
-    href: "/history-of-depot-road/",
+    title: "About Depot Heights",
+    description: "Learn about the development, location, and key features of Depot Heights in Bukit Merah.",
+    href: "/about-depot-heights/"
   },
   {
-    title: "Depot Heights Location",
-    description: "Understand where Depot Heights sits within Bukit Merah and how the estate connects to surrounding districts.",
-    href: "/location/",
-  },
+    title: "Bukit Merah & Depot Road History",
+    description: "Explore the background and history of Depot Road and the surrounding Bukit Merah estate.",
+    href: "/history-of-depot-road/"
+  }
 ];
 ---
-
-<Image 
-  src={heroImg} 
-  alt="Depot Heights in Bukit Merah, Singapore" 
-  width={720} 
-  height={385} 
-  format="webp" 
-  quality={80} 
-  loading="eager" 
-  fetchpriority="high" 
-/>
 
 <Layout
   title="Depot Heights | Neighbourhood Guide, Bukit Merah, Singapore"
@@ -256,17 +231,17 @@ const historySections = [
     <section class="neighbourhood-feature">
       <div class="feature-image">
         <img
-          src="/images/depot-heights-shopping-centre.webp"
-          alt="Depot Heights Shopping Centre at Block 108 Depot Road"
+          src="/images/depot-heights-hero.webp"
+          alt="Depot Heights in Bukit Merah, Singapore"
           decoding="async"
-          width="800"
-          height="450"
+          width="1100"
+          height="588"
         />
       </div>
 
       <div class="feature-content">
         <p class="eyebrow">
-          DEPOT HEIGHTS SHOPPING CENTRE
+          LIVING CONVENIENCE & NATURE
         </p>
 
         <h2>
@@ -274,31 +249,28 @@ const historySections = [
         </h2>
 
         <p>
-          Located at Block 108 Depot Road, Depot Heights Shopping
-          Centre provides residents with convenient access to
-          groceries, essential services, healthcare, dining, cafés
-          and fitness facilities.
+          Living in Depot Heights means residing in a City in Nature residential estate nestled beside Telok Blangah Hill and its park connectors. Residents enjoy convenient access to groceries, essential services, healthcare, dining, cafés, and fitness facilities.
         </p>
 
-        <a class="button button-primary" href="/amenities/#shopping">
-          Explore Depot Heights Shopping Centre
+        <a class="button button-primary" href="/living-around-depot-heights/">
+          Explore Living Around Depot Heights
         </a>
       </div>
     </section>
 
-    <!-- YOUTUBE VIDEO -->
-<section class="content-section">
-  <div class="section-heading">
-    <h2>See Depot Heights</h2>
-    <p>A glimpse into the life and surroundings of our neighbourhood.</p>
-  </div>
-  <div class="video-container">
-    <YouTube 
-      id="UGf3-ZhsV5s" 
-      title="Depot Heights Video" 
-    />
-  </div>
-</section>
+   <!-- YOUTUBE VIDEO -->
+    <section class="content-section">
+      <div class="section-heading">
+        <h2>See Depot Heights</h2>
+        <p>A glimpse into the life and surroundings of our neighbourhood.</p>
+      </div>
+      <div class="video-wrapper">
+        <YouTube 
+          id="UGf3-ZhsV5s" 
+          title="Depot Heights Video" 
+        />
+      </div>
+    </section>
 
     <!-- HISTORY & LOCATION -->
     <section class="content-section soft-section">
@@ -673,36 +645,21 @@ const historySections = [
     line-height: 1.8;
   }
 
-  .video-container {
-    position: relative;
+  .video-wrapper {
+    width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
     border-radius: 20px;
+    overflow: hidden;
     box-shadow: 0 12px 40px rgba(24, 49, 38, 0.1);
   }
 
-  .video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
-  overflow: hidden;
-  border-radius: 8px; /* Optional: smooth corners */
-}
-
-/* Target both iframe and astro-embed web component */
-.video-container iframe,
-.video-container lite-youtube {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+  /* Force astro-embed's web component to scale properly within the container */
+  .video-wrapper lite-youtube {
+    max-width: 100% !important;
+    width: 100% !important;
+    border-radius: 20px;
+  }
 
   .history-grid {
     display: grid;
@@ -833,4 +790,3 @@ const historySections = [
     }
   }
 </style>
-

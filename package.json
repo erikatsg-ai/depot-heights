@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && npx pagefind --site dist --output-subdir pagefind",
+    "build": "astro build && pagefind --site dist --output-subdir pagefind",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -15,7 +15,9 @@
     "@astrojs/sitemap": "^3.7.4",
     "@vercel/analytics": "^1.6.1",
     "astro": "^7.3.3",
-    "astro-embed": "^0.14.0",
+    "astro-embed": "^0.14.0"
+  },
+  "devDependencies": {
     "pagefind": "^1.5.2"
   },
   "allowScripts": {

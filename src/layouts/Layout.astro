@@ -57,7 +57,6 @@ const {
     <meta property="og:image:height" content="630" />
     
     <!-- Multi-Platform Mobile Favicon Matrix Integration -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -71,15 +70,11 @@ const {
     {schemaData && (
       <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaData)} />
     )}
-    <!-- Vercel Web Analytics Tracking Hook -->
-    <script>
-      import { inject } from '@vercel/analytics';
-      inject();
-    </script>
   </head>
   <body>
     <Header />
-    <main>
+    <!-- Pagefind will only index content inside this main wrapper -->
+    <main data-pagefind-body>
       <!-- Main application viewport layer entry slot -->
       <slot />
     </main>

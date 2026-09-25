@@ -7,8 +7,8 @@ export default defineConfig({
   // Set the deployment URL for Vercel
   site: 'https://depot-heights.vercel.app',
   
-  // Use 'never' to prevent redirection issues on sitemap XML files
-  trailingSlash: 'never',
+  // Use 'always' to prevent redirection issues on sitemap XML files
+  trailingSlash: 'always',
   
   // Register the sitemap integration to auto-generate sitemap-index.xml on build
   integrations: [sitemap()],
