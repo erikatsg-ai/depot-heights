@@ -12,6 +12,21 @@ echo [1/5] Cleaning local build caches...
 if exist "dist" rmdir /s /q "dist"
 if exist ".astro" rmdir /s /q ".astro"
 echo Local cache cleared.
+@echo off
+TITLE Astro to Vercel Deployment Automation
+COLOR 0A
+
+echo ===================================================
+echo   Astro Project Deployment to Vercel
+echo ===================================================
+echo.
+
+:: Step 1: Clean previous build artifacts & caches
+echo [1/5] Cleaning local build caches...
+if exist "dist" rmdir /s /q "dist" || echo Failed to remove dist folder & exit /b 1
+if exist ".astro" rmdir /s /q ".astro" || echo Failed to remove .astro folder & exit /b 1
+echo Local cache cleared.
+<START EDITING HERE>
 echo.
 
 :: Step 2: Test local build
@@ -32,10 +47,10 @@ echo.
 
 :: Step 3: Run Local Preview Server & Link Audit
 echo [3/5] Starting background preview server for link audit...
-start /B npx astro preview --host 127.0.0.1 --port 4321
+start /B npx astro preview --host 127.0.0.1 --port 4321 > nul 2>&1
 
 echo Waiting for preview server to initialize on http://127.0.0.1:4321...
-:: Reliable 6-second delay in Windows Batch
+:: Reliable 6-second delay for Windows Batch
 ping 127.0.0.1 -n 9 > nul
 
 echo Scanning all internal links with Linkinator...
@@ -81,8 +96,13 @@ goto GIT_DEPLOY
 :GIT_DEPLOY
 echo.
 echo [5/5] Uploading via Git...
+
+:: Clear variable state and prompt user
+set "commit_msg="
 set /p commit_msg="Enter Git commit message (e.g. Update header navigation): "
-if "%commit_msg%"=="" set commit_msg="Update Astro site build"
+
+:: Safe fallback if left blank
+if not defined commit_msg set "commit_msg=Update Astro site build"
 
 call git add .
 call git commit -m "%commit_msg%"
