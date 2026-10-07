@@ -78,7 +78,7 @@ const nearbySportsHubs = [
     number: "02",
     title: "SAFRA Club",
     description:
-      "A premier recreational clubhouse offering full-fledged facilities including a well-equipped gym, swimming pool, bowling alley, indoor badminton courts, games rooms, and food court options.",
+      "A premier recreational clubhouse offering full-fledged facilities including a well-equipped gym, swimming pool, bowling alley, indoor badminton courts, games rooms, food and dining options.",
     images: [
       { src: "/images/sp-safra-club.webp", alt: "SAFRA Club exterior and recreational facade" },
       { src: "/images/sp-safra-bowling.webp", alt: "SAFRA indoor bowling alley lanes" },
@@ -123,7 +123,7 @@ const doorstepGyms = [
     number: "02",
     title: "Fitness First (Mapletree Business City)",
     description:
-      "A premium commercial fitness club situated nearby at Mapletree Business City, featuring top-tier group fitness classes, cycling studios, and advanced workout amenities.",
+      "A premium commercial fitness club at Mapletree Business City, featuring top-tier group fitness classes, cycling studios, and advanced workout amenities just a short jog away.",
     image: "/images/sp-fitness-first-mbc.webp",
     alt: "Fitness First commercial gym at Mapletree Business City",
   },
@@ -256,7 +256,7 @@ const doorstepGyms = [
     </div>
   </section>
 
-  <!-- KEY SPORTS HUBS WITH SLIDESHOW -->
+  <!-- KEY SPORTS HUBS WITH PHOTO GALLERIES -->
   <section class="section hubs-section" id="recreation-facilities">
     <div class="section-heading">
       <p class="eyebrow">KEY SPORTS HUBS</p>
@@ -269,27 +269,27 @@ const doorstepGyms = [
 
     <div class="hubs-grid">
       {
-        nearbySportsHubs.map((hub, index) => (
+        nearbySportsHubs.map((hub) => (
           <article class="hub-card">
             <span class="card-number">{hub.number}</span>
             <h3>{hub.title}</h3>
             <p>{hub.description}</p>
             {hub.images && hub.images.length > 0 && (
-              <div class="hub-slideshow" data-slideshow-id={index}>
-                <div class="slides-container">
-                  {hub.images.map((photo, pIdx) => (
-                    <figure class={`slide-item ${pIdx === 0 ? 'active' : ''}`}>
-                      <img src={photo.src} alt={photo.alt} width="600" height="400" />
-                    </figure>
-                  ))}
-                </div>
-                {hub.images.length > 1 && (
-                  <div class="slideshow-controls">
-                    <button class="slide-btn prev-btn" aria-label="Previous image">‹</button>
-                    <span class="slide-counter">1 / {hub.images.length}</span>
-                    <button class="slide-btn next-btn" aria-label="Next image">›</button>
-                  </div>
-                )}
+              <div class="thumbnail-grid">
+                {hub.images.map((photo, pIdx) => (
+                  <button
+                    class={`thumb-btn${pIdx < 2 ? "" : " visually-hidden-thumb"}`}
+                    type="button"
+                    data-src={photo.src}
+                    data-alt={photo.alt}
+                    aria-label={`View image ${pIdx + 1} of ${hub.images.length} for ${hub.title}`}
+                  >
+                    <img src={photo.src} alt={photo.alt} width="600" height="338" decoding="async" />
+                    {pIdx === 1 && hub.images.length > 2 && (
+                      <span class="badge-count">+{hub.images.length - 2} more photos</span>
+                    )}
+                  </button>
+                ))}
               </div>
             )}
           </article>
@@ -305,7 +305,7 @@ const doorstepGyms = [
         <p class="eyebrow">ISLAND RECREATION & ADVENTURE</p>
         <h2>Sentosa: Your nearby resort island for sports and thrills.</h2>
         <p>
-          Located just minutes south of Depot Heights, Sentosa offers an expansive natural and recreational playground. 
+          Located just a short 13-minute cycling (under 4 km) toward south from Block 109 Depot Road, Sentosa offers an expansive natural and recreational playground. 
           Residents can easily access scenic coastal walking promenades, cycling paths, water sports along the beaches, 
           and immersive nature hiking trails through Imbiah and Mount Imbiah nature walks.
         </p>
@@ -398,43 +398,112 @@ const doorstepGyms = [
   </section>
 </Layout>
 
+<dialog class="slideshow-dialog" aria-label="Sports and recreation image slideshow">
+  <div class="dialog-controls">
+    <button class="dialog-close" type="button" aria-label="Close slideshow">×</button>
+  </div>
+  <div class="dialog-body">
+    <button class="nav-btn prev-btn" type="button" aria-label="Previous image">‹</button>
+    <div class="dialog-image-container">
+      <img class="dialog-main-img" src="" alt="" decoding="async" />
+      <div class="dialog-caption"></div>
+      <div class="dialog-counter"></div>
+    </div>
+    <button class="nav-btn next-btn" type="button" aria-label="Next image">›</button>
+  </div>
+</dialog>
+
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const slideshows = document.querySelectorAll(".hub-slideshow");
+  function initializeSportsPage() {
+    const dialog = document.querySelector(".slideshow-dialog");
+    const dialogImage = dialog?.querySelector(".dialog-main-img");
+    const caption = dialog?.querySelector(".dialog-caption");
+    const counter = dialog?.querySelector(".dialog-counter");
+    const closeButton = dialog?.querySelector(".dialog-close");
+    const prevButton = dialog?.querySelector(".prev-btn");
+    const nextButton = dialog?.querySelector(".next-btn");
 
-    slideshows.forEach((slideshow) => {
-      const slides = slideshow.querySelectorAll(".slide-item");
-      const prevBtn = slideshow.querySelector(".prev-btn");
-      const nextBtn = slideshow.querySelector(".next-btn");
-      const counter = slideshow.querySelector(".slide-counter");
-      
-      if (!slides.length) return;
+    if (!(dialog instanceof HTMLDialogElement) || !(dialogImage instanceof HTMLImageElement)) {
+      return;
+    }
 
-      let currentIndex = 0;
-      const totalSlides = slides.length;
+    let activeImages = [];
+    let currentIndex = 0;
+    let previousBodyOverflow = "";
 
-      function updateSlide(newIndex) {
-        slides[currentIndex].classList.remove("active");
-        currentIndex = (newIndex + totalSlides) % totalSlides;
-        slides[currentIndex].classList.add("active");
-        if (counter) {
-          counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
-        }
-      }
+    function updateView() {
+      const current = activeImages[currentIndex];
+      dialogImage.src = current.src;
+      dialogImage.alt = current.alt;
+      if (caption) caption.textContent = current.alt;
+      if (counter) counter.textContent = `${currentIndex + 1} / ${activeImages.length}`;
+      if (prevButton) prevButton.hidden = activeImages.length < 2;
+      if (nextButton) nextButton.hidden = activeImages.length < 2;
+    }
 
-      if (prevBtn) {
-        prevBtn.addEventListener("click", () => {
-          updateSlide(currentIndex - 1);
+    function openSlideshow(images, index) {
+      if (dialog.open) return;
+      activeImages = images;
+      currentIndex = index;
+      updateView();
+      previousBodyOverflow = document.body.style.overflow;
+      dialog.showModal();
+      document.body.style.overflow = "hidden";
+    }
+
+    function showRelativeImage(offset) {
+      currentIndex = (currentIndex + offset + activeImages.length) % activeImages.length;
+      updateView();
+    }
+
+    document.querySelectorAll(".thumbnail-grid").forEach((gallery) => {
+      const thumbs = Array.from(gallery.querySelectorAll(".thumb-btn"));
+      thumbs.forEach((thumb, index) => {
+        thumb.addEventListener("click", () => {
+          const images = thumbs.map((button) => ({
+            src: button.dataset.src || "",
+            alt: button.dataset.alt || "",
+          }));
+          openSlideshow(images, index);
         });
-      }
-
-      if (nextBtn) {
-        nextBtn.addEventListener("click", () => {
-          updateSlide(currentIndex + 1);
-        });
-      }
+      });
     });
-  });
+
+    document.querySelectorAll(".hero-image img, .card-image-wrap img").forEach((image) => {
+      image.classList.add("lightbox-trigger");
+      image.tabIndex = 0;
+      image.setAttribute("role", "button");
+      image.setAttribute("aria-label", `View full-size image: ${image.alt}`);
+      const singleImage = [{ src: image.currentSrc || image.src, alt: image.alt }];
+      image.addEventListener("click", () => openSlideshow(singleImage, 0));
+      image.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openSlideshow(singleImage, 0);
+        }
+      });
+    });
+
+    closeButton?.addEventListener("click", () => dialog.close());
+    prevButton?.addEventListener("click", () => showRelativeImage(-1));
+    nextButton?.addEventListener("click", () => showRelativeImage(1));
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight") showRelativeImage(1);
+      if (event.key === "ArrowLeft") showRelativeImage(-1);
+    });
+    dialog.addEventListener("close", () => {
+      document.body.style.overflow = previousBodyOverflow;
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeSportsPage, { once: true });
+  } else {
+    initializeSportsPage();
+  }
 </script>
 
 <style>
@@ -560,6 +629,196 @@ const doorstepGyms = [
     display: block;
     object-fit: cover;
     object-position: center;
+  }
+
+  .lightbox-trigger {
+    cursor: zoom-in;
+  }
+
+  .lightbox-trigger:focus-visible {
+    outline: 3px solid #a9d1b5;
+    outline-offset: -3px;
+  }
+
+  .thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .thumb-btn {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: zoom-in;
+  }
+
+  .thumb-btn img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease, filter 0.25s ease;
+  }
+
+  .thumb-btn:hover img {
+    transform: scale(1.04);
+    filter: brightness(0.92);
+  }
+
+  .thumb-btn:focus-visible {
+    outline: 3px solid #a9d1b5;
+    outline-offset: 3px;
+  }
+
+  .visually-hidden-thumb {
+    display: none !important;
+  }
+
+  .badge-count {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(19, 50, 39, 0.88);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .slideshow-dialog {
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  .slideshow-dialog::backdrop {
+    background: rgba(7, 20, 15, 0.92);
+    backdrop-filter: blur(8px);
+    cursor: zoom-out;
+  }
+
+  .slideshow-dialog[open] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dialog-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 18px;
+    z-index: 10;
+  }
+
+  .dialog-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 0;
+    padding: 0 24px 40px;
+  }
+
+  .dialog-image-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 0;
+  }
+
+  .dialog-main-img {
+    max-width: 100%;
+    max-height: calc(100vh - 160px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    user-select: none;
+  }
+
+  .dialog-caption {
+    max-width: 800px;
+    margin-top: 15px;
+    color: #d8e9df;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .dialog-counter {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 7px 13px;
+    border-radius: 999px;
+    background: rgba(19, 50, 39, 0.78);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .dialog-close,
+  .nav-btn {
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 50%;
+    background: rgba(19, 50, 39, 0.78);
+    color: #ffffff;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .dialog-close {
+    width: 48px;
+    height: 48px;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .nav-btn {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    font-size: 42px;
+    line-height: 1;
+  }
+
+  .dialog-close:hover,
+  .nav-btn:hover {
+    background: #275a43;
+    transform: scale(1.05);
+  }
+
+  .dialog-close:focus-visible,
+  .nav-btn:focus-visible {
+    outline: 3px solid #a9d1b5;
+    outline-offset: 3px;
   }
 
   .section {
@@ -775,79 +1034,6 @@ const doorstepGyms = [
     line-height: 1.8;
   }
 
-  /* Slideshow Styles */
-  .hub-slideshow {
-    margin-top: 20px;
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.2);
-  }
-
-  .slides-container {
-    position: relative;
-    width: 100%;
-    height: 220px;
-  }
-
-  .slide-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-    pointer-events: none;
-  }
-
-  .slide-item.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .slide-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .slideshow-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 15px;
-    background: rgba(18, 48, 36, 0.85);
-  }
-
-  .slide-btn {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #ffffff;
-    font-size: 18px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s ease;
-  }
-
-  .slide-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-  }
-
-  .slide-counter {
-    color: #c9e4d5;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-  }
-
   .sentosa-section {
     background: #ffffff;
   }
@@ -1052,6 +1238,55 @@ const doorstepGyms = [
     }
   }
 
+  @media (max-width: 768px) {
+    .thumbnail-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .dialog-body {
+      position: relative;
+      padding: 0 10px 20px;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      width: 44px;
+      height: 44px;
+      transform: translateY(-50%);
+      background: rgba(13, 33, 25, 0.7);
+      font-size: 32px;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
+
+    .dialog-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .dialog-main-img {
+      max-height: calc(100vh - 120px);
+    }
+
+    .dialog-counter {
+      bottom: -25px;
+    }
+  }
+
   @media (max-width: 600px) {
     .hero-content {
       padding: 65px 24px;
@@ -1071,4 +1306,3 @@ const doorstepGyms = [
     }
   }
 </style>
-

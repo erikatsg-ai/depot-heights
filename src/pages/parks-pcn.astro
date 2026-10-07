@@ -133,9 +133,8 @@ const parksData = [
 ---
 
 <Layout title={title} description={description} image="/images/henderson-wave-birdview.webp">
-  <!-- Script injected into head slot -->
-  <script slot="head">
-    document.addEventListener("DOMContentLoaded", function() {
+  <script>
+    function initializeParkGalleries() {
       document.querySelectorAll("[data-park-gallery]").forEach(function(section) {
         var thumbs = Array.from(section.querySelectorAll(".thumb-btn"));
         var dialog = section.querySelector(".slideshow-dialog");
@@ -149,6 +148,7 @@ const parksData = [
         if (!dialog || !dialogImg || thumbs.length === 0) return;
 
         var currentIndex = 0;
+        var previousBodyOverflow = "";
 
         function updateView() {
           var current = thumbs[currentIndex];
@@ -162,15 +162,16 @@ const parksData = [
         }
 
         function openModal(index) {
+          if (dialog.open) return;
           currentIndex = index;
           updateView();
           dialog.showModal();
+          previousBodyOverflow = document.body.style.overflow;
           document.body.style.overflow = "hidden";
         }
 
         function closeModal() {
-          dialog.close();
-          document.body.style.overflow = "";
+          if (dialog.open) dialog.close();
         }
 
         function nextImage() {
@@ -191,6 +192,10 @@ const parksData = [
         if (btnNext) btnNext.addEventListener("click", nextImage);
         if (btnPrev) btnPrev.addEventListener("click", prevImage);
 
+        dialog.addEventListener("close", function() {
+          document.body.style.overflow = previousBodyOverflow;
+        });
+
         dialog.addEventListener("click", function(e) {
           if (e.target === dialog) closeModal();
         });
@@ -198,10 +203,15 @@ const parksData = [
         dialog.addEventListener("keydown", function(e) {
           if (e.key === "ArrowRight") nextImage();
           if (e.key === "ArrowLeft") prevImage();
-          if (e.key === "Escape") document.body.style.overflow = "";
         });
       });
-    });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initializeParkGalleries, { once: true });
+    } else {
+      initializeParkGalleries();
+    }
   </script>
 
   <div class="page-container">
@@ -209,10 +219,8 @@ const parksData = [
       <span class="badge-category">Nature & Outdoors Guide</span>
       <h1>Parks & Nature Trails Near Depot Heights</h1>
       <p>
-        Living in Depot Heights puts you at the unique crossroads of Singapore's best green spaces. 
-        Whether you are looking for a quick neighborhood shortcut into <strong>Telok Blangah Hill</strong>, 
-        a weekend stroll across <strong>Henderson Waves</strong>, or a long-distance run along the 
-        <strong>Rail Corridor</strong>, this guide details the finest nature spots right outside your doorstep. 
+        Living at Depot Heights (Block 109 Depot Road) puts you right at the heart of Singapore’s southern green corridor. With lush trails and scenic parks virtually at your doorstep, you are never more than a short stroll or a quick 7-minute bicycle ride (under 2 km) away from the city's most iconic natural retreats including <strong>Labrador Park and Kent Ridge Park</strong>.
+        Whether you need a quick neighbourhood shortcut into <strong>Telok Blangah Hill</strong>, a weekend stroll across <strong>Henderson Waves</strong>, or an extended ride along the continuous <strong>Rail Corridor</strong>, this guide maps out the best nature spots just minutes from your home.
         Click any photo thumbnail to open a full-screen interactive slideshow.
       </p>
     </header>
@@ -674,4 +682,3 @@ const parksData = [
     }
   }
 </style>
-
