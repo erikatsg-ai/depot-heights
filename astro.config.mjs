@@ -1,6 +1,5 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,9 +9,6 @@ export default defineConfig({
   // Use 'always' to prevent redirection issues on sitemap XML files
   trailingSlash: 'always',
   
-  // Register the sitemap integration to auto-generate sitemap-index.xml on build
-  integrations: [sitemap()],
-
   // Inline CSS bundles into HTML to eliminate render-blocking stylesheet requests
   build: {
     inlineStylesheets: 'always',

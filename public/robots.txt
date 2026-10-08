@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://depot-heights.vercel.app/sitemap-index.xml
+Sitemap: https://depot-heights.vercel.app/sitemap.xml
