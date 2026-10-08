@@ -8,14 +8,16 @@ const pageDescription =
   "Discover the history around Depot Heights, from the British military presence at Gillman Barracks and its 1930s history to the development of Depot Road and the neighbourhood today.";
 
 const heroImage = "/images/gillman-barracks.webp";
+const siteURL = Astro.site ?? new URL("https://depot-heights.vercel.app");
+const pageURL = new URL(Astro.url.pathname, siteURL).href;
+const imageURL = new URL(heroImage, siteURL).href;
 
-// ✅ JSON-LD Structured Data for SEO
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": pageTitle,
   "description": pageDescription,
-  "image": `https://depotheights.great-site.net${heroImage}`,
+  "image": imageURL,
   "author": {
     "@type": "Organization",
     "name": "Depot Heights HDB Estate Guide"
@@ -25,14 +27,14 @@ const jsonLd = {
     "name": "Depot Heights HDB Estate Guide",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://depotheights.great-site.net/favicon.svg"
+      "url": new URL("/favicon.svg", siteURL).href
     }
   },
   "datePublished": "2024-01-01",
   "dateModified": "2024-01-01",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": `https://depotheights.great-site.net/history-of-depot-road/`
+    "@id": pageURL
   }
 };
 ---
@@ -40,11 +42,11 @@ const jsonLd = {
 <Layout
   title={pageTitle}
   description={pageDescription}
+  canonicalURL={pageURL}
   image={heroImage}
+  openGraphType="article"
+  schemaData={jsonLd}
 >
-  <!-- ✅ Inject JSON-LD Schema into head -->
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
-
   <main>
     <!-- HERO -->
     <section class="hero">
@@ -1040,4 +1042,3 @@ const jsonLd = {
     }
   }
 </style>
-

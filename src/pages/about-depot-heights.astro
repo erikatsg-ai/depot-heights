@@ -6,6 +6,7 @@ const pageTitle =
 
 const pageDescription =
   "Learn about Depot Heights, an established HDB residential estate in Bukit Merah, Singapore, covering Blocks 102 to 114, Depot Heights Shopping Centre and the neighbourhood around Depot Road.";
+const pageURL = "https://depot-heights.vercel.app/about-depot-heights/";
 
 // JSON-LD Structured Data for Advanced SEO
 const jsonLd = {
@@ -13,11 +14,11 @@ const jsonLd = {
   "@type": "WebPage",
   "name": pageTitle,
   "description": pageDescription,
-  "url": Astro.url.href,
+  "url": pageURL,
   "isPartOf": {
     "@type": "WebSite",
     "name": "Depot Heights",
-    "url": "https://depot-heights.vercel.app"
+    "url": "https://depot-heights.vercel.app/"
   },
   "about": {
     "@type": "Place",
@@ -104,11 +105,9 @@ const nearbyLinks = [
 <Layout
   title={pageTitle}
   description={pageDescription}
-  canonicalURL="https://depot-heights.vercel.app/about-depot-heights/"
+  canonicalURL={pageURL}
+  schemaData={jsonLd}
 >
-  <!-- Inject JSON-LD Schema into head -->
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
-
   <main>
     <section class="hero">
       <div class="hero-content">
@@ -769,4 +768,3 @@ const nearbyLinks = [
     }
   }
 </style>
-

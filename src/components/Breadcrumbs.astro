@@ -1,0 +1,59 @@
+---
+import { getBreadcrumbs } from "../utils/breadcrumbs";
+
+const siteUrl = Astro.site ?? new URL("https://depot-heights.vercel.app");
+const breadcrumbs = getBreadcrumbs(Astro.url.pathname, siteUrl);
+---
+
+{breadcrumbs.length > 0 && (
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      {breadcrumbs.map((breadcrumb, index) => (
+        <li class={index === breadcrumbs.length - 1 ? "current" : undefined}>
+          {index === breadcrumbs.length - 1 ? (
+            <span aria-current="page">{breadcrumb.name}</span>
+          ) : (
+            <a href={new URL(breadcrumb.url).pathname}>{breadcrumb.name}</a>
+          )}
+        </li>
+      ))}
+    </ol>
+  </nav>
+)}
+
+<style>
+  .breadcrumbs {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 14px 0;
+    color: #52635b;
+    font-size: 14px;
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+  }
+
+  .breadcrumbs li + li::before {
+    content: "/";
+    margin-right: 8px;
+    color: #87958e;
+  }
+
+  .breadcrumbs a {
+    color: #2d6a4f;
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumbs .current {
+    color: #2f3e46;
+  }
+</style>
