@@ -1,0 +1,41 @@
+# Depot Heights
+
+> A neighbourhood guide to Depot Heights and the surrounding Bukit Merah area of Singapore, covering local amenities, food, transport, education, healthcare, recreation, shopping, and history.
+
+Base URL: https://depot-heights.vercel.app/
+
+## About
+
+Depot Heights is an HDB residential estate on Depot Road in Bukit Merah, Singapore. This site helps residents and visitors explore the estate and nearby neighbourhoods, facilities, places to eat, green spaces, and transport connections.
+
+## Main pages
+
+- [Home](https://depot-heights.vercel.app/): Overview of the neighbourhood and links to the site's guides.
+- [About Depot Heights](https://depot-heights.vercel.app/about-depot-heights/): Estate overview, including Blocks 102–114, Depot Heights Shopping Centre, and the surrounding Bukit Merah area.
+- [Location](https://depot-heights.vercel.app/location/): Guide to Depot Heights' location and nearby neighbourhoods and destinations.
+- [History of Depot Road](https://depot-heights.vercel.app/history-of-depot-road/): Background on Depot Road and the area's history.
+- [Living Around Depot Heights](https://depot-heights.vercel.app/living-around-depot-heights/): Overview of neighbourhood lifestyle, everyday convenience, connectivity, and nearby destinations.
+
+## Neighbourhood guides
+
+- [Amenities](https://depot-heights.vercel.app/amenities/): Everyday facilities, playgrounds, exercise areas, sheltered walkways, and shopping-centre amenities.
+- [Transport](https://depot-heights.vercel.app/transport/): Nearby public transport, bus connections, roads, and travel links.
+- [Schools and Education](https://depot-heights.vercel.app/schools-education/): Nearby schools and education options.
+- [Healthcare](https://depot-heights.vercel.app/healthcare/): Nearby clinics, hospitals, and medical centres.
+- [Local Food](https://depot-heights.vercel.app/local-food/): Hawker centres, markets, and local food around the neighbourhood.
+- [Cafés](https://depot-heights.vercel.app/cafes/): Cafés and coffee spots in nearby areas.
+- [Restaurants](https://depot-heights.vercel.app/restaurants/): Restaurants and dining options around Depot Heights.
+- [Parks and PCNs](https://depot-heights.vercel.app/parks-pcn/): Nearby parks, trails, and green connections.
+- [Sports and Recreation](https://depot-heights.vercel.app/sports-recreation/): Sports, exercise, and recreational options.
+- [Shopping and Retail](https://depot-heights.vercel.app/retail-shopping/): Nearby shopping centres, retail, and everyday shopping.
+
+## Site resources
+
+- [HTML sitemap](https://depot-heights.vercel.app/sitemap/): Human-readable directory of the site's main pages.
+- [XML sitemap](https://depot-heights.vercel.app/sitemap.xml): Sitemap for search engines and crawlers.
+- [Search](https://depot-heights.vercel.app/search/): Search the site's neighbourhood guides.
+- [Robots.txt](https://depot-heights.vercel.app/robots.txt): Crawler access and sitemap information.
+
+## Notes
+
+This site is a general neighbourhood guide, not an official service directory. Business details, opening hours, transport routes, and facility information can change; verify time-sensitive details with the relevant provider.
