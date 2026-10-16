@@ -2,10 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 
 const pageTitle =
-  "Depot Heights Transport | Bus Routes, MRT & Connectivity";
+  "Public Transport near Depot Heights";
 
 const pageDescription =
-  "Explore public transport from Depot Heights, including bus connections from Blk 110 and Aft Hewlett Packard to Queenstown, Labrador Park, and Pasir Panjang MRT stations, plus major routes towards Bukit Merah and the city.";
+  "Master your commute! Learn about public transport near Depot Heights, from neighborhood bus stops to quick feeder routes connecting you directly to town and MRTs.";
 
 const busRoutes = [
   {
@@ -180,7 +180,11 @@ const travelLinks = [
 ];
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  focusKeyword="Public Transport near Depot Heights"
+>
   <main>
     <section class="hero">
       <div class="hero-content">
@@ -975,4 +979,3 @@ const travelLinks = [
     }
   }
 </style>
-

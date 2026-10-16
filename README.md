@@ -43,3 +43,14 @@ The local Pagefind index is generated from a production build when the dev serve
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Page SEO metadata
+
+Every page using `src/layouts/Layout.astro` must provide a unique `title`, a
+page-specific `description`, and a single `focusKeyword`. The shared contract
+is defined in `src/utils/seo.ts`, so missing fields fail Astro's type check.
+
+Use a concise, accurate title and description that reflect the page content.
+Choose a natural-language focus phrase that describes that page's primary
+search intent. The focus phrase is editorial guidance only; it is not emitted
+as a `meta keywords` tag, which search engines do not use for ranking.

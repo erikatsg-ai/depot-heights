@@ -2,10 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 
 const pageTitle =
-  "History of Depot Heights | From Gillman Barracks to Today";
+  "History of Depot Heights";
 
 const pageDescription =
-  "Discover the history around Depot Heights, from the British military presence at Gillman Barracks and its 1930s history to the development of Depot Road and the neighbourhood today.";
+  "Explore the history of Depot Heights in Bukit Merah. Learn how this unique Depot Road enclave evolved from its early roots into a thriving modern community.";
 
 const heroImage = "/images/gillman-barracks.webp";
 const siteURL = Astro.site ?? new URL("https://depot-heights.vercel.app");
@@ -42,6 +42,7 @@ const jsonLd = {
 <Layout
   title={pageTitle}
   description={pageDescription}
+  focusKeyword="History of Depot Heights"
   canonicalURL={pageURL}
   image={heroImage}
   openGraphType="article"

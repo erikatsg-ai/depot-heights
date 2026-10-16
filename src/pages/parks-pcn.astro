@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const title = "Parks & PCN Near Depot Heights | Bukit Merah Green Trails Guide";
-const description = "Explore the best parks, hidden shortcuts, and park connectors (PCN) near Depot Heights, Singapore. Discover direct trails to Telok Blangah Hill, Henderson Waves, HortPark, and the Rail Corridor.";
+const title = "Five Nature Parks, Two PCNs and a Rail Corridor";
+const description = "Located near 5 nature parks, 2 Park Connectors (PCN), and the Rail Corridor, Depot Heights offers residents a premium lifestyle with Telok Blangah Hill Park practically in their backyard.";
 
 const parksData = [
   {
@@ -132,7 +132,12 @@ const parksData = [
 ];
 ---
 
-<Layout title={title} description={description} image="/images/henderson-wave-birdview.webp">
+<Layout
+  title={title}
+  description={description}
+  focusKeyword="Parks near Depot Heights"
+  image="/images/henderson-wave-birdview.webp"
+>
   <script>
     function initializeParkGalleries() {
       document.querySelectorAll("[data-park-gallery]").forEach(function(section) {
