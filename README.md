@@ -40,6 +40,12 @@ All commands are run from the root of the project, from a terminal:
 
 The local Pagefind index is generated from a production build when the dev server starts. It reflects the content at startup; rerun `npm run dev` after changing indexed page content to refresh search results. `npm run build` generates the production site and its Pagefind index in `dist/pagefind/`.
 
+## RSS feed
+
+The static RSS 2.0 feed is available at `/rss.xml` and is linked from the shared
+page metadata for feed readers. It lists the home page and 14 editorial pages;
+search and sitemap pages are excluded.
+
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
