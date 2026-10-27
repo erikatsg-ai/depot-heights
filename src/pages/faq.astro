@@ -1,0 +1,433 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const faqSections = [
+  {
+    title: "Transport & Connectivity",
+    questions: [
+      {
+        question: "What is the nearest MRT station to Depot Heights?",
+        answer:
+          "There is no MRT station directly beside Depot Heights. The nearest options are a short feeder bus ride away:",
+        points: [
+          "Labrador Park (CC27) on the Circle Line — the quickest connection via Bus 175 or 57.",
+          "Queenstown (EW19) on the East-West Line — accessible via Bus 195.",
+          "Redhill (EW18) may look closest on a map, but there is no direct access; reaching it requires bus transfers and takes longer.",
+        ],
+      },
+      {
+        question: "How do I travel from Depot Heights to Orchard Road?",
+        answer:
+          "Board Bus 175 at the 'Aft Hewlett Packard' stop along Depot Road, next to North London Collegiate School (NLCS), and alight at Lucky Plaza. The ride takes about 25 minutes.",
+      },
+      {
+        question: "How do I travel from Depot Heights to Great World City?",
+        answer:
+          "Board Bus 175 at the 'Aft Hewlett Packard' stop along Depot Road, next to NLCS, and alight at 'Opp Great World City'. It is a nine-stop ride that takes about 16 to 20 minutes. Bus 195 also serves the same stop, but takes longer.",
+      },
+      {
+        question: "How do I travel from Depot Heights to VivoCity or HarbourFront?",
+        answer:
+          "Board Bus 57 at the 'Blk 110' stop along Depot Road. It takes about 15 minutes to reach VivoCity and HarbourFront MRT.",
+      },
+      {
+        question: "How do I travel from Depot Heights to NUS or NUH?",
+        answer:
+          "Board Bus 57 or 175 at the 'Blk 110' stop, transfer to Bus 97 or 963 at the 'Aft HortPark' stop, and alight at the 'NUS Sport Centre' stop. The total journey takes about 25 minutes; driving takes around 8 minutes.",
+      },
+      {
+        question: "How do I travel from Depot Heights to One-North?",
+        answer: "Connect to the Circle Line using either of these bus routes:",
+        points: [
+          "Via Bus 175 (about 20–25 minutes): take Bus 175 from 'Blk 110' for six stops to Pasir Panjang MRT, then ride the Circle Line three stops to one-north.",
+          "Via Bus 57 (about 25 minutes): take Bus 57 from 'Blk 110' for five stops to 'Opp Alexandra Retail Centre', walk to Labrador Park MRT, then ride the Circle Line four stops to one-north.",
+        ],
+      },
+      {
+        question:
+          "How do I travel from Depot Heights to the CBD (Shenton Way, Robinson Road or Tanjong Pagar)?",
+        answer:
+          "Board Bus 57 at 'Blk 110' (Stop 14201) along Depot Road and alight at the stop closest to your destination:",
+        points: [
+          "Bef. Cantonment Rd (100 AM / Tras St.)",
+          "Tanjong Pagar Stn. Exit C (International Plaza)",
+          "Aft Telok Ayer St (McCallum St / Robinson Road / OUE Downtown)",
+          "Prudential Tower (Capital Square / Lau Pa Sat)",
+          "Fullerton Square (Battery Rd / UOB Plaza)",
+        ],
+      },
+      {
+        question: "How do I travel from Depot Heights to Suntec City or Marina Square?",
+        answer:
+          "Board Bus 57 at 'Blk 110' (Stop 14201) along Depot Road and alight at 'Esplanade Bridge'. Use the underground Citylink / One Raffles Link connection to reach Suntec City or Esplanade Mall.",
+      },
+      {
+        question: "How do I travel from Depot Heights to New Bahru or Mohamed Sultan Road?",
+        answer:
+          "Board Bus 195 at the 'Aft Hewlett Packard' stop and alight at 'Opp. Mohd. Sultan Rd'. Alternatively, it is about a 17-minute drive (around 5 km) to New Bahru.",
+      },
+      {
+        question: "How do I travel from Depot Heights to Clarke Quay?",
+        answer:
+          "Board Bus 195 at the 'Aft Hewlett Packard' stop and alight at 'Opp. Clarke Quay'.",
+      },
+    ],
+  },
+  {
+    title: "Shopping, Dining & Daily Amenities",
+    questions: [
+      {
+        question: "Where can I eat near Depot Heights?",
+        answer:
+          "There are more than 10 hawker centres a short distance from Depot Heights. Here are some recommendations:",
+        points: [
+          "Alexandra Village Food Centre",
+          "ABC Market",
+          "Margaret Drive Food Centre",
+          "Bukit Merah View Hawker Centre",
+          "Tiong Bahru Market — about 3.2 km away, five bus stops away",
+        ],
+      },
+      {
+        question: "What is good to eat at the Depot Heights Shopping Centre food court?",
+        answer: "The food court is on Level 2. Popular stalls include:",
+        points: [
+          "Chicken Rice & Herbal Soup Stall — known for generous chicken portions and rich soups.",
+          "Yong Tau Foo & Ban Mian stalls — expect long queues during weekday lunch hours.",
+          "Roasted Delights / Wanton Noodles — known for tasty char siew and noodles.",
+          "Plain prata with teh halia (ginger tea); ask for it less sweet.",
+        ],
+      },
+      {
+        question: "Where can I find a casual Japanese restaurant near Depot Heights?",
+        answer:
+          "Sakuraya Fish Mart at Anchorpoint serves fresh sashimi from its display fridge. Ma Maison serves Japanese-Western food and is also just a few minutes away from Depot Heights.",
+      },
+      {
+        question: "Where can I find affordable Japanese restaurants near Depot Heights?",
+        answer:
+          "The Tanjong Pagar area is about a 25-minute bus ride away and has several budget-friendly Japanese options by Chef Keisuke:",
+        points: [
+          "Keisuke Hamburg Steak — Japanese hamburger steak with a free-flow salad bar.",
+          "Tonkotsu King Ramen — creamy pork-bone broth and Black Spicy ramen, with free-flow hard-boiled eggs and marinated spicy bean sprouts.",
+          "Tori King Ramen — rich chicken broth and signature grilled chicken leg; try the Black Spicy ramen.",
+          "Grilled Fish Keisuke — each main dish comes as a set with Japanese rice, hot miso soup, steamed egg (chawanmushi) and condiments.",
+        ],
+      },
+      {
+        question: "Which shopping centres do Depot Heights residents usually visit?",
+        answer: "Residents commonly visit these shopping and dining destinations:",
+        points: [
+          "VivoCity — a popular weekend destination for families, with restaurants, a library, a cinema and a rooftop water playground.",
+          "Alexandra Retail Centre (ARC) — often quieter on weekends, with cafés, children's enrichment classes and Fitness First, which has a swimming pool.",
+          "Anchorpoint — a convenient choice with casual dining spots.",
+          "Alexandra Central — offers a variety of casual dining options.",
+          "IKEA Alexandra — popular for its Swedish cafeteria-style restaurant as well as home furnishings.",
+          "Queensway Shopping Centre — known for sportswear, shoes, men's local fashion and eyewear, as well as local favourites such as Katong Laksa and curry chicken rice.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Sports & Recreation",
+    questions: [
+      {
+        question: "Where is the nearest stadium?",
+        answer:
+          "Queenstown Stadium is about a nine-minute bus ride away. Its running track is free for public use.",
+      },
+      {
+        question: "Where is the nearest swimming pool?",
+        answer: "There are three nearby swimming pools:",
+        points: [
+          "SAFRA Mount Faber — members can bring up to three paying guests.",
+          "Queenstown Swimming Complex",
+          "Delta Swimming Pool",
+        ],
+      },
+      {
+        question: "Where is the nearest bowling centre?",
+        answer:
+          "The bowling centre is on Level 2 at SAFRA Mount Faber and is publicly accessible.",
+      },
+      {
+        question: "Where is the nearest indoor badminton court?",
+        answer: "Nearby public badminton halls include:",
+        points: [
+          "Telok Blangah CC",
+          "Delta Sport Centre",
+          "Tiong Bahru CC",
+          "Leng Kee CC",
+          "Radin Mas CC",
+          "SAFRA Mount Faber — member bookings",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Estate Facilities & Living",
+    questions: [
+      {
+        question: "Where is the nearest library?",
+        answer:
+          "Two public libraries are about a 10- to 15-minute bus ride from Depot Heights:",
+        points: [
+          "Queenstown Public Library — the closest to Depot Heights, but temporarily closed for upgrading.",
+          "Harbourfront Library at VivoCity — with scenic views overlooking Sentosa.",
+        ],
+      },
+      {
+        question: "Is Depot Heights a shopping centre?",
+        answer:
+          "No. Depot Heights is the name of a residential HDB estate. It does have a small neighbourhood hub, Depot Heights Shopping Centre, for daily groceries and essential services.",
+      },
+      {
+        question: "What redevelopment projects are happening near Depot Road?",
+        answer:
+          "The surrounding Depot Lane Industrial Estate and warehouses are scheduled for vacancy and clearance to make way for future residential developments, including HDB BTO and private housing, expanding the residential area around Telok Blangah and Depot Road.",
+      },
+      {
+        question: "What primary schools are located near Depot Heights?",
+        answer:
+          "Notable primary schools within a 1 km to 2 km radius include:",
+        points: [
+          "Gan Eng Seng Primary School",
+          "Blangah Rise Primary School",
+          "Radin Mas Primary School",
+          "Zhangde Primary School",
+        ],
+      },
+      {
+        question:
+          "Are there good places for cycling, jogging and walking near Depot Heights?",
+        answer:
+          "Yes. Residents can connect to the Alexandra Park Connector, Rail Corridor, Labrador Park, Sentosa Boardwalk and the Southern Ridges network.",
+      },
+      {
+        question:
+          "What parcel collection and ATM facilities are available in Depot Heights?",
+        answer: "Level 1 facilities include:",
+        points: [
+          "ATMs: DBS/POSB and OCBC cash machines near FairPrice at Block 108.",
+          "Parcel lockers: Pick Network, Shopee Xpress and Ninja Box lockers at Block 105 for 24/7 self-service parcel collection.",
+        ],
+      },
+    ],
+  },
+];
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqSections.flatMap((section) =>
+    section.questions.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: [item.answer, ...(item.points ?? [])].join(" "),
+      },
+    })),
+  ),
+};
+---
+
+<Layout
+  title="FAQ | Depot Heights, Bukit Merah Singapore"
+  description="Answers to common questions about Depot Heights transport, shopping, dining, recreation, estate facilities and nearby amenities."
+  focusKeyword="Depot Heights FAQ"
+  schemaData={schemaData}
+>
+  <div class="faq-page">
+    <header class="faq-header">
+      <p class="eyebrow">DEPOT HEIGHTS COMMUNITY GUIDE</p>
+      <h1>Frequently asked questions</h1>
+      <p class="intro">
+        Find practical answers about getting around, places to eat and shop,
+        recreation, and everyday life in Depot Heights.
+      </p>
+      <nav class="section-links" aria-label="FAQ topics">
+        {faqSections.map((section, index) => (
+          <a href={`#faq-section-${index + 1}`}>{section.title}</a>
+        ))}
+      </nav>
+    </header>
+
+    {faqSections.map((section, sectionIndex) => (
+      <section
+        class="faq-section"
+        id={`faq-section-${sectionIndex + 1}`}
+        aria-labelledby={`faq-heading-${sectionIndex + 1}`}
+      >
+        <h2 id={`faq-heading-${sectionIndex + 1}`}>{section.title}</h2>
+        <div class="faq-list">
+          {section.questions.map((item) => (
+            <details class="faq-item">
+              <summary>{item.question}</summary>
+              <div class="faq-answer">
+                <p>{item.answer}</p>
+                {item.points && (
+                  <ul>
+                    {item.points.map((point) => <li>{point}</li>)}
+                  </ul>
+                )}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .faq-page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+    color: #1d2924;
+  }
+
+  .faq-header {
+    margin-bottom: 3.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #dfe8df;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.65rem;
+    color: #3d805f;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+
+  h1 {
+    margin: 0;
+    color: #183d2d;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    letter-spacing: -0.045em;
+    line-height: 1.15;
+  }
+
+  .intro {
+    max-width: 680px;
+    margin: 1rem 0 0;
+    color: #53615b;
+    font-size: 1.1rem;
+  }
+
+  .section-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.75rem;
+  }
+
+  .section-links a {
+    padding: 0.55rem 0.9rem;
+    border: 1px solid #d6e4d9;
+    border-radius: 999px;
+    color: #245c41;
+    font-size: 0.92rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .section-links a:hover {
+    background: #eaf3eb;
+  }
+
+  .faq-section {
+    margin-top: 3rem;
+    scroll-margin-top: 6rem;
+  }
+
+  .faq-section h2 {
+    margin: 0 0 1rem;
+    color: #183d2d;
+    font-size: clamp(1.45rem, 3vw, 1.9rem);
+    letter-spacing: -0.025em;
+  }
+
+  .faq-list {
+    overflow: hidden;
+    border: 1px solid #e0e8e2;
+    border-radius: 14px;
+    background: #fff;
+  }
+
+  .faq-item + .faq-item {
+    border-top: 1px solid #e8eee9;
+  }
+
+  .faq-item summary {
+    position: relative;
+    padding: 1.1rem 3rem 1.1rem 1.25rem;
+    color: #263d32;
+    font-size: 1.02rem;
+    font-weight: 700;
+    line-height: 1.5;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    color: #3d805f;
+    content: "+";
+    font-size: 1.35rem;
+    font-weight: 500;
+    transform: translateY(-50%);
+  }
+
+  .faq-item[open] summary::after {
+    content: "−";
+  }
+
+  .faq-item summary:focus-visible,
+  .section-links a:focus-visible {
+    outline: 3px solid #75aa86;
+    outline-offset: 3px;
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem;
+    color: #53615b;
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+
+  .faq-answer ul {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0.75rem 0 0;
+    padding-left: 1.25rem;
+  }
+
+  .faq-answer li {
+    padding-left: 0.15rem;
+  }
+
+  @media (max-width: 600px) {
+    .faq-page {
+      padding: 3rem 1rem 4rem;
+    }
+
+    .section-links {
+      align-items: flex-start;
+    }
+
+    .section-links a {
+      font-size: 0.84rem;
+    }
+  }
+</style>

@@ -37,6 +37,12 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://depot-heights.vercel.app/faq/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
     <loc>https://depot-heights.vercel.app/living-around-depot-heights/</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>

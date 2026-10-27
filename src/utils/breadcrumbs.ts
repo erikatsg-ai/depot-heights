@@ -2,6 +2,7 @@ const labels: Record<string, string> = {
   "about-depot-heights": "About Depot Heights",
   amenities: "Amenities",
   cafes: "Cafés",
+  faq: "FAQ",
   healthcare: "Healthcare",
   "history-of-depot-road": "History of Depot Road",
   "living-around-depot-heights": "Living Around Depot Heights",
